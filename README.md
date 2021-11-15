@@ -1,3 +1,10 @@
-# usKet_MOD
+# usKet_OOD
+- Our Own Difinition / Justice
 
-Who am I? Let's get to know me by defining the things around us.
+<!-- <br></br> -->
+
+|이터레이션|날짜|앱 기획|
+|:---:|:---:|:---:|
+|이터레이션1|11/15(월) ~ 11/17(수)|앱 기획|
+
+
