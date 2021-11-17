@@ -24,4 +24,4 @@
  
 <br></br>
 
-👉 **Notion** : **[ 및 일정관리🧑🏻‍💻](https://jasper-atom-7c6.notion.site/a815c7d1282143f1bdcca2bd7eda7c16)**
+👉 **Notion** : **[이터레이션 및 일정관리🧑🏻‍💻](https://jasper-atom-7c6.notion.site/a815c7d1282143f1bdcca2bd7eda7c16)**
