@@ -26,4 +26,4 @@
  
 
 
-**Notion Link** : **[선수산정 및 일정관리🧑🏻‍💻](https://www.notion.so/a815c7d1282143f1bdcca2bd7eda7c16)**
+**Notion Link** : **[선수산정 및 일정관리🧑🏻‍💻](https://jasper-atom-7c6.notion.site/a815c7d1282143f1bdcca2bd7eda7c16)**
