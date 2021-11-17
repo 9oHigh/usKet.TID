@@ -1,5 +1,5 @@
 # usKet_OOD
-- Our Own Difinition / Justice
+- Our Own Difinition
 
 ##### ✔️아이디어
 
