@@ -7,19 +7,52 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C238481274A7F4F007314BF /* UIButton + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C238480274A7F4F007314BF /* UIButton + Extension.swift */; };
+		4C3276432747E13500C0456D /* Cafe24Oneprettynight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C3276422747E13500C0456D /* Cafe24Oneprettynight.ttf */; };
+		4C3276462747F9FF00C0456D /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 4C3276452747F9FF00C0456D /* SideMenu */; };
+		4C3276482747FA6D00C0456D /* SideMenuNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3276472747FA6D00C0456D /* SideMenuNavigationViewController.swift */; };
+		4C32764A2747FD5C00C0456D /* CustomSideMenuNavigation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3276492747FD5C00C0456D /* CustomSideMenuNavigation.swift */; };
+		4C32764C27481CFD00C0456D /* WordList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C32764B27481CFD00C0456D /* WordList.swift */; };
+		4C3AD73F274A09EF00EFC636 /* StatisticsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AD73E274A09EF00EFC636 /* StatisticsViewController.swift */; };
+		4C3AD741274A0A0700EFC636 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AD740274A0A0700EFC636 /* SettingViewController.swift */; };
+		4C3AD743274A0A3200EFC636 /* OpenSourceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AD742274A0A3200EFC636 /* OpenSourceViewController.swift */; };
+		4C3AD745274A2F9800EFC636 /* WordScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C3AD744274A2F9800EFC636 /* WordScreen.storyboard */; };
+		4C3AD74C274A363F00EFC636 /* BasicViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AD74B274A363F00EFC636 /* BasicViewController.swift */; };
+		4C3AD74E274A364B00EFC636 /* ContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AD74D274A364B00EFC636 /* ContentViewController.swift */; };
+		4C3AD752274A36D100EFC636 /* PageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AD751274A36D100EFC636 /* PageViewController.swift */; };
+		4C3AD755274A575400EFC636 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = 4C3AD754274A575400EFC636 /* Realm */; };
+		4C3AD757274A575400EFC636 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4C3AD756274A575400EFC636 /* RealmSwift */; };
+		4C3AD759274A5C4E00EFC636 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AD758274A5C4E00EFC636 /* ContactViewController.swift */; };
+		4C3AD75B274A70B700EFC636 /* Walkthrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C3AD75A274A70B700EFC636 /* Walkthrough.storyboard */; };
+		4C3AD75D274A70D700EFC636 /* FirstLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AD75C274A70D700EFC636 /* FirstLoginViewController.swift */; };
 		4C758A9A2746AA9E00B9F7AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C758A992746AA9E00B9F7AC /* AppDelegate.swift */; };
 		4C758A9C2746AA9E00B9F7AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C758A9B2746AA9E00B9F7AC /* SceneDelegate.swift */; };
-		4C758A9E2746AA9E00B9F7AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C758A9D2746AA9E00B9F7AC /* ViewController.swift */; };
+		4C758A9E2746AA9E00B9F7AC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C758A9D2746AA9E00B9F7AC /* MainViewController.swift */; };
 		4C758AA12746AA9E00B9F7AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C758A9F2746AA9E00B9F7AC /* Main.storyboard */; };
 		4C758AA32746AA9F00B9F7AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C758AA22746AA9F00B9F7AC /* Assets.xcassets */; };
 		4C758AA62746AA9F00B9F7AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C758AA42746AA9F00B9F7AC /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C238480274A7F4F007314BF /* UIButton + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extension.swift"; sourceTree = "<group>"; };
+		4C3276422747E13500C0456D /* Cafe24Oneprettynight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cafe24Oneprettynight.ttf; sourceTree = "<group>"; };
+		4C3276472747FA6D00C0456D /* SideMenuNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuNavigationViewController.swift; sourceTree = "<group>"; };
+		4C3276492747FD5C00C0456D /* CustomSideMenuNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSideMenuNavigation.swift; sourceTree = "<group>"; };
+		4C32764B27481CFD00C0456D /* WordList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordList.swift; sourceTree = "<group>"; };
+		4C3AD73E274A09EF00EFC636 /* StatisticsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatisticsViewController.swift; sourceTree = "<group>"; };
+		4C3AD740274A0A0700EFC636 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
+		4C3AD742274A0A3200EFC636 /* OpenSourceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceViewController.swift; sourceTree = "<group>"; };
+		4C3AD744274A2F9800EFC636 /* WordScreen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = WordScreen.storyboard; sourceTree = "<group>"; };
+		4C3AD74B274A363F00EFC636 /* BasicViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasicViewController.swift; sourceTree = "<group>"; };
+		4C3AD74D274A364B00EFC636 /* ContentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewController.swift; sourceTree = "<group>"; };
+		4C3AD751274A36D100EFC636 /* PageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageViewController.swift; sourceTree = "<group>"; };
+		4C3AD758274A5C4E00EFC636 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
+		4C3AD75A274A70B700EFC636 /* Walkthrough.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Walkthrough.storyboard; sourceTree = "<group>"; };
+		4C3AD75C274A70D700EFC636 /* FirstLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLoginViewController.swift; sourceTree = "<group>"; };
 		4C758A962746AA9E00B9F7AC /* usket_TID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = usket_TID.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C758A992746AA9E00B9F7AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C758A9B2746AA9E00B9F7AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		4C758A9D2746AA9E00B9F7AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		4C758A9D2746AA9E00B9F7AC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		4C758AA02746AA9E00B9F7AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		4C758AA22746AA9F00B9F7AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C758AA52746AA9F00B9F7AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -31,12 +64,101 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C3AD757274A575400EFC636 /* RealmSwift in Frameworks */,
+				4C3AD755274A575400EFC636 /* Realm in Frameworks */,
+				4C3276462747F9FF00C0456D /* SideMenu in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C23847F274A7F26007314BF /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				4C238480274A7F4F007314BF /* UIButton + Extension.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		4C32763B2747978300C0456D /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				4C32764B27481CFD00C0456D /* WordList.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		4C32763C2747978E00C0456D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				4C758A9F2746AA9E00B9F7AC /* Main.storyboard */,
+				4C758AA42746AA9F00B9F7AC /* LaunchScreen.storyboard */,
+				4C3AD744274A2F9800EFC636 /* WordScreen.storyboard */,
+				4C3AD75A274A70B700EFC636 /* Walkthrough.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		4C32763D274797A300C0456D /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				4C3AD748274A35B500EFC636 /* MainController */,
+				4C3AD749274A35C300EFC636 /* MenuController */,
+				4C3AD74A274A35DF00EFC636 /* AddController */,
+				4C23847F274A7F26007314BF /* Extension */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		4C32763E2747D9A400C0456D /* Resource */ = {
+			isa = PBXGroup;
+			children = (
+				4C32763F2747D9BC00C0456D /* Font */,
+			);
+			path = Resource;
+			sourceTree = "<group>";
+		};
+		4C32763F2747D9BC00C0456D /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				4C3276422747E13500C0456D /* Cafe24Oneprettynight.ttf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		4C3AD748274A35B500EFC636 /* MainController */ = {
+			isa = PBXGroup;
+			children = (
+				4C758A9D2746AA9E00B9F7AC /* MainViewController.swift */,
+				4C3AD75C274A70D700EFC636 /* FirstLoginViewController.swift */,
+			);
+			path = MainController;
+			sourceTree = "<group>";
+		};
+		4C3AD749274A35C300EFC636 /* MenuController */ = {
+			isa = PBXGroup;
+			children = (
+				4C3276472747FA6D00C0456D /* SideMenuNavigationViewController.swift */,
+				4C3276492747FD5C00C0456D /* CustomSideMenuNavigation.swift */,
+				4C3AD73E274A09EF00EFC636 /* StatisticsViewController.swift */,
+				4C3AD740274A0A0700EFC636 /* SettingViewController.swift */,
+				4C3AD742274A0A3200EFC636 /* OpenSourceViewController.swift */,
+				4C3AD758274A5C4E00EFC636 /* ContactViewController.swift */,
+			);
+			path = MenuController;
+			sourceTree = "<group>";
+		};
+		4C3AD74A274A35DF00EFC636 /* AddController */ = {
+			isa = PBXGroup;
+			children = (
+				4C3AD74B274A363F00EFC636 /* BasicViewController.swift */,
+				4C3AD74D274A364B00EFC636 /* ContentViewController.swift */,
+				4C3AD751274A36D100EFC636 /* PageViewController.swift */,
+			);
+			path = AddController;
+			sourceTree = "<group>";
+		};
 		4C758A8D2746AA9E00B9F7AC = {
 			isa = PBXGroup;
 			children = (
@@ -56,12 +178,13 @@
 		4C758A982746AA9E00B9F7AC /* usket_TID */ = {
 			isa = PBXGroup;
 			children = (
+				4C32763E2747D9A400C0456D /* Resource */,
+				4C32763B2747978300C0456D /* Model */,
+				4C32763C2747978E00C0456D /* View */,
+				4C32763D274797A300C0456D /* Controller */,
 				4C758A992746AA9E00B9F7AC /* AppDelegate.swift */,
 				4C758A9B2746AA9E00B9F7AC /* SceneDelegate.swift */,
-				4C758A9D2746AA9E00B9F7AC /* ViewController.swift */,
-				4C758A9F2746AA9E00B9F7AC /* Main.storyboard */,
 				4C758AA22746AA9F00B9F7AC /* Assets.xcassets */,
-				4C758AA42746AA9F00B9F7AC /* LaunchScreen.storyboard */,
 				4C758AA72746AA9F00B9F7AC /* Info.plist */,
 			);
 			path = usket_TID;
@@ -83,6 +206,11 @@
 			dependencies = (
 			);
 			name = usket_TID;
+			packageProductDependencies = (
+				4C3276452747F9FF00C0456D /* SideMenu */,
+				4C3AD754274A575400EFC636 /* Realm */,
+				4C3AD756274A575400EFC636 /* RealmSwift */,
+			);
 			productName = usket_TID;
 			productReference = 4C758A962746AA9E00B9F7AC /* usket_TID.app */;
 			productType = "com.apple.product-type.application";
@@ -111,6 +239,10 @@
 				Base,
 			);
 			mainGroup = 4C758A8D2746AA9E00B9F7AC;
+			packageReferences = (
+				4C3276442747F9FF00C0456D /* XCRemoteSwiftPackageReference "SideMenu" */,
+				4C3AD753274A575400EFC636 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+			);
 			productRefGroup = 4C758A972746AA9E00B9F7AC /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -126,6 +258,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C758AA62746AA9F00B9F7AC /* LaunchScreen.storyboard in Resources */,
+				4C3276432747E13500C0456D /* Cafe24Oneprettynight.ttf in Resources */,
+				4C3AD745274A2F9800EFC636 /* WordScreen.storyboard in Resources */,
+				4C3AD75B274A70B700EFC636 /* Walkthrough.storyboard in Resources */,
 				4C758AA32746AA9F00B9F7AC /* Assets.xcassets in Resources */,
 				4C758AA12746AA9E00B9F7AC /* Main.storyboard in Resources */,
 			);
@@ -138,9 +273,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4C758A9E2746AA9E00B9F7AC /* ViewController.swift in Sources */,
+				4C758A9E2746AA9E00B9F7AC /* MainViewController.swift in Sources */,
+				4C3AD74C274A363F00EFC636 /* BasicViewController.swift in Sources */,
+				4C3AD759274A5C4E00EFC636 /* ContactViewController.swift in Sources */,
+				4C32764A2747FD5C00C0456D /* CustomSideMenuNavigation.swift in Sources */,
+				4C3AD752274A36D100EFC636 /* PageViewController.swift in Sources */,
+				4C3AD743274A0A3200EFC636 /* OpenSourceViewController.swift in Sources */,
 				4C758A9A2746AA9E00B9F7AC /* AppDelegate.swift in Sources */,
+				4C3AD741274A0A0700EFC636 /* SettingViewController.swift in Sources */,
+				4C3276482747FA6D00C0456D /* SideMenuNavigationViewController.swift in Sources */,
+				4C3AD75D274A70D700EFC636 /* FirstLoginViewController.swift in Sources */,
 				4C758A9C2746AA9E00B9F7AC /* SceneDelegate.swift in Sources */,
+				4C3AD74E274A364B00EFC636 /* ContentViewController.swift in Sources */,
+				4C238481274A7F4F007314BF /* UIButton + Extension.swift in Sources */,
+				4C32764C27481CFD00C0456D /* WordList.swift in Sources */,
+				4C3AD73F274A09EF00EFC636 /* StatisticsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,6 +364,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -272,6 +420,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "";
 				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -362,6 +511,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4C3276442747F9FF00C0456D /* XCRemoteSwiftPackageReference "SideMenu" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jonkykong/SideMenu";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
+		4C3AD753274A575400EFC636 /* XCRemoteSwiftPackageReference "realm-cocoa" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-cocoa.git";
+			requirement = {
+				kind = exactVersion;
+				version = 10.18.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4C3276452747F9FF00C0456D /* SideMenu */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C3276442747F9FF00C0456D /* XCRemoteSwiftPackageReference "SideMenu" */;
+			productName = SideMenu;
+		};
+		4C3AD754274A575400EFC636 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C3AD753274A575400EFC636 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = Realm;
+		};
+		4C3AD756274A575400EFC636 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C3AD753274A575400EFC636 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
+			productName = RealmSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4C758A8E2746AA9E00B9F7AC /* Project object */;
 }

@@ -1,0 +1,20 @@
+//
+//  OpenSourceViewController.swift
+//  usket_TID
+//
+//  Created by 이경후 on 2021/11/21.
+//
+
+import UIKit
+
+class OpenSourceViewController: UIViewController {
+
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+    }
+    //클로즈
+    @IBAction func closeButtonClicked(_ sender: UIButton) {
+        self.dismiss(animated: true, completion: nil)
+    }
+}

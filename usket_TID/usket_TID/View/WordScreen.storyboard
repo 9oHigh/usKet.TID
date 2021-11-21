@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5gY-pp-eRK">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Page View Controller-->
+        <scene sceneID="cHe-En-SIj">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="5gY-pp-eRK" customClass="PageViewController" customModule="usket_TID" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jK6-je-x5f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-171" y="119"/>
+        </scene>
+        <!--Basic View Controller-->
+        <scene sceneID="30X-2T-dXz">
+            <objects>
+                <viewController storyboardIdentifier="BasicViewController" id="cbc-J6-drn" customClass="BasicViewController" customModule="usket_TID" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zb4-af-Fzx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Xji-e9-sNC"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <outlet property="mainView" destination="zb4-af-Fzx" id="9oQ-46-yhi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pWw-J5-Jux" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="589.85507246376812" y="-205.58035714285714"/>
+        </scene>
+        <!--Content View Controller-->
+        <scene sceneID="t27-C0-Nkf">
+            <objects>
+                <viewController storyboardIdentifier="ContentViewController" id="2Wh-3S-kRA" customClass="ContentViewController" customModule="usket_TID" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="spm-gh-bfn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzW-3r-8Z2">
+                                <rect key="frame" x="329" y="64" width="65" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="2l5-Ww-SAQ"/>
+                                    <constraint firstAttribute="height" constant="44" id="ESb-r6-kQj"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="저장">
+                                    <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="22"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqa-i8-1ug">
+                                <rect key="frame" x="269" y="64" width="60" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Kgb-AF-cyG"/>
+                                    <constraint firstAttribute="width" constant="60" id="lKx-8E-0kx"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="취소">
+                                    <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="22"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="cancelButtonClicked:" destination="2Wh-3S-kRA" eventType="touchUpInside" id="gR6-P5-s5R"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4Xl-6o-07a"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CzW-3r-8Z2" firstAttribute="top" secondItem="4Xl-6o-07a" secondAttribute="top" constant="20" id="63k-zv-o9s"/>
+                            <constraint firstItem="4Xl-6o-07a" firstAttribute="trailing" secondItem="CzW-3r-8Z2" secondAttribute="trailing" constant="20" id="boY-1d-r8m"/>
+                            <constraint firstItem="aqa-i8-1ug" firstAttribute="top" secondItem="4Xl-6o-07a" secondAttribute="top" constant="20" id="oj8-YP-1WI"/>
+                            <constraint firstItem="CzW-3r-8Z2" firstAttribute="leading" secondItem="aqa-i8-1ug" secondAttribute="trailing" id="rTA-Sn-W4B"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="aqa-i8-1ug" id="PEK-vy-n9a"/>
+                        <outlet property="mainView" destination="spm-gh-bfn" id="Pkb-fi-Uvf"/>
+                        <outlet property="storeButton" destination="CzW-3r-8Z2" id="QsW-Jp-4Mn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wcN-yi-Cvl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="589.85507246376812" y="497.54464285714283"/>
+        </scene>
+    </scenes>
+</document>

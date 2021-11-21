@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cafe24Oneprettynight.ttf">
+            <string>Cafe24Oneprettynight</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--First Login View Controller-->
+        <scene sceneID="s0d-6b-0kx">
+            <objects>
+                <viewController storyboardIdentifier="FirstLoginViewController" id="Y6W-OH-hqX" customClass="FirstLoginViewController" customModule="usket_TID" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dHW-al-Vof">
+                                <rect key="frame" x="75" y="94" width="264" height="596"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요😊" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XDE-JS-9L4">
+                                        <rect key="frame" x="50" y="30" width="164" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="iQT-UO-Zsl"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="안녕하세요. Today I Define을 만든 개발자입니다.\n애플리케이션을 다운받아주셔서 정말 감사합니다." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dqg-2o-ncF">
+                                        <rect key="frame" x="30" y="90" width="204" height="94.5"/>
+                                        <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="18"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="세상을 바라보는 정의와 의미는 모두가 다를 것이라고 생각합니다. 여러분들의 세상은 어떤지 오늘부터 하나씩 기록하시면서 자신을 돌아보는 시간을 갖길 바랍니다😄" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XCf-9q-8kx">
+                                        <rect key="frame" x="30" y="214.5" width="204" height="132.5"/>
+                                        <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="18"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개발자 드림" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9zM-gv-dLk">
+                                        <rect key="frame" x="166" y="377" width="88" height="21"/>
+                                        <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="XDE-JS-9L4" firstAttribute="leading" secondItem="dHW-al-Vof" secondAttribute="leading" constant="50" id="E6G-wn-OFQ"/>
+                                    <constraint firstItem="XCf-9q-8kx" firstAttribute="top" secondItem="dqg-2o-ncF" secondAttribute="bottom" constant="30" id="HHz-9L-P5G"/>
+                                    <constraint firstAttribute="trailing" secondItem="XDE-JS-9L4" secondAttribute="trailing" constant="50" id="Rn1-Jy-Ilh"/>
+                                    <constraint firstAttribute="trailing" secondItem="XCf-9q-8kx" secondAttribute="trailing" constant="30" id="T1J-iA-f8U"/>
+                                    <constraint firstAttribute="trailing" secondItem="dqg-2o-ncF" secondAttribute="trailing" constant="30" id="Tvg-Ws-mWE"/>
+                                    <constraint firstItem="9zM-gv-dLk" firstAttribute="top" secondItem="XCf-9q-8kx" secondAttribute="bottom" constant="30" id="WlD-Yw-YAs"/>
+                                    <constraint firstItem="XCf-9q-8kx" firstAttribute="leading" secondItem="dHW-al-Vof" secondAttribute="leading" constant="30" id="ZNo-vY-I1W"/>
+                                    <constraint firstItem="dqg-2o-ncF" firstAttribute="top" secondItem="XDE-JS-9L4" secondAttribute="bottom" constant="30" id="k4t-xB-EjH"/>
+                                    <constraint firstItem="XDE-JS-9L4" firstAttribute="top" secondItem="dHW-al-Vof" secondAttribute="top" constant="30" id="vcL-oX-WPg"/>
+                                    <constraint firstItem="dqg-2o-ncF" firstAttribute="leading" secondItem="dHW-al-Vof" secondAttribute="leading" constant="30" id="wWo-ix-jgP"/>
+                                    <constraint firstAttribute="trailing" secondItem="9zM-gv-dLk" secondAttribute="trailing" constant="10" id="z1O-dc-etd"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FbG-al-n7B">
+                                <rect key="frame" x="172" y="710" width="70" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="70" id="X1Z-FR-7Nc"/>
+                                    <constraint firstAttribute="height" constant="40" id="p61-UF-cM3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
+                                <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                <state key="normal" title="시작하기">
+                                    <color key="titleColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="startButtonClicked:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="WFw-Bv-rNS"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="vDu-zF-Fre"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="vDu-zF-Fre" firstAttribute="trailing" secondItem="dHW-al-Vof" secondAttribute="trailing" constant="75" id="1cn-ly-Ci7"/>
+                            <constraint firstItem="dHW-al-Vof" firstAttribute="top" secondItem="vDu-zF-Fre" secondAttribute="top" constant="50" id="8W3-t4-eVC"/>
+                            <constraint firstItem="FbG-al-n7B" firstAttribute="top" secondItem="dHW-al-Vof" secondAttribute="bottom" constant="20" id="905-qh-qo0"/>
+                            <constraint firstItem="dHW-al-Vof" firstAttribute="leading" secondItem="vDu-zF-Fre" secondAttribute="leading" constant="75" id="oge-Za-nlT"/>
+                            <constraint firstItem="FbG-al-n7B" firstAttribute="centerX" secondItem="vDu-zF-Fre" secondAttribute="centerX" id="qJt-Qd-c06"/>
+                            <constraint firstItem="dHW-al-Vof" firstAttribute="height" secondItem="5EZ-qb-Rvc" secondAttribute="height" multiplier="0.58817" constant="69" id="s2E-qY-WfA"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentLabel" destination="XCf-9q-8kx" id="KSF-Py-A01"/>
+                        <outlet property="introLabel" destination="dqg-2o-ncF" id="aJ9-7E-enq"/>
+                        <outlet property="letterView" destination="dHW-al-Vof" id="Cfb-lx-Aa6"/>
+                        <outlet property="mainView" destination="5EZ-qb-Rvc" id="IZe-FA-Qdk"/>
+                        <outlet property="sendLabel" destination="9zM-gv-dLk" id="JFi-t2-mBZ"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Ief-a0-LHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="13.043478260869566" y="138.61607142857142"/>
+        </scene>
+    </scenes>
+    <resources>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+    </resources>
+</document>
