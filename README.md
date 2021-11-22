@@ -59,6 +59,4 @@
 
 ### 🏃🏻‍♂️ 3일차
 
-- [ ]  오늘의 단어 : ViewController, 새로운 단어 뽑기, 우리말샘 API로 뜻가져오기, 저장 버튼으로 값 전달
-- [ ]  SearchBar OpenSource
-- [ ]  CollectionView + CollectionViewCell
+- [x]  오늘의 단어 : ViewController, 새로운 단어 뽑기, 우리말샘 API로 뜻가져오기
