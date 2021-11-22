@@ -45,9 +45,25 @@
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="n1B-2V-2eq" secondAttribute="bottom" constant="30" id="Vjm-Mm-eKP"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="4hP-hm-B8o"/>
+                    <navigationItem key="navigationItem" id="4hP-hm-B8o">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="zej-rw-xBT">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" springLoaded="YES" id="eiX-sl-3bC">
+                                <rect key="frame" x="275" y="3.5" width="119" height="38"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="오늘의 단어">
+                                    <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="22"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="todayWordGenerate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="L1u-RQ-OqY"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="plusButton" destination="n1B-2V-2eq" id="qWJ-hx-3Hs"/>
+                        <outlet property="rightBarButton" destination="eiX-sl-3bC" id="D6w-s5-Dub"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -370,6 +386,7 @@
         <!--Navigation Controller-->
         <scene sceneID="7JM-TM-5kh">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VlK-uJ-J7Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L2G-Ie-6ZA" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="p2x-ce-3YQ">
@@ -381,7 +398,6 @@
                         <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="1oq-MC-gew"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VlK-uJ-J7Z" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="73.913043478260875" y="138.61607142857142"/>
         </scene>

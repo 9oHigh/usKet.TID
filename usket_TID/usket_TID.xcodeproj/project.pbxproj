@@ -25,12 +25,16 @@
 		4C3AD759274A5C4E00EFC636 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AD758274A5C4E00EFC636 /* ContactViewController.swift */; };
 		4C3AD75B274A70B700EFC636 /* Walkthrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C3AD75A274A70B700EFC636 /* Walkthrough.storyboard */; };
 		4C3AD75D274A70D700EFC636 /* FirstLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AD75C274A70D700EFC636 /* FirstLoginViewController.swift */; };
+		4C596D02274BDA1900E2DE59 /* DefineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C596D01274BDA1900E2DE59 /* DefineTableViewCell.swift */; };
 		4C758A9A2746AA9E00B9F7AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C758A992746AA9E00B9F7AC /* AppDelegate.swift */; };
 		4C758A9C2746AA9E00B9F7AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C758A9B2746AA9E00B9F7AC /* SceneDelegate.swift */; };
 		4C758A9E2746AA9E00B9F7AC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C758A9D2746AA9E00B9F7AC /* MainViewController.swift */; };
 		4C758AA12746AA9E00B9F7AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C758A9F2746AA9E00B9F7AC /* Main.storyboard */; };
 		4C758AA32746AA9F00B9F7AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 4C758AA22746AA9F00B9F7AC /* Assets.xcassets */; };
 		4C758AA62746AA9F00B9F7AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C758AA42746AA9F00B9F7AC /* LaunchScreen.storyboard */; };
+		4C9EBF6A274BC61100B922F7 /* WordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9EBF69274BC61100B922F7 /* WordViewController.swift */; };
+		4C9EBF6D274BCE7000B922F7 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 4C9EBF6C274BCE7000B922F7 /* Alamofire */; };
+		4C9EBF70274BCE8D00B922F7 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 4C9EBF6F274BCE8D00B922F7 /* SwiftyJSON */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -49,6 +53,7 @@
 		4C3AD758274A5C4E00EFC636 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		4C3AD75A274A70B700EFC636 /* Walkthrough.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Walkthrough.storyboard; sourceTree = "<group>"; };
 		4C3AD75C274A70D700EFC636 /* FirstLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLoginViewController.swift; sourceTree = "<group>"; };
+		4C596D01274BDA1900E2DE59 /* DefineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefineTableViewCell.swift; sourceTree = "<group>"; };
 		4C758A962746AA9E00B9F7AC /* usket_TID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = usket_TID.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C758A992746AA9E00B9F7AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C758A9B2746AA9E00B9F7AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -57,6 +62,7 @@
 		4C758AA22746AA9F00B9F7AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		4C758AA52746AA9F00B9F7AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		4C758AA72746AA9F00B9F7AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C9EBF69274BC61100B922F7 /* WordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WordViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,7 +71,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C3AD757274A575400EFC636 /* RealmSwift in Frameworks */,
+				4C9EBF6D274BCE7000B922F7 /* Alamofire in Frameworks */,
 				4C3AD755274A575400EFC636 /* Realm in Frameworks */,
+				4C9EBF70274BCE8D00B922F7 /* SwiftyJSON in Frameworks */,
 				4C3276462747F9FF00C0456D /* SideMenu in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -92,10 +100,8 @@
 		4C32763C2747978E00C0456D /* View */ = {
 			isa = PBXGroup;
 			children = (
-				4C758A9F2746AA9E00B9F7AC /* Main.storyboard */,
-				4C758AA42746AA9F00B9F7AC /* LaunchScreen.storyboard */,
-				4C3AD744274A2F9800EFC636 /* WordScreen.storyboard */,
-				4C3AD75A274A70B700EFC636 /* Walkthrough.storyboard */,
+				4C596CFF274BD9BC00E2DE59 /* Storyboard */,
+				4C596D00274BD9D500E2DE59 /* Cells */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -106,7 +112,7 @@
 				4C3AD748274A35B500EFC636 /* MainController */,
 				4C3AD749274A35C300EFC636 /* MenuController */,
 				4C3AD74A274A35DF00EFC636 /* AddController */,
-				4C23847F274A7F26007314BF /* Extension */,
+				4C9EBF68274BC5E500B922F7 /* WordController */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -159,6 +165,25 @@
 			path = AddController;
 			sourceTree = "<group>";
 		};
+		4C596CFF274BD9BC00E2DE59 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				4C758A9F2746AA9E00B9F7AC /* Main.storyboard */,
+				4C758AA42746AA9F00B9F7AC /* LaunchScreen.storyboard */,
+				4C3AD75A274A70B700EFC636 /* Walkthrough.storyboard */,
+				4C3AD744274A2F9800EFC636 /* WordScreen.storyboard */,
+			);
+			path = Storyboard;
+			sourceTree = "<group>";
+		};
+		4C596D00274BD9D500E2DE59 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				4C596D01274BDA1900E2DE59 /* DefineTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		4C758A8D2746AA9E00B9F7AC = {
 			isa = PBXGroup;
 			children = (
@@ -182,12 +207,21 @@
 				4C32763B2747978300C0456D /* Model */,
 				4C32763C2747978E00C0456D /* View */,
 				4C32763D274797A300C0456D /* Controller */,
+				4C23847F274A7F26007314BF /* Extension */,
 				4C758A992746AA9E00B9F7AC /* AppDelegate.swift */,
 				4C758A9B2746AA9E00B9F7AC /* SceneDelegate.swift */,
 				4C758AA22746AA9F00B9F7AC /* Assets.xcassets */,
 				4C758AA72746AA9F00B9F7AC /* Info.plist */,
 			);
 			path = usket_TID;
+			sourceTree = "<group>";
+		};
+		4C9EBF68274BC5E500B922F7 /* WordController */ = {
+			isa = PBXGroup;
+			children = (
+				4C9EBF69274BC61100B922F7 /* WordViewController.swift */,
+			);
+			path = WordController;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +244,8 @@
 				4C3276452747F9FF00C0456D /* SideMenu */,
 				4C3AD754274A575400EFC636 /* Realm */,
 				4C3AD756274A575400EFC636 /* RealmSwift */,
+				4C9EBF6C274BCE7000B922F7 /* Alamofire */,
+				4C9EBF6F274BCE8D00B922F7 /* SwiftyJSON */,
 			);
 			productName = usket_TID;
 			productReference = 4C758A962746AA9E00B9F7AC /* usket_TID.app */;
@@ -242,6 +278,8 @@
 			packageReferences = (
 				4C3276442747F9FF00C0456D /* XCRemoteSwiftPackageReference "SideMenu" */,
 				4C3AD753274A575400EFC636 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
+				4C9EBF6B274BCE7000B922F7 /* XCRemoteSwiftPackageReference "Alamofire" */,
+				4C9EBF6E274BCE8D00B922F7 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 			);
 			productRefGroup = 4C758A972746AA9E00B9F7AC /* Products */;
 			projectDirPath = "";
@@ -273,6 +311,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C596D02274BDA1900E2DE59 /* DefineTableViewCell.swift in Sources */,
 				4C758A9E2746AA9E00B9F7AC /* MainViewController.swift in Sources */,
 				4C3AD74C274A363F00EFC636 /* BasicViewController.swift in Sources */,
 				4C3AD759274A5C4E00EFC636 /* ContactViewController.swift in Sources */,
@@ -287,6 +326,7 @@
 				4C3AD74E274A364B00EFC636 /* ContentViewController.swift in Sources */,
 				4C238481274A7F4F007314BF /* UIButton + Extension.swift in Sources */,
 				4C32764C27481CFD00C0456D /* WordList.swift in Sources */,
+				4C9EBF6A274BC61100B922F7 /* WordViewController.swift in Sources */,
 				4C3AD73F274A09EF00EFC636 /* StatisticsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -529,6 +569,22 @@
 				version = 10.18.0;
 			};
 		};
+		4C9EBF6B274BCE7000B922F7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Alamofire/Alamofire";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.4.0;
+			};
+		};
+		4C9EBF6E274BCE8D00B922F7 /* XCRemoteSwiftPackageReference "SwiftyJSON" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SwiftyJSON/SwiftyJSON";
+			requirement = {
+				kind = exactVersion;
+				version = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -546,6 +602,16 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4C3AD753274A575400EFC636 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
+		};
+		4C9EBF6C274BCE7000B922F7 /* Alamofire */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C9EBF6B274BCE7000B922F7 /* XCRemoteSwiftPackageReference "Alamofire" */;
+			productName = Alamofire;
+		};
+		4C9EBF6F274BCE8D00B922F7 /* SwiftyJSON */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C9EBF6E274BCE8D00B922F7 /* XCRemoteSwiftPackageReference "SwiftyJSON" */;
+			productName = SwiftyJSON;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};

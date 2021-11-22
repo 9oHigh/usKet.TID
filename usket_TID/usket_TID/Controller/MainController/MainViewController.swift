@@ -14,27 +14,28 @@ class MainViewController: UIViewController {
     let userDefaults = UserDefaults.standard
     //Appdelegate로 할 수 있는 걸로 알고 있다. 찾아보자.
     static let originalFont : String = "Cafe24Oneprettynight"
+    
+    //barbuttonItem에서 Storyboard에서 확인
+    //코드로 barbuttonitem의 버튼에 접근 불가능
+    @IBOutlet weak var rightBarButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         //Left Button = 메뉴
-        let config = UIImage.SymbolConfiguration(pointSize:35, weight: .thin, scale: .default)
+        let config = UIImage.SymbolConfiguration(pointSize:38, weight: .thin, scale: .default)
         let images = UIImage(systemName: "line.3.horizontal", withConfiguration: config)
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: images, style: .plain, target: self, action: #selector(openSideMenu))
         navigationItem.leftBarButtonItem?.tintColor = .black
         
-        //right Button = 당일에 해당하는 단어 설정
-        //Normal + disabled 모두 설정해야한다. 클릭이벤트가 없으므로
-        let btnTitle = UIBarButtonItem(title: "오늘의 단어", style: .plain, target: nil, action:nil)
-        btnTitle.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: MainViewController.originalFont, size: 20.0)!,NSAttributedString.Key.foregroundColor: UIColor.black], for: .normal)
-        btnTitle.setTitleTextAttributes([NSAttributedString.Key.font: UIFont(name: MainViewController.originalFont, size: 20.0)!,NSAttributedString.Key.foregroundColor: UIColor.black], for: .disabled)
-        btnTitle.isEnabled = false
-        self.navigationItem.rightBarButtonItem = btnTitle
+        //right Button
+        rightBarButton.toCustomButton()
+        rightBarButton.titleLabel?.text = "오늘의 단어"
         
         //first LogIn
         firstLogInCheck()
+
     }
     //처음인지 아닌지 확인
     func firstLogInCheck(){
@@ -73,4 +74,16 @@ class MainViewController: UIViewController {
         
         self.present(vc, animated: true, completion: nil)
     }
+    
+    @IBAction func todayWordGenerate(_ sender: UIButton) {
+        
+        let storyboard = UIStoryboard(name: "WordScreen", bundle: nil)
+        
+        let vc = storyboard.instantiateViewController(withIdentifier: "WordViewController") as! WordViewController
+        
+        vc.modalPresentationStyle = .overFullScreen
+        
+        self.present(vc, animated: true, completion: nil)
+    }
+    
 }

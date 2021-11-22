@@ -10,8 +10,7 @@ import UIKit
 
 extension UIButton {
     func toCustomButton(){
-        self.titleLabel?.tintColor = .black
+        self.titleLabel?.tintColor = .yellow
         self.titleLabel?.font = UIFont(name: MainViewController.originalFont, size: 22)
     }
 }
-

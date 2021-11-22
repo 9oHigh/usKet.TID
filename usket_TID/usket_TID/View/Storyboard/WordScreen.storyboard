@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5gY-pp-eRK">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Cafe24Oneprettynight.ttf">
+            <string>Cafe24Oneprettynight</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Page View Controller-->
+        <scene sceneID="cHe-En-SIj">
+            <objects>
+                <pageViewController storyboardIdentifier="PageViewController" autoresizesArchivedViewToFullSize="NO" transitionStyle="scroll" navigationOrientation="horizontal" spineLocation="none" id="5gY-pp-eRK" customClass="PageViewController" customModule="usket_TID" customModuleProvider="target" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jK6-je-x5f" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-103" y="-206"/>
+        </scene>
+        <!--Word View Controller-->
+        <scene sceneID="6ar-YT-14b">
+            <objects>
+                <viewController storyboardIdentifier="WordViewController" id="zbO-y6-ra9" customClass="WordViewController" customModule="usket_TID" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Bqt-3D-1M1">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 단어는 시작입니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwg-SJ-Al9">
+                                <rect key="frame" x="0.0" y="123" width="414" height="23.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23.5" id="reo-fd-Ntv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="22"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="먼저, 시작의 정의를 볼까요?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Gf-Fc-6gD">
+                                <rect key="frame" x="0.0" y="176.5" width="414" height="23.5"/>
+                                <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="22"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QE1-Lc-bkm">
+                                <rect key="frame" x="49" y="691" width="88" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="New one">
+                                    <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="newWord:" destination="zbO-y6-ra9" eventType="touchUpInside" id="mw5-l5-Ehy"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggS-eB-MaG">
+                                <rect key="frame" x="283" y="691" width="91" height="35"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="This is it!">
+                                    <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="wantButtonClicked:" destination="zbO-y6-ra9" eventType="touchUpInside" id="640-V0-2iJ"/>
+                                </connections>
+                            </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="scrollableAxes" dataMode="prototypes" style="insetGrouped" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pRE-Qz-tRC">
+                                <rect key="frame" x="20" y="200" width="374" height="446"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DefineTableViewCell" rowHeight="118" id="pJ5-bp-MXa" customClass="DefineTableViewCell" customModule="usket_TID" customModuleProvider="target">
+                                        <rect key="frame" x="20" y="49.5" width="334" height="118"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pJ5-bp-MXa" id="tao-K6-xr5">
+                                            <rect key="frame" x="0.0" y="0.0" width="334" height="118"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오류" textAlignment="justified" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUz-gH-do2">
+                                                    <rect key="frame" x="20" y="21" width="27" height="76"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="17"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="오류" textAlignment="justified" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1T-6y-eGc">
+                                                    <rect key="frame" x="62" y="21" width="213.5" height="76"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="17"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="highlightedColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="shadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstItem="iUz-gH-do2" firstAttribute="leading" secondItem="tao-K6-xr5" secondAttribute="leadingMargin" id="5xm-Hl-pnZ"/>
+                                                <constraint firstItem="iUz-gH-do2" firstAttribute="top" secondItem="tao-K6-xr5" secondAttribute="topMargin" constant="10" id="E44-xq-Hn1"/>
+                                                <constraint firstItem="h1T-6y-eGc" firstAttribute="width" secondItem="tao-K6-xr5" secondAttribute="width" multiplier="0.768362" constant="-43" id="F6f-Mg-Aso"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="iUz-gH-do2" secondAttribute="bottom" constant="10" id="M2W-9M-qN0"/>
+                                                <constraint firstItem="h1T-6y-eGc" firstAttribute="top" secondItem="tao-K6-xr5" secondAttribute="topMargin" constant="10" id="ie3-fX-DEt"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="h1T-6y-eGc" secondAttribute="bottom" constant="10" id="le2-wY-wqo"/>
+                                                <constraint firstItem="h1T-6y-eGc" firstAttribute="leading" secondItem="iUz-gH-do2" secondAttribute="trailing" constant="15" id="nX5-XR-C9T"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="defineLabel" destination="h1T-6y-eGc" id="7eD-dV-Rmb"/>
+                                            <outlet property="numberLabel" destination="iUz-gH-do2" id="K46-SO-TO4"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZV-lp-SMi">
+                                <rect key="frame" x="20" y="44" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="2Vo-WB-lks"/>
+                                    <constraint firstAttribute="width" constant="44" id="7vA-UH-iaA"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <imageReference key="image" image="xmark" catalog="system" symbolScale="large"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="closeButtonClicked:" destination="zbO-y6-ra9" eventType="touchUpInside" id="6o3-mH-9hw"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="kjx-4L-VJy"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="6Gf-Fc-6gD" firstAttribute="leading" secondItem="kjx-4L-VJy" secondAttribute="leading" id="2Y9-iZ-5Wl"/>
+                            <constraint firstItem="kjx-4L-VJy" firstAttribute="trailing" secondItem="6Gf-Fc-6gD" secondAttribute="trailing" id="2pG-SO-xui"/>
+                            <constraint firstItem="cZV-lp-SMi" firstAttribute="leading" secondItem="kjx-4L-VJy" secondAttribute="leading" constant="20" id="5Ui-p8-P10"/>
+                            <constraint firstItem="pRE-Qz-tRC" firstAttribute="trailing" secondItem="kjx-4L-VJy" secondAttribute="trailing" constant="-20" id="Dqr-fk-dim"/>
+                            <constraint firstItem="ggS-eB-MaG" firstAttribute="top" secondItem="pRE-Qz-tRC" secondAttribute="bottom" constant="45" id="GuW-24-5rw"/>
+                            <constraint firstItem="QE1-Lc-bkm" firstAttribute="top" secondItem="pRE-Qz-tRC" secondAttribute="bottom" constant="45" id="IT9-FI-TbT"/>
+                            <constraint firstItem="kjx-4L-VJy" firstAttribute="trailing" secondItem="hwg-SJ-Al9" secondAttribute="trailing" id="Ibd-VG-mk3"/>
+                            <constraint firstItem="6Gf-Fc-6gD" firstAttribute="top" secondItem="hwg-SJ-Al9" secondAttribute="bottom" constant="30" id="Tnp-9T-Y36"/>
+                            <constraint firstItem="pRE-Qz-tRC" firstAttribute="top" secondItem="6Gf-Fc-6gD" secondAttribute="bottom" id="b1i-rG-MPf"/>
+                            <constraint firstItem="pRE-Qz-tRC" firstAttribute="leading" secondItem="kjx-4L-VJy" secondAttribute="leading" constant="20" id="c7Y-2k-xlX"/>
+                            <constraint firstItem="hwg-SJ-Al9" firstAttribute="leading" secondItem="kjx-4L-VJy" secondAttribute="leading" id="dWU-g9-Eal"/>
+                            <constraint firstItem="pRE-Qz-tRC" firstAttribute="height" secondItem="Bqt-3D-1M1" secondAttribute="height" multiplier="0.497768" id="k59-po-Ff3"/>
+                            <constraint firstItem="QE1-Lc-bkm" firstAttribute="leading" secondItem="kjx-4L-VJy" secondAttribute="leading" constant="49" id="pPf-6l-e5f"/>
+                            <constraint firstItem="hwg-SJ-Al9" firstAttribute="top" secondItem="kjx-4L-VJy" secondAttribute="top" constant="79" id="yw6-wg-7tg"/>
+                            <constraint firstItem="cZV-lp-SMi" firstAttribute="top" secondItem="kjx-4L-VJy" secondAttribute="top" id="zQh-R3-lQ4"/>
+                            <constraint firstItem="kjx-4L-VJy" firstAttribute="trailing" secondItem="ggS-eB-MaG" secondAttribute="trailing" constant="40" id="zWA-F3-fy3"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="defineLabel" destination="6Gf-Fc-6gD" id="ZcR-0B-4Cw"/>
+                        <outlet property="defineTableView" destination="pRE-Qz-tRC" id="Ry2-D6-oOf"/>
+                        <outlet property="todayWordLabel" destination="hwg-SJ-Al9" id="mkE-0x-rV8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9y9-j6-TY0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-114.49275362318842" y="455.35714285714283"/>
+        </scene>
+        <!--Basic View Controller-->
+        <scene sceneID="30X-2T-dXz">
+            <objects>
+                <viewController storyboardIdentifier="BasicViewController" id="cbc-J6-drn" customClass="BasicViewController" customModule="usket_TID" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="zb4-af-Fzx">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Xji-e9-sNC"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                    <connections>
+                        <outlet property="mainView" destination="zb4-af-Fzx" id="9oQ-46-yhi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pWw-J5-Jux" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="589.85507246376812" y="-205.58035714285714"/>
+        </scene>
+        <!--Content View Controller-->
+        <scene sceneID="t27-C0-Nkf">
+            <objects>
+                <viewController storyboardIdentifier="ContentViewController" id="2Wh-3S-kRA" customClass="ContentViewController" customModule="usket_TID" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="spm-gh-bfn">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzW-3r-8Z2">
+                                <rect key="frame" x="329" y="64" width="65" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="2l5-Ww-SAQ"/>
+                                    <constraint firstAttribute="height" constant="44" id="ESb-r6-kQj"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="저장">
+                                    <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="22"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqa-i8-1ug">
+                                <rect key="frame" x="269" y="64" width="60" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="44" id="Kgb-AF-cyG"/>
+                                    <constraint firstAttribute="width" constant="60" id="lKx-8E-0kx"/>
+                                </constraints>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="취소">
+                                    <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="22"/>
+                                    <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="cancelButtonClicked:" destination="2Wh-3S-kRA" eventType="touchUpInside" id="gR6-P5-s5R"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="4Xl-6o-07a"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="CzW-3r-8Z2" firstAttribute="top" secondItem="4Xl-6o-07a" secondAttribute="top" constant="20" id="63k-zv-o9s"/>
+                            <constraint firstItem="4Xl-6o-07a" firstAttribute="trailing" secondItem="CzW-3r-8Z2" secondAttribute="trailing" constant="20" id="boY-1d-r8m"/>
+                            <constraint firstItem="aqa-i8-1ug" firstAttribute="top" secondItem="4Xl-6o-07a" secondAttribute="top" constant="20" id="oj8-YP-1WI"/>
+                            <constraint firstItem="CzW-3r-8Z2" firstAttribute="leading" secondItem="aqa-i8-1ug" secondAttribute="trailing" id="rTA-Sn-W4B"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="cancelButton" destination="aqa-i8-1ug" id="PEK-vy-n9a"/>
+                        <outlet property="mainView" destination="spm-gh-bfn" id="Pkb-fi-Uvf"/>
+                        <outlet property="storeButton" destination="CzW-3r-8Z2" id="QsW-Jp-4Mn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wcN-yi-Cvl" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1241" y="-206"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="xmark" catalog="system" width="128" height="113"/>
+    </resources>
+</document>
