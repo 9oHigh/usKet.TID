@@ -8,29 +8,43 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Network
 
 class WordViewController: UIViewController {
     
+    @IBOutlet weak var newWordButton: UIButton!
     @IBOutlet weak var defineTableView: UITableView!
     @IBOutlet weak var todayWordLabel: UILabel!
     @IBOutlet weak var defineLabel: UILabel!
-    
-    var todayWord : String = "명예"
-    var numbering : [String] = ["첫 번째, ","두 번째, ","세 번째, "]
+    // 감시자 프로퍼티
+    // 오늘의 단어가 버튼으로 지속적으로 바뀐다.
+    var todayWord : String = "시작" {
+        didSet{
+            todayWordLabel.text = "오늘의 단어는 \(todayWord)입니다."
+            defineLabel.text = "먼저, \(todayWord)의 정의를 볼까요?"
+            //로딩중 화면을 위해 필요한 듯
+            numbering = []
+            definitions = []
+            coloredText()
+        }
+    }
+    var numbering : [String] = []
     var definitions : [String] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        todayWord = randomWords.wordList.randomWordGenerate()
         
         todayWordLabel.text = "오늘의 단어는 \(todayWord)입니다."
         defineLabel.text = "먼저, \(todayWord)의 정의를 볼까요?"
         
-        fetchWordData()
-        
         defineTableView.delegate = self
         defineTableView.dataSource = self
+        
+        coloredText()
+        monitorNetwork()
+        fetchWordData()
     }
-   
     @IBAction func closeButtonClicked(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
@@ -40,44 +54,31 @@ class WordViewController: UIViewController {
     }
     
     @IBAction func newWord(_ sender: UIButton) {
-        todayWord = "부부"
-        todayWordLabel.text = "오늘의 단어는 \(todayWord)입니다."
-        defineLabel.text = "먼저, \(todayWord)의 정의를 볼까요?"
-        //찾는 중 표시를 위해 reloadData + 배열 초기화
-        definitions = []
+        todayWord = randomWords.wordList.randomWordGenerate()
+        //로딩 중 표시를 위해 reloadData + 배열 초기화
         self.defineTableView.reloadData()
         //데이터 찾아오기
         fetchWordData()
+        
+        newWordButton.isUserInteractionEnabled = false
     }
-    
-    func fetchWordData(){
+    func coloredText(){
         
-        let urlString =
-        "https://opendict.korean.go.kr/api/search?certkey_no=3231&key=&target_type=search&req_type=json&part=word&q=\(String(describing: todayWord))&sort=dict&start=1&num=10"
-        let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
-        let url = URL(string: encodedString)!
+        let attributtedToday = NSMutableAttributedString(string: todayWordLabel.text!)
+        attributtedToday.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.systemIndigo, range: (todayWordLabel.text! as NSString).range(of:"\(todayWord)"))
+        todayWordLabel.attributedText = attributtedToday
         
-        //새로운 단어를 뽑을 시에 초기화
-        self.definitions = []
-        
-        AF.request(url, method: .get).validate().responseJSON { response in
-            switch response.result {
-            case .success(let value):
-                let json = JSON(value)
-                for number in 0...2 {
-                    let definition = json["channel"]["item"][number]["sense"][0]["definition"].stringValue
-                    self.definitions.append(definition)
-                }
-                self.defineTableView.reloadData()
-            case .failure(let error):
-                print(error)
-            }
-        }
+        let attributtedDefine = NSMutableAttributedString(string: defineLabel.text!)
+        attributtedDefine.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.systemIndigo, range: (defineLabel.text! as NSString).range(of:"\(todayWord)"))
+        defineLabel.attributedText = attributtedDefine
     }
 }
 extension WordViewController : UITableViewDelegate,UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+        if numbering.count == 0 {
+            if section == 0 { return 1 }
+        }
+        return numbering.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -85,11 +86,15 @@ extension WordViewController : UITableViewDelegate,UITableViewDataSource {
             return UITableViewCell()
         }
         if definitions.isEmpty {
-            cell.defineLabel.text = "잠시만 기다려주세요!"
-            cell.numberLabel.text = "찾는중.."
+            newWordButton.isUserInteractionEnabled = false
+            cell.defineLabel.text = "로딩중..."
+            cell.numberLabel.text = ""
             return cell
         }else {
+            //결과를 보여주게 되면 버튼 클릭이 가능하게
+            newWordButton.isUserInteractionEnabled = true
             cell.numberLabel.text = numbering[indexPath.row]
+            cell.defineLabel.lineBreakStrategy = .hangulWordPriority
             cell.defineLabel.text = definitions[indexPath.row]
             return cell
         }

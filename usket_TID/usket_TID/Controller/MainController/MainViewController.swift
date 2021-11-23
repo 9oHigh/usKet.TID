@@ -7,6 +7,7 @@
 
 import UIKit
 import SideMenu
+import Realm
 
 class MainViewController: UIViewController {
     
@@ -15,10 +16,11 @@ class MainViewController: UIViewController {
     //Appdelegate로 할 수 있는 걸로 알고 있다. 찾아보자.
     static let originalFont : String = "Cafe24Oneprettynight"
     
-    //barbuttonItem에서 Storyboard에서 확인
+    //barbuttonItem에서 Storyboard에서 확인 - 중요..
     //코드로 barbuttonitem의 버튼에 접근 불가능
     @IBOutlet weak var rightBarButton: UIButton!
     @IBOutlet weak var plusButton: UIButton!
+    @IBOutlet weak var mainTableView: UITableView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,8 +35,15 @@ class MainViewController: UIViewController {
         rightBarButton.toCustomButton()
         rightBarButton.titleLabel?.text = "오늘의 단어"
         
+        //delegate + dataSource
+        mainTableView.delegate = self
+        mainTableView.dataSource = self
+        
         //first LogIn
         firstLogInCheck()
+        
+        //스크롤시 상단으로 사라지기
+        navigationController?.hidesBarsOnSwipe = true
 
     }
     //처음인지 아닌지 확인
