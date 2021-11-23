@@ -1,4 +1,10 @@
+
+
+<br></br>
+
 # usKet_TID ( 가제 : 티드 )
+
+ 👉 **Notion** : **[이터레이션 / 팀빌딩 및 일정🧑🏻‍💻](https://jasper-atom-7c6.notion.site/a815c7d1282143f1bdcca2bd7eda7c16)**
 
  👉  **Today I Define**
 
@@ -46,5 +52,3 @@
 - 통계 : PNChart를 이용 Card 형태의 UI 
 <br></br>
 
-👉 **Notion** : **[이터레이션 및 일정관리🧑🏻‍💻](https://jasper-atom-7c6.notion.site/a815c7d1282143f1bdcca2bd7eda7c16)**
-<br></br>
