@@ -48,15 +48,3 @@
 
 👉 **Notion** : **[이터레이션 및 일정관리🧑🏻‍💻](https://jasper-atom-7c6.notion.site/a815c7d1282143f1bdcca2bd7eda7c16)**
 <br></br>
-### 🏃🏻‍♂️ 1일차, 2일차
-
-- [x]  iOS Version
-- [x]  Asset : Launch, AppIcon, logo, instagram
-- [x]  Font : Cafe24Oneprettynight
-- [x]  OpenSource : Realm / SideMenu
-- [x]  MVC + Extension
-
-
-### 🏃🏻‍♂️ 3일차
-
-- [x]  오늘의 단어 : ViewController, 새로운 단어 뽑기, 우리말샘 API로 뜻가져오기
