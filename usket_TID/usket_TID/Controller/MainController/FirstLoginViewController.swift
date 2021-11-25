@@ -18,6 +18,8 @@ class FirstLoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        letterView.layer.borderWidth = 0.3
+        letterView.layer.borderColor = UIColor.black.cgColor
         letterView.layer.cornerRadius = 20
         //Background Alpha 조정
         mainView.backgroundColor = UIColor.white.withAlphaComponent(0.7)

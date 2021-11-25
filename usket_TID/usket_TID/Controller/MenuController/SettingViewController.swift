@@ -13,7 +13,7 @@ class SettingViewController: UIViewController {
         super.viewDidLoad()
         
     }
-    //캔슬
+    //클로즈
     @IBAction func closeButtonClicked(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }

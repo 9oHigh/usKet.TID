@@ -26,6 +26,10 @@
 		4C3AD75B274A70B700EFC636 /* Walkthrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C3AD75A274A70B700EFC636 /* Walkthrough.storyboard */; };
 		4C3AD75D274A70D700EFC636 /* FirstLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AD75C274A70D700EFC636 /* FirstLoginViewController.swift */; };
 		4C596D02274BDA1900E2DE59 /* DefineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C596D01274BDA1900E2DE59 /* DefineTableViewCell.swift */; };
+		4C6086D8274E031200FCD3E4 /* JJFloatingActionButton in Frameworks */ = {isa = PBXBuildFile; productRef = 4C6086D7274E031200FCD3E4 /* JJFloatingActionButton */; };
+		4C6086E1274FD89900FCD3E4 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6086E0274FD89900FCD3E4 /* UIView + Extension.swift */; };
+		4C6086E3274FE1E200FCD3E4 /* ContentViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6086E2274FE1E200FCD3E4 /* ContentViewController + Extension.swift */; };
+		4C625448274FF8970056D30F /* CALayer + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C625447274FF8970056D30F /* CALayer + Extension.swift */; };
 		4C758A9A2746AA9E00B9F7AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C758A992746AA9E00B9F7AC /* AppDelegate.swift */; };
 		4C758A9C2746AA9E00B9F7AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C758A9B2746AA9E00B9F7AC /* SceneDelegate.swift */; };
 		4C758A9E2746AA9E00B9F7AC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C758A9D2746AA9E00B9F7AC /* MainViewController.swift */; };
@@ -59,6 +63,9 @@
 		4C3AD75A274A70B700EFC636 /* Walkthrough.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Walkthrough.storyboard; sourceTree = "<group>"; };
 		4C3AD75C274A70D700EFC636 /* FirstLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLoginViewController.swift; sourceTree = "<group>"; };
 		4C596D01274BDA1900E2DE59 /* DefineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefineTableViewCell.swift; sourceTree = "<group>"; };
+		4C6086E0274FD89900FCD3E4 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
+		4C6086E2274FE1E200FCD3E4 /* ContentViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentViewController + Extension.swift"; sourceTree = "<group>"; };
+		4C625447274FF8970056D30F /* CALayer + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CALayer + Extension.swift"; sourceTree = "<group>"; };
 		4C758A962746AA9E00B9F7AC /* usket_TID.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = usket_TID.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		4C758A992746AA9E00B9F7AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		4C758A9B2746AA9E00B9F7AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -82,6 +89,7 @@
 			files = (
 				4C3AD757274A575400EFC636 /* RealmSwift in Frameworks */,
 				4C9EBF6D274BCE7000B922F7 /* Alamofire in Frameworks */,
+				4C6086D8274E031200FCD3E4 /* JJFloatingActionButton in Frameworks */,
 				4C3AD755274A575400EFC636 /* Realm in Frameworks */,
 				4C9EBF70274BCE8D00B922F7 /* SwiftyJSON in Frameworks */,
 				4C3276462747F9FF00C0456D /* SideMenu in Frameworks */,
@@ -96,8 +104,11 @@
 			children = (
 				4C811C27274D29BF00F51493 /* MainViewController + Extension.swift */,
 				4C811C23274CD48C00F51493 /* WordViewController + Extension.swift */,
+				4C6086E2274FE1E200FCD3E4 /* ContentViewController + Extension.swift */,
 				4C238480274A7F4F007314BF /* UIButton + Extension.swift */,
 				4C811C25274CE07100F51493 /* String + Extenstion.swift */,
+				4C6086E0274FD89900FCD3E4 /* UIView + Extension.swift */,
+				4C625447274FF8970056D30F /* CALayer + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -261,6 +272,7 @@
 				4C3AD756274A575400EFC636 /* RealmSwift */,
 				4C9EBF6C274BCE7000B922F7 /* Alamofire */,
 				4C9EBF6F274BCE8D00B922F7 /* SwiftyJSON */,
+				4C6086D7274E031200FCD3E4 /* JJFloatingActionButton */,
 			);
 			productName = usket_TID;
 			productReference = 4C758A962746AA9E00B9F7AC /* usket_TID.app */;
@@ -295,6 +307,7 @@
 				4C3AD753274A575400EFC636 /* XCRemoteSwiftPackageReference "realm-cocoa" */,
 				4C9EBF6B274BCE7000B922F7 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				4C9EBF6E274BCE8D00B922F7 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
+				4C6086D6274E031200FCD3E4 /* XCRemoteSwiftPackageReference "JJFloatingActionButton" */,
 			);
 			productRefGroup = 4C758A972746AA9E00B9F7AC /* Products */;
 			projectDirPath = "";
@@ -327,8 +340,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C596D02274BDA1900E2DE59 /* DefineTableViewCell.swift in Sources */,
+				4C6086E1274FD89900FCD3E4 /* UIView + Extension.swift in Sources */,
 				4C758A9E2746AA9E00B9F7AC /* MainViewController.swift in Sources */,
 				4C3AD74C274A363F00EFC636 /* BasicViewController.swift in Sources */,
+				4C6086E3274FE1E200FCD3E4 /* ContentViewController + Extension.swift in Sources */,
 				4C3AD759274A5C4E00EFC636 /* ContactViewController.swift in Sources */,
 				4C32764A2747FD5C00C0456D /* CustomSideMenuNavigation.swift in Sources */,
 				4C3AD752274A36D100EFC636 /* PageViewController.swift in Sources */,
@@ -341,6 +356,7 @@
 				4C811C28274D29BF00F51493 /* MainViewController + Extension.swift in Sources */,
 				4C811C24274CD48C00F51493 /* WordViewController + Extension.swift in Sources */,
 				4C3AD75D274A70D700EFC636 /* FirstLoginViewController.swift in Sources */,
+				4C625448274FF8970056D30F /* CALayer + Extension.swift in Sources */,
 				4C758A9C2746AA9E00B9F7AC /* SceneDelegate.swift in Sources */,
 				4C811C2C274D3F3800F51493 /* DefineModel.swift in Sources */,
 				4C3AD74E274A364B00EFC636 /* ContentViewController.swift in Sources */,
@@ -501,7 +517,7 @@
 				DEVELOPMENT_TEAM = 46QF7GBZH7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = usket_TID/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Today I Define";
+				INFOPLIST_KEY_CFBundleDisplayName = "Today I define";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -531,7 +547,7 @@
 				DEVELOPMENT_TEAM = 46QF7GBZH7;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = usket_TID/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Today I Define";
+				INFOPLIST_KEY_CFBundleDisplayName = "Today I define";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -591,6 +607,14 @@
 				version = 10.18.0;
 			};
 		};
+		4C6086D6274E031200FCD3E4 /* XCRemoteSwiftPackageReference "JJFloatingActionButton" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/jjochen/JJFloatingActionButton";
+			requirement = {
+				kind = exactVersion;
+				version = 2.5.0;
+			};
+		};
 		4C9EBF6B274BCE7000B922F7 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/Alamofire/Alamofire";
@@ -624,6 +648,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4C3AD753274A575400EFC636 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
+		};
+		4C6086D7274E031200FCD3E4 /* JJFloatingActionButton */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C6086D6274E031200FCD3E4 /* XCRemoteSwiftPackageReference "JJFloatingActionButton" */;
+			productName = JJFloatingActionButton;
 		};
 		4C9EBF6C274BCE7000B922F7 /* Alamofire */ = {
 			isa = XCSwiftPackageProductDependency;

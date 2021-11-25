@@ -20,7 +20,7 @@ class WordViewController: UIViewController {
     // 오늘의 단어가 버튼으로 지속적으로 바뀐다.
     var todayWord : String = "시작" {
         didSet{
-            todayWordLabel.text = "오늘의 단어는 \(todayWord)입니다."
+            todayWordLabel.text = "추천 단어는 \(todayWord)입니다."
             defineLabel.text = "먼저, \(todayWord)의 정의를 볼까요?"
             //로딩중 화면을 위해 필요한 듯
             numbering = []
@@ -35,7 +35,7 @@ class WordViewController: UIViewController {
         super.viewDidLoad()
         todayWord = randomWords.wordList.randomWordGenerate()
         
-        todayWordLabel.text = "오늘의 단어는 \(todayWord)입니다."
+        todayWordLabel.text = "추천 단어는 \(todayWord)입니다."
         defineLabel.text = "먼저, \(todayWord)의 정의를 볼까요?"
         
         defineTableView.delegate = self
@@ -48,9 +48,15 @@ class WordViewController: UIViewController {
     @IBAction func closeButtonClicked(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
-    //여기서 바로 에디터로 가야한다. 취소가 아님!
+
     @IBAction func wantButtonClicked(_ sender: UIButton) {
-        self.dismiss(animated: true, completion: nil)
+        let storyboard = UIStoryboard(name: "WordScreen", bundle: nil)
+        
+        let vc = storyboard.instantiateViewController(withIdentifier: "PageViewController") as! PageViewController
+        
+        vc.modalPresentationStyle = .overFullScreen
+        
+        self.present(vc, animated: true, completion: nil)
     }
     
     @IBAction func newWord(_ sender: UIButton) {
@@ -59,9 +65,10 @@ class WordViewController: UIViewController {
         self.defineTableView.reloadData()
         //데이터 찾아오기
         fetchWordData()
-        
+        //여기서 버튼 클릭 이벤트가 발생하지 않게 조정 -> reload시에 값을 가지고 왔을 경우 다시 true
         newWordButton.isUserInteractionEnabled = false
     }
+    // 가져온 word값만 컬러주기
     func coloredText(){
         
         let attributtedToday = NSMutableAttributedString(string: todayWordLabel.text!)
@@ -85,6 +92,7 @@ extension WordViewController : UITableViewDelegate,UITableViewDataSource {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "DefineTableViewCell") as? DefineTableViewCell else {
             return UITableViewCell()
         }
+        //가지고온 값이 없다면
         if definitions.isEmpty {
             newWordButton.isUserInteractionEnabled = false
             cell.defineLabel.text = "로딩중..."

@@ -8,28 +8,39 @@
 import UIKit
 
 class MainTableViewCell: UITableViewCell {
-
     
+    
+    @IBOutlet weak var dateLabel: UILabel!
+    @IBOutlet weak var dayLabel: UILabel!
     @IBOutlet weak var wordLabel: UILabel!
-    @IBOutlet weak var firstComesWord: UILabel!
     @IBOutlet weak var emotionImageView: UIImageView!
     @IBOutlet weak var contentLabel: UILabel!
+    @IBOutlet weak var backView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        contentView.layer.borderWidth = 1
-        contentView.layer.borderColor = CGColor(red: 100/255, green: 100/255, blue: 100/255, alpha: 1)
-        contentView.layer.cornerRadius = 10
+        
+        //백그라운드 그림자 효과 
+        self.contentView.layer.cornerRadius = 10
+        self.contentView.layer.masksToBounds = false
+        self.contentView.clipsToBounds = false
+        self.contentView.layer.shadowOffset = CGSize(width: 0, height: 0)
+        self.contentView.layer.shadowColor = UIColor.black.cgColor
+        self.contentView.layer.shadowRadius = 3
+        self.contentView.layer.shadowOpacity = 0.25
+        
+        self.backView.frame = backView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0))
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
         
     }
-    //셀간 간격 주기
     override func layoutSubviews() {
         super.layoutSubviews()
-        let margin : CGFloat = 5
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: margin, left: margin-2, bottom: margin, right: margin-2))
+        //셀간 간격 주기
+        let margin : CGFloat = 10
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: margin + 5 , left: margin + 5, bottom: 5, right: margin + 5))
+        self.backView.frame = backView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0))
     }
 }

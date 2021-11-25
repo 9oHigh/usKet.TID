@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "JJFloatingActionButton",
+        "repositoryURL": "https://github.com/jjochen/JJFloatingActionButton",
+        "state": {
+          "branch": null,
+          "revision": "60fcde6d01aa33598753214b9438c192f2074900",
+          "version": "2.5.0"
+        }
+      },
+      {
         "package": "Realm",
         "repositoryURL": "https://github.com/realm/realm-cocoa.git",
         "state": {

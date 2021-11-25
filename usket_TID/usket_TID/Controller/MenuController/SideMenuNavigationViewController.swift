@@ -30,20 +30,19 @@ class SideMenuNavigationViewController: UIViewController {
         supportLabel.text = "Logo design\nBy   bo110_1"
         supportLabel.font = UIFont(name: MainViewController.originalFont, size: 18)
         
-        let image = UIImage(named: "instagramLogo.png")
+        let image = UIImage(named: "instaLogo.png")
         instagramImageView.image = image
         instagramImageView.contentMode = .scaleAspectFill
     }
     //통계
     @IBAction func statisticsButtonClicked(_ sender: UIButton) {
-
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let vc = storyboard.instantiateViewController(withIdentifier: "StatisticsViewController") as! StatisticsViewController
         
         vc.modalPresentationStyle = .fullScreen
-        
-        self.present(vc,animated: true,completion: nil)
+
+        self.present(vc, animated: true, completion: nil)
     }
     //설정
     @IBAction func settingButtonClicked(_ sender: UIButton) {
@@ -78,6 +77,8 @@ class SideMenuNavigationViewController: UIViewController {
         
         self.present(vc,animated: true,completion: nil)
     }
+    
+    
 }
 
 
