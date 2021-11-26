@@ -24,7 +24,7 @@ extension CALayer {
                 border.frame = CGRect.init(x: 0, y: 0, width: width, height: frame.height)
                 break
             case UIRectEdge.right:
-                border.frame = CGRect.init(x: frame.width - width, y: 0, width: width, height: frame.height)
+                border.frame = CGRect.init(x: frame.width - width, y: 0, width: width, height: frame.height - 20)
                 break
             default:
                 break

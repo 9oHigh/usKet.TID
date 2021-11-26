@@ -16,6 +16,7 @@ class MainTableViewCell: UITableViewCell {
     @IBOutlet weak var emotionImageView: UIImageView!
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var backView: UIView!
+    @IBOutlet weak var contentLabelView: UIView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -29,7 +30,6 @@ class MainTableViewCell: UITableViewCell {
         self.contentView.layer.shadowRadius = 3
         self.contentView.layer.shadowOpacity = 0.25
         
-        self.backView.frame = backView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0))
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -41,6 +41,6 @@ class MainTableViewCell: UITableViewCell {
         //셀간 간격 주기
         let margin : CGFloat = 10
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: margin + 5 , left: margin + 5, bottom: 5, right: margin + 5))
-        self.backView.frame = backView.frame.inset(by: UIEdgeInsets(top: 0, left: 0, bottom: 20, right: 0))
+        
     }
 }

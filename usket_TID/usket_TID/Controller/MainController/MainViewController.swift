@@ -23,7 +23,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var searchBar: UISearchBar!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        mainTableView.rowHeight = UITableView.automaticDimension
         //Left Button - sideMenu
         let config = UIImage.SymbolConfiguration(pointSize:35, weight: .light , scale: .default)
         let indexImage = UIImage(systemName: "line.3.horizontal", withConfiguration: config)

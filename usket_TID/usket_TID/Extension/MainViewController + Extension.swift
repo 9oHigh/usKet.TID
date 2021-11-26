@@ -19,16 +19,17 @@ extension MainViewController : UITableViewDelegate,UITableViewDataSource{
         }
         
         cell.wordLabel.text = "행복"
-//        cell.emotionImageView.image = UIImage(named: "logo.png")
+        
         cell.contentLabel.text = "동해물과 백두산이 마르고 닳도록 동해물과 백두산이 마르고 닳도록 동해물과 백두산이 마르고 닳도록 동해물과 백두산이 마르고 닳도록 동해물과 백두산이 마르고 닳도록"
+        cell.emotionImageView.image = UIImage(named: "logo.png")
         cell.backView.layer.addBorder([.right], color: UIColor.lightGray, width: 1.0)
         
         return cell
     }
     //고민해봐야 할듯..
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        
-        return UIScreen.main.bounds.height / 4
-    }
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        
+//        
+//    }
     
 }
