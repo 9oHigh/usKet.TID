@@ -195,9 +195,9 @@
 		4C3AD74A274A35DF00EFC636 /* AddController */ = {
 			isa = PBXGroup;
 			children = (
+				4C3AD751274A36D100EFC636 /* PageViewController.swift */,
 				4C3AD74B274A363F00EFC636 /* BasicViewController.swift */,
 				4C3AD74D274A364B00EFC636 /* ContentViewController.swift */,
-				4C3AD751274A36D100EFC636 /* PageViewController.swift */,
 			);
 			path = AddController;
 			sourceTree = "<group>";

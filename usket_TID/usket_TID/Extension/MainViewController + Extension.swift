@@ -22,6 +22,17 @@ extension MainViewController : UITableViewDelegate,UITableViewDataSource{
         cell.wordLabel.text = tasks[indexPath.row].word
         cell.contentLabel.text = tasks[indexPath.row].definition
         cell.emotionImageView.image = UIImage(named: tasks[indexPath.row].emotion)
+        
+        var format = DateFormatter()
+        format.dateFormat = "dd"
+        var value = format.string(from: tasks[indexPath.row].date)
+        cell.dateLabel.text = value
+        
+        format = DateFormatter()
+        format.dateFormat = "EEEE"
+        value = format.string(from: tasks[indexPath.row].date)
+        cell.dayLabel.text = value
+        
         cell.backView.layer.addBorder([.right], color: UIColor.lightGray, width: 1.0)
         
         return cell

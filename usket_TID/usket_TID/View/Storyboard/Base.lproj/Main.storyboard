@@ -79,7 +79,7 @@
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="logo" translatesAutoresizingMaskIntoConstraints="NO" id="IwC-0x-c2z">
-                                                            <rect key="frame" x="0.0" y="110" width="100" height="94"/>
+                                                            <rect key="frame" x="0.0" y="120" width="100" height="84"/>
                                                             <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         </imageView>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="bottom" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="19" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d5x-7G-WTf">
@@ -93,7 +93,7 @@
                                                     <constraints>
                                                         <constraint firstAttribute="bottom" secondItem="IwC-0x-c2z" secondAttribute="bottom" id="Hu7-yh-sAj"/>
                                                         <constraint firstItem="VW0-v7-Bka" firstAttribute="centerY" secondItem="xcc-bY-ntS" secondAttribute="centerY" id="LkL-Ht-5Ef"/>
-                                                        <constraint firstItem="IwC-0x-c2z" firstAttribute="top" secondItem="VW0-v7-Bka" secondAttribute="bottom" id="Od4-8O-zuf"/>
+                                                        <constraint firstItem="IwC-0x-c2z" firstAttribute="top" secondItem="VW0-v7-Bka" secondAttribute="bottom" constant="10" id="Od4-8O-zuf"/>
                                                         <constraint firstItem="VW0-v7-Bka" firstAttribute="centerX" secondItem="xcc-bY-ntS" secondAttribute="centerX" id="R3t-Bf-fVa"/>
                                                         <constraint firstItem="d5x-7G-WTf" firstAttribute="leading" secondItem="xcc-bY-ntS" secondAttribute="leading" id="SSE-c0-K2W"/>
                                                         <constraint firstItem="VW0-v7-Bka" firstAttribute="top" secondItem="d5x-7G-WTf" secondAttribute="bottom" id="Yw1-Jv-cMH"/>
