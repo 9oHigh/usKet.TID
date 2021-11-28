@@ -7,6 +7,6 @@
 
 import Foundation
 
-protocol passData {
+protocol shareToContent {
     func getDatas(word : String, firstComes: String, emotion : String)
 }

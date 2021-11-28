@@ -11,18 +11,31 @@ import RealmSwift
 import JJFloatingActionButton
 
 class MainViewController: UIViewController {
+    
     //First Login 구현을 위해 UserDefaults
     let userDefaults = UserDefaults.standard
-    //Main TableView Contents
+    
+    //Realm
     let localRealm = try! Realm()
     var tasks : Results<DefineWordModel>!
+    
+    //서치바에서 검색중인지 아닌지 확인하고 filtered로 사용하기
+    //오류방지
+    var filtered : Results<DefineWordModel>!
+    var isFiltering: Bool {
+        
+        let searchController = self.navigationItem.searchController
+        let isActive = searchController?.isActive ?? false
+        let isSearchBarHasText = searchController?.searchBar.text?.isEmpty == false
+        return isActive && isSearchBarHasText
+    }
+    
     //Appdelegate로 할 수 있는 걸로 알고 있다. 찾아보자.
     static let originalFont : String = "Cafe24Oneprettynight"
     
-    //barbuttonItem에서 Storyboard에서 확인 - 중요..
+    //barbuttonItem에서 Storyboard에서 확인..
     //코드로 barbuttonitem의 버튼에 접근 불가능
     @IBOutlet weak var mainTableView: UITableView!
-    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,16 +58,17 @@ class MainViewController: UIViewController {
         //delegate + dataSource
         mainTableView.delegate = self
         mainTableView.dataSource = self
-        //오토!!
-        mainTableView.rowHeight = UITableView.automaticDimension
-        //works 확인
-        tasks = localRealm.objects(DefineWordModel.self)
+        
+        //tasks 확인 - 먼저입력한게 하단으로..
+        tasks = localRealm.objects(DefineWordModel.self).sorted(byKeyPath: "date", ascending: false)
+        
         //first LogIn 확인
         firstLogInCheck()
         //액션버튼 적용
         addActionButton()
         //서치바 적용
         searchBarSetting()
+        
         print("위치 :",localRealm.configuration.fileURL!)
     }
   
@@ -66,10 +80,12 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         mainTableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+        tasks = localRealm.objects(DefineWordModel.self).sorted(byKeyPath: "date", ascending: false)
         self.mainTableView.reloadData()
     }
     //처음인지 아닌지 확인
     func firstLogInCheck(){
+        
         //두번이상 실행
         if userDefaults.bool(forKey: "FirstLogIn") { return }
         //처음 실행
@@ -132,16 +148,11 @@ class MainViewController: UIViewController {
         }
         
         actionButton.addItem(title: "작성하기", image: UIImage(named: "writing.png")?.withRenderingMode(.alwaysTemplate)) { item in
-            
-            //뷰컨트롤러 넣어주고
-            var storyboard = UIStoryboard(name: "WordScreen", bundle: nil)
-            let ContentVC = storyboard.instantiateViewController(withIdentifier: "ContentViewController") as! ContentViewController
-            ContentVC.delegate = self
-            
+    
             //에디터로 연결
-            storyboard = UIStoryboard(name: "WordScreen", bundle: nil)
+            let storyboard = UIStoryboard(name: "WordScreen", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "PageViewController") as! PageViewController
-            vc.modalPresentationStyle = .overFullScreen
+            vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
         }
 
@@ -149,7 +160,7 @@ class MainViewController: UIViewController {
             //단어 추천 으로 연결
             let storyboard = UIStoryboard(name: "WordScreen", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "WordViewController") as! WordViewController
-            vc.modalPresentationStyle = .overFullScreen
+            vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
         }
         //전체 뷰위에 constrain 값주고 올리기
@@ -165,24 +176,29 @@ class MainViewController: UIViewController {
         actionButton.buttonImageColor = .black
 
     }
-    //수정이 필요함
-    //navigationBar 바로 밑에 두어야 할 듯 하다
-    //현재 테이블뷰 상단에 고정되어있음
+    
+    //서치바
     func searchBarSetting(){
-
-        searchBar.placeholder = "단어, 감정, 연관단어를 검색해보세요."
-        
-        //서치 아이콘 제거 - 있으니까 어색함..
-        searchBar.setImage(UIImage(), for: UISearchBar.Icon.search, state: .normal)
-        searchBar.setImage(UIImage(named: "icCancel"), for: .clear, state: .normal)
-        
-        //상하의 라인을 없애고 텍스트 필드의 컬러값을 주기 위해서는 백그라운드 이미지를 넣어주는 방법이 있다.
-        //searchBarStyle에서 minimal도 있으나 검색창 커스텀이 어려움..
-        searchBar.setBackgroundImage(UIImage(), for: UIBarPosition.top, barMetrics: UIBarMetrics.default)
-        searchBar.setBackgroundImage(UIImage(), for: UIBarPosition.bottom, barMetrics: UIBarMetrics.default)
-        
-        searchBar.searchTextField.backgroundColor = UIColor.white
-        searchBar.searchTextField.textColor = .black
-        searchBar.searchTextField.font = UIFont(name: MainViewController.originalFont, size: 18)
+        //생성
+        let searchController = UISearchController(searchResultsController: nil)
+        //리턴키!
+        searchController.searchBar.enablesReturnKeyAutomatically = true
+        //settings..
+        searchController.searchResultsUpdater = self
+        //검색시 배경 alpha
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.placeholder = "단어, 감정, 연관단어를 검색해보세요."
+        //네비게이션 아이템에 넣기
+        navigationItem.searchController = searchController
+        definesPresentationContext = true
+        //서치바 속성
+        searchController.searchBar.searchBarStyle = .minimal
+        searchController.searchBar.backgroundColor = .white
+        //텍스트 필드 속성
+        searchController.searchBar.searchTextField.backgroundColor = .white
+        searchController.searchBar.searchTextField.borderStyle = .none
+        searchController.searchBar.searchTextField.textColor = .black
+        searchController.searchBar.searchTextField.font = UIFont(name: MainViewController.originalFont, size: 18)
+        searchController.searchBar.searchTextField.leftView?.tintColor = .lightGray
     }
 }

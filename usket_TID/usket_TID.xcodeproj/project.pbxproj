@@ -25,10 +25,13 @@
 		4C3AD759274A5C4E00EFC636 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AD758274A5C4E00EFC636 /* ContactViewController.swift */; };
 		4C3AD75B274A70B700EFC636 /* Walkthrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C3AD75A274A70B700EFC636 /* Walkthrough.storyboard */; };
 		4C3AD75D274A70D700EFC636 /* FirstLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AD75C274A70D700EFC636 /* FirstLoginViewController.swift */; };
-		4C489A3227526EF200932983 /* PageDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C489A3127526EF200932983 /* PageDataProtocol.swift */; };
+		4C489A3227526EF200932983 /* ShareContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C489A3127526EF200932983 /* ShareContent.swift */; };
 		4C489A34275271EA00932983 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C489A33275271EA00932983 /* UIViewController + Extension.swift */; };
 		4C489A36275280F600932983 /* TextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C489A35275280F600932983 /* TextField + Extension.swift */; };
-		4C489A3827528D0400932983 /* MainDataProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C489A3727528D0400932983 /* MainDataProtocol.swift */; };
+		4C489A3827528D0400932983 /* ShareMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C489A3727528D0400932983 /* ShareMain.swift */; };
+		4C489A3A275369A900932983 /* SharePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C489A39275369A900932983 /* SharePage.swift */; };
+		4C489A3D2753B95700932983 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4C489A3C2753B95700932983 /* IQKeyboardManagerSwift */; };
+		4C489A3F2753CDAB00932983 /* UISearchBar + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C489A3E2753CDAB00932983 /* UISearchBar + Extension.swift */; };
 		4C596D02274BDA1900E2DE59 /* DefineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C596D01274BDA1900E2DE59 /* DefineTableViewCell.swift */; };
 		4C6086D8274E031200FCD3E4 /* JJFloatingActionButton in Frameworks */ = {isa = PBXBuildFile; productRef = 4C6086D7274E031200FCD3E4 /* JJFloatingActionButton */; };
 		4C6086E1274FD89900FCD3E4 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6086E0274FD89900FCD3E4 /* UIView + Extension.swift */; };
@@ -66,10 +69,12 @@
 		4C3AD758274A5C4E00EFC636 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		4C3AD75A274A70B700EFC636 /* Walkthrough.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Walkthrough.storyboard; sourceTree = "<group>"; };
 		4C3AD75C274A70D700EFC636 /* FirstLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLoginViewController.swift; sourceTree = "<group>"; };
-		4C489A3127526EF200932983 /* PageDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageDataProtocol.swift; sourceTree = "<group>"; };
+		4C489A3127526EF200932983 /* ShareContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareContent.swift; sourceTree = "<group>"; };
 		4C489A33275271EA00932983 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		4C489A35275280F600932983 /* TextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField + Extension.swift"; sourceTree = "<group>"; };
-		4C489A3727528D0400932983 /* MainDataProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDataProtocol.swift; sourceTree = "<group>"; };
+		4C489A3727528D0400932983 /* ShareMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareMain.swift; sourceTree = "<group>"; };
+		4C489A39275369A900932983 /* SharePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePage.swift; sourceTree = "<group>"; };
+		4C489A3E2753CDAB00932983 /* UISearchBar + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar + Extension.swift"; sourceTree = "<group>"; };
 		4C596D01274BDA1900E2DE59 /* DefineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefineTableViewCell.swift; sourceTree = "<group>"; };
 		4C6086E0274FD89900FCD3E4 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		4C6086E2274FE1E200FCD3E4 /* ContentViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentViewController + Extension.swift"; sourceTree = "<group>"; };
@@ -95,6 +100,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C489A3D2753B95700932983 /* IQKeyboardManagerSwift in Frameworks */,
 				4C3AD757274A575400EFC636 /* RealmSwift in Frameworks */,
 				4C9EBF6D274BCE7000B922F7 /* Alamofire in Frameworks */,
 				4C6086D8274E031200FCD3E4 /* JJFloatingActionButton in Frameworks */,
@@ -119,6 +125,7 @@
 				4C625447274FF8970056D30F /* CALayer + Extension.swift */,
 				4C489A33275271EA00932983 /* UIViewController + Extension.swift */,
 				4C489A35275280F600932983 /* TextField + Extension.swift */,
+				4C489A3E2753CDAB00932983 /* UISearchBar + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -128,8 +135,9 @@
 			children = (
 				4C32764B27481CFD00C0456D /* WordModel.swift */,
 				4C811C2B274D3F3800F51493 /* DefineWordModel.swift */,
-				4C489A3127526EF200932983 /* PageDataProtocol.swift */,
-				4C489A3727528D0400932983 /* MainDataProtocol.swift */,
+				4C489A3127526EF200932983 /* ShareContent.swift */,
+				4C489A3727528D0400932983 /* ShareMain.swift */,
+				4C489A39275369A900932983 /* SharePage.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -285,6 +293,7 @@
 				4C9EBF6C274BCE7000B922F7 /* Alamofire */,
 				4C9EBF6F274BCE8D00B922F7 /* SwiftyJSON */,
 				4C6086D7274E031200FCD3E4 /* JJFloatingActionButton */,
+				4C489A3C2753B95700932983 /* IQKeyboardManagerSwift */,
 			);
 			productName = usket_TID;
 			productReference = 4C758A962746AA9E00B9F7AC /* usket_TID.app */;
@@ -320,6 +329,7 @@
 				4C9EBF6B274BCE7000B922F7 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				4C9EBF6E274BCE8D00B922F7 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				4C6086D6274E031200FCD3E4 /* XCRemoteSwiftPackageReference "JJFloatingActionButton" */,
+				4C489A3B2753B95700932983 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 			);
 			productRefGroup = 4C758A972746AA9E00B9F7AC /* Products */;
 			projectDirPath = "";
@@ -355,16 +365,17 @@
 				4C6086E1274FD89900FCD3E4 /* UIView + Extension.swift in Sources */,
 				4C758A9E2746AA9E00B9F7AC /* MainViewController.swift in Sources */,
 				4C3AD74C274A363F00EFC636 /* BasicViewController.swift in Sources */,
-				4C489A3227526EF200932983 /* PageDataProtocol.swift in Sources */,
+				4C489A3227526EF200932983 /* ShareContent.swift in Sources */,
 				4C6086E3274FE1E200FCD3E4 /* ContentViewController + Extension.swift in Sources */,
 				4C3AD759274A5C4E00EFC636 /* ContactViewController.swift in Sources */,
 				4C32764A2747FD5C00C0456D /* CustomSideMenuNavigation.swift in Sources */,
 				4C3AD752274A36D100EFC636 /* PageViewController.swift in Sources */,
 				4C3AD743274A0A3200EFC636 /* OpenSourceViewController.swift in Sources */,
-				4C489A3827528D0400932983 /* MainDataProtocol.swift in Sources */,
+				4C489A3827528D0400932983 /* ShareMain.swift in Sources */,
 				4C489A34275271EA00932983 /* UIViewController + Extension.swift in Sources */,
 				4C758A9A2746AA9E00B9F7AC /* AppDelegate.swift in Sources */,
 				4C811C26274CE07100F51493 /* String + Extenstion.swift in Sources */,
+				4C489A3A275369A900932983 /* SharePage.swift in Sources */,
 				4C3AD741274A0A0700EFC636 /* SettingViewController.swift in Sources */,
 				4C811C2A274D2B2800F51493 /* MainTableViewCell.swift in Sources */,
 				4C3276482747FA6D00C0456D /* SideMenuNavigationViewController.swift in Sources */,
@@ -379,6 +390,7 @@
 				4C32764C27481CFD00C0456D /* WordModel.swift in Sources */,
 				4C9EBF6A274BC61100B922F7 /* WordViewController.swift in Sources */,
 				4C3AD73F274A09EF00EFC636 /* StatisticsViewController.swift in Sources */,
+				4C489A3F2753CDAB00932983 /* UISearchBar + Extension.swift in Sources */,
 				4C489A36275280F600932983 /* TextField + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -623,6 +635,14 @@
 				version = 10.18.0;
 			};
 		};
+		4C489A3B2753B95700932983 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/hackiftekhar/IQKeyboardManager";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.0.0;
+			};
+		};
 		4C6086D6274E031200FCD3E4 /* XCRemoteSwiftPackageReference "JJFloatingActionButton" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jjochen/JJFloatingActionButton";
@@ -664,6 +684,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4C3AD753274A575400EFC636 /* XCRemoteSwiftPackageReference "realm-cocoa" */;
 			productName = RealmSwift;
+		};
+		4C489A3C2753B95700932983 /* IQKeyboardManagerSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C489A3B2753B95700932983 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */;
+			productName = IQKeyboardManagerSwift;
 		};
 		4C6086D7274E031200FCD3E4 /* JJFloatingActionButton */ = {
 			isa = XCSwiftPackageProductDependency;

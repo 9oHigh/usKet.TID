@@ -6,12 +6,23 @@
 //
 
 import UIKit
+import RealmSwift
+
 //단어 + 연관 단어 + 감정
 class BasicViewController: UIViewController {
     
     //줄 놈이 선언되어 있어야지
-    var delegate : passData?
-    var selectedButton : String = ""
+    var delegate : shareToContent?
+    //감정 기록시 앞의 연관단어를 입력하지 않았다면 Alert하기위해 감시자 프로퍼티로 설정
+    var selectedButton : String = ""{
+        didSet{
+            sendData()
+        }
+    }
+    //수정시 필요한 프로퍼티 -> ID로 수정해보자.
+    var cellId : ObjectId?
+    var wordText : String?
+    var firstText : String?
     
     @IBOutlet weak var wordChoceView: UIView!
     @IBOutlet weak var topView: UIView!
@@ -34,13 +45,16 @@ class BasicViewController: UIViewController {
         
         choseWordTextField.toCustomTF()
         wordTextField.toCustomTF()
-        
+        //cell의 id값이 들어왔다면 단어만 셋팅 -> 나머지는 수정..
+        if cellId != nil{
+            choseWordTextField.text = wordText!
+            wordTextField.text = firstText!
+        }
         happyButton.setImage(UIImage(named: "happyFace.png"), for: .normal)
         sadButton.setImage(UIImage(named: "sadFace.png"), for: .normal)
         angryButton.setImage(UIImage(named: "angryFace.png"), for: .normal)
         sosoButton.setImage(UIImage(named: "normalFace.png"), for: .normal)
     }
-    
     //버튼 이벤트
     @IBAction func happyButtonClicked(_ sender: UIButton) {
         
@@ -53,7 +67,7 @@ class BasicViewController: UIViewController {
         selectedButton = "happyFace.png"
         sendData()
     }
-    @IBAction func sadButtonClicked(_ sender: Any) {
+    @IBAction func sadButtonClicked(_ sender: UIButton) {
         
         sadButton.bounceAnimation()
         
@@ -64,7 +78,7 @@ class BasicViewController: UIViewController {
         selectedButton = "sadFace.png"
         sendData()
     }
-    @IBAction func angryButtonClicked(_ sender: Any) {
+    @IBAction func angryButtonClicked(_ sender: UIButton) {
         
         angryButton.bounceAnimation()
         
@@ -75,7 +89,7 @@ class BasicViewController: UIViewController {
         selectedButton = "angryFace.png"
         sendData()
     }
-    @IBAction func sosoButtonClicked(_ sender: Any) {
+    @IBAction func sosoButtonClicked(_ sender: UIButton) {
         
         sosoButton.bounceAnimation()
         
@@ -87,6 +101,14 @@ class BasicViewController: UIViewController {
         sendData()
     }
     func sendData(){
+        //이미지 클릭시 selectedButton값이 변경이 되므로 해당
+        //오류를 Alert로 표시
+        if choseWordTextField.text == ""{
+            showAlert(title: "단어 입력 오류", message: "단어를 입력하지 않았어요. 순서대로 모두 입력해주세요!")
+        } else if wordTextField.text == ""{
+            showAlert(title: "연관 단어 입력 오류", message: "연관 단어를 입력하지 않았어요. 순서대로 모두 입력해주세요!")
+        }
+        //데이터 패스
         delegate?.getDatas(word: choseWordTextField.text!, firstComes: wordTextField.text!, emotion: selectedButton)
     }
 }

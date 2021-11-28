@@ -6,18 +6,28 @@
 //
 
 import UIKit
+import RealmSwift
 
-class ContentViewController: UIViewController,passData{
+class ContentViewController: UIViewController,shareToContent{
     
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var cancelButton: UIButton!
     @IBOutlet weak var storeButton: UIButton!
     @IBOutlet weak var defineTextView: UITextView!
     
-    var delegate : passToMainData?
+    //메인뷰컨트롤러로 데이터 패스하기 위한 delegate
+    var delegate : shareToMain?
+    
+    //넘어온 값들을 받는 저장 프로퍼티
     var word : String = ""
     var firstComes : String = ""
     var emotion : String = ""
+    
+    //넘어온 값중에 cell id 값이 있다면 수정으로 분류
+    var idOfCell : ObjectId?
+    
+    //중복검사시 필요
+    let localRealm  = try! Realm()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,28 +43,35 @@ class ContentViewController: UIViewController,passData{
         defineTextView.layer.cornerRadius = 10
         
         self.placeholderSetting()
-        
     }
     @IBAction func cancelButtonClicked(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
-    //여기서 다시 메인으로 넘어가야한다. + reloadData
+    //저장버튼 클릭시 유효성 검사 + 메인에서 reloadData
     @IBAction func storeButtonClicked(_ sender: UIButton) {
-        //조건들이 필요..
-        if dataCorrectCheck() {
-            delegate?.getDatas(word: word, firstComes: firstComes, emotion: emotion, definition: defineTextView.text)
-            self.dismiss(animated: true, completion: nil)
+        //유효성 검사시에 Nope이아닌 ADD/Modify가 넘어왔다면 실행
+        if dataCorrectCheck() != "Nope" {
+            let method : String = dataCorrectCheck()
+            //추가해주는 delegate
+            if method == "ADD"{
+                delegate?.getDatas(word: word, firstComes: firstComes, emotion: emotion, definition: defineTextView.text)
+            //수정해주는 delegate by ID
+            } else {
+                delegate?.getDatas(word: word, firstComes: firstComes, emotion: emotion, definition: defineTextView.text, id: idOfCell!)
+            }
+            //추천단어로 들어왔을 수도 있으니 루트뷰로 보내주기
+            self.view.window?.rootViewController?.dismiss(animated: true)
         } else {
             return
         }
     }
-    
+    //감정 클릭시 받는 값들
     func getDatas(word: String, firstComes: String, emotion: String) {
         self.word = word
         self.firstComes = firstComes
         self.emotion = emotion
     }
-    
+    //메인으로 보낼 값들
     func getDatas(word: String, firstComes: String, emotion: String, definition: String) {
         self.word = word
         self.firstComes = firstComes
@@ -63,22 +80,38 @@ class ContentViewController: UIViewController,passData{
     }
     
     //유효성 검사
-    func dataCorrectCheck() -> Bool{
-        
-        if word == "" {
-            self.showAlert(title: "입력 오류 안내", message: "입력하신 내용으로는 저장이 어려워요. 모두 작성해주세요!")
-            return false
-        } else if firstComes == "" {
-            self.showAlert(title: "입력 오류 안내", message: "입력하신 내용으로는 저장이 어려워요. 모두 작성해주세요!")
-            return false
+    func dataCorrectCheck() -> String{
+        //유효성 검사, 오류
+        if word == "" || word == "이 곳에 적어볼까요!" {
+            self.showAlert(title: "입력 오류 안내", message: "아직 입력하지 않은게 있어요.\n순서대로 모두 작성해주세요!")
+            return "Nope"
+        } else if firstComes == "" || firstComes == "이 곳에 적어볼까요!" {
+            self.showAlert(title: "입력 오류 안내", message: "감정을 다시 한번 클릭 해주세요!")
+            return "Nope"
         } else if emotion == "" {
-            self.showAlert(title: "입력 오류 안내", message: "입력하신 내용으로는 저장이 어려워요. 모두 작성해주세요!")
-            return false
-        } else if defineTextView.text == ""{
-            self.showAlert(title: "입력 오류 안내", message: "정의/의미가 없습니다. 저장할 수 없어요🥲")
-            return false
+            self.showAlert(title: "입력 오류 안내", message: "감정이 기록이 되지 않았어요.\n순서대로 모두 작성해주세요!")
+            return "Nope"
+        } else if defineTextView.text == "" || defineTextView.text == "이 곳에 적어볼까요!"{
+            self.showAlert(title: "입력 오류 안내", message: "정의/의미가 없습니다.\n순서대로 모두 작성해주세요!")
+            return "Nope"
         } else {
-            return true
+            let tasks = localRealm.objects(DefineWordModel.self)
+            //수정여부 확인
+            if idOfCell != nil {
+                //중복검사 필요없음
+                return "Modify"
+            }else {
+                //중복검사
+                let wordArray = tasks.value(forKey: "word")
+                //고치고와도 이미지를 클릭하지 않은이상..
+                //방법이 있을텐데 수정해야겠다
+                if wordArray.debugDescription.contains(word){
+                    showAlert(title: "중복된 단어", message: "이미 목록에 있는 단어에요.\n처음부터 다시 작성후 감정버튼을 눌러주세요!")
+                    return "Nope"
+                }else {
+                    return "ADD"
+                }
+            }
         }
     }
     

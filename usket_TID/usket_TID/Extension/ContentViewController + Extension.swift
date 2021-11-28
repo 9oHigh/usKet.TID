@@ -29,7 +29,7 @@ extension ContentViewController : UITextViewDelegate {
     func textViewDidEndEditing(_ textView: UITextView) {
         defineTextView.layer.borderColor = UIColor.lightGray.cgColor
         if textView.text.isEmpty {
-            textView.text = "이곳에 적어볼까요!"
+            textView.text = "이 곳에 적어볼까요!"
             textView.textColor = UIColor.lightGray
         }
     }

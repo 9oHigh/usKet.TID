@@ -6,12 +6,16 @@
 //
 
 import UIKit
+import RealmSwift
 
 //페이지 관리
 class PageViewController: UIPageViewController {
     
     //페이지(viewController) 배열
     var addPages = [UIViewController]()
+    var idOfCell : ObjectId?
+    let localReam = try! Realm()
+    var tasks : Results<DefineWordModel>!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,6 +31,17 @@ class PageViewController: UIPageViewController {
         BasicVC.delegate = ContentVC
         ContentVC.delegate = mainVC
         
+        //id값이 같이 넘어오게 된다면 수정임.
+        if let id = idOfCell {
+            //해당 id의 값으로 셋팅하기
+            tasks = localReam.objects(DefineWordModel.self)
+            let target = tasks.filter("_id == %@", id)[0]
+                
+            BasicVC.cellId = target._id
+            BasicVC.wordText = target.word
+            BasicVC.firstText = target.firstWord
+            ContentVC.idOfCell = target._id
+        }
         //페이지넣고
         addPages.append(BasicVC)
         addPages.append(ContentVC)
@@ -58,7 +73,7 @@ class PageViewController: UIPageViewController {
                 view.backgroundColor = UIColor.clear
             }
         }
-    }  
+    }
 }
 extension PageViewController : UIPageViewControllerDelegate,UIPageViewControllerDataSource{
     
