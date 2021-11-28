@@ -8,16 +8,6 @@
 import Foundation
 
 extension String {
-    //문자열에서 특수문자 혹은 공백 제거하기
-    func replaceSpecialWord(source : String) -> String{
-        var word = source
-        word = word.replacingOccurrences(of: "^", with: " ")
-        word = word.replacingOccurrences(of: "~", with: "")
-        word = word.replacingOccurrences(of: "-", with: "")
-        word = word.replacingOccurrences(of: "  ", with: " ")
-        
-        return word
-    }
     // 정규식으로 제거하기
     func matchString (_string : String) -> String {
         // 문자열 한글자씩 확인을 위해 배열에 담는다
@@ -26,7 +16,7 @@ extension String {
         // 정규식 : 한글, 영어, 숫자만 허용 (공백, 특수문자 제거)
         // let pattern = "^[ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z0-9]$"
         // 정규식 : 한글, 영어, 숫자, 공백만 허용 (특수문자 제거)
-        let pattern = "^[ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z0-9\\s~]$"
+        let pattern = "^[ㄱ-ㅎㅏ-ㅣ가-힣a-zA-Z0-9\\s~,.]$"
         
         // 문자열 길이가 한개 이상인 경우만 패턴 검사 수행
         var resultString = ""

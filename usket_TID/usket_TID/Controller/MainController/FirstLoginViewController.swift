@@ -5,6 +5,8 @@
 //  Created by 이경후 on 2021/11/21.
 //
 
+//MARK: DONE.
+
 import UIKit
 
 class FirstLoginViewController: UIViewController {
@@ -14,15 +16,14 @@ class FirstLoginViewController: UIViewController {
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var letterView: UIView!
     @IBOutlet weak var sendLabel: UILabel!
+    @IBOutlet weak var startView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        letterView.layer.borderWidth = 0.3
-        letterView.layer.borderColor = UIColor.black.cgColor
-        letterView.layer.cornerRadius = 20
+        startView.toShadowView()
+        letterView.toShadowView()
         //Background Alpha 조정
-        mainView.backgroundColor = UIColor.white.withAlphaComponent(0.7)
+        mainView.backgroundColor = UIColor.white.withAlphaComponent(0.9)
         
         introLabel.font = UIFont(name: MainViewController.originalFont, size: 18.0)
         introLabel.text = "안녕하세요.\nToday I Define을 만든 개발자입니다.\n애플리케이션을 다운받아주셔서 정말 감사합니다."

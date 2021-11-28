@@ -11,16 +11,25 @@ import UIKit
 class PageViewController: UIPageViewController {
     
     //페이지(viewController) 배열
-    lazy var addPages : [UIViewController] = {
-        return [
-            //인스턴스 넣어주기
-            self.PageInstance(name: "BasicViewController"),
-            self.PageInstance(name: "ContentViewController")
-        ]
-    }()
+    var addPages = [UIViewController]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        //뷰컨트롤러 넣어주고
+        let BasicVC = storyboard?.instantiateViewController(withIdentifier: "BasicViewController") as! BasicViewController
+        let ContentVC = storyboard?.instantiateViewController(withIdentifier: "ContentViewController") as! ContentViewController
+        
+        //뷰컨트롤러 넣어주고
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let mainVC = storyboard.instantiateViewController(withIdentifier: "MainViewController") as! MainViewController
+        
+        //값전달을 위한 delegate
+        BasicVC.delegate = ContentVC
+        ContentVC.delegate = mainVC
+        
+        //페이지넣고
+        addPages.append(BasicVC)
+        addPages.append(ContentVC)
         
         //delegate + dataSource
         self.dataSource = self
@@ -34,7 +43,7 @@ class PageViewController: UIPageViewController {
         let pageControl = UIPageControl.appearance()
         pageControl.pageIndicatorTintColor = .lightGray
         pageControl.currentPageIndicatorTintColor = .black
-        
+
     }
     //스토리보드 특정 및 Identifier
     private func PageInstance(name : String) -> UIViewController{
@@ -49,8 +58,7 @@ class PageViewController: UIPageViewController {
                 view.backgroundColor = UIColor.clear
             }
         }
-    }
-   
+    }  
 }
 extension PageViewController : UIPageViewControllerDelegate,UIPageViewControllerDataSource{
     

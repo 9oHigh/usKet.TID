@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="5gY-pp-eRK">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
@@ -26,17 +26,17 @@
             <objects>
                 <viewController storyboardIdentifier="WordViewController" id="zbO-y6-ra9" customClass="WordViewController" customModule="usket_TID" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Bqt-3D-1M1">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="먼저, 시작의 정의를 볼까요?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Gf-Fc-6gD">
-                                <rect key="frame" x="0.0" y="215" width="414" height="23.5"/>
+                                <rect key="frame" x="0.0" y="171" width="375" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="22"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QE1-Lc-bkm">
-                                <rect key="frame" x="40" y="708" width="111" height="35"/>
+                                <rect key="frame" x="40" y="550" width="111" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="새로운 단어">
                                     <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
@@ -47,7 +47,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ggS-eB-MaG">
-                                <rect key="frame" x="242.5" y="708" width="131.5" height="35"/>
+                                <rect key="frame" x="203.5" y="550" width="131.5" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="이걸로 할래요!">
                                     <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
@@ -57,8 +57,8 @@
                                     <action selector="wantButtonClicked:" destination="zbO-y6-ra9" eventType="touchUpInside" id="640-V0-2iJ"/>
                                 </connections>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="scrollableAxes" indicatorStyle="white" dataMode="prototypes" style="insetGrouped" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pRE-Qz-tRC">
-                                <rect key="frame" x="0.0" y="253.5" width="414" height="429"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" contentInsetAdjustmentBehavior="scrollableAxes" indicatorStyle="white" dataMode="prototypes" style="insetGrouped" separatorStyle="none" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="pRE-Qz-tRC">
+                                <rect key="frame" x="0.0" y="209.5" width="375" height="315"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="15" maxY="0.0"/>
@@ -67,21 +67,21 @@
                                 <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="DefineTableViewCell" rowHeight="118" id="pJ5-bp-MXa" customClass="DefineTableViewCell" customModule="usket_TID" customModuleProvider="target">
-                                        <rect key="frame" x="20" y="49.5" width="374" height="118"/>
+                                        <rect key="frame" x="16" y="49.5" width="343" height="118"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pJ5-bp-MXa" id="tao-K6-xr5">
-                                            <rect key="frame" x="0.0" y="0.0" width="374" height="118"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="343" height="118"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오류" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iUz-gH-do2">
-                                                    <rect key="frame" x="30" y="11" width="28.5" height="96"/>
+                                                    <rect key="frame" x="26" y="11" width="28.5" height="96"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="18"/>
                                                     <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="오류" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1T-6y-eGc">
-                                                    <rect key="frame" x="78.5" y="11" width="225" height="96"/>
+                                                    <rect key="frame" x="74.5" y="11" width="252" height="96"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="18"/>
@@ -96,7 +96,7 @@
                                                 <constraint firstItem="h1T-6y-eGc" firstAttribute="top" secondItem="tao-K6-xr5" secondAttribute="topMargin" id="kXq-30-Ysz"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="h1T-6y-eGc" secondAttribute="bottom" id="mNz-pW-m68"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="iUz-gH-do2" secondAttribute="bottom" id="pOE-wg-rvU"/>
-                                                <constraint firstItem="h1T-6y-eGc" firstAttribute="width" secondItem="tao-K6-xr5" secondAttribute="width" multiplier="0.76738" constant="-62" id="pWk-bU-phU"/>
+                                                <constraint firstItem="h1T-6y-eGc" firstAttribute="width" secondItem="tao-K6-xr5" secondAttribute="width" multiplier="0.76738" constant="-11.211340000000007" id="pWk-bU-phU"/>
                                                 <constraint firstItem="iUz-gH-do2" firstAttribute="top" secondItem="tao-K6-xr5" secondAttribute="topMargin" id="vVJ-B7-0vF"/>
                                                 <constraint firstItem="h1T-6y-eGc" firstAttribute="leading" secondItem="iUz-gH-do2" secondAttribute="trailing" constant="20" id="x8I-Hx-dMA"/>
                                             </constraints>
@@ -111,7 +111,7 @@
                                 </prototypes>
                             </tableView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cZV-lp-SMi">
-                                <rect key="frame" x="20" y="44" width="44" height="44"/>
+                                <rect key="frame" x="20" y="0.0" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="2Vo-WB-lks"/>
                                     <constraint firstAttribute="width" constant="44" id="7vA-UH-iaA"/>
@@ -126,7 +126,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오늘의 단어는 시작입니다." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hwg-SJ-Al9">
-                                <rect key="frame" x="0.0" y="157" width="414" height="23.5"/>
+                                <rect key="frame" x="0.0" y="113" width="375" height="23.5"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="23.5" id="reo-fd-Ntv"/>
                                 </constraints>
@@ -165,27 +165,27 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="9y9-j6-TY0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-114.49275362318842" y="455.35714285714283"/>
+            <point key="canvasLocation" x="-116" y="454.72263868065971"/>
         </scene>
         <!--Basic View Controller-->
         <scene sceneID="30X-2T-dXz">
             <objects>
                 <viewController storyboardIdentifier="BasicViewController" id="cbc-J6-drn" customClass="BasicViewController" customModule="usket_TID" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zb4-af-Fzx">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5os-OE-99i">
-                                <rect key="frame" x="50" y="94" width="314" height="154"/>
+                                <rect key="frame" x="50" y="50" width="275" height="125"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q. 어떤 단어를 선택하셨나요?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gYN-ya-amx">
-                                        <rect key="frame" x="10" y="20" width="294" height="18"/>
+                                        <rect key="frame" x="10" y="25" width="255" height="18"/>
                                         <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="여기에 적어 볼까요!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HvR-hR-P2v">
-                                        <rect key="frame" x="45" y="100" width="224" height="34"/>
+                                        <rect key="frame" x="45" y="61" width="185" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="17"/>
@@ -194,25 +194,25 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="HvR-hR-P2v" secondAttribute="bottom" constant="20" id="6f2-5j-hJ7"/>
+                                    <constraint firstAttribute="bottom" secondItem="HvR-hR-P2v" secondAttribute="bottom" constant="30" id="OHT-Nz-0LL"/>
                                     <constraint firstItem="HvR-hR-P2v" firstAttribute="leading" secondItem="5os-OE-99i" secondAttribute="leading" constant="45" id="bgL-r4-Md2"/>
-                                    <constraint firstItem="gYN-ya-amx" firstAttribute="top" secondItem="5os-OE-99i" secondAttribute="top" constant="20" id="ie5-Hr-0v3"/>
+                                    <constraint firstItem="gYN-ya-amx" firstAttribute="top" secondItem="5os-OE-99i" secondAttribute="top" constant="25" id="ie5-Hr-0v3"/>
                                     <constraint firstAttribute="trailing" secondItem="HvR-hR-P2v" secondAttribute="trailing" constant="45" id="nLb-XN-XUE"/>
                                     <constraint firstAttribute="trailing" secondItem="gYN-ya-amx" secondAttribute="trailing" constant="10" id="pzj-UU-pss"/>
                                     <constraint firstItem="gYN-ya-amx" firstAttribute="leading" secondItem="5os-OE-99i" secondAttribute="leading" constant="10" id="zcF-3m-pxo"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Spp-PO-dcj">
-                                <rect key="frame" x="50" y="278" width="314" height="183"/>
+                                <rect key="frame" x="50" y="200" width="275" height="125"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q. 어떤 단어가 가장 처음 떠오르나요?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D4S-Ev-MiM">
-                                        <rect key="frame" x="10" y="20" width="294" height="18"/>
+                                        <rect key="frame" x="10" y="25" width="255" height="18"/>
                                         <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="여기에 적어 볼까요!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UCE-0D-FSf">
-                                        <rect key="frame" x="45" y="129" width="224" height="34"/>
+                                        <rect key="frame" x="45" y="61" width="185" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="17"/>
@@ -221,96 +221,115 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="UCE-0D-FSf" secondAttribute="bottom" constant="20" id="BuB-l4-Cq7"/>
                                     <constraint firstAttribute="trailing" secondItem="UCE-0D-FSf" secondAttribute="trailing" constant="45" id="EyD-WQ-coB"/>
                                     <constraint firstAttribute="trailing" secondItem="D4S-Ev-MiM" secondAttribute="trailing" constant="10" id="FxR-Hf-Elf"/>
                                     <constraint firstItem="UCE-0D-FSf" firstAttribute="leading" secondItem="Spp-PO-dcj" secondAttribute="leading" constant="45" id="TFt-k8-Ath"/>
-                                    <constraint firstItem="D4S-Ev-MiM" firstAttribute="top" secondItem="Spp-PO-dcj" secondAttribute="top" constant="20" id="dCl-i2-mml"/>
+                                    <constraint firstItem="D4S-Ev-MiM" firstAttribute="top" secondItem="Spp-PO-dcj" secondAttribute="top" constant="25" id="dCl-i2-mml"/>
                                     <constraint firstItem="D4S-Ev-MiM" firstAttribute="leading" secondItem="Spp-PO-dcj" secondAttribute="leading" constant="10" id="i9g-sj-duz"/>
+                                    <constraint firstAttribute="bottom" secondItem="UCE-0D-FSf" secondAttribute="bottom" constant="30" id="m1E-Wy-H7g"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P23-DO-K7X">
-                                <rect key="frame" x="50" y="491" width="314" height="280"/>
+                                <rect key="frame" x="50" y="350" width="275" height="250"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q. 이 단어를 보면 어떤 감정이 드나요?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zRH-Ew-OLu">
-                                        <rect key="frame" x="20" y="20" width="274" height="18"/>
+                                        <rect key="frame" x="20" y="30" width="235" height="36"/>
                                         <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rex-rf-tWL">
-                                        <rect key="frame" x="30" y="148" width="58" height="35"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rex-rf-tWL">
+                                        <rect key="frame" x="45" y="176" width="65" height="65"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="65" id="C8P-tE-pny"/>
+                                            <constraint firstAttribute="height" constant="65" id="fjC-TE-k3U"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="화남">
-                                            <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
-                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="angryButtonClicked:" destination="cbc-J6-drn" eventType="touchUpInside" id="Ije-pp-kvZ"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byF-uc-iVI">
-                                        <rect key="frame" x="228" y="83" width="56" height="35"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="byF-uc-iVI">
+                                        <rect key="frame" x="160" y="91" width="65" height="65"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="65" id="ged-IK-h5D"/>
+                                            <constraint firstAttribute="height" constant="65" id="haO-cs-sL6"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="우울">
-                                            <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
-                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="sadButtonClicked:" destination="cbc-J6-drn" eventType="touchUpInside" id="bXp-IS-ic4"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHI-13-3TA">
-                                        <rect key="frame" x="30" y="83" width="57" height="35"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PHI-13-3TA">
+                                        <rect key="frame" x="45" y="91" width="65" height="65"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="행복">
-                                            <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
-                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="65" id="SwY-Pa-Y8W"/>
+                                            <constraint firstAttribute="width" constant="65" id="ebr-13-nNf"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
+                                        <connections>
+                                            <action selector="happyButtonClicked:" destination="cbc-J6-drn" eventType="touchUpInside" id="tTj-n9-hi3"/>
+                                        </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTz-f3-fCY">
-                                        <rect key="frame" x="211.5" y="148" width="72.5" height="35"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTz-f3-fCY">
+                                        <rect key="frame" x="160" y="176" width="65" height="65"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="65" id="6tx-u1-SFh"/>
+                                            <constraint firstAttribute="width" constant="65" id="Nan-XO-T8l"/>
+                                        </constraints>
+                                        <inset key="imageEdgeInsets" minX="0.0" minY="0.0" maxX="2.2250738585072014e-308" maxY="0.0"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="즐거움">
-                                            <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
-                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="sosoButtonClicked:" destination="cbc-J6-drn" eventType="touchUpInside" id="U7I-Qi-nmy"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="Rex-rf-tWL" firstAttribute="leading" secondItem="P23-DO-K7X" secondAttribute="leading" constant="30" id="77s-bR-RfL"/>
-                                    <constraint firstItem="ZTz-f3-fCY" firstAttribute="top" secondItem="byF-uc-iVI" secondAttribute="bottom" constant="30" id="AdB-om-vky"/>
-                                    <constraint firstItem="Rex-rf-tWL" firstAttribute="top" secondItem="PHI-13-3TA" secondAttribute="bottom" constant="30" id="Jks-pW-poW"/>
+                                    <constraint firstItem="byF-uc-iVI" firstAttribute="top" secondItem="zRH-Ew-OLu" secondAttribute="bottom" constant="25" id="1oF-xf-V6C"/>
+                                    <constraint firstItem="Rex-rf-tWL" firstAttribute="leading" secondItem="P23-DO-K7X" secondAttribute="leading" constant="45" id="77s-bR-RfL"/>
+                                    <constraint firstItem="ZTz-f3-fCY" firstAttribute="top" secondItem="byF-uc-iVI" secondAttribute="bottom" constant="20" id="AdB-om-vky"/>
+                                    <constraint firstItem="Rex-rf-tWL" firstAttribute="top" secondItem="PHI-13-3TA" secondAttribute="bottom" constant="20" id="Jks-pW-poW"/>
                                     <constraint firstAttribute="trailing" secondItem="zRH-Ew-OLu" secondAttribute="trailing" constant="20" id="c9y-hA-IOl"/>
-                                    <constraint firstAttribute="trailing" secondItem="byF-uc-iVI" secondAttribute="trailing" constant="30" id="kum-C1-nZb"/>
-                                    <constraint firstItem="PHI-13-3TA" firstAttribute="top" secondItem="zRH-Ew-OLu" secondAttribute="bottom" constant="45" id="nO3-pS-fEY"/>
+                                    <constraint firstAttribute="trailing" secondItem="byF-uc-iVI" secondAttribute="trailing" constant="50" id="kum-C1-nZb"/>
+                                    <constraint firstAttribute="height" secondItem="byF-uc-iVI" secondAttribute="height" multiplier="3.84615" id="mj5-la-tKS"/>
                                     <constraint firstItem="zRH-Ew-OLu" firstAttribute="leading" secondItem="P23-DO-K7X" secondAttribute="leading" constant="20" id="nlM-c3-8jC"/>
-                                    <constraint firstItem="zRH-Ew-OLu" firstAttribute="top" secondItem="P23-DO-K7X" secondAttribute="top" constant="20" id="rj9-Or-XBB"/>
-                                    <constraint firstItem="PHI-13-3TA" firstAttribute="leading" secondItem="P23-DO-K7X" secondAttribute="leading" constant="30" id="xi6-tA-oPw"/>
-                                    <constraint firstItem="byF-uc-iVI" firstAttribute="top" secondItem="zRH-Ew-OLu" secondAttribute="bottom" constant="45" id="yv2-Nx-Ipv"/>
-                                    <constraint firstAttribute="trailing" secondItem="ZTz-f3-fCY" secondAttribute="trailing" constant="30" id="zqs-GO-hte"/>
+                                    <constraint firstItem="zRH-Ew-OLu" firstAttribute="top" secondItem="P23-DO-K7X" secondAttribute="top" constant="30" id="v4U-3b-ITo"/>
+                                    <constraint firstItem="PHI-13-3TA" firstAttribute="leading" secondItem="P23-DO-K7X" secondAttribute="leading" constant="45" id="xi6-tA-oPw"/>
+                                    <constraint firstItem="PHI-13-3TA" firstAttribute="top" secondItem="zRH-Ew-OLu" secondAttribute="bottom" constant="25" id="zbp-dj-OdY"/>
+                                    <constraint firstAttribute="trailing" secondItem="ZTz-f3-fCY" secondAttribute="trailing" constant="50" id="zqs-GO-hte"/>
                                 </constraints>
                             </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Xji-e9-sNC"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="Spp-PO-dcj" firstAttribute="top" secondItem="5os-OE-99i" secondAttribute="bottom" constant="30" id="0YH-dy-pGs"/>
+                            <constraint firstItem="Spp-PO-dcj" firstAttribute="top" secondItem="5os-OE-99i" secondAttribute="bottom" constant="25" id="0YH-dy-pGs"/>
                             <constraint firstItem="Spp-PO-dcj" firstAttribute="leading" secondItem="Xji-e9-sNC" secondAttribute="leading" constant="50" id="0sd-jH-jLr"/>
                             <constraint firstItem="Xji-e9-sNC" firstAttribute="trailing" secondItem="P23-DO-K7X" secondAttribute="trailing" constant="50" id="G8W-uy-ocv"/>
                             <constraint firstItem="Xji-e9-sNC" firstAttribute="trailing" secondItem="5os-OE-99i" secondAttribute="trailing" constant="50" id="Gon-w3-s4U"/>
                             <constraint firstItem="P23-DO-K7X" firstAttribute="leading" secondItem="Xji-e9-sNC" secondAttribute="leading" constant="50" id="PdK-Qm-luC"/>
-                            <constraint firstItem="Spp-PO-dcj" firstAttribute="height" secondItem="zb4-af-Fzx" secondAttribute="height" multiplier="0.261161" constant="-51" id="STR-wb-ZLl"/>
+                            <constraint firstItem="Spp-PO-dcj" firstAttribute="height" secondItem="zb4-af-Fzx" secondAttribute="height" multiplier="0.261161" constant="-49.194386999999978" id="STR-wb-ZLl"/>
                             <constraint firstItem="5os-OE-99i" firstAttribute="top" secondItem="Xji-e9-sNC" secondAttribute="top" constant="50" id="Xfq-RL-LeJ"/>
                             <constraint firstItem="5os-OE-99i" firstAttribute="leading" secondItem="Xji-e9-sNC" secondAttribute="leading" constant="50" id="Xzu-15-umj"/>
-                            <constraint firstItem="P23-DO-K7X" firstAttribute="height" secondItem="zb4-af-Fzx" secondAttribute="height" multiplier="0.232143" constant="72" id="cco-Ly-fYH"/>
-                            <constraint firstItem="P23-DO-K7X" firstAttribute="top" secondItem="Spp-PO-dcj" secondAttribute="bottom" constant="30" id="e1Z-UH-qWV"/>
+                            <constraint firstItem="P23-DO-K7X" firstAttribute="top" secondItem="Spp-PO-dcj" secondAttribute="bottom" constant="25" id="e1Z-UH-qWV"/>
                             <constraint firstItem="Xji-e9-sNC" firstAttribute="trailing" secondItem="Spp-PO-dcj" secondAttribute="trailing" constant="50" id="q7r-Ya-9Hr"/>
-                            <constraint firstItem="5os-OE-99i" firstAttribute="height" secondItem="zb4-af-Fzx" secondAttribute="height" multiplier="0.203125" constant="-28" id="v7J-J6-zQR"/>
+                            <constraint firstItem="5os-OE-99i" firstAttribute="height" secondItem="zb4-af-Fzx" secondAttribute="height" multiplier="0.203125" constant="-10.484375" id="v7J-J6-zQR"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="angryButton" destination="Rex-rf-tWL" id="IO5-2q-FuS"/>
                         <outlet property="bottomView" destination="P23-DO-K7X" id="cb4-zD-lAu"/>
                         <outlet property="choseWordTextField" destination="HvR-hR-P2v" id="UAi-wV-yle"/>
+                        <outlet property="happyButton" destination="PHI-13-3TA" id="ChO-92-qAo"/>
+                        <outlet property="sadButton" destination="byF-uc-iVI" id="GsG-X0-xaO"/>
+                        <outlet property="sosoButton" destination="ZTz-f3-fCY" id="oGW-tZ-Pcx"/>
                         <outlet property="topView" destination="Spp-PO-dcj" id="BOk-b3-8Br"/>
                         <outlet property="wordChoceView" destination="5os-OE-99i" id="gvq-FP-let"/>
                         <outlet property="wordTextField" destination="UCE-0D-FSf" id="IkU-Uq-L7k"/>
@@ -318,18 +337,18 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pWw-J5-Jux" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="589.85507246376812" y="-205.58035714285714"/>
+            <point key="canvasLocation" x="589.60000000000002" y="-206.44677661169416"/>
         </scene>
         <!--Content View Controller-->
         <scene sceneID="t27-C0-Nkf">
             <objects>
                 <viewController storyboardIdentifier="ContentViewController" id="2Wh-3S-kRA" customClass="ContentViewController" customModule="usket_TID" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="spm-gh-bfn">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aqa-i8-1ug">
-                                <rect key="frame" x="90" y="715" width="60" height="37.5"/>
+                                <rect key="frame" x="90" y="541" width="60" height="37.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="취소">
                                     <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="22"/>
@@ -340,23 +359,23 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="gTO-Mg-abI">
-                                <rect key="frame" x="45" y="94" width="324" height="601"/>
+                                <rect key="frame" x="45" y="50" width="285" height="471"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Q. 이 단어의 정의가 뭐라고 생각하시나요?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZHb-VD-Als">
-                                        <rect key="frame" x="20" y="40" width="284" height="18"/>
+                                        <rect key="frame" x="20" y="40" width="245" height="36"/>
                                         <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Kcr-WP-OIC">
-                                        <rect key="frame" x="20" y="134" width="284" height="447"/>
+                                        <rect key="frame" x="20" y="152" width="245" height="299"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="17"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이 단어가 나에게주는 의미를 적어보는것도 좋아요." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ejB-FI-ba8">
-                                        <rect key="frame" x="10" y="68" width="304" height="36"/>
+                                        <rect key="frame" x="10" y="86" width="265" height="36"/>
                                         <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="17"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -379,12 +398,15 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CzW-3r-8Z2">
-                                <rect key="frame" x="263" y="715" width="61" height="37.5"/>
+                                <rect key="frame" x="224" y="541" width="61" height="37.5"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" title="저장">
                                     <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="22"/>
                                     <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="storeButtonClicked:" destination="2Wh-3S-kRA" eventType="touchUpInside" id="U9V-g7-yKn"/>
+                                </connections>
                             </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4Xl-6o-07a"/>

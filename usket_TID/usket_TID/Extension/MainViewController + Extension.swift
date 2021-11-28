@@ -10,7 +10,8 @@ import UIKit
 
 extension MainViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 3
+
+        return tasks.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -18,18 +19,24 @@ extension MainViewController : UITableViewDelegate,UITableViewDataSource{
             return UITableViewCell()
         }
         
-        cell.wordLabel.text = "행복"
-        
-        cell.contentLabel.text = "동해물과 백두산이 마르고 닳도록 동해물과 백두산이 마르고 닳도록 동해물과 백두산이 마르고 닳도록 동해물과 백두산이 마르고 닳도록 동해물과 백두산이 마르고 닳도록"
-        cell.emotionImageView.image = UIImage(named: "logo.png")
+        cell.wordLabel.text = tasks[indexPath.row].word
+        cell.contentLabel.text = tasks[indexPath.row].definition
+        cell.emotionImageView.image = UIImage(named: tasks[indexPath.row].emotion)
         cell.backView.layer.addBorder([.right], color: UIColor.lightGray, width: 1.0)
         
         return cell
     }
-    //고민해봐야 할듯..
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        
-//        
-//    }
-    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 204
+    }
+}
+extension MainViewController : passToMainData {
+    func getDatas(word: String, firstComes: String, emotion: String,definition: String) {
+        let newData = DefineWordModel(word: word, definition: definition, emotion: emotion, firstWord: firstComes)
+        
+        try! localRealm.write{
+            localRealm.add(newData)
+        }
+        self.mainTableView.reloadData()
+    }
 }

@@ -39,8 +39,8 @@ class MainTableViewCell: UITableViewCell {
     override func layoutSubviews() {
         super.layoutSubviews()
         //셀간 간격 주기
-        let margin : CGFloat = 10
-        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: margin + 5 , left: margin + 5, bottom: 5, right: margin + 5))
+        let margin : CGFloat = 5
+        contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: margin + 5, left: margin + 5, bottom: margin, right: margin + 5))
         
     }
 }

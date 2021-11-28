@@ -7,13 +7,15 @@
 
 import UIKit
 import SideMenu
-import Realm
+import RealmSwift
 import JJFloatingActionButton
 
 class MainViewController: UIViewController {
     //First Login 구현을 위해 UserDefaults
     let userDefaults = UserDefaults.standard
-    
+    //Main TableView Contents
+    let localRealm = try! Realm()
+    var tasks : Results<DefineWordModel>!
     //Appdelegate로 할 수 있는 걸로 알고 있다. 찾아보자.
     static let originalFont : String = "Cafe24Oneprettynight"
     
@@ -21,9 +23,10 @@ class MainViewController: UIViewController {
     //코드로 barbuttonitem의 버튼에 접근 불가능
     @IBOutlet weak var mainTableView: UITableView!
     @IBOutlet weak var searchBar: UISearchBar!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        mainTableView.rowHeight = UITableView.automaticDimension
+        
         //Left Button - sideMenu
         let config = UIImage.SymbolConfiguration(pointSize:35, weight: .light , scale: .default)
         let indexImage = UIImage(systemName: "line.3.horizontal", withConfiguration: config)
@@ -42,15 +45,19 @@ class MainViewController: UIViewController {
         //delegate + dataSource
         mainTableView.delegate = self
         mainTableView.dataSource = self
-        
+        //오토!!
+        mainTableView.rowHeight = UITableView.automaticDimension
+        //works 확인
+        tasks = localRealm.objects(DefineWordModel.self)
         //first LogIn 확인
         firstLogInCheck()
         //액션버튼 적용
         addActionButton()
         //서치바 적용
         searchBarSetting()
+        print("위치 :",localRealm.configuration.fileURL!)
     }
-    
+  
     //LargeTitle 혹은 Tableview와 관련해 바운스이후 네비게이션바로 돌아가는 이슈
     //viewWillAppear에서 Tableview 상단에 inset을 주면 해결되었다.
     // 확인 : TableView의 Align Top SafeArea값에 따라 top의 값을 조정
@@ -59,8 +66,8 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         mainTableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+        self.mainTableView.reloadData()
     }
- 
     //처음인지 아닌지 확인
     func firstLogInCheck(){
         //두번이상 실행
@@ -125,8 +132,14 @@ class MainViewController: UIViewController {
         }
         
         actionButton.addItem(title: "작성하기", image: UIImage(named: "writing.png")?.withRenderingMode(.alwaysTemplate)) { item in
+            
+            //뷰컨트롤러 넣어주고
+            var storyboard = UIStoryboard(name: "WordScreen", bundle: nil)
+            let ContentVC = storyboard.instantiateViewController(withIdentifier: "ContentViewController") as! ContentViewController
+            ContentVC.delegate = self
+            
             //에디터로 연결
-            let storyboard = UIStoryboard(name: "WordScreen", bundle: nil)
+            storyboard = UIStoryboard(name: "WordScreen", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "PageViewController") as! PageViewController
             vc.modalPresentationStyle = .overFullScreen
             self.present(vc, animated: true, completion: nil)
@@ -150,8 +163,6 @@ class MainViewController: UIViewController {
         actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
         actionButton.buttonColor = .white
         actionButton.buttonImageColor = .black
-        // last 4 lines can be replaced with
-        // actionButton.display(inViewController: self)
 
     }
     //수정이 필요함

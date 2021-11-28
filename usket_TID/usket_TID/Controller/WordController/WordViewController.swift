@@ -16,6 +16,7 @@ class WordViewController: UIViewController {
     @IBOutlet weak var defineTableView: UITableView!
     @IBOutlet weak var todayWordLabel: UILabel!
     @IBOutlet weak var defineLabel: UILabel!
+    var prevCount : Int = 0
     // 감시자 프로퍼티
     // 오늘의 단어가 버튼으로 지속적으로 바뀐다.
     var todayWord : String = "시작" {
@@ -23,8 +24,6 @@ class WordViewController: UIViewController {
             todayWordLabel.text = "추천 단어는 \(todayWord)입니다."
             defineLabel.text = "먼저, \(todayWord)의 정의를 볼까요?"
             //로딩중 화면을 위해 필요한 듯
-            numbering = []
-            definitions = []
             coloredText()
         }
     }
@@ -62,6 +61,8 @@ class WordViewController: UIViewController {
     @IBAction func newWord(_ sender: UIButton) {
         todayWord = randomWords.wordList.randomWordGenerate()
         //로딩 중 표시를 위해 reloadData + 배열 초기화
+        numbering = []
+        definitions = []
         self.defineTableView.reloadData()
         //데이터 찾아오기
         fetchWordData()

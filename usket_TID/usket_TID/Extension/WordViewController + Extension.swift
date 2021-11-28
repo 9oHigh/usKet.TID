@@ -29,16 +29,20 @@ extension WordViewController {
                 for number in 0...1 {
                     var word = json["channel"]["item"][number]["word"].stringValue
                     var definition = json["channel"]["item"][number]["sense"]["definition"].stringValue
-                    word = word.replaceSpecialWord(source: word)
                     word = word.matchString(_string: word)
                     definition = definition.matchString(_string: definition)
-                    
-                    self.numbering.append(word)
-                    self.definitions.append(definition)
+                    //단어가 없어도 ""값을 넣는듯 -> 셀에서 계속나옴
+                    //맞았네 나이스
+                    if word.isEmpty{
+                        continue
+                    } else {
+                        self.numbering.append(word)
+                        self.definitions.append(definition)
+                    }
                 }
                 self.defineTableView.reloadData()
             case .failure(let error):
-                self.showAlert(title: "네트워크에서 응답이 없어요.\n다시 시도해 주세요 🥲", connection: false)
+                self.showAlert(title: "네트워크에서 응답이 없어요.\n잠시후 다시 시도해 주세요 🥲", connection: false)
                 print(error)
             }
         }
@@ -65,7 +69,7 @@ extension WordViewController {
     }
     func showAlert(title : String, connection : Bool){
         
-        let alert = UIAlertController(title: "네트워크 오류", message: title, preferredStyle: .alert)
+        let alert = UIAlertController(title: "네트워크 오류 안내", message: title, preferredStyle: .alert)
         let ok = UIAlertAction(title: "화인", style: .default) { action in
             if connection{
                 guard let url = URL(string:UIApplication.openSettingsURLString) else { return }
