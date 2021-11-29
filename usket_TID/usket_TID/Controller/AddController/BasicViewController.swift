@@ -43,6 +43,9 @@ class BasicViewController: UIViewController {
         bottomView.toShadowView()
         wordChoceView.toShadowView()
         
+        wordTextField.delegate = self
+        choseWordTextField.delegate = self
+        
         choseWordTextField.toCustomTF()
         wordTextField.toCustomTF()
         //cell의 id값이 들어왔다면 단어만 셋팅 -> 나머지는 수정..
@@ -112,5 +115,15 @@ class BasicViewController: UIViewController {
         delegate?.getDatas(word: choseWordTextField.text!, firstComes: wordTextField.text!, emotion: selectedButton)
     }
 }
-
-
+extension BasicViewController : UITextFieldDelegate{
+    //텍스트 5글자로 제한.. 아니면 너무 깨져보인다..
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        let currentText = textField.text ?? ""
+        guard let stringRange = Range(range, in: currentText) else { return false }
+     
+        let updatedText = currentText.replacingCharacters(in: stringRange, with: string)
+     
+        return updatedText.count <= 6
+    }
+    
+}

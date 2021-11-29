@@ -39,7 +39,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         //Left Button - sideMenu
         let config = UIImage.SymbolConfiguration(pointSize:35, weight: .light , scale: .default)
         let indexImage = UIImage(systemName: "line.3.horizontal", withConfiguration: config)
@@ -200,5 +200,16 @@ class MainViewController: UIViewController {
         searchController.searchBar.searchTextField.textColor = .black
         searchController.searchBar.searchTextField.font = UIFont(name: MainViewController.originalFont, size: 18)
         searchController.searchBar.searchTextField.leftView?.tintColor = .lightGray
+        //영어도 있을 수 있으니..
+        searchController.searchBar.autocapitalizationType = .none
+        searchController.searchBar.setValue("취소", forKey: "cancelButtonText")
+        
+        //취소버튼 color + font 변경 
+        let attributes:[NSAttributedString.Key: Any] = [
+            .foregroundColor: UIColor.black,
+            .font: UIFont(name: MainViewController.originalFont, size: 17)!
+        ]
+        UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes(attributes, for: .normal)
+        
     }
 }

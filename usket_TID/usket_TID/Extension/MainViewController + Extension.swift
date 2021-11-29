@@ -31,6 +31,7 @@ extension MainViewController : UITableViewDelegate,UITableViewDataSource{
         cell.wordLabel.text = works[indexPath.row].word
         cell.contentLabel.text = works[indexPath.row].definition
         cell.emotionImageView.image = UIImage(named: works[indexPath.row].emotion)
+        cell.firstComeWordLabel.text = "[" + works[indexPath.row].firstWord + "]"
         
         var format = DateFormatter()
         format.timeZone = TimeZone(abbreviation: "KST")
@@ -60,6 +61,55 @@ extension MainViewController : UITableViewDelegate,UITableViewDataSource{
         vc.modalPresentationStyle = .fullScreen
         self.present(vc, animated: true, completion: nil)
         
+    }
+    //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+    //        let works : Results<DefineWordModel>!
+    //        if isFiltering{
+    //            works = filtered
+    //        } else {
+    //            works = tasks
+    //        }
+    //
+    //        showAlertCancel(title: "삭제 안내", message: "정말로 삭제 하시겠습니까?") { delete in
+    //            do{
+    //                try self.localRealm.write{
+    //                    self.localRealm.delete(works[indexPath.row])
+    //                    self.mainTableView.reloadData()
+    //                }
+    //            } catch{
+    //                self.showAlert(title: "안내", message: "해당 단어는 삭제할 수 없습니다.")
+    //            }
+    //        }
+    //    }
+    func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        
+        let action =  UIContextualAction(style: .normal, title: "삭제", handler: { (action,view,completionHandler ) in
+            let works : Results<DefineWordModel>!
+            if self.isFiltering{
+                works = self.filtered
+            } else {
+                works = self.tasks
+            }
+            
+            self.showAlertCancel(title: "삭제 안내", message: "정말로 삭제 하시겠습니까?") { delete in
+                do{
+                    try self.localRealm.write{
+                        self.localRealm.delete(works[indexPath.row])
+                        self.mainTableView.reloadData()
+                    }
+                } catch{
+                    self.showAlert(title: "안내", message: "해당 단어는 삭제할 수 없습니다.")
+                }
+            }
+            completionHandler(true)
+        })
+        //alpha를 주는게 제일 좋은 방법인듯..
+        action.backgroundColor = UIColor(white: 1, alpha: 0)
+        action.image = UIImage(named: "trashbucket.png")
+        
+        let configuration = UISwipeActionsConfiguration(actions: [action])
+        
+        return configuration
     }
     //고정 높이로가자.. 레이아웃오류가 너무 많다.
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -100,6 +150,6 @@ extension MainViewController : UISearchResultsUpdating {
         filtered = self.localRealm.objects(DefineWordModel.self).filter("word CONTAINS '\(text)' || definition CONTAINS '\(text)' || firstWord CONTAINS '\(text)' ")
         
         self.mainTableView.reloadData()
-        
     }
+    
 }

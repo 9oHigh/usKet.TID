@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="L2G-Ie-6ZA">
-    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -18,35 +19,41 @@
             <objects>
                 <viewController storyboardIdentifier="MainViewController" id="BYZ-38-t0r" customClass="MainViewController" customModule="usket_TID" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" separatorStyle="none" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="hJp-5g-RyR">
-                                <rect key="frame" x="0.0" y="44" width="375" height="623"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="MainTableViewCell" rowHeight="226" id="OCi-kv-yIF" customClass="MainTableViewCell" customModule="usket_TID" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="32" width="375" height="226"/>
+                                        <rect key="frame" x="0.0" y="32" width="414" height="226"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="OCi-kv-yIF" id="dYK-bU-CbT">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="226"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="226"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h43-6k-Ntc">
-                                                    <rect key="frame" x="146" y="11" width="213" height="204"/>
+                                                    <rect key="frame" x="150" y="11" width="244" height="204"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="동해물과 백두산이 마르고 닳도록동해물과 백두산이 마르고 닳도록동해물과 백두산이 마르고 닳도록동해물과 백두산이 마르고 닳도록동해물과 백두산이 마르고 닳도록동해물과 백두산이 마르고 닳도록동해물과 백두산이 마르고 닳도록" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljI-bU-zRF">
-                                                            <rect key="frame" x="8" y="46.5" width="197" height="149.5"/>
-                                                            <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="15"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="751" text="행복행복행복행복" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyI-zB-lc6">
+                                                            <rect key="frame" x="5" y="15" width="150.5" height="24.5"/>
+                                                            <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="23"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cyI-zB-lc6">
-                                                            <rect key="frame" x="5" y="15" width="41" height="31.5"/>
-                                                            <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="25"/>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="멍청이멍청이멍청이" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YDD-2n-Thb">
+                                                            <rect key="frame" x="165.5" y="18.5" width="70.5" height="18"/>
+                                                            <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="17"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="동해물과 백두산이 마르고 닳도록동해물과 백두산이 마르고 닳도록동해물과 백두산이 마르고 닳도록동해물과 백두산이 마르고 닳도록동해물과 백두산이 마르고 닳도록동해물과 백두산이 마르고 닳도록동해물과 백두산이 마르고 닳도록" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ljI-bU-zRF">
+                                                            <rect key="frame" x="8" y="39.5" width="228" height="156.5"/>
+                                                            <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="15"/>
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
@@ -54,16 +61,18 @@
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
                                                         <constraint firstItem="cyI-zB-lc6" firstAttribute="leading" secondItem="h43-6k-Ntc" secondAttribute="leading" constant="5" id="7Ux-hc-XUI"/>
+                                                        <constraint firstItem="YDD-2n-Thb" firstAttribute="trailing" secondItem="h43-6k-Ntc" secondAttribute="trailingMargin" id="BYC-Hd-ltg"/>
                                                         <constraint firstItem="ljI-bU-zRF" firstAttribute="trailing" secondItem="h43-6k-Ntc" secondAttribute="trailingMargin" id="BZv-BD-jpv"/>
+                                                        <constraint firstItem="YDD-2n-Thb" firstAttribute="centerY" secondItem="cyI-zB-lc6" secondAttribute="centerY" id="CkG-Q2-olA"/>
                                                         <constraint firstItem="ljI-bU-zRF" firstAttribute="leading" secondItem="h43-6k-Ntc" secondAttribute="leadingMargin" id="Dhx-90-1au"/>
-                                                        <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="cyI-zB-lc6" secondAttribute="trailing" constant="20" symbolic="YES" id="I44-cY-Mjt"/>
+                                                        <constraint firstItem="YDD-2n-Thb" firstAttribute="leading" secondItem="cyI-zB-lc6" secondAttribute="trailing" constant="10" id="EEL-6C-VSb"/>
                                                         <constraint firstItem="cyI-zB-lc6" firstAttribute="top" secondItem="h43-6k-Ntc" secondAttribute="top" constant="15" id="Otc-QK-iNJ"/>
                                                         <constraint firstItem="ljI-bU-zRF" firstAttribute="bottom" secondItem="h43-6k-Ntc" secondAttribute="bottomMargin" id="ccV-CX-2by"/>
                                                         <constraint firstItem="ljI-bU-zRF" firstAttribute="top" secondItem="cyI-zB-lc6" secondAttribute="bottom" id="mqi-8Z-20A"/>
                                                     </constraints>
                                                 </view>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xcc-bY-ntS">
-                                                    <rect key="frame" x="16" y="6" width="100" height="204"/>
+                                                    <rect key="frame" x="20" y="6" width="100" height="204"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="WED" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VW0-v7-Bka">
                                                             <rect key="frame" x="0.0" y="94" width="100" height="16"/>
@@ -104,7 +113,6 @@
                                                 <constraint firstAttribute="bottomMargin" secondItem="xcc-bY-ntS" secondAttribute="bottom" constant="5" id="5rX-Wm-xOd"/>
                                                 <constraint firstItem="h43-6k-Ntc" firstAttribute="top" secondItem="dYK-bU-CbT" secondAttribute="topMargin" id="Lvc-i3-b4o"/>
                                                 <constraint firstItem="xcc-bY-ntS" firstAttribute="top" secondItem="dYK-bU-CbT" secondAttribute="topMargin" constant="-5" id="X6W-Kd-I3Q"/>
-                                                <constraint firstItem="cyI-zB-lc6" firstAttribute="height" secondItem="VW0-v7-Bka" secondAttribute="height" multiplier="1.96875" id="aj5-Ac-u3I"/>
                                                 <constraint firstItem="h43-6k-Ntc" firstAttribute="trailing" secondItem="dYK-bU-CbT" secondAttribute="trailingMargin" id="eHC-nv-D6b"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="h43-6k-Ntc" secondAttribute="bottom" id="fTf-hp-GrL"/>
                                                 <constraint firstItem="h43-6k-Ntc" firstAttribute="leading" secondItem="xcc-bY-ntS" secondAttribute="trailing" constant="30" id="m3S-KR-c2Z"/>
@@ -120,6 +128,7 @@
                                             <outlet property="dateLabel" destination="d5x-7G-WTf" id="SZg-98-FuJ"/>
                                             <outlet property="dayLabel" destination="VW0-v7-Bka" id="nN5-Oo-YjL"/>
                                             <outlet property="emotionImageView" destination="IwC-0x-c2z" id="Ke0-AE-gF7"/>
+                                            <outlet property="firstComeWordLabel" destination="YDD-2n-Thb" id="BDK-cb-HKd"/>
                                             <outlet property="wordLabel" destination="cyI-zB-lc6" id="vUI-41-Sqg"/>
                                         </connections>
                                     </tableViewCell>
@@ -144,14 +153,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="773.60000000000002" y="138.0809595202399"/>
+            <point key="canvasLocation" x="772.46376811594212" y="137.94642857142856"/>
         </scene>
         <!--Side Menu Navigation View Controller-->
         <scene sceneID="MJj-nZ-nfy">
             <objects>
                 <viewController storyboardIdentifier="SideMenuNavigationViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="fzk-GP-LNN" customClass="SideMenuNavigationViewController" customModule="usket_TID" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="2ha-fc-3o5">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="Ddg-kD-svW">
@@ -169,9 +178,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rja-o2-T5I">
-                                        <rect key="frame" x="0.0" y="76.5" width="61" height="37.5"/>
+                                        <rect key="frame" x="0.0" y="76.5" width="77" height="37.5"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="설정">
+                                        <buttonConfiguration key="configuration" style="plain" image="lockColored" imagePlacement="trailing" title="설정">
                                             <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="22"/>
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
@@ -204,7 +213,7 @@
                                 </subviews>
                             </stackView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="by bo110_1" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D7D-YP-eJa">
-                                <rect key="frame" x="30" y="609" width="73.5" height="18"/>
+                                <rect key="frame" x="30" y="804" width="73.5" height="18"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -217,7 +226,7 @@
                                 </constraints>
                             </imageView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OST-PF-c3h">
-                                <rect key="frame" x="111" y="607" width="16" height="19"/>
+                                <rect key="frame" x="111" y="802" width="16" height="19"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="19" id="6n7-cm-kNc"/>
                                     <constraint firstAttribute="width" constant="16" id="qz3-Ay-ou5"/>
@@ -257,11 +266,11 @@
             <objects>
                 <viewController storyboardIdentifier="StatisticsViewController" id="yIK-eH-oic" customClass="StatisticsViewController" customModule="usket_TID" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="jNH-lF-qdb">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKN-bI-OSe">
-                                <rect key="frame" x="29" y="9" width="44" height="44"/>
+                                <rect key="frame" x="29" y="53" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="ZJd-x6-l9D"/>
                                     <constraint firstAttribute="height" constant="44" id="uTT-6B-QzD"/>
@@ -294,11 +303,11 @@
             <objects>
                 <viewController storyboardIdentifier="SettingViewController" id="gRh-aj-JLi" customClass="SettingViewController" customModule="usket_TID" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="FRl-Hb-7wz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Zj-qj-Tpo">
-                                <rect key="frame" x="20" y="0.0" width="44" height="44"/>
+                                <rect key="frame" x="20" y="44" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="Npj-Y5-z5f"/>
                                     <constraint firstAttribute="height" constant="44" id="bwG-df-RaQ"/>
@@ -330,14 +339,14 @@
             <objects>
                 <viewController storyboardIdentifier="OpenSourceViewController" id="bWt-sU-7PO" customClass="OpenSourceViewController" customModule="usket_TID" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="au7-w3-ymR">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tDC-0q-3aY">
-                                <rect key="frame" x="20" y="0.0" width="44" height="44"/>
+                                <rect key="frame" x="20" y="44" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="NOX-go-02D"/>
-                                    <constraint firstAttribute="width" constant="44" id="oZI-Bb-b3e"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="oZI-Bb-b3e"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain">
@@ -348,29 +357,120 @@
                                     <action selector="closeButtonClicked:" destination="bWt-sU-7PO" eventType="touchUpInside" id="VMv-Ac-N42"/>
                                 </connections>
                             </button>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" dataMode="prototypes" style="grouped" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" estimatedSectionHeaderHeight="-1" sectionFooterHeight="18" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="luc-Xn-6Cf">
+                                <rect key="frame" x="20" y="86" width="374" height="810"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="separatorColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="sectionIndexTrackingBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="OpensourceTableViewCell" rowHeight="112" id="RDb-Vl-yeW" customClass="OpensourceTableViewCell" customModule="usket_TID" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="49.5" width="374" height="112"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="RDb-Vl-yeW" id="84t-eP-51T">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="112"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ABF-a4-T7a">
+                                                    <rect key="frame" x="25" y="5" width="324" height="102"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="80" id="HM4-gm-E2t"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                </label>
+                                            </subviews>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            <constraints>
+                                                <constraint firstAttribute="trailingMargin" secondItem="ABF-a4-T7a" secondAttribute="trailing" constant="5" id="At3-zU-yZE"/>
+                                                <constraint firstItem="ABF-a4-T7a" firstAttribute="top" secondItem="84t-eP-51T" secondAttribute="top" constant="5" id="aUo-dw-uua"/>
+                                                <constraint firstAttribute="bottom" secondItem="ABF-a4-T7a" secondAttribute="bottom" constant="5" id="qzf-AO-P79"/>
+                                                <constraint firstItem="ABF-a4-T7a" firstAttribute="leading" secondItem="84t-eP-51T" secondAttribute="leadingMargin" constant="5" id="suF-Z6-ZnN"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <connections>
+                                            <outlet property="nameLabel" destination="ABF-a4-T7a" id="90L-7G-m8d"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오픈소스 라이선스" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lug-Xf-LfA">
+                                <rect key="frame" x="140" y="54" width="134" height="21"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qxs-cP-doh"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="Qxs-cP-doh" firstAttribute="trailing" secondItem="luc-Xn-6Cf" secondAttribute="trailing" constant="20" id="30T-mV-NK4"/>
                             <constraint firstItem="tDC-0q-3aY" firstAttribute="leading" secondItem="Qxs-cP-doh" secondAttribute="leading" constant="20" id="5GM-mF-Mlk"/>
+                            <constraint firstItem="luc-Xn-6Cf" firstAttribute="height" secondItem="au7-w3-ymR" secondAttribute="height" multiplier="0.904018" id="CO4-ZI-fly"/>
+                            <constraint firstItem="Lug-Xf-LfA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tDC-0q-3aY" secondAttribute="trailing" constant="8" symbolic="YES" id="Dti-fp-Mjf"/>
+                            <constraint firstItem="luc-Xn-6Cf" firstAttribute="leading" secondItem="Qxs-cP-doh" secondAttribute="leading" constant="20" id="Eeu-xp-FQp"/>
+                            <constraint firstAttribute="bottom" secondItem="luc-Xn-6Cf" secondAttribute="bottom" id="IcJ-cU-okS"/>
+                            <constraint firstItem="Lug-Xf-LfA" firstAttribute="centerX" secondItem="Qxs-cP-doh" secondAttribute="centerX" id="Kdz-qe-ovO"/>
                             <constraint firstItem="tDC-0q-3aY" firstAttribute="top" secondItem="Qxs-cP-doh" secondAttribute="top" id="iMm-Wr-8nk"/>
+                            <constraint firstItem="Lug-Xf-LfA" firstAttribute="top" secondItem="Qxs-cP-doh" secondAttribute="top" constant="10" id="uad-u3-elu"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="licenseTableView" destination="luc-Xn-6Cf" id="tVa-6f-yo3"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hWL-vn-5NZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1438" y="1504"/>
+            <point key="canvasLocation" x="1437.68115942029" y="1503.3482142857142"/>
+        </scene>
+        <!--License View Controller-->
+        <scene sceneID="h5a-OC-4xT">
+            <objects>
+                <viewController storyboardIdentifier="LicenseViewController" id="Max-4i-KZU" customClass="LicenseViewController" customModule="usket_TID" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="pVN-k6-yN3">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Oez-Zn-tgC">
+                                <rect key="frame" x="0.0" y="64" width="414" height="832"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="C7N-2w-ccV"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="Oez-Zn-tgC" firstAttribute="leading" secondItem="C7N-2w-ccV" secondAttribute="leading" id="Jvs-d0-Nnd"/>
+                            <constraint firstItem="C7N-2w-ccV" firstAttribute="bottom" secondItem="Oez-Zn-tgC" secondAttribute="bottom" constant="-34" id="XNx-l7-2Bd"/>
+                            <constraint firstItem="C7N-2w-ccV" firstAttribute="trailing" secondItem="Oez-Zn-tgC" secondAttribute="trailing" id="ZmZ-Md-Dx1"/>
+                            <constraint firstItem="Oez-Zn-tgC" firstAttribute="top" secondItem="C7N-2w-ccV" secondAttribute="top" constant="20" id="wsJ-2y-7bh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contentTextView" destination="Oez-Zn-tgC" id="pDZ-62-9Bb"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ulR-GG-mV5" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1437.68115942029" y="2165.625"/>
         </scene>
         <!--Contact View Controller-->
         <scene sceneID="NYg-9j-weX">
             <objects>
                 <viewController storyboardIdentifier="ContactViewController" id="gri-vp-qou" customClass="ContactViewController" customModule="usket_TID" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cWI-ib-Ycj">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sJV-ZY-SnE">
-                                <rect key="frame" x="20" y="0.0" width="44" height="44"/>
+                                <rect key="frame" x="20" y="44" width="44" height="44"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="44" id="0R0-X5-66G"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="3M2-5G-0uP"/>
@@ -385,28 +485,28 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4A-sL-Med">
-                                <rect key="frame" x="42" y="194" width="291" height="256"/>
+                                <rect key="frame" x="42" y="238" width="330" height="407"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="wkdska957@naver.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YB9-dl-hZJ">
-                                        <rect key="frame" x="0.0" y="217" width="291" height="19"/>
+                                        <rect key="frame" x="0.0" y="368" width="330" height="19"/>
                                         <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="18"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.github.com/9oHigh" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2C-vR-mR1">
-                                        <rect key="frame" x="0.0" y="61" width="291" height="19"/>
+                                        <rect key="frame" x="0.0" y="61" width="330" height="19"/>
                                         <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="18"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYw-Lg-Dey">
-                                        <rect key="frame" x="0.0" y="176" width="291" height="21"/>
+                                        <rect key="frame" x="0.0" y="327" width="330" height="21"/>
                                         <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Github" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXb-9E-lxF">
-                                        <rect key="frame" x="0.0" y="20" width="291" height="21"/>
+                                        <rect key="frame" x="0.0" y="20" width="330" height="21"/>
                                         <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -420,13 +520,9 @@
                                     <constraint firstItem="ZYw-Lg-Dey" firstAttribute="centerX" secondItem="k4A-sL-Med" secondAttribute="centerX" id="BUn-Rp-rBZ"/>
                                     <constraint firstAttribute="trailing" secondItem="ZYw-Lg-Dey" secondAttribute="trailing" id="Cc1-Kh-8ZN"/>
                                     <constraint firstItem="YB9-dl-hZJ" firstAttribute="centerX" secondItem="k4A-sL-Med" secondAttribute="centerX" id="E8b-cc-n6f"/>
-                                    <constraint firstItem="gXb-9E-lxF" firstAttribute="leading" secondItem="k4A-sL-Med" secondAttribute="leading" id="IxV-cB-IjV"/>
-                                    <constraint firstItem="ZYw-Lg-Dey" firstAttribute="leading" secondItem="k4A-sL-Med" secondAttribute="leading" id="Mpt-lC-SlF"/>
                                     <constraint firstItem="d2C-vR-mR1" firstAttribute="top" secondItem="gXb-9E-lxF" secondAttribute="bottom" constant="20" id="bxh-ko-WOD"/>
                                     <constraint firstAttribute="bottom" secondItem="YB9-dl-hZJ" secondAttribute="bottom" constant="20" id="e21-ED-4Ec"/>
-                                    <constraint firstItem="YB9-dl-hZJ" firstAttribute="leading" secondItem="k4A-sL-Med" secondAttribute="leading" id="eA0-J6-LTH"/>
                                     <constraint firstItem="d2C-vR-mR1" firstAttribute="leading" secondItem="k4A-sL-Med" secondAttribute="leading" id="gzd-oD-3bX"/>
-                                    <constraint firstAttribute="trailing" secondItem="d2C-vR-mR1" secondAttribute="trailing" id="pHY-WA-ruJ"/>
                                     <constraint firstItem="gXb-9E-lxF" firstAttribute="top" secondItem="k4A-sL-Med" secondAttribute="top" constant="20" id="sIT-Ia-gUK"/>
                                     <constraint firstItem="d2C-vR-mR1" firstAttribute="centerX" secondItem="k4A-sL-Med" secondAttribute="centerX" id="shU-G3-3zL"/>
                                     <constraint firstAttribute="trailing" secondItem="gXb-9E-lxF" secondAttribute="trailing" id="uju-W5-s21"/>
@@ -457,7 +553,7 @@
                 <navigationController id="CS9-M1-yvE" customClass="CustomSideMenuNavigation" customModule="usket_TID" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="Zox-yi-uNP"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="PhI-uO-gNz">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <connections>
@@ -474,13 +570,12 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L2G-Ie-6ZA" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" largeTitles="YES" id="p2x-ce-3YQ">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="96"/>
+                        <rect key="frame" x="0.0" y="44" width="414" height="96"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <textAttributes key="largeTitleTextAttributes">
                             <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="40"/>
                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <color key="textShadowColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         </textAttributes>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -494,7 +589,11 @@
         </scene>
     </scenes>
     <resources>
+        <image name="lockColored" width="16" height="16"/>
         <image name="logo" width="1125" height="1189"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

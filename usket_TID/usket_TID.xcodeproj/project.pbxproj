@@ -7,6 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C18736827552D870059968B /* OpensourceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C18736727552D870059968B /* OpensourceTableViewCell.swift */; };
+		4C18736C27553B450059968B /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C18736B27553B450059968B /* LicenseViewController.swift */; };
+		4C18737127553CF40059968B /* Alamofire.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4C18737027553CF40059968B /* Alamofire.txt */; };
+		4C18737327553CFB0059968B /* Font:Cafe24Oneprettynight.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4C18737227553CFB0059968B /* Font:Cafe24Oneprettynight.txt */; };
+		4C18737527553D030059968B /* hackiftekhar:IQKeyboardManager.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4C18737427553D030059968B /* hackiftekhar:IQKeyboardManager.txt */; };
+		4C18737727553D100059968B /* jonkykong:SideMenu.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4C18737627553D100059968B /* jonkykong:SideMenu.txt */; };
+		4C18737927553D150059968B /* kciter:Floaty.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4C18737827553D150059968B /* kciter:Floaty.txt */; };
+		4C18737B27553D1B0059968B /* Realm.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4C18737A27553D1B0059968B /* Realm.txt */; };
+		4C18737D27553D200059968B /* SwiftyJson.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4C18737C27553D200059968B /* SwiftyJson.txt */; };
 		4C238481274A7F4F007314BF /* UIButton + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C238480274A7F4F007314BF /* UIButton + Extension.swift */; };
 		4C3276432747E13500C0456D /* Cafe24Oneprettynight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C3276422747E13500C0456D /* Cafe24Oneprettynight.ttf */; };
 		4C3276462747F9FF00C0456D /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 4C3276452747F9FF00C0456D /* SideMenu */; };
@@ -31,7 +40,6 @@
 		4C489A3827528D0400932983 /* ShareMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C489A3727528D0400932983 /* ShareMain.swift */; };
 		4C489A3A275369A900932983 /* SharePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C489A39275369A900932983 /* SharePage.swift */; };
 		4C489A3D2753B95700932983 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4C489A3C2753B95700932983 /* IQKeyboardManagerSwift */; };
-		4C489A3F2753CDAB00932983 /* UISearchBar + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C489A3E2753CDAB00932983 /* UISearchBar + Extension.swift */; };
 		4C596D02274BDA1900E2DE59 /* DefineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C596D01274BDA1900E2DE59 /* DefineTableViewCell.swift */; };
 		4C6086D8274E031200FCD3E4 /* JJFloatingActionButton in Frameworks */ = {isa = PBXBuildFile; productRef = 4C6086D7274E031200FCD3E4 /* JJFloatingActionButton */; };
 		4C6086E1274FD89900FCD3E4 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6086E0274FD89900FCD3E4 /* UIView + Extension.swift */; };
@@ -54,6 +62,15 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		4C18736727552D870059968B /* OpensourceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpensourceTableViewCell.swift; sourceTree = "<group>"; };
+		4C18736B27553B450059968B /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
+		4C18737027553CF40059968B /* Alamofire.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Alamofire.txt; sourceTree = "<group>"; };
+		4C18737227553CFB0059968B /* Font:Cafe24Oneprettynight.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Font:Cafe24Oneprettynight.txt"; sourceTree = "<group>"; };
+		4C18737427553D030059968B /* hackiftekhar:IQKeyboardManager.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "hackiftekhar:IQKeyboardManager.txt"; sourceTree = "<group>"; };
+		4C18737627553D100059968B /* jonkykong:SideMenu.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "jonkykong:SideMenu.txt"; sourceTree = "<group>"; };
+		4C18737827553D150059968B /* kciter:Floaty.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "kciter:Floaty.txt"; sourceTree = "<group>"; };
+		4C18737A27553D1B0059968B /* Realm.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Realm.txt; sourceTree = "<group>"; };
+		4C18737C27553D200059968B /* SwiftyJson.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftyJson.txt; sourceTree = "<group>"; };
 		4C238480274A7F4F007314BF /* UIButton + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extension.swift"; sourceTree = "<group>"; };
 		4C3276422747E13500C0456D /* Cafe24Oneprettynight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cafe24Oneprettynight.ttf; sourceTree = "<group>"; };
 		4C3276472747FA6D00C0456D /* SideMenuNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuNavigationViewController.swift; sourceTree = "<group>"; };
@@ -74,7 +91,6 @@
 		4C489A35275280F600932983 /* TextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField + Extension.swift"; sourceTree = "<group>"; };
 		4C489A3727528D0400932983 /* ShareMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareMain.swift; sourceTree = "<group>"; };
 		4C489A39275369A900932983 /* SharePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePage.swift; sourceTree = "<group>"; };
-		4C489A3E2753CDAB00932983 /* UISearchBar + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UISearchBar + Extension.swift"; sourceTree = "<group>"; };
 		4C596D01274BDA1900E2DE59 /* DefineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefineTableViewCell.swift; sourceTree = "<group>"; };
 		4C6086E0274FD89900FCD3E4 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		4C6086E2274FE1E200FCD3E4 /* ContentViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentViewController + Extension.swift"; sourceTree = "<group>"; };
@@ -113,6 +129,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4C18736D27553CAD0059968B /* License */ = {
+			isa = PBXGroup;
+			children = (
+				4C18737C27553D200059968B /* SwiftyJson.txt */,
+				4C18737A27553D1B0059968B /* Realm.txt */,
+				4C18737827553D150059968B /* kciter:Floaty.txt */,
+				4C18737627553D100059968B /* jonkykong:SideMenu.txt */,
+				4C18737427553D030059968B /* hackiftekhar:IQKeyboardManager.txt */,
+				4C18737227553CFB0059968B /* Font:Cafe24Oneprettynight.txt */,
+				4C18737027553CF40059968B /* Alamofire.txt */,
+			);
+			path = License;
+			sourceTree = "<group>";
+		};
 		4C23847F274A7F26007314BF /* Extension */ = {
 			isa = PBXGroup;
 			children = (
@@ -125,7 +155,6 @@
 				4C625447274FF8970056D30F /* CALayer + Extension.swift */,
 				4C489A33275271EA00932983 /* UIViewController + Extension.swift */,
 				4C489A35275280F600932983 /* TextField + Extension.swift */,
-				4C489A3E2753CDAB00932983 /* UISearchBar + Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -165,6 +194,7 @@
 		4C32763E2747D9A400C0456D /* Resource */ = {
 			isa = PBXGroup;
 			children = (
+				4C18736D27553CAD0059968B /* License */,
 				4C32763F2747D9BC00C0456D /* Font */,
 			);
 			path = Resource;
@@ -196,6 +226,7 @@
 				4C3AD740274A0A0700EFC636 /* SettingViewController.swift */,
 				4C3AD742274A0A3200EFC636 /* OpenSourceViewController.swift */,
 				4C3AD758274A5C4E00EFC636 /* ContactViewController.swift */,
+				4C18736B27553B450059968B /* LicenseViewController.swift */,
 			);
 			path = MenuController;
 			sourceTree = "<group>";
@@ -226,6 +257,7 @@
 			children = (
 				4C811C29274D2B2800F51493 /* MainTableViewCell.swift */,
 				4C596D01274BDA1900E2DE59 /* DefineTableViewCell.swift */,
+				4C18736727552D870059968B /* OpensourceTableViewCell.swift */,
 			);
 			path = Cells;
 			sourceTree = "<group>";
@@ -345,12 +377,19 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4C18737727553D100059968B /* jonkykong:SideMenu.txt in Resources */,
 				4C758AA62746AA9F00B9F7AC /* LaunchScreen.storyboard in Resources */,
+				4C18737127553CF40059968B /* Alamofire.txt in Resources */,
 				4C3276432747E13500C0456D /* Cafe24Oneprettynight.ttf in Resources */,
 				4C3AD745274A2F9800EFC636 /* WordScreen.storyboard in Resources */,
+				4C18737D27553D200059968B /* SwiftyJson.txt in Resources */,
+				4C18737927553D150059968B /* kciter:Floaty.txt in Resources */,
 				4C3AD75B274A70B700EFC636 /* Walkthrough.storyboard in Resources */,
+				4C18737327553CFB0059968B /* Font:Cafe24Oneprettynight.txt in Resources */,
+				4C18737B27553D1B0059968B /* Realm.txt in Resources */,
 				4C758AA32746AA9F00B9F7AC /* Assets.xcassets in Resources */,
 				4C758AA12746AA9E00B9F7AC /* Main.storyboard in Resources */,
+				4C18737527553D030059968B /* hackiftekhar:IQKeyboardManager.txt in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -386,11 +425,12 @@
 				4C758A9C2746AA9E00B9F7AC /* SceneDelegate.swift in Sources */,
 				4C811C2C274D3F3800F51493 /* DefineWordModel.swift in Sources */,
 				4C3AD74E274A364B00EFC636 /* ContentViewController.swift in Sources */,
+				4C18736C27553B450059968B /* LicenseViewController.swift in Sources */,
 				4C238481274A7F4F007314BF /* UIButton + Extension.swift in Sources */,
 				4C32764C27481CFD00C0456D /* WordModel.swift in Sources */,
 				4C9EBF6A274BC61100B922F7 /* WordViewController.swift in Sources */,
+				4C18736827552D870059968B /* OpensourceTableViewCell.swift in Sources */,
 				4C3AD73F274A09EF00EFC636 /* StatisticsViewController.swift in Sources */,
-				4C489A3F2753CDAB00932983 /* UISearchBar + Extension.swift in Sources */,
 				4C489A36275280F600932983 /* TextField + Extension.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

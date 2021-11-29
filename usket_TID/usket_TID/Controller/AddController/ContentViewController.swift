@@ -35,7 +35,7 @@ class ContentViewController: UIViewController,shareToContent{
         cancelButton.toCustomButton()
         storeButton.toCustomButton()
         backgroundView.toShadowView()
-        
+        defineTextView.textContainerInset = UIEdgeInsets(top: 15, left: 10, bottom: 15, right: 10)
         defineTextView.delegate = self
         defineTextView.layer.borderWidth = 1
         defineTextView.layer.borderColor = UIColor.lightGray.cgColor
@@ -101,15 +101,14 @@ class ContentViewController: UIViewController,shareToContent{
                 //중복검사 필요없음
                 return "Modify"
             }else {
-                //중복검사
-                let wordArray = tasks.value(forKey: "word")
-                //고치고와도 이미지를 클릭하지 않은이상..
-                //방법이 있을텐데 수정해야겠다
-                if wordArray.debugDescription.contains(word){
+                //중복 수정.. contain은 포함관계라서 음절이 들어가도 중복이되어버렸음..
+                let contain = tasks.filter("word == %@",word)
+                
+                if contain.isEmpty {
+                    return "ADD"
+                } else {
                     showAlert(title: "중복된 단어", message: "이미 목록에 있는 단어에요.\n처음부터 다시 작성후 감정버튼을 눌러주세요!")
                     return "Nope"
-                }else {
-                    return "ADD"
                 }
             }
         }
