@@ -17,7 +17,9 @@ class OpenSourceViewController: UIViewController {
         "Alamofire",
         "kciter:Floaty",
         "hackiftekhar:IQKeyboardManager",
-        "Font:Cafe24Oneprettynight"
+        "Font:Cafe24Oneprettynight",
+        "danielgindi:Charts",
+        "alxrguz:ALProgressView"
     ]
     override func viewDidLoad() {
         super.viewDidLoad()

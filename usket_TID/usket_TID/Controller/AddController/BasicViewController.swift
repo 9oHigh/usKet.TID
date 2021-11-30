@@ -53,6 +53,9 @@ class BasicViewController: UIViewController {
             choseWordTextField.text = wordText!
             wordTextField.text = firstText!
         }
+        if let wordText = wordText {
+            choseWordTextField.text = wordText
+        }
         happyButton.setImage(UIImage(named: "happyFace.png"), for: .normal)
         sadButton.setImage(UIImage(named: "sadFace.png"), for: .normal)
         angryButton.setImage(UIImage(named: "angryFace.png"), for: .normal)

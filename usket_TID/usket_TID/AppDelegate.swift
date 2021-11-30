@@ -20,6 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
         IQKeyboardManager.shared.toolbarTintColor = .lightGray
         IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "완료"
+        IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
         return true
     }
 

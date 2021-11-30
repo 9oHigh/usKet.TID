@@ -11,6 +11,15 @@
         }
       },
       {
+        "package": "ALProgressView",
+        "repositoryURL": "https://github.com/alxrguz/ALProgressView",
+        "state": {
+          "branch": null,
+          "revision": "54f42cb339924de1b37fe8ecdbe72a3336cbc73d",
+          "version": "2.0.0"
+        }
+      },
+      {
         "package": "IQKeyboardManagerSwift",
         "repositoryURL": "https://github.com/hackiftekhar/IQKeyboardManager",
         "state": {

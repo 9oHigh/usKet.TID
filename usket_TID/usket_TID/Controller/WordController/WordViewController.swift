@@ -52,7 +52,7 @@ class WordViewController: UIViewController {
         let storyboard = UIStoryboard(name: "WordScreen", bundle: nil)
         
         let vc = storyboard.instantiateViewController(withIdentifier: "PageViewController") as! PageViewController
-        
+        vc.recommendWord = todayWord
         vc.modalPresentationStyle = .overFullScreen
         
         self.present(vc, animated: true, completion: nil)

@@ -164,7 +164,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="Ddg-kD-svW">
-                                <rect key="frame" x="20" y="200" width="171.5" height="267"/>
+                                <rect key="frame" x="20" y="200" width="171.5" height="190.5"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXQ-5i-Bdx">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="37.5"/>
@@ -177,8 +177,8 @@
                                             <action selector="statisticsButtonClicked:" destination="fzk-GP-LNN" eventType="touchUpInside" id="t2O-yx-kXa"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rja-o2-T5I">
-                                        <rect key="frame" x="0.0" y="76.5" width="77" height="37.5"/>
+                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rja-o2-T5I">
+                                        <rect key="frame" x="0.0" y="57" width="77" height="0.0"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="lockColored" imagePlacement="trailing" title="설정">
                                             <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="22"/>
@@ -189,7 +189,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jkv-dI-Nqk">
-                                        <rect key="frame" x="0.0" y="153" width="171.5" height="37.5"/>
+                                        <rect key="frame" x="0.0" y="76.5" width="171.5" height="37.5"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="오픈소스 라이선스">
                                             <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="22"/>
@@ -200,7 +200,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkX-cZ-GEY">
-                                        <rect key="frame" x="0.0" y="229.5" width="96.5" height="37.5"/>
+                                        <rect key="frame" x="0.0" y="153" width="96.5" height="37.5"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="문의하기">
                                             <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="22"/>
@@ -269,10 +269,97 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKN-bI-OSe">
-                                <rect key="frame" x="29" y="53" width="44" height="44"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="cIi-7s-QkE">
+                                <rect key="frame" x="30" y="118" width="354" height="121"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="글자 수" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xfv-yw-ZYA">
+                                        <rect key="frame" x="53" y="71" width="48" height="19"/>
+                                        <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="18"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByI-c3-fry">
+                                        <rect key="frame" x="313" y="32" width="24" height="19"/>
+                                        <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="18"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="단어의 개수" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FwC-q9-rSl">
+                                        <rect key="frame" x="53" y="32" width="78.5" height="19"/>
+                                        <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="18"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wp3-xJ-2L7">
+                                        <rect key="frame" x="313" y="71" width="26" height="19"/>
+                                        <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="18"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="ZJd-x6-l9D"/>
+                                    <constraint firstItem="ByI-c3-fry" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FwC-q9-rSl" secondAttribute="trailing" constant="8" symbolic="YES" id="GaS-VB-FYa"/>
+                                    <constraint firstItem="Wp3-xJ-2L7" firstAttribute="top" secondItem="ByI-c3-fry" secondAttribute="bottom" constant="20" id="J1U-OA-dW6"/>
+                                    <constraint firstItem="FwC-q9-rSl" firstAttribute="centerY" secondItem="ByI-c3-fry" secondAttribute="centerY" id="JtF-Kh-uU8"/>
+                                    <constraint firstItem="xfv-yw-ZYA" firstAttribute="top" secondItem="FwC-q9-rSl" secondAttribute="bottom" constant="20" id="SOr-Lx-u0l"/>
+                                    <constraint firstItem="ByI-c3-fry" firstAttribute="leading" secondItem="Wp3-xJ-2L7" secondAttribute="leading" id="UGT-EB-4cS"/>
+                                    <constraint firstItem="FwC-q9-rSl" firstAttribute="leading" secondItem="xfv-yw-ZYA" secondAttribute="leading" id="fOF-io-Kf5"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ByI-c3-fry" secondAttribute="trailing" id="fQD-qG-p4q"/>
+                                    <constraint firstItem="xfv-yw-ZYA" firstAttribute="centerX" secondItem="cIi-7s-QkE" secondAttribute="centerX" constant="-100" id="iBi-cy-XiV"/>
+                                    <constraint firstItem="Wp3-xJ-2L7" firstAttribute="centerY" secondItem="cIi-7s-QkE" secondAttribute="centerY" constant="20" id="vNs-Jy-rQK"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wp3-xJ-2L7" secondAttribute="trailing" constant="15" id="wPZ-Nx-2Qd"/>
+                                    <constraint firstItem="xfv-yw-ZYA" firstAttribute="centerY" secondItem="cIi-7s-QkE" secondAttribute="centerY" constant="20" id="zlx-Ae-2Eh"/>
+                                </constraints>
+                            </view>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2mw-QX-5rM">
+                                <rect key="frame" x="30" y="254" width="354" height="283"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="78% 달성중" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lKL-c8-jOe">
+                                        <rect key="frame" x="139.5" y="120" width="75.5" height="19"/>
+                                        <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="18"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1일 1티드" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bmc-bc-Icv">
+                                        <rect key="frame" x="140" y="147" width="68" height="21"/>
+                                        <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="15"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2일 / 31일" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dm7-jk-xfX">
+                                        <rect key="frame" x="277" y="253" width="65" height="18"/>
+                                        <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="17"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CHECK❗️" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dCl-64-OT1">
+                                        <rect key="frame" x="11" y="11" width="58" height="16"/>
+                                        <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="15"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Bmc-bc-Icv" firstAttribute="centerX" secondItem="2mw-QX-5rM" secondAttribute="centerX" constant="-3" id="4v0-Cs-qYS"/>
+                                    <constraint firstItem="lKL-c8-jOe" firstAttribute="centerX" secondItem="2mw-QX-5rM" secondAttribute="centerX" id="6gr-mM-ewA"/>
+                                    <constraint firstItem="Bmc-bc-Icv" firstAttribute="width" secondItem="2mw-QX-5rM" secondAttribute="width" multiplier="0.134181" constant="20.499999999999993" id="Fkq-4C-P3P"/>
+                                    <constraint firstItem="Bmc-bc-Icv" firstAttribute="top" secondItem="lKL-c8-jOe" secondAttribute="bottom" constant="8" id="OgQ-Qc-gmU"/>
+                                    <constraint firstAttribute="trailing" secondItem="dm7-jk-xfX" secondAttribute="trailing" constant="12" id="SPH-Yi-PO4"/>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="dCl-64-OT1" secondAttribute="trailing" constant="20" symbolic="YES" id="dIb-ik-fPb"/>
+                                    <constraint firstItem="dCl-64-OT1" firstAttribute="leading" secondItem="2mw-QX-5rM" secondAttribute="leadingMargin" constant="3" id="dtK-ki-P0z"/>
+                                    <constraint firstItem="dm7-jk-xfX" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="2mw-QX-5rM" secondAttribute="leading" constant="20" symbolic="YES" id="imv-ht-Cs0"/>
+                                    <constraint firstItem="dCl-64-OT1" firstAttribute="top" secondItem="2mw-QX-5rM" secondAttribute="topMargin" constant="3" id="klJ-iH-mTO"/>
+                                    <constraint firstItem="Bmc-bc-Icv" firstAttribute="height" secondItem="2mw-QX-5rM" secondAttribute="height" multiplier="0.0714286" constant="0.78571428571428825" id="qI7-Ze-16b"/>
+                                    <constraint firstItem="lKL-c8-jOe" firstAttribute="centerY" secondItem="2mw-QX-5rM" secondAttribute="centerY" constant="-12" id="r3X-NM-8yo"/>
+                                    <constraint firstAttribute="bottom" secondItem="dm7-jk-xfX" secondAttribute="bottom" constant="12" id="w9f-Om-a7e"/>
+                                </constraints>
+                            </view>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PKN-bI-OSe">
+                                <rect key="frame" x="20" y="44" width="44" height="44"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="ZJd-x6-l9D"/>
                                     <constraint firstAttribute="height" constant="44" id="uTT-6B-QzD"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
@@ -285,18 +372,150 @@
                                     <action selector="closeButtonClicked:" destination="yIK-eH-oic" eventType="touchUpInside" id="Hc5-oa-HTq"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="통계" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygl-kM-d9x">
+                                <rect key="frame" x="190.5" y="54" width="33" height="21"/>
+                                <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a9t-bS-cfL">
+                                <rect key="frame" x="30" y="552" width="354" height="253"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="감정 분포" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bXs-Vz-jca">
+                                        <rect key="frame" x="0.0" y="30" width="354" height="32"/>
+                                        <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="18"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happyFace" translatesAutoresizingMaskIntoConstraints="NO" id="Xe3-x6-cAt">
+                                        <rect key="frame" x="12.5" y="96.5" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="yrB-ux-aZC"/>
+                                        </constraints>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="sadFace" translatesAutoresizingMaskIntoConstraints="NO" id="CfB-TH-twG">
+                                        <rect key="frame" x="102" y="96.5" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="rWw-PS-XFK"/>
+                                        </constraints>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="normalFace" translatesAutoresizingMaskIntoConstraints="NO" id="50u-m2-FFF">
+                                        <rect key="frame" x="192" y="96.5" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="OLv-xM-ypx"/>
+                                        </constraints>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                    </imageView>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="angryFace" translatesAutoresizingMaskIntoConstraints="NO" id="zHI-co-79H">
+                                        <rect key="frame" x="281.5" y="96.5" width="60" height="60"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="60" id="imG-DL-IJE"/>
+                                        </constraints>
+                                        <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="default"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="H8T-OA-Eiz">
+                                        <rect key="frame" x="15" y="166.5" width="324" height="19"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="행복" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IV4-Gb-mPs">
+                                                <rect key="frame" x="0.0" y="0.0" width="55" height="19"/>
+                                                <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="18"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="우울" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pZZ-gV-bUx">
+                                                <rect key="frame" x="90" y="0.0" width="54.5" height="19"/>
+                                                <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="18"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="평범" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zKF-bf-Fk8">
+                                                <rect key="frame" x="179.5" y="0.0" width="55" height="19"/>
+                                                <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="18"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="분노" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nvs-LM-0Ed">
+                                                <rect key="frame" x="269.5" y="0.0" width="54.5" height="19"/>
+                                                <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="18"/>
+                                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="Xe3-x6-cAt" firstAttribute="centerY" secondItem="a9t-bS-cfL" secondAttribute="centerY" id="3w7-bz-n2K"/>
+                                    <constraint firstItem="CfB-TH-twG" firstAttribute="centerY" secondItem="a9t-bS-cfL" secondAttribute="centerY" id="4d1-7E-67l"/>
+                                    <constraint firstAttribute="trailing" secondItem="bXs-Vz-jca" secondAttribute="trailing" id="Dup-u7-RDZ"/>
+                                    <constraint firstItem="Xe3-x6-cAt" firstAttribute="centerX" secondItem="IV4-Gb-mPs" secondAttribute="centerX" id="Eir-QY-u1y"/>
+                                    <constraint firstItem="H8T-OA-Eiz" firstAttribute="width" secondItem="a9t-bS-cfL" secondAttribute="width" multiplier="0.915254" id="Ipi-Pu-PS2"/>
+                                    <constraint firstAttribute="trailing" secondItem="H8T-OA-Eiz" secondAttribute="trailing" constant="15" id="Jr4-WR-lDq"/>
+                                    <constraint firstItem="bXs-Vz-jca" firstAttribute="top" secondItem="a9t-bS-cfL" secondAttribute="top" constant="30" id="Lfi-Nn-py8"/>
+                                    <constraint firstItem="50u-m2-FFF" firstAttribute="centerX" secondItem="zKF-bf-Fk8" secondAttribute="centerX" id="NfY-bN-rLk"/>
+                                    <constraint firstItem="H8T-OA-Eiz" firstAttribute="leading" secondItem="a9t-bS-cfL" secondAttribute="leading" constant="15" id="UAz-4Y-Xtc"/>
+                                    <constraint firstItem="H8T-OA-Eiz" firstAttribute="top" secondItem="zHI-co-79H" secondAttribute="bottom" constant="10" id="Vq8-kx-OTV"/>
+                                    <constraint firstItem="CfB-TH-twG" firstAttribute="width" secondItem="a9t-bS-cfL" secondAttribute="width" multiplier="0.169492" id="bPS-Z5-UQ5"/>
+                                    <constraint firstItem="zHI-co-79H" firstAttribute="centerX" secondItem="Nvs-LM-0Ed" secondAttribute="centerX" id="c4M-Yd-Wfm"/>
+                                    <constraint firstItem="CfB-TH-twG" firstAttribute="centerX" secondItem="pZZ-gV-bUx" secondAttribute="centerX" id="joI-hR-Erg"/>
+                                    <constraint firstItem="50u-m2-FFF" firstAttribute="width" secondItem="a9t-bS-cfL" secondAttribute="width" multiplier="0.169492" id="kmc-D1-Tbs"/>
+                                    <constraint firstItem="Xe3-x6-cAt" firstAttribute="width" secondItem="a9t-bS-cfL" secondAttribute="width" multiplier="0.169492" id="nHB-0Q-hbc"/>
+                                    <constraint firstItem="H8T-OA-Eiz" firstAttribute="top" secondItem="Xe3-x6-cAt" secondAttribute="bottom" constant="10" id="pZ1-4U-vQE"/>
+                                    <constraint firstItem="50u-m2-FFF" firstAttribute="centerY" secondItem="a9t-bS-cfL" secondAttribute="centerY" id="q4d-fJ-y1g"/>
+                                    <constraint firstItem="zHI-co-79H" firstAttribute="width" secondItem="a9t-bS-cfL" secondAttribute="width" multiplier="0.169492" id="rd7-MH-bj7"/>
+                                    <constraint firstItem="H8T-OA-Eiz" firstAttribute="top" secondItem="Xe3-x6-cAt" secondAttribute="bottom" constant="10" id="w4M-id-bbd"/>
+                                    <constraint firstItem="bXs-Vz-jca" firstAttribute="height" secondItem="a9t-bS-cfL" secondAttribute="height" multiplier="0.126482" id="wbQ-9B-qsA"/>
+                                    <constraint firstItem="bXs-Vz-jca" firstAttribute="leading" secondItem="a9t-bS-cfL" secondAttribute="leading" id="wqC-TM-X5Z"/>
+                                    <constraint firstItem="H8T-OA-Eiz" firstAttribute="top" secondItem="CfB-TH-twG" secondAttribute="bottom" constant="10" id="wqn-oK-thz"/>
+                                    <constraint firstItem="zHI-co-79H" firstAttribute="centerY" secondItem="a9t-bS-cfL" secondAttribute="centerY" id="yTV-KK-KTA"/>
+                                    <constraint firstItem="H8T-OA-Eiz" firstAttribute="top" secondItem="50u-m2-FFF" secondAttribute="bottom" constant="10" id="yYj-vr-bf6"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="USX-OV-W7W"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="PKN-bI-OSe" firstAttribute="leading" secondItem="USX-OV-W7W" secondAttribute="leading" constant="29" id="MDd-Kj-P7a"/>
-                            <constraint firstItem="PKN-bI-OSe" firstAttribute="top" secondItem="USX-OV-W7W" secondAttribute="top" constant="9" id="t3l-9u-Hhq"/>
+                            <constraint firstItem="Ygl-kM-d9x" firstAttribute="centerX" secondItem="USX-OV-W7W" secondAttribute="centerX" id="2ch-La-c62"/>
+                            <constraint firstItem="cIi-7s-QkE" firstAttribute="height" secondItem="jNH-lF-qdb" secondAttribute="height" multiplier="0.168527" constant="-30" id="E3K-A9-BKv"/>
+                            <constraint firstItem="cIi-7s-QkE" firstAttribute="centerX" secondItem="USX-OV-W7W" secondAttribute="centerX" id="Gz1-J2-naX"/>
+                            <constraint firstItem="2mw-QX-5rM" firstAttribute="leading" secondItem="USX-OV-W7W" secondAttribute="leading" constant="30" id="Kst-py-phb"/>
+                            <constraint firstItem="cIi-7s-QkE" firstAttribute="leading" secondItem="USX-OV-W7W" secondAttribute="leading" constant="30" id="Le8-Rr-cA7"/>
+                            <constraint firstItem="PKN-bI-OSe" firstAttribute="leading" secondItem="USX-OV-W7W" secondAttribute="leading" constant="20" id="MDd-Kj-P7a"/>
+                            <constraint firstItem="Ygl-kM-d9x" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PKN-bI-OSe" secondAttribute="trailing" constant="8" symbolic="YES" id="Mdc-cd-Dho"/>
+                            <constraint firstItem="a9t-bS-cfL" firstAttribute="height" secondItem="jNH-lF-qdb" secondAttribute="height" multiplier="0.282366" id="NuY-cQ-mN2"/>
+                            <constraint firstItem="cIi-7s-QkE" firstAttribute="top" secondItem="PKN-bI-OSe" secondAttribute="bottom" constant="30" id="Qgu-CH-s2G"/>
+                            <constraint firstItem="Ygl-kM-d9x" firstAttribute="top" secondItem="USX-OV-W7W" secondAttribute="top" constant="10" id="Swr-Hg-dMP"/>
+                            <constraint firstItem="2mw-QX-5rM" firstAttribute="centerX" secondItem="USX-OV-W7W" secondAttribute="centerX" id="VCM-gH-tgb"/>
+                            <constraint firstItem="PKN-bI-OSe" firstAttribute="top" secondItem="USX-OV-W7W" secondAttribute="top" id="csP-V3-9W1"/>
+                            <constraint firstItem="2mw-QX-5rM" firstAttribute="top" secondItem="cIi-7s-QkE" secondAttribute="bottom" constant="15" id="e2c-ws-G5g"/>
+                            <constraint firstItem="USX-OV-W7W" firstAttribute="trailing" secondItem="2mw-QX-5rM" secondAttribute="trailing" constant="30" id="eNL-co-gsF"/>
+                            <constraint firstItem="a9t-bS-cfL" firstAttribute="top" secondItem="2mw-QX-5rM" secondAttribute="bottom" constant="15" id="mbt-UB-hHQ"/>
+                            <constraint firstItem="a9t-bS-cfL" firstAttribute="centerX" secondItem="USX-OV-W7W" secondAttribute="centerX" id="nnV-o3-yIF"/>
+                            <constraint firstItem="USX-OV-W7W" firstAttribute="trailing" secondItem="a9t-bS-cfL" secondAttribute="trailing" constant="30" id="rRP-sb-02V"/>
+                            <constraint firstItem="a9t-bS-cfL" firstAttribute="leading" secondItem="USX-OV-W7W" secondAttribute="leading" constant="30" id="tHT-Qr-XQI"/>
+                            <constraint firstItem="2mw-QX-5rM" firstAttribute="height" secondItem="jNH-lF-qdb" secondAttribute="height" multiplier="0.25" constant="59" id="vtI-n4-r7u"/>
+                            <constraint firstItem="USX-OV-W7W" firstAttribute="trailing" secondItem="cIi-7s-QkE" secondAttribute="trailing" constant="30" id="wZJ-FX-JU5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="angryCountLabel" destination="Nvs-LM-0Ed" id="Cga-Ys-KuV"/>
+                        <outlet property="countMorphemeLabel" destination="Wp3-xJ-2L7" id="kvE-kg-X0T"/>
+                        <outlet property="countView" destination="cIi-7s-QkE" id="kdD-LE-9VN"/>
+                        <outlet property="countWordLabel" destination="ByI-c3-fry" id="vIM-nv-E2l"/>
+                        <outlet property="emotionVIew" destination="a9t-bS-cfL" id="Lu9-nV-TuK"/>
+                        <outlet property="happyCountLabel" destination="IV4-Gb-mPs" id="xnp-K3-oeU"/>
+                        <outlet property="normalCountLabel" destination="zKF-bf-Fk8" id="SmH-wy-o7P"/>
+                        <outlet property="percentLabel" destination="lKL-c8-jOe" id="r6k-Fr-wgZ"/>
+                        <outlet property="progressLabel" destination="dm7-jk-xfX" id="au5-Us-SZP"/>
+                        <outlet property="progressView" destination="2mw-QX-5rM" id="g43-qx-rl5"/>
+                        <outlet property="sadCountLabel" destination="pZZ-gV-bUx" id="YOI-WD-hc8"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="MV5-Vt-ra6" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1439" y="826"/>
+            <point key="canvasLocation" x="1437.68115942029" y="825.66964285714278"/>
         </scene>
         <!--Setting View Controller-->
         <scene sceneID="Oa1-JW-pvo">
@@ -309,7 +528,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Zj-qj-Tpo">
                                 <rect key="frame" x="20" y="44" width="44" height="44"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="44" id="Npj-Y5-z5f"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="44" id="Npj-Y5-z5f"/>
                                     <constraint firstAttribute="height" constant="44" id="bwG-df-RaQ"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
@@ -326,6 +545,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="7Zj-qj-Tpo" firstAttribute="top" secondItem="N8L-ju-Kct" secondAttribute="top" id="2C6-rQ-sqI"/>
+                            <constraint firstItem="N8L-ju-Kct" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7Zj-qj-Tpo" secondAttribute="trailing" symbolic="YES" id="U1m-vJ-yLj"/>
                             <constraint firstItem="7Zj-qj-Tpo" firstAttribute="leading" secondItem="N8L-ju-Kct" secondAttribute="leading" constant="20" id="h92-AM-xWW"/>
                         </constraints>
                     </view>
@@ -589,8 +809,12 @@
         </scene>
     </scenes>
     <resources>
+        <image name="angryFace" width="1125" height="1189"/>
+        <image name="happyFace" width="1125" height="1189"/>
         <image name="lockColored" width="16" height="16"/>
         <image name="logo" width="1125" height="1189"/>
+        <image name="normalFace" width="1125" height="1189"/>
+        <image name="sadFace" width="1125" height="1189"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

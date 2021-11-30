@@ -16,6 +16,7 @@ class PageViewController: UIPageViewController {
     var idOfCell : ObjectId?
     let localReam = try! Realm()
     var tasks : Results<DefineWordModel>!
+    var recommendWord : String?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +32,9 @@ class PageViewController: UIPageViewController {
         BasicVC.delegate = ContentVC
         ContentVC.delegate = mainVC
         
+        if let recommendWord = recommendWord {
+            BasicVC.wordText = recommendWord
+        }
         //id값이 같이 넘어오게 된다면 수정임.
         if let id = idOfCell {
             //해당 id의 값으로 셋팅하기

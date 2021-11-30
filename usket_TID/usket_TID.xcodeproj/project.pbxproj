@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		4C0540042756101A00498E86 /* danielgindi:Charts.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4C0540032756101A00498E86 /* danielgindi:Charts.txt */; };
+		4C05401127566A2E00498E86 /* ALProgressView in Frameworks */ = {isa = PBXBuildFile; productRef = 4C05401027566A2E00498E86 /* ALProgressView */; };
+		4C05401327566A6900498E86 /* alxrguz:ALProgressView.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4C05401227566A6900498E86 /* alxrguz:ALProgressView.txt */; };
 		4C18736827552D870059968B /* OpensourceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C18736727552D870059968B /* OpensourceTableViewCell.swift */; };
 		4C18736C27553B450059968B /* LicenseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C18736B27553B450059968B /* LicenseViewController.swift */; };
 		4C18737127553CF40059968B /* Alamofire.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4C18737027553CF40059968B /* Alamofire.txt */; };
@@ -61,7 +64,22 @@
 		4C9EBF70274BCE8D00B922F7 /* SwiftyJSON in Frameworks */ = {isa = PBXBuildFile; productRef = 4C9EBF6F274BCE8D00B922F7 /* SwiftyJSON */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXCopyFilesBuildPhase section */
+		4C05400E2756155700498E86 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
+		4C0540032756101A00498E86 /* danielgindi:Charts.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "danielgindi:Charts.txt"; sourceTree = "<group>"; };
+		4C05401227566A6900498E86 /* alxrguz:ALProgressView.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "alxrguz:ALProgressView.txt"; sourceTree = "<group>"; };
 		4C18736727552D870059968B /* OpensourceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpensourceTableViewCell.swift; sourceTree = "<group>"; };
 		4C18736B27553B450059968B /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
 		4C18737027553CF40059968B /* Alamofire.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Alamofire.txt; sourceTree = "<group>"; };
@@ -119,6 +137,7 @@
 				4C489A3D2753B95700932983 /* IQKeyboardManagerSwift in Frameworks */,
 				4C3AD757274A575400EFC636 /* RealmSwift in Frameworks */,
 				4C9EBF6D274BCE7000B922F7 /* Alamofire in Frameworks */,
+				4C05401127566A2E00498E86 /* ALProgressView in Frameworks */,
 				4C6086D8274E031200FCD3E4 /* JJFloatingActionButton in Frameworks */,
 				4C3AD755274A575400EFC636 /* Realm in Frameworks */,
 				4C9EBF70274BCE8D00B922F7 /* SwiftyJSON in Frameworks */,
@@ -132,6 +151,8 @@
 		4C18736D27553CAD0059968B /* License */ = {
 			isa = PBXGroup;
 			children = (
+				4C05401227566A6900498E86 /* alxrguz:ALProgressView.txt */,
+				4C0540032756101A00498E86 /* danielgindi:Charts.txt */,
 				4C18737C27553D200059968B /* SwiftyJson.txt */,
 				4C18737A27553D1B0059968B /* Realm.txt */,
 				4C18737827553D150059968B /* kciter:Floaty.txt */,
@@ -312,6 +333,7 @@
 				4C758A922746AA9E00B9F7AC /* Sources */,
 				4C758A932746AA9E00B9F7AC /* Frameworks */,
 				4C758A942746AA9E00B9F7AC /* Resources */,
+				4C05400E2756155700498E86 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -326,6 +348,7 @@
 				4C9EBF6F274BCE8D00B922F7 /* SwiftyJSON */,
 				4C6086D7274E031200FCD3E4 /* JJFloatingActionButton */,
 				4C489A3C2753B95700932983 /* IQKeyboardManagerSwift */,
+				4C05401027566A2E00498E86 /* ALProgressView */,
 			);
 			productName = usket_TID;
 			productReference = 4C758A962746AA9E00B9F7AC /* usket_TID.app */;
@@ -362,6 +385,7 @@
 				4C9EBF6E274BCE8D00B922F7 /* XCRemoteSwiftPackageReference "SwiftyJSON" */,
 				4C6086D6274E031200FCD3E4 /* XCRemoteSwiftPackageReference "JJFloatingActionButton" */,
 				4C489A3B2753B95700932983 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
+				4C05400F27566A2E00498E86 /* XCRemoteSwiftPackageReference "ALProgressView" */,
 			);
 			productRefGroup = 4C758A972746AA9E00B9F7AC /* Products */;
 			projectDirPath = "";
@@ -378,8 +402,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4C18737727553D100059968B /* jonkykong:SideMenu.txt in Resources */,
+				4C05401327566A6900498E86 /* alxrguz:ALProgressView.txt in Resources */,
 				4C758AA62746AA9F00B9F7AC /* LaunchScreen.storyboard in Resources */,
 				4C18737127553CF40059968B /* Alamofire.txt in Resources */,
+				4C0540042756101A00498E86 /* danielgindi:Charts.txt in Resources */,
 				4C3276432747E13500C0456D /* Cafe24Oneprettynight.ttf in Resources */,
 				4C3AD745274A2F9800EFC636 /* WordScreen.storyboard in Resources */,
 				4C18737D27553D200059968B /* SwiftyJson.txt in Resources */,
@@ -509,7 +535,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -565,7 +591,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = "";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -659,6 +685,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		4C05400F27566A2E00498E86 /* XCRemoteSwiftPackageReference "ALProgressView" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/alxrguz/ALProgressView";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.0.0;
+			};
+		};
 		4C3276442747F9FF00C0456D /* XCRemoteSwiftPackageReference "SideMenu" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jonkykong/SideMenu";
@@ -710,6 +744,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		4C05401027566A2E00498E86 /* ALProgressView */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C05400F27566A2E00498E86 /* XCRemoteSwiftPackageReference "ALProgressView" */;
+			productName = ALProgressView;
+		};
 		4C3276452747F9FF00C0456D /* SideMenu */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = 4C3276442747F9FF00C0456D /* XCRemoteSwiftPackageReference "SideMenu" */;

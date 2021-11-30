@@ -42,6 +42,9 @@ class MainTableViewCell: UITableViewCell {
         //셀간 간격 주기
         let margin : CGFloat = 5
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: margin + 5, left: margin + 5, bottom: margin, right: margin + 5))
-        
+    }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        print(#function)
     }
 }

@@ -34,4 +34,8 @@ class DefineTableViewCell: UITableViewCell {
         let margin : CGFloat = 3
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: margin , left: margin, bottom: margin, right: margin))
     }
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        print(#function)
+    }
 }
