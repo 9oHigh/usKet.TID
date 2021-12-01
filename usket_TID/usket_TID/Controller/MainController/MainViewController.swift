@@ -187,7 +187,7 @@ class MainViewController: UIViewController {
         searchController.searchResultsUpdater = self
         //검색시 배경 alpha
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "단어, 감정, 연관단어를 검색해보세요."
+        searchController.searchBar.placeholder = "단어, 연관단어, 내용을 검색해보세요."
         //네비게이션 아이템에 넣기
         navigationItem.searchController = searchController
         definesPresentationContext = true
