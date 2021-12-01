@@ -302,6 +302,7 @@
                                     <constraint firstItem="ByI-c3-fry" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FwC-q9-rSl" secondAttribute="trailing" constant="8" symbolic="YES" id="GaS-VB-FYa"/>
                                     <constraint firstItem="Wp3-xJ-2L7" firstAttribute="top" secondItem="ByI-c3-fry" secondAttribute="bottom" constant="20" id="J1U-OA-dW6"/>
                                     <constraint firstItem="FwC-q9-rSl" firstAttribute="centerY" secondItem="ByI-c3-fry" secondAttribute="centerY" id="JtF-Kh-uU8"/>
+                                    <constraint firstItem="Wp3-xJ-2L7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="xfv-yw-ZYA" secondAttribute="trailing" constant="8" symbolic="YES" id="NYk-Zd-4CV"/>
                                     <constraint firstItem="xfv-yw-ZYA" firstAttribute="top" secondItem="FwC-q9-rSl" secondAttribute="bottom" constant="20" id="SOr-Lx-u0l"/>
                                     <constraint firstItem="FwC-q9-rSl" firstAttribute="leading" secondItem="xfv-yw-ZYA" secondAttribute="leading" id="fOF-io-Kf5"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ByI-c3-fry" secondAttribute="trailing" id="fQD-qG-p4q"/>
