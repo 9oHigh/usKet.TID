@@ -73,30 +73,6 @@ class StatisticsViewController: UIViewController {
     func fetchDatas(){
         
         tasks = localRealm.objects(DefineWordModel.self)
-        //감정 개수 반환
-        var image = tasks.filter("emotion == %@","happyFace.png")
-        self.happyCountLabel.text = String(image.count) + "개"
-        
-        image = tasks.filter("emotion == %@","sadFace.png")
-        self.sadCountLabel.text = String(image.count) + "개"
-        
-        image = tasks.filter("emotion == %@","normalFace.png")
-        self.normalCountLabel.text = String(image.count) + "개"
-        
-        image = tasks.filter("emotion == %@","angryFace.png")
-        self.angryCountLabel.text = String(image.count) + "개"
-        
-        //단어 개수 및 글자 수 반환
-        self.countWordLabel.text = String(tasks.count) + "개"
-        var cnt : Int = 0
-        for item in 0...tasks.count - 1{
-            cnt += tasks[item].word.count
-            cnt += tasks[item].firstWord.count
-            cnt += tasks[item].definition.count
-        }
-        self.countMorphemeLabel.text = numberFormatter(number: cnt) + "개"
-        
-        //프로그레스 체크!
         //마지막일
         //년
         let year = Date()
@@ -110,27 +86,61 @@ class StatisticsViewController: UIViewController {
         let nowMonth = formatMonth.string(from: month)
         //한달 일수
         let totalDay = lastDay(ofMonth: Int(nowMonth)!, year: Int(nowYear)!)
-        
-        //이번달에 등록한 날의 개수
-        let countDay = tasks.filter("date <= %@",Date())
-        let writeCount = countDay.filter("date >= %@",Date().getStart(of: .month, calendar: .current)!).count
-        
-    
-        //퍼센테이지 계산
-        if writeCount == 0{
-            self.progressLabel.text = "0일 / \(totalDay)일"
-            self.percentLabel.text = "0% 달성중"
-        } else {
-            let percent = Double(writeCount) / Double(totalDay) * 100
-            self.gauge = Float(percent)
-            self.progressLabel.text = "\(writeCount)일 / \(totalDay)일"
-            if percent == 100 {
-                self.percentLabel.text = "\(Int(percent))% 달성🎉"
-            } else {
-                self.percentLabel.text = "\(Int(percent))% 달성중"
+        //존재할때만 계산
+        if tasks.count > 0 {
+            //감정 개수 반환
+            var image = tasks.filter("emotion == %@","happyFace.png")
+            self.happyCountLabel.text = String(image.count) + "개"
+            
+            image = tasks.filter("emotion == %@","sadFace.png")
+            self.sadCountLabel.text = String(image.count) + "개"
+            
+            image = tasks.filter("emotion == %@","normalFace.png")
+            self.normalCountLabel.text = String(image.count) + "개"
+            
+            image = tasks.filter("emotion == %@","angryFace.png")
+            self.angryCountLabel.text = String(image.count) + "개"
+            
+            //단어 개수 및 글자 수 반환
+            self.countWordLabel.text = String(tasks.count) + "개"
+            var cnt : Int = 0
+            for item in 0...tasks.count - 1{
+                cnt += tasks[item].word.count
+                cnt += tasks[item].firstWord.count
+                cnt += tasks[item].definition.count
             }
+            self.countMorphemeLabel.text = numberFormatter(number: cnt) + "개"
+            
+            //프로그레스 체크!
+            //이번달에 등록한 날의 개수.. 중복제거가 어렵다..
+            let countDay = tasks.filter("date <= %@",Date() as Date)
+            let writeCount = countDay.filter("date >= %@",Date().getStart(of: .month, calendar: .current)!).count
+            
+            //퍼센테이지 계산
+            if writeCount == 0{
+                self.progressLabel.text = "0개 / \(totalDay)개"
+                self.percentLabel.text = "0% 달성중"
+            } else {
+                let percent = Double(writeCount) / Double(totalDay) * 100
+                self.gauge = Float(percent)
+                self.progressLabel.text = "\(writeCount)개 / \(totalDay)개"
+                if percent == 100 {
+                    self.percentLabel.text = "\(Int(percent))% 달성🎉"
+                } else {
+                    self.percentLabel.text = "\(Int(percent))% 달성중"
+                }
+            }
+        } else {
+            //한개없으뮤
+            self.countWordLabel.text = "0개"
+            self.countMorphemeLabel.text = "0개"
+            self.percentLabel.text = "0% 달성중"
+            self.progressLabel.text = "0개 /\(totalDay)개"
+            self.happyCountLabel.text = "0개"
+            self.sadCountLabel.text = "0개"
+            self.normalCountLabel.text = "0개"
+            self.angryCountLabel.text = "0개"
         }
-        
     }
     //NumberFormmater : 세자리마다 컴마!
     func numberFormatter(number: Int) -> String {
@@ -150,11 +160,11 @@ class StatisticsViewController: UIViewController {
     }
 }
 extension Date {
-
+    
     func getStart(of component: Calendar.Component, calendar: Calendar = Calendar.current) -> Date? {
         return calendar.dateInterval(of: component, for: self)?.start
     }
-
+    
     func getEnd(of component: Calendar.Component, calendar: Calendar = Calendar.current) -> Date? {
         return calendar.dateInterval(of: component, for: self)?.end
     }

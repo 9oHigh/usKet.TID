@@ -15,7 +15,7 @@ extension WordViewController {
     //표준국어대사전 API를 이용해 단어의 정의 3개 가지고 오기
     func fetchWordData(){
         //표준국어대사전 API
-        let urlString = "https://stdict.korean.go.kr/api/search.do?certkey_no=3233&key=9973B24A6DA7D5D70D5DD231CC8CE1CA&type_search=search&req_type=json&q=\(String(describing: todayWord))"
+        let urlString = "https://stdict.korean.go.kr/api/search.do?certkey_no=3233&key=\(Storage().apiKey)&type_search=search&req_type=json&q=\(String(describing: todayWord))"
         //혹시 모를 오류를 대비해 인코딩 처리
         let encodedString = urlString.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed)!
         let url = URL(string: encodedString)!

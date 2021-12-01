@@ -62,25 +62,7 @@ extension MainViewController : UITableViewDelegate,UITableViewDataSource{
         self.present(vc, animated: true, completion: nil)
         
     }
-    //    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-    //        let works : Results<DefineWordModel>!
-    //        if isFiltering{
-    //            works = filtered
-    //        } else {
-    //            works = tasks
-    //        }
-    //
-    //        showAlertCancel(title: "삭제 안내", message: "정말로 삭제 하시겠습니까?") { delete in
-    //            do{
-    //                try self.localRealm.write{
-    //                    self.localRealm.delete(works[indexPath.row])
-    //                    self.mainTableView.reloadData()
-    //                }
-    //            } catch{
-    //                self.showAlert(title: "안내", message: "해당 단어는 삭제할 수 없습니다.")
-    //            }
-    //        }
-    //    }
+    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let action =  UIContextualAction(style: .normal, title: "삭제", handler: { (action,view,completionHandler ) in

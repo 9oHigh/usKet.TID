@@ -17,7 +17,6 @@ class DefineWordModel : Object{
     @Persisted var emotion : String
     @Persisted var date : Date
     
-
     @Persisted(primaryKey: true) var _id : ObjectId
     
     convenience init(word : String, definition : String,emotion : String,firstWord : String){
@@ -26,5 +25,6 @@ class DefineWordModel : Object{
         self.firstWord = firstWord
         self.definition = definition
         self.emotion = emotion
+        
     }
 }

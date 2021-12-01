@@ -279,7 +279,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ByI-c3-fry">
-                                        <rect key="frame" x="313" y="32" width="24" height="19"/>
+                                        <rect key="frame" x="300" y="32" width="24" height="19"/>
                                         <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="18"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -291,7 +291,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="200" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wp3-xJ-2L7">
-                                        <rect key="frame" x="313" y="71" width="26" height="19"/>
+                                        <rect key="frame" x="298" y="71" width="26" height="19"/>
                                         <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="18"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -303,12 +303,12 @@
                                     <constraint firstItem="Wp3-xJ-2L7" firstAttribute="top" secondItem="ByI-c3-fry" secondAttribute="bottom" constant="20" id="J1U-OA-dW6"/>
                                     <constraint firstItem="FwC-q9-rSl" firstAttribute="centerY" secondItem="ByI-c3-fry" secondAttribute="centerY" id="JtF-Kh-uU8"/>
                                     <constraint firstItem="xfv-yw-ZYA" firstAttribute="top" secondItem="FwC-q9-rSl" secondAttribute="bottom" constant="20" id="SOr-Lx-u0l"/>
-                                    <constraint firstItem="ByI-c3-fry" firstAttribute="leading" secondItem="Wp3-xJ-2L7" secondAttribute="leading" id="UGT-EB-4cS"/>
                                     <constraint firstItem="FwC-q9-rSl" firstAttribute="leading" secondItem="xfv-yw-ZYA" secondAttribute="leading" id="fOF-io-Kf5"/>
                                     <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="ByI-c3-fry" secondAttribute="trailing" id="fQD-qG-p4q"/>
                                     <constraint firstItem="xfv-yw-ZYA" firstAttribute="centerX" secondItem="cIi-7s-QkE" secondAttribute="centerX" constant="-100" id="iBi-cy-XiV"/>
+                                    <constraint firstItem="ByI-c3-fry" firstAttribute="trailing" secondItem="Wp3-xJ-2L7" secondAttribute="trailing" id="lkh-5X-aD5"/>
                                     <constraint firstItem="Wp3-xJ-2L7" firstAttribute="centerY" secondItem="cIi-7s-QkE" secondAttribute="centerY" constant="20" id="vNs-Jy-rQK"/>
-                                    <constraint firstAttribute="trailing" secondItem="Wp3-xJ-2L7" secondAttribute="trailing" constant="15" id="wPZ-Nx-2Qd"/>
+                                    <constraint firstAttribute="trailing" secondItem="Wp3-xJ-2L7" secondAttribute="trailing" constant="30" id="wPZ-Nx-2Qd"/>
                                     <constraint firstItem="xfv-yw-ZYA" firstAttribute="centerY" secondItem="cIi-7s-QkE" secondAttribute="centerY" constant="20" id="zlx-Ae-2Eh"/>
                                 </constraints>
                             </view>
@@ -451,7 +451,6 @@
                                     <constraint firstItem="CfB-TH-twG" firstAttribute="centerY" secondItem="a9t-bS-cfL" secondAttribute="centerY" id="4d1-7E-67l"/>
                                     <constraint firstAttribute="trailing" secondItem="bXs-Vz-jca" secondAttribute="trailing" id="Dup-u7-RDZ"/>
                                     <constraint firstItem="Xe3-x6-cAt" firstAttribute="centerX" secondItem="IV4-Gb-mPs" secondAttribute="centerX" id="Eir-QY-u1y"/>
-                                    <constraint firstItem="H8T-OA-Eiz" firstAttribute="width" secondItem="a9t-bS-cfL" secondAttribute="width" multiplier="0.915254" id="Ipi-Pu-PS2"/>
                                     <constraint firstAttribute="trailing" secondItem="H8T-OA-Eiz" secondAttribute="trailing" constant="15" id="Jr4-WR-lDq"/>
                                     <constraint firstItem="bXs-Vz-jca" firstAttribute="top" secondItem="a9t-bS-cfL" secondAttribute="top" constant="30" id="Lfi-Nn-py8"/>
                                     <constraint firstItem="50u-m2-FFF" firstAttribute="centerX" secondItem="zKF-bf-Fk8" secondAttribute="centerX" id="NfY-bN-rLk"/>
