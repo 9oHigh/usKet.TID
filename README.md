@@ -4,7 +4,9 @@
 
 # usKet_TID ( 가제 : 티드 )
 
- 👉 **Notion** : **[이터레이션 / 팀빌딩 및 일정🧑🏻‍💻](https://jasper-atom-7c6.notion.site/a815c7d1282143f1bdcca2bd7eda7c16)**
+👉 **출시완료** : **[Today I Define](https://apps.apple.com/kr/app/%ED%8B%B0%EB%93%9C-%EB%82%98%EB%8A%94-%EC%9D%B4%EA%B1%B8-%EC%9D%B4%EB%A0%87%EA%B2%8C-%EB%B6%80%EB%A5%B4%EA%B8%B0%EB%A1%9C-%ED%96%88%EB%8B%A4/id1597847159)**
+
+ 👉 **Notion** : **[이터레이션 / 팀빌딩 및 일정 / 개발과정 🧑🏻‍💻](https://jasper-atom-7c6.notion.site/a815c7d1282143f1bdcca2bd7eda7c16)**
 
  👉  **Today I Define**
 
