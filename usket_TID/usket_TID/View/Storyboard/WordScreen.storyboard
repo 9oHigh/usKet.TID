@@ -81,7 +81,7 @@
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="오류" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h1T-6y-eGc">
-                                                    <rect key="frame" x="74.5" y="11" width="252" height="96"/>
+                                                    <rect key="frame" x="64.5" y="11" width="220" height="96"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="18"/>
@@ -96,9 +96,9 @@
                                                 <constraint firstItem="h1T-6y-eGc" firstAttribute="top" secondItem="tao-K6-xr5" secondAttribute="topMargin" id="kXq-30-Ysz"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="h1T-6y-eGc" secondAttribute="bottom" id="mNz-pW-m68"/>
                                                 <constraint firstAttribute="bottomMargin" secondItem="iUz-gH-do2" secondAttribute="bottom" id="pOE-wg-rvU"/>
-                                                <constraint firstItem="h1T-6y-eGc" firstAttribute="width" secondItem="tao-K6-xr5" secondAttribute="width" multiplier="0.76738" constant="-11.211340000000007" id="pWk-bU-phU"/>
+                                                <constraint firstItem="h1T-6y-eGc" firstAttribute="width" secondItem="tao-K6-xr5" secondAttribute="width" multiplier="0.76738" constant="-43.211340000000007" id="pWk-bU-phU"/>
                                                 <constraint firstItem="iUz-gH-do2" firstAttribute="top" secondItem="tao-K6-xr5" secondAttribute="topMargin" id="vVJ-B7-0vF"/>
-                                                <constraint firstItem="h1T-6y-eGc" firstAttribute="leading" secondItem="iUz-gH-do2" secondAttribute="trailing" constant="20" id="x8I-Hx-dMA"/>
+                                                <constraint firstItem="h1T-6y-eGc" firstAttribute="leading" secondItem="iUz-gH-do2" secondAttribute="trailing" constant="10" id="x8I-Hx-dMA"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -185,7 +185,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="여기에 적어 볼까요!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="HvR-hR-P2v">
-                                        <rect key="frame" x="45" y="61" width="185" height="34"/>
+                                        <rect key="frame" x="45" y="66" width="185" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="17"/>
@@ -194,7 +194,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="HvR-hR-P2v" secondAttribute="bottom" constant="30" id="OHT-Nz-0LL"/>
+                                    <constraint firstAttribute="bottom" secondItem="HvR-hR-P2v" secondAttribute="bottom" constant="25" id="OHT-Nz-0LL"/>
                                     <constraint firstItem="HvR-hR-P2v" firstAttribute="leading" secondItem="5os-OE-99i" secondAttribute="leading" constant="45" id="bgL-r4-Md2"/>
                                     <constraint firstItem="gYN-ya-amx" firstAttribute="top" secondItem="5os-OE-99i" secondAttribute="top" constant="25" id="ie5-Hr-0v3"/>
                                     <constraint firstAttribute="trailing" secondItem="HvR-hR-P2v" secondAttribute="trailing" constant="45" id="nLb-XN-XUE"/>
@@ -212,7 +212,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="여기에 적어 볼까요!" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="UCE-0D-FSf">
-                                        <rect key="frame" x="45" y="61" width="185" height="34"/>
+                                        <rect key="frame" x="45" y="66" width="185" height="34"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="17"/>
@@ -226,7 +226,7 @@
                                     <constraint firstItem="UCE-0D-FSf" firstAttribute="leading" secondItem="Spp-PO-dcj" secondAttribute="leading" constant="45" id="TFt-k8-Ath"/>
                                     <constraint firstItem="D4S-Ev-MiM" firstAttribute="top" secondItem="Spp-PO-dcj" secondAttribute="top" constant="25" id="dCl-i2-mml"/>
                                     <constraint firstItem="D4S-Ev-MiM" firstAttribute="leading" secondItem="Spp-PO-dcj" secondAttribute="leading" constant="10" id="i9g-sj-duz"/>
-                                    <constraint firstAttribute="bottom" secondItem="UCE-0D-FSf" secondAttribute="bottom" constant="30" id="m1E-Wy-H7g"/>
+                                    <constraint firstAttribute="bottom" secondItem="UCE-0D-FSf" secondAttribute="bottom" constant="25" id="m1E-Wy-H7g"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P23-DO-K7X">

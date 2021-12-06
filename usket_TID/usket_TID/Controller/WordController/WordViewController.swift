@@ -74,12 +74,12 @@ class WordViewController: UIViewController {
         
         let attributtedToday = NSMutableAttributedString(string: todayWordLabel.text!)
         attributtedToday.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.purple, range: (todayWordLabel.text! as NSString).range(of:"\(todayWord)"))
-        attributtedToday.addAttribute(NSAttributedString.Key.font, value: UIFont(name: MainViewController.originalFont, size: 24)!, range: (todayWordLabel.text! as NSString).range(of:"\(todayWord)"))
+        attributtedToday.addAttribute(NSAttributedString.Key.font, value: UIFont(name: MainViewController.originalFont, size: 26)!, range: (todayWordLabel.text! as NSString).range(of:"\(todayWord)"))
         todayWordLabel.attributedText = attributtedToday
         
         let attributtedDefine = NSMutableAttributedString(string: defineLabel.text!)
         attributtedDefine.addAttribute(NSAttributedString.Key.foregroundColor, value: UIColor.purple, range: (defineLabel.text! as NSString).range(of:"\(todayWord)"))
-        attributtedDefine.addAttribute(NSAttributedString.Key.font, value: UIFont(name: MainViewController.originalFont, size: 24)!, range: (defineLabel.text! as NSString).range(of:"\(todayWord)"))
+        attributtedDefine.addAttribute(NSAttributedString.Key.font, value: UIFont(name: MainViewController.originalFont, size: 26)!, range: (defineLabel.text! as NSString).range(of:"\(todayWord)"))
         defineLabel.attributedText = attributtedDefine
     }
 }

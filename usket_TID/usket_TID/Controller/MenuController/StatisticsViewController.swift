@@ -131,7 +131,7 @@ class StatisticsViewController: UIViewController {
                 }
             }
         } else {
-            //한개없으뮤
+            //한게없으뮤
             self.countWordLabel.text = "0개"
             self.countMorphemeLabel.text = "0개"
             self.percentLabel.text = "0% 달성중"

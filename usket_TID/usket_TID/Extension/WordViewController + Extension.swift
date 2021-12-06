@@ -71,7 +71,7 @@ extension WordViewController {
         
         let alert = UIAlertController(title: "네트워크 오류 안내", message: title, preferredStyle: .alert)
         let ok = UIAlertAction(title: "화인", style: .default) { action in
-            if connection{
+            if connection {
                 guard let url = URL(string:UIApplication.openSettingsURLString) else { return }
                 if UIApplication.shared.canOpenURL(url) {
                     UIApplication.shared.open(url)
