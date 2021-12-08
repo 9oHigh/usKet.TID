@@ -14,8 +14,8 @@
             filePath = "usket_TID/Controller/MainController/MainViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "94"
-            endingLineNumber = "94"
+            startingLineNumber = "106"
+            endingLineNumber = "106"
             landmarkName = "firstLogInCheck()"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,9 +46,9 @@
             filePath = "usket_TID/Controller/AddController/BasicViewController.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "108"
-            endingLineNumber = "108"
-            landmarkName = "sosoButtonClicked(_:)"
+            startingLineNumber = "172"
+            endingLineNumber = "172"
+            landmarkName = "sendData()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

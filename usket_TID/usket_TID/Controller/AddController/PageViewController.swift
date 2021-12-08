@@ -13,10 +13,15 @@ class PageViewController: UIPageViewController {
     
     //페이지(viewController) 배열
     var addPages = [UIViewController]()
+    
+    //어디서 들어오나 확인하는 프로퍼티, 둘다 안들어오면 그냥 작성!
     var idOfCell : ObjectId?
+    var recommendWord : String?
+    
+    //Realm
     let localReam = try! Realm()
     var tasks : Results<DefineWordModel>!
-    var recommendWord : String?
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,7 +49,10 @@ class PageViewController: UIPageViewController {
             BasicVC.cellId = target._id
             BasicVC.wordText = target.word
             BasicVC.firstText = target.firstWord
+            BasicVC.emotion = target.emotion
+            
             ContentVC.idOfCell = target._id
+            ContentVC.defineText = target.definition
         }
         //페이지넣고
         addPages.append(BasicVC)

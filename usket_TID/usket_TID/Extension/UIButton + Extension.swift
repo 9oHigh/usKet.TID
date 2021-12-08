@@ -20,13 +20,13 @@ extension UIButton {
     //무슨 코드인지는 이해가 안된당..
     
     func bounceAnimation(){
-        // 변화정도 같은건가
-        self.transform = CGAffineTransform(scaleX: 0.50, y: 0.50)
+        // 목적지 비율
+        self.transform = CGAffineTransform(scaleX: 0.70, y: 0.70)
         // 해당 이미지뷰에 애니메이션
-        UIImageView.animate(withDuration: 2.0,
+        UIImageView.animate(withDuration: 1.25,
                             delay: 0,
                             usingSpringWithDamping: 0.2,
-                            initialSpringVelocity: 3.0,
+                            initialSpringVelocity: 2.0,
                             options: .allowUserInteraction,
                             animations: { [weak self] in
             self?.transform = .identity

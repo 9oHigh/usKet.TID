@@ -11,15 +11,14 @@ class OpenSourceViewController: UIViewController {
     
     @IBOutlet weak var licenseTableView: UITableView!
     let opensourceList : [String] = [
-        "Realm",
-        "jonkykong:SideMenu",
-        "SwiftyJson",
         "Alamofire",
-        "kciter:Floaty",
+        "SwiftyJson",
+        "Realm",
         "hackiftekhar:IQKeyboardManager",
-        "Font:Cafe24Oneprettynight",
-        "danielgindi:Charts",
-        "alxrguz:ALProgressView"
+        "jonkykong:SideMenu",
+        "kciter:Floaty",
+        "alxrguz:ALProgressView",
+        "Font:Cafe24Oneprettynight"
     ]
     override func viewDidLoad() {
         super.viewDidLoad()

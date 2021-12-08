@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		4C0540042756101A00498E86 /* danielgindi:Charts.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4C0540032756101A00498E86 /* danielgindi:Charts.txt */; };
 		4C05401127566A2E00498E86 /* ALProgressView in Frameworks */ = {isa = PBXBuildFile; productRef = 4C05401027566A2E00498E86 /* ALProgressView */; };
 		4C05401327566A6900498E86 /* alxrguz:ALProgressView.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4C05401227566A6900498E86 /* alxrguz:ALProgressView.txt */; };
 		4C18736827552D870059968B /* OpensourceTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C18736727552D870059968B /* OpensourceTableViewCell.swift */; };
@@ -20,6 +19,8 @@
 		4C18737B27553D1B0059968B /* Realm.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4C18737A27553D1B0059968B /* Realm.txt */; };
 		4C18737D27553D200059968B /* SwiftyJson.txt in Resources */ = {isa = PBXBuildFile; fileRef = 4C18737C27553D200059968B /* SwiftyJson.txt */; };
 		4C238481274A7F4F007314BF /* UIButton + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C238480274A7F4F007314BF /* UIButton + Extension.swift */; };
+		4C2E58832761118200817D50 /* FSCalendar in Frameworks */ = {isa = PBXBuildFile; productRef = 4C2E58822761118200817D50 /* FSCalendar */; };
+		4C2E5885276114B100817D50 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C2E5884276114B100817D50 /* CalendarViewController.swift */; };
 		4C3276432747E13500C0456D /* Cafe24Oneprettynight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4C3276422747E13500C0456D /* Cafe24Oneprettynight.ttf */; };
 		4C3276462747F9FF00C0456D /* SideMenu in Frameworks */ = {isa = PBXBuildFile; productRef = 4C3276452747F9FF00C0456D /* SideMenu */; };
 		4C3276482747FA6D00C0456D /* SideMenuNavigationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3276472747FA6D00C0456D /* SideMenuNavigationViewController.swift */; };
@@ -79,7 +80,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		4C0540032756101A00498E86 /* danielgindi:Charts.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "danielgindi:Charts.txt"; sourceTree = "<group>"; };
 		4C05401227566A6900498E86 /* alxrguz:ALProgressView.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "alxrguz:ALProgressView.txt"; sourceTree = "<group>"; };
 		4C18736727552D870059968B /* OpensourceTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpensourceTableViewCell.swift; sourceTree = "<group>"; };
 		4C18736B27553B450059968B /* LicenseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LicenseViewController.swift; sourceTree = "<group>"; };
@@ -91,6 +91,7 @@
 		4C18737A27553D1B0059968B /* Realm.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Realm.txt; sourceTree = "<group>"; };
 		4C18737C27553D200059968B /* SwiftyJson.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = SwiftyJson.txt; sourceTree = "<group>"; };
 		4C238480274A7F4F007314BF /* UIButton + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIButton + Extension.swift"; sourceTree = "<group>"; };
+		4C2E5884276114B100817D50 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
 		4C3276422747E13500C0456D /* Cafe24Oneprettynight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Cafe24Oneprettynight.ttf; sourceTree = "<group>"; };
 		4C3276472747FA6D00C0456D /* SideMenuNavigationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SideMenuNavigationViewController.swift; sourceTree = "<group>"; };
 		4C3276492747FD5C00C0456D /* CustomSideMenuNavigation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomSideMenuNavigation.swift; sourceTree = "<group>"; };
@@ -140,6 +141,7 @@
 				4C3AD757274A575400EFC636 /* RealmSwift in Frameworks */,
 				4C9EBF6D274BCE7000B922F7 /* Alamofire in Frameworks */,
 				4C05401127566A2E00498E86 /* ALProgressView in Frameworks */,
+				4C2E58832761118200817D50 /* FSCalendar in Frameworks */,
 				4C6086D8274E031200FCD3E4 /* JJFloatingActionButton in Frameworks */,
 				4C3AD755274A575400EFC636 /* Realm in Frameworks */,
 				4C9EBF70274BCE8D00B922F7 /* SwiftyJSON in Frameworks */,
@@ -154,7 +156,6 @@
 			isa = PBXGroup;
 			children = (
 				4C05401227566A6900498E86 /* alxrguz:ALProgressView.txt */,
-				4C0540032756101A00498E86 /* danielgindi:Charts.txt */,
 				4C18737C27553D200059968B /* SwiftyJson.txt */,
 				4C18737A27553D1B0059968B /* Realm.txt */,
 				4C18737827553D150059968B /* kciter:Floaty.txt */,
@@ -236,6 +237,7 @@
 			isa = PBXGroup;
 			children = (
 				4C758A9D2746AA9E00B9F7AC /* MainViewController.swift */,
+				4C2E5884276114B100817D50 /* CalendarViewController.swift */,
 				4C3AD75C274A70D700EFC636 /* FirstLoginViewController.swift */,
 			);
 			path = MainController;
@@ -352,6 +354,7 @@
 				4C6086D7274E031200FCD3E4 /* JJFloatingActionButton */,
 				4C489A3C2753B95700932983 /* IQKeyboardManagerSwift */,
 				4C05401027566A2E00498E86 /* ALProgressView */,
+				4C2E58822761118200817D50 /* FSCalendar */,
 			);
 			productName = usket_TID;
 			productReference = 4C758A962746AA9E00B9F7AC /* usket_TID.app */;
@@ -389,6 +392,7 @@
 				4C6086D6274E031200FCD3E4 /* XCRemoteSwiftPackageReference "JJFloatingActionButton" */,
 				4C489A3B2753B95700932983 /* XCRemoteSwiftPackageReference "IQKeyboardManager" */,
 				4C05400F27566A2E00498E86 /* XCRemoteSwiftPackageReference "ALProgressView" */,
+				4C2E58812761118200817D50 /* XCRemoteSwiftPackageReference "FSCalendar" */,
 			);
 			productRefGroup = 4C758A972746AA9E00B9F7AC /* Products */;
 			projectDirPath = "";
@@ -408,7 +412,6 @@
 				4C05401327566A6900498E86 /* alxrguz:ALProgressView.txt in Resources */,
 				4C758AA62746AA9F00B9F7AC /* LaunchScreen.storyboard in Resources */,
 				4C18737127553CF40059968B /* Alamofire.txt in Resources */,
-				4C0540042756101A00498E86 /* danielgindi:Charts.txt in Resources */,
 				4C3276432747E13500C0456D /* Cafe24Oneprettynight.ttf in Resources */,
 				4C3AD745274A2F9800EFC636 /* WordScreen.storyboard in Resources */,
 				4C18737D27553D200059968B /* SwiftyJson.txt in Resources */,
@@ -431,6 +434,7 @@
 			files = (
 				4C596D02274BDA1900E2DE59 /* DefineTableViewCell.swift in Sources */,
 				4C6086E1274FD89900FCD3E4 /* UIView + Extension.swift in Sources */,
+				4C2E5885276114B100817D50 /* CalendarViewController.swift in Sources */,
 				4C758A9E2746AA9E00B9F7AC /* MainViewController.swift in Sources */,
 				4C3AD74C274A363F00EFC636 /* BasicViewController.swift in Sources */,
 				4C489A3227526EF200932983 /* ShareContent.swift in Sources */,
@@ -701,6 +705,14 @@
 				minimumVersion = 2.0.0;
 			};
 		};
+		4C2E58812761118200817D50 /* XCRemoteSwiftPackageReference "FSCalendar" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/WenchaoD/FSCalendar";
+			requirement = {
+				kind = exactVersion;
+				version = 2.8.2;
+			};
+		};
 		4C3276442747F9FF00C0456D /* XCRemoteSwiftPackageReference "SideMenu" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/jonkykong/SideMenu";
@@ -756,6 +768,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 4C05400F27566A2E00498E86 /* XCRemoteSwiftPackageReference "ALProgressView" */;
 			productName = ALProgressView;
+		};
+		4C2E58822761118200817D50 /* FSCalendar */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4C2E58812761118200817D50 /* XCRemoteSwiftPackageReference "FSCalendar" */;
+			productName = FSCalendar;
 		};
 		4C3276452747F9FF00C0456D /* SideMenu */ = {
 			isa = XCSwiftPackageProductDependency;

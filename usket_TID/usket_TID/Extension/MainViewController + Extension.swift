@@ -109,7 +109,6 @@ extension MainViewController : shareToMain {
     }
     //수정
     func getDatas(word: String, firstComes: String, emotion: String, definition: String, id: ObjectId) {
-        
         //어차피 하나니까 인덱스는 [0]
         let works = localRealm.objects(DefineWordModel.self)
         let data = works.filter("_id == %@",id)[0]

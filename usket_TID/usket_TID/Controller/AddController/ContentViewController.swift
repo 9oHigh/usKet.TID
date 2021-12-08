@@ -22,6 +22,7 @@ class ContentViewController: UIViewController,shareToContent{
     var word : String = ""
     var firstComes : String = ""
     var emotion : String = ""
+    var defineText : String = ""
     
     //넘어온 값중에 cell id 값이 있다면 수정으로 분류
     var idOfCell : ObjectId?
@@ -42,10 +43,31 @@ class ContentViewController: UIViewController,shareToContent{
         defineTextView.backgroundColor = .white
         defineTextView.layer.cornerRadius = 10
         
-        self.placeholderSetting()
+        if idOfCell != nil {
+            defineTextView.text = defineText
+        } else {
+            self.placeholderSetting()
+        }
+        
+        //제스처를 이용해 나갈 수 있게 해보자.
+        let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(BasicViewController.respondToSwipeGesture(_:)))
+        swipeDown.direction = UISwipeGestureRecognizer.Direction.down
+        self.view.addGestureRecognizer(swipeDown)
     }
     @IBAction func cancelButtonClicked(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
+    }
+    // 아래로 내리면 디스미스!
+    @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
+        
+        if let swipeGesture = gesture as? UISwipeGestureRecognizer{
+            switch swipeGesture.direction {
+            case UISwipeGestureRecognizer.Direction.down :
+                self.dismiss(animated: true, completion: nil)
+            default:
+                break
+            }
+        }
     }
     //저장버튼 클릭시 유효성 검사 + 메인에서 reloadData
     @IBAction func storeButtonClicked(_ sender: UIButton) {
@@ -55,9 +77,11 @@ class ContentViewController: UIViewController,shareToContent{
             //추가해주는 delegate
             if method == "ADD"{
                 delegate?.getDatas(word: word, firstComes: firstComes, emotion: emotion, definition: defineTextView.text)
+                MainViewController.toastMessage = "저장완료😊"
             //수정해주는 delegate by ID
             } else {
                 delegate?.getDatas(word: word, firstComes: firstComes, emotion: emotion, definition: defineTextView.text, id: idOfCell!)
+                MainViewController.toastMessage = "수정완료😊"
             }
             //추천단어로 들어왔을 수도 있으니 루트뷰로 보내주기
             self.view.window?.rootViewController?.dismiss(animated: true)

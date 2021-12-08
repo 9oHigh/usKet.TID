@@ -19,6 +19,9 @@ class MainViewController: UIViewController {
     let localRealm = try! Realm()
     var tasks : Results<DefineWordModel>!
     
+    // 저장 및 수정 확인
+    static var toastMessage : String?
+    
     //서치바에서 검색중인지 아닌지 확인하고 filtered로 사용하기
     //오류방지
     var filtered : Results<DefineWordModel>!
@@ -42,10 +45,15 @@ class MainViewController: UIViewController {
     
         //Left Button - sideMenu
         let config = UIImage.SymbolConfiguration(pointSize:35, weight: .light , scale: .default)
-        let indexImage = UIImage(systemName: "line.3.horizontal", withConfiguration: config)
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: indexImage, style: .plain, target: self, action: #selector(openSideMenu))
+        let lineImage = UIImage(systemName: "line.3.horizontal", withConfiguration: config)
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: lineImage, style: .plain, target: self, action: #selector(openSideMenu))
         navigationItem.leftBarButtonItem?.tintColor = .black
-
+        
+        //Right Button - Calendar
+        let calendarImage = UIImage(systemName: "calendar", withConfiguration: config)
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: calendarImage, style: .plain, target: self, action: #selector(openCalendar))
+        navigationItem.rightBarButtonItem?.tintColor = .black
+        
         //LargeTitle
         self.navigationController?.navigationBar.prefersLargeTitles = true
         navigationItem.title = "Today I define"
@@ -82,6 +90,10 @@ class MainViewController: UIViewController {
         mainTableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
         tasks = localRealm.objects(DefineWordModel.self).sorted(byKeyPath: "date", ascending: false)
         self.mainTableView.reloadData()
+        if MainViewController.toastMessage != nil {
+            self.showToast(message: MainViewController.toastMessage!)
+            MainViewController.toastMessage = nil
+        }
     }
     //처음인지 아닌지 확인
     func firstLogInCheck(){
@@ -108,7 +120,18 @@ class MainViewController: UIViewController {
 
         let menu = CustomSideMenuNavigation(rootViewController: sideMenuViewController)
 
-        present(menu,animated: true,completion: nil)
+        self.present(menu,animated: true,completion: nil)
+    }
+    // 캘린더 뷰컨트롤러
+    @objc func openCalendar(){
+        
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        
+        let vc = storyboard.instantiateViewController(withIdentifier: "CalendarViewController") as! CalendarViewController
+        
+        navigationItem.backBarButtonItem?.tintColor = .black
+        
+        self.navigationController?.pushViewController(vc, animated: true)
     }
     
     //Floating Button 추가하기
