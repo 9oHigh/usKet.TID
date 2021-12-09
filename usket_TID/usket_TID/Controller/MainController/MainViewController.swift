@@ -15,7 +15,7 @@ class MainViewController: UIViewController {
     //First Login 구현을 위해 UserDefaults
     let userDefaults = UserDefaults.standard
     
-    //Realm
+    //realm
     let localRealm = try! Realm()
     var tasks : Results<DefineWordModel>!
     
@@ -52,11 +52,9 @@ class MainViewController: UIViewController {
         //Right Button - Calendar
         let calendarImage = UIImage(systemName: "calendar", withConfiguration: config)
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: calendarImage, style: .plain, target: self, action: #selector(openCalendar))
-        navigationItem.rightBarButtonItem?.tintColor = .black
         
         //LargeTitle
-        self.navigationController?.navigationBar.prefersLargeTitles = true
-        navigationItem.title = "Today I define"
+        self.navigationController?.navigationBar.prefersLargeTitles = false
         
         //네비게이션바 스크롤시 default 값은 다크모드시 검정색이 된다.
         //타이틀에 폰트 주기
@@ -87,9 +85,13 @@ class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+    
+        //상단에 짤리지 않게 인셋
         mainTableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+        //리로드!
         tasks = localRealm.objects(DefineWordModel.self).sorted(byKeyPath: "date", ascending: false)
         self.mainTableView.reloadData()
+        //저장한 값이 있거나 수정한 값이 있을 때!
         if MainViewController.toastMessage != nil {
             self.showToast(message: MainViewController.toastMessage!)
             MainViewController.toastMessage = nil
@@ -126,12 +128,11 @@ class MainViewController: UIViewController {
     @objc func openCalendar(){
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        
         let vc = storyboard.instantiateViewController(withIdentifier: "CalendarViewController") as! CalendarViewController
         
-        navigationItem.backBarButtonItem?.tintColor = .black
+        vc.modalPresentationStyle = .fullScreen
         
-        self.navigationController?.pushViewController(vc, animated: true)
+        self.present(vc, animated: true, completion: nil)
     }
     
     //Floating Button 추가하기

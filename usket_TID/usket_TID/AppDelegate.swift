@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Realm
+import RealmSwift
 import IQKeyboardManagerSwift
 
 @main
@@ -21,6 +23,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.toolbarTintColor = .lightGray
         IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "완료"
         IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
+        
+        //realm migration
+        //
+        let config = Realm.Configuration(
+            schemaVersion: 2,
+            migrationBlock: { migration,oldSchemaVersion in
+                if (oldSchemaVersion < 2){
+                    migration.enumerateObjects(ofType: DefineWordModel.className()) { oldObject, newObject in
+                        //기존의 날짜들을 변환하고 storedDate에 값을 남긴다.
+                        let format = DateFormatter()
+                        format.dateFormat = "yyyy년 MM월 dd일"
+                        let value = format.string(from: oldObject?["date"] as! Date)
+
+                        newObject?["storedDate"] = value
+                    }
+                }
+                
+            }
+        )
+        Realm.Configuration.defaultConfiguration = config
+        
         return true
     }
 

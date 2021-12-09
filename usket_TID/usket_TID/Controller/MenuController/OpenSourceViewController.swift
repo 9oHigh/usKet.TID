@@ -18,6 +18,7 @@ class OpenSourceViewController: UIViewController {
         "jonkykong:SideMenu",
         "kciter:Floaty",
         "alxrguz:ALProgressView",
+        "WenchaoD:FSCalendar",
         "Font:Cafe24Oneprettynight"
     ]
     override func viewDidLoad() {

@@ -16,6 +16,7 @@ class DefineWordModel : Object{
     @Persisted var firstWord : String
     @Persisted var emotion : String
     @Persisted var date : Date
+    @Persisted var storedDate : String
     
     @Persisted(primaryKey: true) var _id : ObjectId
     
@@ -26,5 +27,9 @@ class DefineWordModel : Object{
         self.definition = definition
         self.emotion = emotion
         
+        let format = DateFormatter()
+        format.dateFormat = "yyyy년 MM월 dd일"
+        let value = format.string(from: self.date)
+        self.storedDate = value
     }
 }
