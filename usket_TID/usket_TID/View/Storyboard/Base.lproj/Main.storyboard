@@ -314,7 +314,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="39" translatesAutoresizingMaskIntoConstraints="NO" id="Ddg-kD-svW">
-                                <rect key="frame" x="20" y="200" width="171.66666666666666" height="190"/>
+                                <rect key="frame" x="20" y="199.99999999999997" width="171.66666666666666" height="266.33333333333326"/>
                                 <subviews>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oXQ-5i-Bdx">
                                         <rect key="frame" x="0.0" y="0.0" width="60" height="37.333333333333336"/>
@@ -327,8 +327,8 @@
                                             <action selector="statisticsButtonClicked:" destination="fzk-GP-LNN" eventType="touchUpInside" id="t2O-yx-kXa"/>
                                         </connections>
                                     </button>
-                                    <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rja-o2-T5I">
-                                        <rect key="frame" x="0.0" y="57" width="76.666666666666671" height="0.0"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rja-o2-T5I">
+                                        <rect key="frame" x="0.0" y="76.333333333333314" width="76.666666666666671" height="37.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" image="lockColored" imagePlacement="trailing" title="설정">
                                             <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="22"/>
@@ -339,7 +339,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jkv-dI-Nqk">
-                                        <rect key="frame" x="0.0" y="76.333333333333314" width="171.66666666666666" height="37.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="152.66666666666669" width="171.66666666666666" height="37.333333333333343"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="오픈소스 라이선스">
                                             <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="22"/>
@@ -350,7 +350,7 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkX-cZ-GEY">
-                                        <rect key="frame" x="0.0" y="152.66666666666669" width="96.333333333333329" height="37.333333333333343"/>
+                                        <rect key="frame" x="0.0" y="229" width="96.333333333333329" height="37.333333333333314"/>
                                         <state key="normal" title="Button"/>
                                         <buttonConfiguration key="configuration" style="plain" title="문의하기">
                                             <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="22"/>

@@ -199,13 +199,16 @@ extension CalendarViewController : FSCalendarDelegate,FSCalendarDataSource,UITab
         
         let works : Results<DefineWordModel>!
         works = localRealm.objects(DefineWordModel.self).filter("storedDate == %@", pressedDate)
-        
-        let compliment : String = " 짝짝짝👏 정의한 단어 \(works.count)개가 있어요!"
-        let attributedString = NSMutableAttributedString(string: compliment, attributes: [
-            .font: UIFont(name: MainViewController.originalFont, size: 20)!,
-            .foregroundColor: UIColor.black
-        ])
-        
-        return attributedString.string
+        if works.count > 0 {
+            let compliment : String = " 짝짝짝👏 정의한 단어 \(works.count)개가 있어요!"
+            let attributedString = NSMutableAttributedString(string: compliment, attributes: [
+                .font: UIFont(name: MainViewController.originalFont, size: 20)!,
+                .foregroundColor: UIColor.black
+            ])
+            
+            return attributedString.string
+        } else {
+            return nil
+        }
     }
 }
