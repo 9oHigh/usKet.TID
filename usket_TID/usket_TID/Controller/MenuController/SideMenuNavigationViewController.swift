@@ -46,7 +46,7 @@ class SideMenuNavigationViewController: UIViewController {
     }
     //설정
     @IBAction func settingButtonClicked(_ sender: UIButton) {
-        showAlert(title: "업데이트 예정 안내😊", message: "다크모드 / 폰트를 준비중입니다!")
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
         let vc = storyboard.instantiateViewController(withIdentifier: "SettingViewController") as! SettingViewController

@@ -9,11 +9,16 @@ import UIKit
 import SideMenu
 import RealmSwift
 import JJFloatingActionButton
+import UserNotifications
 
 class MainViewController: UIViewController {
     
     //First Login 구현을 위해 UserDefaults
     let userDefaults = UserDefaults.standard
+    
+    //알람설정
+    let userNotiCenter = UNUserNotificationCenter.current()
+    static var switchToggle : String = "off"
     
     //realm
     let localRealm = try! Realm()
@@ -42,7 +47,7 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-    
+        
         //Left Button - sideMenu
         let config = UIImage.SymbolConfiguration(pointSize:35, weight: .light , scale: .default)
         let lineImage = UIImage(systemName: "line.3.horizontal", withConfiguration: config)
@@ -74,10 +79,12 @@ class MainViewController: UIViewController {
         addActionButton()
         //서치바 적용
         searchBarSetting()
+        //알림 요청
+        requestNotificationAuthorization()
         
         print("위치 :",localRealm.configuration.fileURL!)
     }
-  
+    
     //LargeTitle 혹은 Tableview와 관련해 바운스이후 네비게이션바로 돌아가는 이슈
     //viewWillAppear에서 Tableview 상단에 inset을 주면 해결되었다.
     // 확인 : TableView의 Align Top SafeArea값에 따라 top의 값을 조정
@@ -85,7 +92,7 @@ class MainViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-    
+        
         //상단에 짤리지 않게 인셋
         mainTableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
         //리로드!
@@ -113,15 +120,15 @@ class MainViewController: UIViewController {
         
         self.present(vc, animated: true, completion: nil)
     }
-   //SideMenu OpenSource
+    //SideMenu OpenSource
     @objc func openSideMenu(){
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let sideMenuViewController : SideMenuNavigationViewController = storyboard.instantiateViewController(withIdentifier: "SideMenuNavigationViewController") as! SideMenuNavigationViewController
-
+        
         let menu = CustomSideMenuNavigation(rootViewController: sideMenuViewController)
-
+        
         self.present(menu,animated: true,completion: nil)
     }
     // 캘린더 뷰컨트롤러
@@ -133,6 +140,23 @@ class MainViewController: UIViewController {
         vc.modalPresentationStyle = .fullScreen
         
         self.present(vc, animated: true, completion: nil)
+    }
+    
+    //로컬 푸시 권한
+    func requestNotificationAuthorization(){
+        
+        let authOptions : UNAuthorizationOptions = [.alert,.sound,.badge]
+        
+        userNotiCenter.requestAuthorization(options: authOptions) { success, error in
+            if success {
+                MainViewController.switchToggle = "on"
+            } else {
+                MainViewController.switchToggle = "off"
+            }
+            if let error = error {
+                print(error)
+            }
+        }
     }
     
     //Floating Button 추가하기
@@ -172,14 +196,14 @@ class MainViewController: UIViewController {
         }
         
         actionButton.addItem(title: "작성하기", image: UIImage(named: "writing.png")?.withRenderingMode(.alwaysTemplate)) { item in
-    
+            
             //에디터로 연결
             let storyboard = UIStoryboard(name: "WordScreen", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "PageViewController") as! PageViewController
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
         }
-
+        
         actionButton.addItem(title: "단어 추천 받기", image: UIImage(named: "recommendation.png")?.withRenderingMode(.alwaysTemplate)) { item in
             //단어 추천 으로 연결
             let storyboard = UIStoryboard(name: "WordScreen", bundle: nil)
@@ -198,7 +222,6 @@ class MainViewController: UIViewController {
         actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
         actionButton.buttonColor = .white
         actionButton.buttonImageColor = .black
-
     }
     
     //서치바
@@ -228,7 +251,7 @@ class MainViewController: UIViewController {
         searchController.searchBar.autocapitalizationType = .none
         searchController.searchBar.setValue("취소", forKey: "cancelButtonText")
         
-        //취소버튼 color + font 변경 
+        //취소버튼 color + font 변경
         let attributes:[NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.black,
             .font: UIFont(name: MainViewController.originalFont, size: 17)!

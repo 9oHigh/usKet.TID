@@ -27,6 +27,17 @@ extension UIViewController {
         
         present(alert, animated: true, completion: nil)
     }
+    func showAlertWithCancel(title : String, message: String,okHandler: @escaping (UIAlertAction) -> Void,noHandler:@escaping (UIAlertAction) -> Void){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        
+        let ok = UIAlertAction(title: "확인", style: .default,handler: okHandler)
+        let cancel = UIAlertAction(title: "취소", style: .default,handler: noHandler)
+        
+        alert.addAction(ok)
+        alert.addAction(cancel)
+        
+        present(alert, animated: true, completion: nil)
+    }
     //저장시 + 수정시 사용할 토스트 메세지
     func showToast(message : String) {
         
@@ -45,7 +56,7 @@ extension UIViewController {
         toastLabel.layer.zPosition = 100
         self.view.addSubview(toastLabel)
         
-        UIView.animate(withDuration: 2.0, delay: 0.5, options: .curveEaseOut, animations: {
+        UIView.animate(withDuration: 3.0, delay: 0.1, options: .curveEaseOut, animations: {
             toastLabel.alpha = 0.0
         }, completion: {
             completed in
