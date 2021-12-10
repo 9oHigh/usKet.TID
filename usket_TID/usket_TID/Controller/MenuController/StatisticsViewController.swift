@@ -26,6 +26,7 @@ class StatisticsViewController: UIViewController {
     @IBOutlet weak var angryCountLabel: UILabel!
     
     
+    @IBOutlet weak var monthLabel: UILabel!
     @IBOutlet weak var progressLabel: UILabel!
     @IBOutlet weak var percentLabel: UILabel!
     
@@ -66,7 +67,6 @@ class StatisticsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //여기다가 실제 수치
-        print(self.gauge)
         progressRing.setProgress(self.gauge * 0.01, animated: true)
     }
     
@@ -79,13 +79,17 @@ class StatisticsViewController: UIViewController {
         let formatYear = DateFormatter()
         formatYear.dateFormat = "yyyy"
         let nowYear = formatYear.string(from: year)
+        
         //월
         let month = Date()
         let formatMonth = DateFormatter()
         formatMonth.dateFormat = "M"
         let nowMonth = formatMonth.string(from: month)
+        monthLabel.text = nowMonth + "월❗️"
+        
         //한달 일수
         let totalDay = lastDay(ofMonth: Int(nowMonth)!, year: Int(nowYear)!)
+        
         //존재할때만 계산
         if tasks.count > 0 {
             //감정 개수 반환
@@ -114,20 +118,32 @@ class StatisticsViewController: UIViewController {
             //프로그레스 체크!
             //이번달에 등록한 날의 개수.. 중복제거가 어렵다..
             let countDay = tasks.filter("date <= %@",Date() as Date)
-            let writeCount = countDay.filter("date >= %@",Date().getStart(of: .month, calendar: .current)!).count
+            let writeDay = countDay.filter("date >= %@",Date().getStart(of: .month, calendar: .current)!)
+            
+            //writeDay에서 중복제거하면 day로 가능할 듯
+            var dayArr : [String] = []
+            for item in 0...writeDay.count - 1 {
+                if dayArr.contains(writeDay[item].storedDate){
+                    continue
+                } else {
+                    dayArr.append(writeDay[item].storedDate)
+                }
+            }
+            print(dayArr)
+            let writeCount = dayArr.count
             
             //퍼센테이지 계산
             if writeCount == 0{
-                self.progressLabel.text = "0개 / \(totalDay)개"
-                self.percentLabel.text = "0% 달성중"
+                self.progressLabel.text = "0일 / \(totalDay)일"
+                self.percentLabel.text = "0% 달성중.."
             } else {
                 let percent = Double(writeCount) / Double(totalDay) * 100
                 self.gauge = Float(percent)
-                self.progressLabel.text = "\(writeCount)개 / \(totalDay)개"
+                self.progressLabel.text = "\(writeCount)일 / \(totalDay)일"
                 if percent == 100 {
                     self.percentLabel.text = "\(Int(percent))% 달성🎉"
                 } else {
-                    self.percentLabel.text = "\(Int(percent))% 달성중"
+                    self.percentLabel.text = "\(Int(percent))% 달성중!"
                 }
             }
         } else {
@@ -135,12 +151,13 @@ class StatisticsViewController: UIViewController {
             self.countWordLabel.text = "0개"
             self.countMorphemeLabel.text = "0개"
             self.percentLabel.text = "0% 달성중"
-            self.progressLabel.text = "0개 /\(totalDay)개"
+            self.progressLabel.text = "0일 /\(totalDay)일"
             self.happyCountLabel.text = "0개"
             self.sadCountLabel.text = "0개"
             self.normalCountLabel.text = "0개"
             self.angryCountLabel.text = "0개"
         }
+        
     }
     //NumberFormmater : 세자리마다 컴마!
     func numberFormatter(number: Int) -> String {
@@ -150,6 +167,7 @@ class StatisticsViewController: UIViewController {
         
         return numberFormatter.string(from: NSNumber(value: number))!
     }
+    //마지막날을 가지고 오는 함수
     func lastDay(ofMonth m: Int, year y: Int) -> Int {
         let cal = Calendar.current
         var comps = DateComponents(calendar: cal, year: y, month: m)
@@ -157,16 +175,6 @@ class StatisticsViewController: UIViewController {
         comps.setValue(0, for: .day)
         let date = cal.date(from: comps)!
         return cal.component(.day, from: date)
-    }
-}
-extension Date {
-    
-    func getStart(of component: Calendar.Component, calendar: Calendar = Calendar.current) -> Date? {
-        return calendar.dateInterval(of: component, for: self)?.start
-    }
-    
-    func getEnd(of component: Calendar.Component, calendar: Calendar = Calendar.current) -> Date? {
-        return calendar.dateInterval(of: component, for: self)?.end
     }
 }
 
