@@ -18,7 +18,6 @@ class MainViewController: UIViewController {
     
     //알람설정
     let userNotiCenter = UNUserNotificationCenter.current()
-    static var switchToggle : String = "off"
     
     //realm
     let localRealm = try! Realm()
@@ -148,11 +147,9 @@ class MainViewController: UIViewController {
         let authOptions : UNAuthorizationOptions = [.alert,.sound,.badge]
         
         userNotiCenter.requestAuthorization(options: authOptions) { success, error in
-            if success {
-                MainViewController.switchToggle = "on"
-            } else {
-                MainViewController.switchToggle = "off"
-            }
+            //푸시 허용상태인지 저장
+            UserDefaults.standard.set(success,forKey: "pushAllow")
+            
             if let error = error {
                 print(error)
             }

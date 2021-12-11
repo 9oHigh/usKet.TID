@@ -70,6 +70,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
 }
 extension AppDelegate: UNUserNotificationCenterDelegate {
+    //알림이 뷰컨에서 안뜰 수도 있으니 Appdelegate에서도 설정해두기
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 willPresent notification: UNNotification,
                                 withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
