@@ -89,6 +89,7 @@ class BasicViewController: UIViewController {
                 default:
                     print("괜찮아!")
                 }
+                self.sendData()
             }
         } else {
             editLabel.isHidden = true

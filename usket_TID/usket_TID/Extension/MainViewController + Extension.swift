@@ -118,7 +118,6 @@ extension MainViewController : shareToMain {
             data.definition = definition
             data.emotion = emotion
             data.firstWord = firstComes
-            data.date = Date()
             localRealm.add(data,update: .modified)
         }
     }
