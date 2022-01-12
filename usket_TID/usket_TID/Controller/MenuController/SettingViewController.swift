@@ -104,10 +104,9 @@ class SettingViewController: UIViewController {
         userNotiCenter.removeAllPendingNotificationRequests()
         
         let content = UNMutableNotificationContent()
-        //랜덤 단어로 추천하기
-        let randomWord = randomWords.wordList.randomWordGenerate()
+        
         content.title = "오늘도 티드와 함께 해요🏃🏻‍♂️"
-        content.body = "오늘의 추천 단어는 [ \(randomWord) ]입니다❗️\n\(randomWord)에 대해 어떻게 생각하시나요? 작성하러 가요😊"
+        content.body = "오늘의 추천 단어는 [ \(randomWords.wordList.randomWordGenerate()) ]입니다❗️\n\(randomWords.wordList.randomWordGenerate())에 대해 어떻게 생각하시나요? 작성하러 가요😊"
         
         let trigger = UNCalendarNotificationTrigger(
             dateMatching: Calendar.current.dateComponents([.hour, .minute], from: notiTimePicker.date), repeats: true)
