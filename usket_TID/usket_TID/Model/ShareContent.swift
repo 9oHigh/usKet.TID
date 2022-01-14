@@ -8,5 +8,6 @@
 import Foundation
 
 protocol shareToContent {
+    
     func getDatas(word : String, firstComes: String, emotion : String)
 }

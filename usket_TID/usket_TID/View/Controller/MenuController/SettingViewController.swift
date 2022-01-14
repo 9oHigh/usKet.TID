@@ -12,6 +12,7 @@ class SettingViewController: UIViewController {
     
     @IBOutlet weak var notiSwitch: UISwitch!
     @IBOutlet weak var notiTimePicker: UIDatePicker!
+    
     let userNotiCenter  = UNUserNotificationCenter.current()
     
     override func viewDidLoad() {

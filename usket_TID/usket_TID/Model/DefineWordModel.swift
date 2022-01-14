@@ -9,7 +9,7 @@ import Foundation
 import RealmSwift
 import UIKit
 
-class DefineWordModel : Object{
+class DefineWordModel : Object {
     
     @Persisted var word : String
     @Persisted var definition : String

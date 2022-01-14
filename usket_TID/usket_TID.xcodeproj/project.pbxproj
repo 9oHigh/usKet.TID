@@ -209,6 +209,7 @@
 			children = (
 				4C596CFF274BD9BC00E2DE59 /* Storyboard */,
 				4C596D00274BD9D500E2DE59 /* Cells */,
+				4C32763D274797A300C0456D /* Controller */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -319,7 +320,6 @@
 				4C32763E2747D9A400C0456D /* Resource */,
 				4C32763B2747978300C0456D /* Model */,
 				4C32763C2747978E00C0456D /* View */,
-				4C32763D274797A300C0456D /* Controller */,
 				4C23847F274A7F26007314BF /* Extension */,
 				4C758A992746AA9E00B9F7AC /* AppDelegate.swift */,
 				4C758A9B2746AA9E00B9F7AC /* SceneDelegate.swift */,

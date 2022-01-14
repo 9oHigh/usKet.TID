@@ -62,6 +62,7 @@ class StatisticsViewController: UIViewController {
     }
     //클로즈
     @IBAction func closeButtonClicked(_ sender: UIButton) {
+        
         self.dismiss(animated: true, completion: nil)
     }
     override func viewWillAppear(_ animated: Bool) {
@@ -120,9 +121,14 @@ class StatisticsViewController: UIViewController {
             let countDay = tasks.filter("date <= %@",Date() as Date)
             let writeDay = countDay.filter("date >= %@",Date().getStart(of: .month, calendar: .current)!)
             
+            print("여기요!",writeDay.first)
+            print("여기요!",writeDay.last)
+            print("여기요!",writeDay.count)
+            
             //writeDay에서 중복제거하면 day로 가능할 듯
             var dayArr : [String] = []
             for item in 0...writeDay.count - 1 {
+                
                 if dayArr.contains(writeDay[item].storedDate){
                     continue
                 } else {
