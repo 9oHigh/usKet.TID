@@ -29,6 +29,7 @@ class MainViewController: UIViewController {
     //서치바에서 검색중인지 아닌지 확인하고 filtered로 사용하기
     //오류방지
     var filtered : Results<DefineWordModel>!
+    
     var isFiltering: Bool {
         
         let searchController = self.navigationItem.searchController
@@ -57,9 +58,6 @@ class MainViewController: UIViewController {
         let calendarImage = UIImage(systemName: "calendar", withConfiguration: config)
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: calendarImage, style: .plain, target: self, action: #selector(openCalendar))
         
-        //LargeTitle
-        self.navigationController?.navigationBar.prefersLargeTitles = false
-        
         //네비게이션바 스크롤시 default 값은 다크모드시 검정색이 된다.
         //타이틀에 폰트 주기
         navigationController?.navigationBar.barTintColor = .white
@@ -84,8 +82,8 @@ class MainViewController: UIViewController {
         print("위치 :",localRealm.configuration.fileURL!)
     }
     
-    //LargeTitle 혹은 Tableview와 관련해 바운스이후 네비게이션바로 돌아가는 이슈
-    //viewWillAppear에서 Tableview 상단에 inset을 주면 해결되었다.
+    // LargeTitle 혹은 Tableview와 관련해 바운스이후 네비게이션바로 돌아가는 이슈
+    // viewWillAppear에서 Tableview 상단에 inset을 주면 해결되었다.
     // 확인 : TableView의 Align Top SafeArea값에 따라 top의 값을 조정
     // 큰 값일 수록 top의 값은 작아지고 반대로 작은 값일 수록 top의 값도 크게 줘야함
     
@@ -94,9 +92,11 @@ class MainViewController: UIViewController {
         
         //상단에 짤리지 않게 인셋
         mainTableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
+        
         //리로드!
         tasks = localRealm.objects(DefineWordModel.self).sorted(byKeyPath: "date", ascending: false)
         self.mainTableView.reloadData()
+        
         //저장한 값이 있거나 수정한 값이 있을 때!
         if MainViewController.toastMessage != nil {
             self.showToast(message: MainViewController.toastMessage!)
@@ -150,9 +150,6 @@ class MainViewController: UIViewController {
             //푸시 허용상태인지 저장
             UserDefaults.standard.set(success,forKey: "pushAllow")
             
-            if let error = error {
-                print(error)
-            }
         }
     }
     

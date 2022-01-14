@@ -8,7 +8,6 @@
 import UIKit
 import FSCalendar
 import RealmSwift
-import SwiftUI
 
 class CalendarViewController: UIViewController {
     
@@ -93,15 +92,19 @@ class CalendarViewController: UIViewController {
         // 년월에 흐릿하게 보이는 애들 없애기
         calendar.appearance.headerMinimumDissolvedAlpha = 0
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         calendar.reloadData()
         calendarTableView.contentInset = UIEdgeInsets(top: 15, left: 0, bottom: 0, right: 0)
         calendarTableView.reloadData()
+    
     }
+    
     @IBAction func closeClicked(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
+    
     func gestureRecognizerShouldBegin(_ gestureRecognizer: UIGestureRecognizer) -> Bool {
         let shouldBegin = self.calendarTableView.contentOffset.y <= -self.calendarTableView.contentInset.top
         if shouldBegin {
@@ -171,6 +174,7 @@ extension CalendarViewController : FSCalendarDelegate,FSCalendarDataSource,UITab
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "CalendarTableViewCell") as? CalendarTableViewCell else {
             return UITableViewCell()
         }
@@ -192,9 +196,11 @@ extension CalendarViewController : FSCalendarDelegate,FSCalendarDataSource,UITab
             return cell
         }
     }
+    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 145
     }
+    
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         
         let works : Results<DefineWordModel>!
@@ -207,7 +213,9 @@ extension CalendarViewController : FSCalendarDelegate,FSCalendarDataSource,UITab
             ])
             
             return attributedString.string
+            
         } else {
+            
             return nil
         }
     }

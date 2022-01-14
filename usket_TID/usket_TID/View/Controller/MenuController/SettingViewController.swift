@@ -116,6 +116,12 @@ class SettingViewController: UIViewController {
         
         userNotiCenter.add(request) { (error) in
             
+            switch error{    
+            case .none:
+                self.showToast(message: "지정할 수 없어요 😭")
+            case .some(_):
+                self.showToast(message: "알수없는 오류 😢")
+            }
         }
     }
 }

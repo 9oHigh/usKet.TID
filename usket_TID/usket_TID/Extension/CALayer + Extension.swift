@@ -9,11 +9,14 @@ import Foundation
 import UIKit
 
 extension CALayer {
-    
+    //Layer에 선넣어주기
     func addBorder(_ arr_edge: [UIRectEdge], color: UIColor, width: CGFloat) {
         for edge in arr_edge {
+            
             let border = CALayer()
+            
             switch edge {
+                
             case UIRectEdge.top:
                 border.frame = CGRect.init(x: 0, y: 0, width: frame.width, height: width)
                 break
@@ -29,6 +32,7 @@ extension CALayer {
             default:
                 break
             }
+            
             border.backgroundColor = color.cgColor;
             self.addSublayer(border)
         }

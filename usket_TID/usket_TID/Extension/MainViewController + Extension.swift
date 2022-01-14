@@ -10,6 +10,7 @@ import UIKit
 import RealmSwift
 
 extension MainViewController : UITableViewDelegate,UITableViewDataSource{
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering{
             return filtered.count
@@ -36,6 +37,7 @@ extension MainViewController : UITableViewDelegate,UITableViewDataSource{
         var format = DateFormatter()
         format.timeZone = TimeZone(abbreviation: "KST")
         format.dateFormat = "dd"
+        
         var value = format.string(from: works[indexPath.row].date)
         cell.dateLabel.text = value
         
@@ -53,12 +55,15 @@ extension MainViewController : UITableViewDelegate,UITableViewDataSource{
         
         let storyboard = UIStoryboard(name: "WordScreen", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "PageViewController") as! PageViewController
+        
         if isFiltering{
             vc.idOfCell = filtered[indexPath.row]._id
         } else {
             vc.idOfCell = tasks[indexPath.row]._id
         }
+        
         vc.modalPresentationStyle = .fullScreen
+        
         self.present(vc, animated: true, completion: nil)
         
     }
@@ -66,7 +71,9 @@ extension MainViewController : UITableViewDelegate,UITableViewDataSource{
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let action =  UIContextualAction(style: .normal, title: "삭제", handler: { (action,view,completionHandler ) in
+            
             let works : Results<DefineWordModel>!
+            
             if self.isFiltering{
                 works = self.filtered
             } else {
@@ -74,17 +81,20 @@ extension MainViewController : UITableViewDelegate,UITableViewDataSource{
             }
             
             self.showAlertCancel(title: "삭제 안내", message: "정말로 삭제 하시겠습니까?") { delete in
+                
                 do{
                     try self.localRealm.write{
                         self.localRealm.delete(works[indexPath.row])
                         self.mainTableView.reloadData()
                     }
                 } catch{
+                    
                     self.showAlert(title: "안내", message: "해당 단어는 삭제할 수 없습니다.")
                 }
             }
             completionHandler(true)
         })
+        
         //alpha를 주는게 제일 좋은 방법인듯..
         action.backgroundColor = UIColor(white: 1, alpha: 0)
         action.image = UIImage(named: "trashbucket.png")
@@ -93,7 +103,8 @@ extension MainViewController : UITableViewDelegate,UITableViewDataSource{
         
         return configuration
     }
-    //고정 높이로가자.. 레이아웃오류가 너무 많다.
+    
+    //고정 높이로가자.. 레이아웃오류가 너무 많음.
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 204
     }
@@ -123,7 +134,9 @@ extension MainViewController : shareToMain {
     }
 }
 extension MainViewController : UISearchResultsUpdating {
+    
     func updateSearchResults(for searchController: UISearchController) {
+        
         guard let text = searchController.searchBar.text else { return }
         //모든 요소 검사
         //추후 업데이트시 텍스트에 백그라운드 혹은 애니메이션 줘보기!

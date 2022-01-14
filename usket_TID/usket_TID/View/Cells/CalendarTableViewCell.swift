@@ -17,6 +17,7 @@ class CalendarTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         //백그라운드 그림자 효과
         self.backView.layer.cornerRadius = 10
         self.contentView.layer.cornerRadius = 10

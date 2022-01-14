@@ -65,6 +65,7 @@ class StatisticsViewController: UIViewController {
         
         self.dismiss(animated: true, completion: nil)
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //여기다가 실제 수치
@@ -121,28 +122,39 @@ class StatisticsViewController: UIViewController {
             let countDay = tasks.filter("date <= %@",Date() as Date)
             let writeDay = countDay.filter("date >= %@",Date().getStart(of: .month, calendar: .current)!)
             
-            print("여기요!",writeDay.first)
-            print("여기요!",writeDay.last)
-            print("여기요!",writeDay.count)
+            //MARK: writeDay 개수가 카운트 되지 않는다.
             
             //writeDay에서 중복제거하면 day로 가능할 듯
             var dayArr : [String] = []
-            for item in 0...writeDay.count - 1 {
+            var writeCount : Int = 0
+            
+            if writeDay.count == 0 {
                 
-                if dayArr.contains(writeDay[item].storedDate){
-                    continue
-                } else {
-                    dayArr.append(writeDay[item].storedDate)
+                writeCount = 0
+                
+            } else {
+                
+                for item in 0...writeDay.count - 1 {
+                    
+                    if dayArr.contains(writeDay[item].storedDate){
+                        continue
+                    } else {
+                        dayArr.append(writeDay[item].storedDate)
+                    }
+                    
                 }
+                writeCount = dayArr.count
             }
-            print(dayArr)
-            let writeCount = dayArr.count
+            
             
             //퍼센테이지 계산
             if writeCount == 0{
+                
                 self.progressLabel.text = "0일 / \(totalDay)일"
                 self.percentLabel.text = "0% 달성중.."
+                
             } else {
+                
                 let percent = Double(writeCount) / Double(totalDay) * 100
                 self.gauge = Float(percent)
                 self.progressLabel.text = "\(writeCount)일 / \(totalDay)일"
@@ -175,11 +187,15 @@ class StatisticsViewController: UIViewController {
     }
     //마지막날을 가지고 오는 함수
     func lastDay(ofMonth m: Int, year y: Int) -> Int {
+        
         let cal = Calendar.current
         var comps = DateComponents(calendar: cal, year: y, month: m)
+        
         comps.setValue(m + 1, for: .month)
         comps.setValue(0, for: .day)
+        
         let date = cal.date(from: comps)!
+        
         return cal.component(.day, from: date)
     }
 }

@@ -14,6 +14,7 @@ class LicenseViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         if let overview = content {
             contentTextView.text = overview
         } else {

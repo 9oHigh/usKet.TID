@@ -9,7 +9,9 @@ import Foundation
 import UIKit
 
 extension UITextField {
+    
     func toCustomTF(){
+        
         self.textAlignment = .center
         self.layer.borderColor = UIColor.lightGray.cgColor
         self.layer.borderWidth = 1

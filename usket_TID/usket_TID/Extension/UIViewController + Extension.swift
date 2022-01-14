@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 extension UIViewController {
+    
     func showAlert(title : String, message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         let ok = UIAlertAction(title: "화인", style: .default,handler: nil)
@@ -16,6 +17,7 @@ extension UIViewController {
         alert.addAction(ok)
         present(alert, animated: true,completion: nil)
     }
+    
     func showAlertCancel(title : String, message: String,handler: @escaping (UIAlertAction) -> Void){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
@@ -27,7 +29,8 @@ extension UIViewController {
         
         present(alert, animated: true, completion: nil)
     }
-    func showAlertWithCancel(title : String, message: String,okHandler: @escaping (UIAlertAction) -> Void,noHandler:@escaping (UIAlertAction) -> Void){
+    
+    func showAlertWithCancel(title : String, message: String, okHandler: @escaping (UIAlertAction) -> Void, noHandler: @escaping (UIAlertAction) -> Void){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
         let ok = UIAlertAction(title: "확인", style: .default,handler: okHandler)

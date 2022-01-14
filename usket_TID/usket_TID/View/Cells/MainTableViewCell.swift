@@ -22,10 +22,11 @@ class MainTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        //백그라운드 그림자 효과 
-        self.contentView.layer.cornerRadius = 10
         self.contentView.layer.masksToBounds = false
         self.contentView.clipsToBounds = false
+        
+        //백그라운드 그림자 효과
+        self.contentView.layer.cornerRadius = 10
         self.contentView.layer.shadowOffset = CGSize(width: 0, height: 0)
         self.contentView.layer.shadowColor = UIColor.black.cgColor
         self.contentView.layer.shadowRadius = 3
@@ -37,12 +38,14 @@ class MainTableViewCell: UITableViewCell {
         super.setSelected(selected, animated: animated)
         
     }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         //셀간 간격 주기
         let margin : CGFloat = 5
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: margin + 5, left: margin + 5, bottom: margin, right: margin + 5))
     }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
     }

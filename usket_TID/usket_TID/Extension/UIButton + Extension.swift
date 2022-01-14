@@ -9,16 +9,18 @@ import Foundation
 import UIKit
 
 extension UIButton {
+    
     func toCustomButton(){
         self.titleLabel?.tintColor = .black
         self.titleLabel?.font = UIFont(name: MainViewController.originalFont, size: 22)
     }
+    
     func getOpacity(alpha : CGFloat){
         self.alpha = alpha
     }
+    
     //팅기는 효과를 줄수 있음
     //무슨 코드인지는 이해가 안된당..
-    
     func bounceAnimation(){
         // 목적지 비율
         self.transform = CGAffineTransform(scaleX: 0.70, y: 0.70)
@@ -31,6 +33,6 @@ extension UIButton {
                             animations: { [weak self] in
             self?.transform = .identity
         },
-                            completion: nil)
+        completion: nil)
     }
 }

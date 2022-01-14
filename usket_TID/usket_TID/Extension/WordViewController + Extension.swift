@@ -12,6 +12,7 @@ import Network
 import UIKit
 
 extension WordViewController {
+    
     //표준국어대사전 API를 이용해 단어의 정의 3개 가지고 오기
     func fetchWordData(){
         //표준국어대사전 API
@@ -59,7 +60,7 @@ extension WordViewController {
                 }
             } else {
                 DispatchQueue.main.async {
-                    print("연결되어 있지 않음")
+                    
                     self.showAlert(title: "네트워크에 연결되어 있지 않아요.\n설정화면으로 이동합니다 🥲",connection: true)
                 }
             }

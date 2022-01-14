@@ -13,7 +13,9 @@ class OpensourceTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
         nameLabel.font = UIFont(name: MainViewController.originalFont, size: 20)
+        
         //백그라운드 그림자 효과
         self.contentView.layer.cornerRadius = 5
         self.contentView.layer.masksToBounds = false
@@ -23,10 +25,12 @@ class OpensourceTableViewCell: UITableViewCell {
         self.contentView.layer.shadowRadius = 1
         self.contentView.layer.shadowOpacity = 0.5
     }
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
     }
+    
     override func layoutSubviews() {
         super.layoutSubviews()
         //셀간 간격 주기
@@ -34,8 +38,8 @@ class OpensourceTableViewCell: UITableViewCell {
         contentView.frame = contentView.frame.inset(by: UIEdgeInsets(top: margin, left: margin, bottom: margin, right: margin))
         
     }
+    
     override func prepareForReuse() {
         super.prepareForReuse()
-        print(#function)
     }
 }
