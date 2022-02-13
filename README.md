@@ -1,15 +1,10 @@
 # Today I Define ( TID ) 🧐  
 
-
 ### ✨출시완료✨ 
   * [![29](https://user-images.githubusercontent.com/53691249/153768166-1c7d7c43-0405-441e-8381-32af0273b4c4.png)](https://apps.apple.com/kr/app/%ED%8B%B0%EB%93%9C-%EB%82%98%EB%8A%94-%EC%9D%B4%EA%B1%B8-%EC%9D%B4%EB%A0%87%EA%B2%8C-%EB%B6%80%EB%A5%B4%EA%B8%B0%EB%A1%9C-%ED%96%88%EB%8B%A4/id1597847159)
 
-<br></br>
-
 ### 주요 기술 스택
 `Realm` `AutoLayout` `Alamofire` `SwiftyJSON` `MVC`
-
-<br></br>
 
 ###  ✔ 학습 및 적용 🏃🏻‍♂️
 
@@ -25,8 +20,6 @@
  
 </div>
 </details>
-
-<br></br>
 
 ### 2. Realm 
   * 유저가 저장한 단어를 기록하기 위해 Realm을 선택했습니다.
@@ -52,12 +45,8 @@
      )
      ```
      
- <br></br>
-     
 ### 3. Alamofire + SwiftyJson
   * API 통신을 위해 Alamofire를, 받아온 Json 형태의 데이터를 사용하기 위해 SwiftyJSON을 학습 및 적용하여 랜덤으로 나온 단어의 정의를 보여줄 수 있었습니다.
-
-<br></br>
 
 ### 4. Network Status
   * 추천 단어 기능을 만들기 위해 [우리말샘API](https://opendict.korean.go.kr/service/openApiInfo)를 이용했습니다. 
@@ -88,13 +77,9 @@
     }
     ```
     
-<br></br>
-    
 ### 5. 애플리케이션 출시 과정 
   * 서비스를 개발하고 배포하는 일련의 과정을 경험할 수 있었습니다.
   * 업데이트를 꾸준히 진행하고 있습니다.
-  
-<br></br>
   
 ### 6. 업데이트
 
@@ -104,7 +89,7 @@
   |v2.01|통계 버그 수정|월이 바뀌게 될 경우 기존의 코드에서 nil 처리로 인한 오류가 존재, 이를 해결했습니다.|
   |v2.0|레이아웃 버그 수정, 저장시 토스트 알림 추가, 작성페이지 진입시 제스처로 나가기 추가, 수정시 감정과 정의 부분까지 보이게 추가, 통계수치 수정, 로컬 알림 제공, 캘린더 제공|출시 이후 받은 피드백 통해 캘린더와 알림을 중점으로 업데이트를 진행했습니다.|
   
-<br></br>
+  ---
   
 ###  ✔ 배워야할 & 배우고 싶은 기술 🏃🏻‍♂
   * SnapKit
