@@ -2,6 +2,9 @@
 
 ### ✨출시완료✨ 
   * [![29](https://user-images.githubusercontent.com/53691249/153768166-1c7d7c43-0405-441e-8381-32af0273b4c4.png)](https://apps.apple.com/kr/app/%ED%8B%B0%EB%93%9C-%EB%82%98%EB%8A%94-%EC%9D%B4%EA%B1%B8-%EC%9D%B4%EB%A0%87%EA%B2%8C-%EB%B6%80%EB%A5%B4%EA%B8%B0%EB%A1%9C-%ED%96%88%EB%8B%A4/id1597847159)
+  * [개발 이터레이션 : 공수산정, 개발이슈 정리](https://jasper-atom-7c6.notion.site/9becfca153ff4e00a180a0e58228ef5c)
+  * [업데이트 이터레이션 : 공수산정](https://jasper-atom-7c6.notion.site/be2d3b61f3af42f48d850b9efc69dc8c)
+
 
 ### 주요 기술 스택
 `Realm` `AutoLayout` `Alamofire` `SwiftyJSON` `MVC`
