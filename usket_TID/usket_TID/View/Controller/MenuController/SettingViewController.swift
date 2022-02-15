@@ -102,8 +102,8 @@ class SettingViewController: UIViewController {
     }
     
     func sendNoti() {
+    
         userNotiCenter.removeAllPendingNotificationRequests()
-        
         let content = UNMutableNotificationContent()
         
         content.title = "오늘도 티드와 함께 해요🏃🏻‍♂️"
@@ -116,12 +116,14 @@ class SettingViewController: UIViewController {
         
         userNotiCenter.add(request) { (error) in
             
-            switch error{    
+            switch error{
+                
             case .none:
                 self.showToast(message: "지정할 수 없어요 😭")
             case .some(_):
                 self.showToast(message: "알수없는 오류 😢")
             }
+            
         }
     }
 }

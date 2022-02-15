@@ -42,9 +42,8 @@ extension WordViewController {
                     }
                 }
                 self.defineTableView.reloadData()
-            case .failure(let error):
+            case .failure:
                 self.showAlert(title: "네트워크에서 응답이 없어요.\n잠시후 다시 시도해 주세요 🥲", connection: false)
-                print(error)
             }
         }
     }

@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 
 extension Date {
+    
     //statisticsViewController
     var day : Int {
         let calendar = Calendar.current

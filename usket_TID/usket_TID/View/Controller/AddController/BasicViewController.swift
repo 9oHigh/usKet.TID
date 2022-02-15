@@ -87,7 +87,7 @@ class BasicViewController: UIViewController {
                     sosoButton.getOpacity(alpha: 1)
                     selectedButton = "happyFace.png"
                 default:
-                    print("괜찮아!")
+                    break
                 }
                 self.sendData()
             }

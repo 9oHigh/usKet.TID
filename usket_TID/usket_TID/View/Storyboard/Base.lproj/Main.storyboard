@@ -205,14 +205,8 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xWG-iE-zP6">
-                                                    <rect key="frame" x="20" y="11" width="388" height="128"/>
+                                                    <rect key="frame" x="21" y="14" width="388" height="128"/>
                                                     <subviews>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[기쁨]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b56-DO-430">
-                                                            <rect key="frame" x="65.666666666666671" y="29" width="37" height="17"/>
-                                                            <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="16"/>
-                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                            <nil key="highlightedColor"/>
-                                                        </label>
                                                         <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="happyFace" translatesAutoresizingMaskIntoConstraints="NO" id="MfI-el-udD">
                                                             <rect key="frame" x="328" y="15" width="45" height="45"/>
                                                             <constraints>
@@ -232,6 +226,12 @@
                                                             <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="[기쁨]" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="b56-DO-430">
+                                                            <rect key="frame" x="65.666666666666671" y="29" width="37" height="17"/>
+                                                            <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="16"/>
+                                                            <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
                                                     </subviews>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
@@ -240,6 +240,7 @@
                                                         <constraint firstItem="b56-DO-430" firstAttribute="centerY" secondItem="MfI-el-udD" secondAttribute="centerY" id="PHp-qa-k2Q"/>
                                                         <constraint firstItem="2ih-um-HEu" firstAttribute="centerY" secondItem="MfI-el-udD" secondAttribute="centerY" id="XLc-pu-Cwn"/>
                                                         <constraint firstItem="2ih-um-HEu" firstAttribute="leading" secondItem="xWG-iE-zP6" secondAttribute="leadingMargin" constant="10" id="ccO-qM-v7e"/>
+                                                        <constraint firstItem="MfI-el-udD" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="b56-DO-430" secondAttribute="trailing" constant="8" symbolic="YES" id="fNg-dT-pmE"/>
                                                         <constraint firstItem="b56-DO-430" firstAttribute="leading" secondItem="2ih-um-HEu" secondAttribute="trailing" constant="15" id="j5Y-b8-ckp"/>
                                                         <constraint firstAttribute="bottomMargin" secondItem="iYj-uQ-ywc" secondAttribute="bottom" id="jz3-jy-gi2"/>
                                                         <constraint firstItem="MfI-el-udD" firstAttribute="top" secondItem="xWG-iE-zP6" secondAttribute="top" constant="15" id="uIX-Ji-i9U"/>
@@ -249,10 +250,10 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="xWG-iE-zP6" firstAttribute="trailing" secondItem="KTN-Pa-tNA" secondAttribute="trailingMargin" id="7Ra-sh-pj0"/>
-                                                <constraint firstItem="xWG-iE-zP6" firstAttribute="top" secondItem="KTN-Pa-tNA" secondAttribute="topMargin" id="FiV-7d-eLZ"/>
-                                                <constraint firstItem="xWG-iE-zP6" firstAttribute="leading" secondItem="KTN-Pa-tNA" secondAttribute="leadingMargin" id="JQy-Lk-IQn"/>
-                                                <constraint firstItem="xWG-iE-zP6" firstAttribute="bottom" secondItem="KTN-Pa-tNA" secondAttribute="bottomMargin" id="sdC-Kh-4GS"/>
+                                                <constraint firstItem="xWG-iE-zP6" firstAttribute="trailing" secondItem="KTN-Pa-tNA" secondAttribute="trailingMargin" constant="1" id="7Ra-sh-pj0"/>
+                                                <constraint firstItem="xWG-iE-zP6" firstAttribute="top" secondItem="KTN-Pa-tNA" secondAttribute="topMargin" constant="3" id="FiV-7d-eLZ"/>
+                                                <constraint firstItem="xWG-iE-zP6" firstAttribute="leading" secondItem="KTN-Pa-tNA" secondAttribute="leadingMargin" constant="1" id="JQy-Lk-IQn"/>
+                                                <constraint firstItem="xWG-iE-zP6" firstAttribute="bottom" secondItem="KTN-Pa-tNA" secondAttribute="bottomMargin" constant="3" id="sdC-Kh-4GS"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -740,6 +741,7 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
+                                    <constraint firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="8xY-ZB-0iE" secondAttribute="trailing" constant="20" symbolic="YES" id="1l3-FR-I7e"/>
                                     <constraint firstItem="AIH-cO-WPI" firstAttribute="centerX" secondItem="eBI-sm-0vb" secondAttribute="centerX" multiplier="0.25" id="Ou0-ff-wpj"/>
                                     <constraint firstItem="8xY-ZB-0iE" firstAttribute="top" secondItem="AIH-cO-WPI" secondAttribute="bottom" constant="15.333333333333343" id="Z3A-xx-Vif"/>
                                     <constraint firstItem="fMK-fv-jTr" firstAttribute="centerX" secondItem="eBI-sm-0vb" secondAttribute="centerX" multiplier="0.15" id="bot-YO-wFl"/>

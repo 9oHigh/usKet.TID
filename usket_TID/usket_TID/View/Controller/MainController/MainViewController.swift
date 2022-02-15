@@ -78,8 +78,6 @@ class MainViewController: UIViewController {
         searchBarSetting()
         //알림 요청
         requestNotificationAuthorization()
-        
-        print("위치 :",localRealm.configuration.fileURL!)
     }
     
     // LargeTitle 혹은 Tableview와 관련해 바운스이후 네비게이션바로 돌아가는 이슈
