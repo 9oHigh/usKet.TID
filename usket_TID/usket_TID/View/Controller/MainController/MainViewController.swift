@@ -78,12 +78,9 @@ class MainViewController: UIViewController {
         searchBarSetting()
         //알림 요청
         requestNotificationAuthorization()
+
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
-    
-    // LargeTitle 혹은 Tableview와 관련해 바운스이후 네비게이션바로 돌아가는 이슈
-    // viewWillAppear에서 Tableview 상단에 inset을 주면 해결되었다.
-    // 확인 : TableView의 Align Top SafeArea값에 따라 top의 값을 조정
-    // 큰 값일 수록 top의 값은 작아지고 반대로 작은 값일 수록 top의 값도 크게 줘야함
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)

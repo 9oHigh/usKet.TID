@@ -16,7 +16,6 @@ class DefineWordModel : Object {
     @Persisted var emotion : String
     @Persisted var date : Date
     @Persisted var storedDate : String
-//    @Persisted var notiWord : List<NotiWordModel>
     
     @Persisted(primaryKey: true) var _id : ObjectId
     

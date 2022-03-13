@@ -31,7 +31,7 @@ class WordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        todayWord = randomWords.wordList.randomWordGenerate()
+        todayWord = randomWords.wordList.randomWord()
         
         todayWordLabel.text = "추천 단어는 \(todayWord)입니다."
         defineLabel.text = "먼저, \(todayWord)의 정의를 볼까요?"
@@ -58,7 +58,7 @@ class WordViewController: UIViewController {
     }
     
     @IBAction func newWord(_ sender: UIButton) {
-        todayWord = randomWords.wordList.randomWordGenerate()
+        todayWord = randomWords.wordList.randomWord()
         //로딩 중 표시를 위해 reloadData + 배열 초기화
         numbering = []
         definitions = []

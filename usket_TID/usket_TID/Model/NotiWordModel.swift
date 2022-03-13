@@ -11,9 +11,9 @@ import UIKit
 class NotiWordModel : Object {
     
     @Persisted var word : String
-    @Persisted var date : Date
+    @Persisted var date : String
     
-    convenience init(word: String, date: Date){
+    convenience init(word: String, date: String){
         self.init()
         self.word = word
         self.date = date
