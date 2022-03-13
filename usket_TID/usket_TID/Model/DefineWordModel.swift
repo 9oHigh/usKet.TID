@@ -5,9 +5,8 @@
 //  Created by 이경후 on 2021/11/24.
 //
 
-import Foundation
-import RealmSwift
 import UIKit
+import RealmSwift
 
 class DefineWordModel : Object {
     
@@ -17,6 +16,7 @@ class DefineWordModel : Object {
     @Persisted var emotion : String
     @Persisted var date : Date
     @Persisted var storedDate : String
+//    @Persisted var notiWord : List<NotiWordModel>
     
     @Persisted(primaryKey: true) var _id : ObjectId
     
