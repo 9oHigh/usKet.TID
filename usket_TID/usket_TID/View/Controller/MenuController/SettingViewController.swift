@@ -14,10 +14,12 @@ class SettingViewController: UIViewController {
     @IBOutlet weak var notiSwitch: UISwitch!
     @IBOutlet weak var notiTimePicker: UIDatePicker!
     
+    let indicator = IndicatorView()
     let userNotiCenter  = UNUserNotificationCenter.current()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         //알림을 허용했다면
         if UserDefaults.standard.bool(forKey: "pushAllow"){
             notiSwitch.isOn = true
@@ -30,7 +32,14 @@ class SettingViewController: UIViewController {
             let date = Date(timeIntervalSince1970: UserDefaults.standard.double(forKey: "setAlarm"))
             notiTimePicker.date = date
         }
+        view.addSubview(indicator)
+        indicator.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+        indicator.isHidden = true
+        notiTimePicker.calendar.timeZone = .current
     }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         //실제로 설정이동후 알림을 켰는지 안켰는지 확인용 - 확인이 안된다.
@@ -92,39 +101,61 @@ class SettingViewController: UIViewController {
     }
     
     @IBAction func pickTimeAdded(_ sender: UIDatePicker) {
-        if UserDefaults.standard.bool(forKey: "pushAllow"){
-            self.sendNoti(date: Date())
-            DispatchQueue.main.async {
-                self.showToast(message: "알림시간 저장완료😊")
-            }
-            //알림 시간 저장
-            UserDefaults.standard.set(sender.date.timeIntervalSince1970, forKey: "setAlarm")
-        } else {
-            DispatchQueue.main.async {
-                self.showToast(message: "알림시간 저장실패😅")
+        self.dismiss(animated: true) {
+            if UserDefaults.standard.bool(forKey: "pushAllow"){
+
+                self.sendNoti()
+                
+                DispatchQueue.main.async {
+                    self.showToast(message: "알림시간 저장완료😊")
+                }
+                //알림 시간 저장
+                print("pick!",sender.date)
+                UserDefaults.standard.set(sender.date.timeIntervalSince1970, forKey: "setAlarm")
+            } else {
+                DispatchQueue.main.async {
+                    self.showToast(message: "알림시간 저장실패😅")
+                }
             }
         }
     }
     
-    func sendNoti(date: Date) {
+    func sendNoti() {
         
         userNotiCenter.removeAllPendingNotificationRequests()
-        
+        indicator.isHidden = false
         DispatchQueue.main.async {
-            randomWords.wordList.shuffleWords(date: date)
+            randomWords.wordList.shuffleWords(date: Date())
+            self.registerContent {
+                self.indicator.isHidden = true
+            }
+        }
+    }
+    
+    func registerContent(onCompletion: @escaping () -> Void){
+        
+        let date : Date = Date()
+        var pickDate = notiTimePicker.date
+        
+        for item in 0...randomWords.wordList.words.count - 1 {
             
+            let newDate = Calendar.current.date(byAdding: .day, value: item, to: date)
+            let word = randomWords.wordList.randomWordGenerate(date: newDate!)
             let content = UNMutableNotificationContent()
-            let word = randomWords.wordList.randomWordGenerate(date: date)
+            
             
             content.title = "오늘도 티드와 함께 해요🏃🏻‍♂️"
             content.body = "오늘의 추천 단어는 [ \(word) ]입니다❗️\n\(word)에 대해 어떻게 생각하시나요? 작성하러 가요😊"
             content.sound = .default
             
             let trigger = UNCalendarNotificationTrigger(
-                dateMatching: Calendar.current.dateComponents([.hour, .minute], from: self.notiTimePicker.date), repeats: true)
+                dateMatching: Calendar.current.dateComponents([.month,.day,.hour, .minute], from: pickDate), repeats: false)
             
-            let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+            pickDate.addTimeInterval(86400)
             
+            let request = UNNotificationRequest(identifier: content.body, content: content, trigger: trigger)
+            print("-------------------")
+            print(pickDate,trigger,content)
             self.userNotiCenter.add(request) { error in
                 guard error != nil else {
                     return
@@ -134,5 +165,6 @@ class SettingViewController: UIViewController {
                 }
             }
         }
+        onCompletion()
     }
 }

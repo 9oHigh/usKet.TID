@@ -48,7 +48,6 @@ final class randomWords {
             try! localRealm.write {
                 localRealm.add(newData)
             }
-            print(newData)
         }
     }
 }
