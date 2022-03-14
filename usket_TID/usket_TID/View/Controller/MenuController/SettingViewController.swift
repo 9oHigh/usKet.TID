@@ -149,7 +149,7 @@ class SettingViewController: UIViewController {
             let request = UNNotificationRequest(identifier: word, content: content, trigger: trigger)
             
             pickDate.addTimeInterval(86400)
-            print(request)
+
             self.userNotiCenter.add(request) { error in
                 guard error != nil else {
                     return

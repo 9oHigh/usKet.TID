@@ -78,8 +78,6 @@ class MainViewController: UIViewController {
         searchBarSetting()
         //알림 요청
         requestNotificationAuthorization()
-
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
     
     override func viewWillAppear(_ animated: Bool) {
