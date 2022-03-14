@@ -23,21 +23,17 @@ class SettingViewController: UIViewController {
         //알림을 허용했다면
         if UserDefaults.standard.bool(forKey: "pushAllow"){
             notiSwitch.isOn = true
-            //알림을 허용하지 않았다면
+        //알림을 허용하지 않았다면
         } else {
             notiSwitch.isOn = false
         }
         //지정한 알림 시간이 있다면
         if UserDefaults.standard.double(forKey: "setAlarm") > 0 {
+            
             let date = Date(timeIntervalSince1970: UserDefaults.standard.double(forKey: "setAlarm"))
+
             notiTimePicker.date = date
         }
-        view.addSubview(indicator)
-        indicator.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
-        }
-        indicator.isHidden = true
-        notiTimePicker.calendar.timeZone = .current
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -103,14 +99,13 @@ class SettingViewController: UIViewController {
     @IBAction func pickTimeAdded(_ sender: UIDatePicker) {
         self.dismiss(animated: true) {
             if UserDefaults.standard.bool(forKey: "pushAllow"){
-
+                
                 self.sendNoti()
                 
                 DispatchQueue.main.async {
                     self.showToast(message: "알림시간 저장완료😊")
                 }
                 //알림 시간 저장
-                print("pick!",sender.date)
                 UserDefaults.standard.set(sender.date.timeIntervalSince1970, forKey: "setAlarm")
             } else {
                 DispatchQueue.main.async {
@@ -120,42 +115,41 @@ class SettingViewController: UIViewController {
         }
     }
     
-    func sendNoti() {
+    private func sendNoti() {
         
         userNotiCenter.removeAllPendingNotificationRequests()
-        indicator.isHidden = false
+        setIndicator()
+
         DispatchQueue.main.async {
             randomWords.wordList.shuffleWords(date: Date())
-            self.registerContent {
-                self.indicator.isHidden = true
+            self.registerContent() {
+                self.removeIndicator()
             }
         }
     }
     
-    func registerContent(onCompletion: @escaping () -> Void){
+    private func registerContent(onCompletion: @escaping () -> Void){
         
         let date : Date = Date()
-        var pickDate = notiTimePicker.date
-        
-        for item in 0...randomWords.wordList.words.count - 1 {
+        var pickDate : Date = notiTimePicker.date
+        //MAX NOTI : 64..
+        for item in 0..<64 {
             
             let newDate = Calendar.current.date(byAdding: .day, value: item, to: date)
             let word = randomWords.wordList.randomWordGenerate(date: newDate!)
+            
             let content = UNMutableNotificationContent()
-            
-            
             content.title = "오늘도 티드와 함께 해요🏃🏻‍♂️"
             content.body = "오늘의 추천 단어는 [ \(word) ]입니다❗️\n\(word)에 대해 어떻게 생각하시나요? 작성하러 가요😊"
             content.sound = .default
             
             let trigger = UNCalendarNotificationTrigger(
-                dateMatching: Calendar.current.dateComponents([.month,.day,.hour, .minute], from: pickDate), repeats: false)
+                dateMatching: Calendar.current.dateComponents([.year,.month,.day,.hour,.minute], from: pickDate), repeats: false)
+            
+            let request = UNNotificationRequest(identifier: word, content: content, trigger: trigger)
             
             pickDate.addTimeInterval(86400)
-            
-            let request = UNNotificationRequest(identifier: content.body, content: content, trigger: trigger)
-            print("-------------------")
-            print(pickDate,trigger,content)
+            print(request)
             self.userNotiCenter.add(request) { error in
                 guard error != nil else {
                     return
@@ -166,5 +160,16 @@ class SettingViewController: UIViewController {
             }
         }
         onCompletion()
+    }
+    
+    private func setIndicator(){
+        view.addSubview(indicator)
+        indicator.snp.makeConstraints { make in
+            make.edges.equalToSuperview()
+        }
+    }
+    
+    private func removeIndicator(){
+        indicator.removeFromSuperview()
     }
 }
