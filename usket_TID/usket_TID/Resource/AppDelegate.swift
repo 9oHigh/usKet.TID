@@ -10,6 +10,7 @@ import Realm
 import RealmSwift
 import IQKeyboardManagerSwift
 import UserNotifications
+import Firebase
 
 @main
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,7 +18,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        //세상에.. 이걸다해줘..
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
@@ -45,6 +45,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         Realm.Configuration.defaultConfiguration = config
         //뷰컨에서 못받을 수도 있으니!
         UNUserNotificationCenter.current().delegate = self
+        
+        FirebaseApp.configure()
         
         return true
     }

@@ -9,14 +9,14 @@ import UIKit
 import UserNotifications
 import RealmSwift
 
-class SettingViewController: UIViewController {
-    
+final class SettingViewController: UIViewController {
+
     @IBOutlet weak var notiSwitch: UISwitch!
     @IBOutlet weak var notiTimePicker: UIDatePicker!
-    
+
     let indicator = IndicatorView()
     let userNotiCenter  = UNUserNotificationCenter.current()
-    
+
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,7 +29,7 @@ class SettingViewController: UIViewController {
         }
         //지정한 알림 시간이 있다면
         if UserDefaults.standard.double(forKey: "setAlarm") > 0 {
-            
+
             let date = Date(timeIntervalSince1970: UserDefaults.standard.double(forKey: "setAlarm"))
 
             notiTimePicker.date = date
@@ -55,12 +55,12 @@ class SettingViewController: UIViewController {
             }
         }
     }
-    
+
     // 클로즈
     @IBAction func closeButtonClicked(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
-    
+
     // 알림 여부 토글
     @IBAction func switchChanged(_ sender: UISwitch) {
         //알림을 켰을 경우 - 설정으로 이동하여 키기
@@ -68,7 +68,7 @@ class SettingViewController: UIViewController {
             UserDefaults.standard.set(true,forKey: "pushAllow")
             showAlertWithCancel(title: "알림 설정 안내", message: "알림 설정 화면으로 이동하시겠습니까?") { action in
                 guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
-                
+
                 if UIApplication.shared.canOpenURL(url) {
                     UIApplication.shared.open(url)
                 }
@@ -81,7 +81,7 @@ class SettingViewController: UIViewController {
             UserDefaults.standard.set(false,forKey: "pushAllow")
             showAlertWithCancel(title: "알림 설정 안내", message: "알림 설정 화면으로 이동하시겠습니까?") { action in
                 guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
-                
+
                 if UIApplication.shared.canOpenURL(url) {
                     UIApplication.shared.open(url)
                 }
@@ -95,13 +95,13 @@ class SettingViewController: UIViewController {
     @IBAction func commingSoonButtonClicked(_ sender: UIButton) {
         self.showAlert(title: "업데이트 안내", message: "다크모드와 폰트 준비중🤗")
     }
-    
+
     @IBAction func pickTimeAdded(_ sender: UIDatePicker) {
         self.dismiss(animated: true) {
             if UserDefaults.standard.bool(forKey: "pushAllow"){
-                
+
                 self.sendNoti()
-                
+
                 DispatchQueue.main.async {
                     self.showToast(message: "알림시간 저장완료😊")
                 }
@@ -114,9 +114,9 @@ class SettingViewController: UIViewController {
             }
         }
     }
-    
+
     private func sendNoti() {
-        
+
         userNotiCenter.removeAllPendingNotificationRequests()
         setIndicator()
 
@@ -127,27 +127,27 @@ class SettingViewController: UIViewController {
             }
         }
     }
-    
+
     private func registerContent(onCompletion: @escaping () -> Void){
-        
+
         let date : Date = Date()
         var pickDate : Date = notiTimePicker.date
         //MAX NOTI : 64..
         for item in 0..<64 {
-            
+
             let newDate = Calendar.current.date(byAdding: .day, value: item, to: date)
             let word = randomWords.wordList.randomWordGenerate(date: newDate!)
-            
+
             let content = UNMutableNotificationContent()
             content.title = "오늘도 티드와 함께 해요🏃🏻‍♂️"
             content.body = "오늘의 추천 단어는 [ \(word) ]입니다❗️\n\(word)에 대해 어떻게 생각하시나요? 작성하러 가요😊"
             content.sound = .default
-            
+
             let trigger = UNCalendarNotificationTrigger(
                 dateMatching: Calendar.current.dateComponents([.year,.month,.day,.hour,.minute], from: pickDate), repeats: false)
-            
+
             let request = UNNotificationRequest(identifier: word, content: content, trigger: trigger)
-            
+
             pickDate.addTimeInterval(86400)
 
             self.userNotiCenter.add(request) { error in
@@ -161,14 +161,14 @@ class SettingViewController: UIViewController {
         }
         onCompletion()
     }
-    
+
     private func setIndicator(){
         view.addSubview(indicator)
         indicator.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
     }
-    
+
     private func removeIndicator(){
         indicator.removeFromSuperview()
     }
