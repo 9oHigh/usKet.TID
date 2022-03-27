@@ -7,7 +7,7 @@
 
 import UIKit
 
-class CalendarTableViewCell: UITableViewCell {
+final class CalendarTableViewCell: UITableViewCell {
 
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var firstComeLabel: UILabel!

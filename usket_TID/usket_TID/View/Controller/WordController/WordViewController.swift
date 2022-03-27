@@ -9,7 +9,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 
-class WordViewController: UIViewController {
+final class WordViewController: UIViewController {
     
     @IBOutlet weak var newWordButton: UIButton!
     @IBOutlet weak var defineTableView: UITableView!

@@ -9,7 +9,7 @@ import UIKit
 import RealmSwift
 
 //페이지 관리
-class PageViewController: UIPageViewController {
+final class PageViewController: UIPageViewController {
     
     //페이지(viewController) 배열
     var addPages = [UIViewController]()

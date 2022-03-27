@@ -6,8 +6,8 @@
 //
 
 import UIKit
-//RootViewController
-class SideMenuNavigationViewController: UIViewController {
+
+final class SideMenuNavigationViewController: UIViewController {
 
     //Buttons...
     @IBOutlet weak var statisticsButton: UIButton!

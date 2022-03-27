@@ -7,7 +7,7 @@
 
 import UIKit
 
-class LicenseViewController: UIViewController {
+final class LicenseViewController: UIViewController {
 
     @IBOutlet weak var contentTextView: UITextView!
     var content : String?

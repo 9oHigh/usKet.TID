@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OpenSourceViewController: UIViewController {
+final class OpenSourceViewController: UIViewController {
     
     @IBOutlet weak var licenseTableView: UITableView!
     let opensourceList : [String] = [

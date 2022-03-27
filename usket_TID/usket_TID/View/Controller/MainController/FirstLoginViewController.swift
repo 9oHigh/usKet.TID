@@ -9,7 +9,7 @@
 
 import UIKit
 
-class FirstLoginViewController: UIViewController {
+final class FirstLoginViewController: UIViewController {
 
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var introLabel: UILabel!

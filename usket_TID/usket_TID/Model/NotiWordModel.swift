@@ -8,7 +8,7 @@
 import RealmSwift
 import UIKit
 
-class NotiWordModel : Object {
+final class NotiWordModel : Object {
     
     @Persisted var word : String
     @Persisted var date : String

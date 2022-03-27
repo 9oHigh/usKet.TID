@@ -9,7 +9,7 @@ import UIKit
 import RealmSwift
 
 //단어 + 연관 단어 + 감정
-class BasicViewController: UIViewController {
+final class BasicViewController: UIViewController {
     
     //줄 놈이 선언되어 있어야지
     var delegate : shareToContent?

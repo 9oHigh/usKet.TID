@@ -7,7 +7,7 @@
 
 import UIKit
 
-class DefineTableViewCell: UITableViewCell {
+final class DefineTableViewCell: UITableViewCell {
 
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var defineLabel: UILabel!

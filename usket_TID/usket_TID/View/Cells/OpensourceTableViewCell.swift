@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OpensourceTableViewCell: UITableViewCell {
+final class OpensourceTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!
     

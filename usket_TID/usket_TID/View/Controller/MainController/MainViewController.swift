@@ -11,7 +11,7 @@ import RealmSwift
 import JJFloatingActionButton
 import UserNotifications
 
-class MainViewController: UIViewController {
+final class MainViewController: UIViewController {
     
     //First Login 구현을 위해 UserDefaults
     let userDefaults = UserDefaults.standard

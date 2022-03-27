@@ -8,7 +8,7 @@
 import UIKit
 import RealmSwift
 
-class ContentViewController: UIViewController,shareToContent{
+final class ContentViewController: UIViewController,shareToContent{
     
     @IBOutlet weak var backgroundView: UIView!
     @IBOutlet weak var cancelButton: UIButton!

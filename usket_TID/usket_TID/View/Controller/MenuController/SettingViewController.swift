@@ -76,7 +76,7 @@ final class SettingViewController: UIViewController {
                 self.notiSwitch.isOn = false
                 UserDefaults.standard.set(false,forKey: "pushAllow")
             }
-            //알림을 끌 경우 - 설정으로 이동하여 꺼기
+        //알림을 끌 경우 - 설정으로 이동하여 꺼기
         } else {
             UserDefaults.standard.set(false,forKey: "pushAllow")
             showAlertWithCancel(title: "알림 설정 안내", message: "알림 설정 화면으로 이동하시겠습니까?") { action in

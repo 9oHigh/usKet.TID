@@ -9,7 +9,7 @@ import UIKit
 import ALProgressView
 import RealmSwift
 
-class StatisticsViewController: UIViewController {
+final class StatisticsViewController: UIViewController {
     
     private lazy var progressRing = ALProgressRing()
     

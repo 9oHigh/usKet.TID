@@ -9,7 +9,7 @@ import UIKit
 import FSCalendar
 import RealmSwift
 
-class CalendarViewController: UIViewController {
+final class CalendarViewController: UIViewController {
     
     @IBOutlet weak var calendarTableView: UITableView!
     @IBOutlet weak var calendar: FSCalendar!
