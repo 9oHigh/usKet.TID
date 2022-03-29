@@ -203,12 +203,14 @@ final class MainViewController: UIViewController {
         
         //여기서 overLayview의 backgroundColor를 블러 처리로 사용할 수 있으나 navigationBar에 적용이 안되는 이슈가 있음..
         // clear로 하고 item 라벨들의 backgroundColor를 줘야함
-        actionButton.overlayView.backgroundColor = .clear
+
+        actionButton.overlayView.backgroundColor = .black.withAlphaComponent(0.3)
         actionButton.translatesAutoresizingMaskIntoConstraints = false
         actionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -30).isActive = true
         actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
         actionButton.buttonColor = .white
         actionButton.buttonImageColor = .black
+        
     }
     
     //서치바
@@ -227,9 +229,9 @@ final class MainViewController: UIViewController {
         definesPresentationContext = true
         //서치바 속성
         searchController.searchBar.searchBarStyle = .minimal
-        searchController.searchBar.backgroundColor = .white
+        searchController.searchBar.backgroundColor = .clear
         //텍스트 필드 속성
-        searchController.searchBar.searchTextField.backgroundColor = .white
+        searchController.searchBar.searchTextField.backgroundColor = .clear
         searchController.searchBar.searchTextField.borderStyle = .none
         searchController.searchBar.searchTextField.textColor = .black
         searchController.searchBar.searchTextField.font = UIFont(name: MainViewController.originalFont, size: 18)
