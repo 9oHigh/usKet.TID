@@ -8,7 +8,7 @@
 import UIKit
 
 final class SideMenuNavigationViewController: UIViewController {
-
+    
     //Buttons...
     @IBOutlet weak var statisticsButton: UIButton!
     @IBOutlet weak var settingButton: UIButton!
@@ -17,6 +17,8 @@ final class SideMenuNavigationViewController: UIViewController {
     @IBOutlet weak var supportLabel: UILabel!
     //관상용 인스타그램 마크
     @IBOutlet var instagramImageView: UIImageView!
+    
+    private lazy var imageGesture = UITapGestureRecognizer(target: self, action: #selector(toInstagram(_:)))
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,31 +35,35 @@ final class SideMenuNavigationViewController: UIViewController {
         let image = UIImage(named: "instaLogo.png")
         instagramImageView.image = image
         instagramImageView.contentMode = .scaleAspectFill
+        //Gesture
+        instagramImageView.addGestureRecognizer(imageGesture)
+        instagramImageView.isUserInteractionEnabled = true
     }
-    //통계
+    
+    // 통계
     @IBAction func statisticsButtonClicked(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let vc = storyboard.instantiateViewController(withIdentifier: "StatisticsViewController") as! StatisticsViewController
         
         vc.modalPresentationStyle = .fullScreen
-
+        
         self.present(vc, animated: true, completion: nil)
     }
-    //설정
+    // 설정
     @IBAction func settingButtonClicked(_ sender: UIButton) {
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-
+        
         let vc = storyboard.instantiateViewController(withIdentifier: "SettingViewController") as! SettingViewController
-
+        
         vc.modalPresentationStyle = .fullScreen
-
+        
         self.present(vc,animated: true,completion: nil)
     }
-    //오픈소스 라이선스
+    // 오픈소스 라이선스
     @IBAction func openSourceButtonClicked(_ sender: UIButton) {
-
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let vc = storyboard.instantiateViewController(withIdentifier: "OpenSourceViewController") as! OpenSourceViewController
@@ -66,9 +72,9 @@ final class SideMenuNavigationViewController: UIViewController {
         
         self.present(vc,animated: true,completion: nil)
     }
-    //문의하기
+    // 문의하기
     @IBAction func contactButtonClicked(_ sender: UIButton) {
-
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let vc = storyboard.instantiateViewController(withIdentifier: "ContactViewController") as! ContactViewController
@@ -78,7 +84,15 @@ final class SideMenuNavigationViewController: UIViewController {
         self.present(vc,animated: true,completion: nil)
     }
     
-    
+    // 인스타그램
+    @objc
+    private func toInstagram(_ sender: UITapGestureRecognizer){
+        
+        guard let instaUrl = URL(string:"https://www.instagram.com/bo110_1/?utm_medium=copy_link") else {
+            return
+        }
+        UIApplication.shared.open(instaUrl, options: [:], completionHandler: nil)
+    }
 }
 
 
