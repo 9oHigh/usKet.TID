@@ -15,7 +15,6 @@ final class SideMenuNavigationViewController: UIViewController {
     @IBOutlet weak var openSourceButton: UIButton!
     @IBOutlet weak var contactButton: UIButton!
     @IBOutlet weak var supportLabel: UILabel!
-    //관상용 인스타그램 마크
     @IBOutlet var instagramImageView: UIImageView!
     
     private lazy var imageGesture = UITapGestureRecognizer(target: self, action: #selector(toInstagram(_:)))
