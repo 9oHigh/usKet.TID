@@ -202,8 +202,6 @@ final class MainViewController: UIViewController {
         view.addSubview(actionButton)
         
         //여기서 overLayview의 backgroundColor를 블러 처리로 사용할 수 있으나 navigationBar에 적용이 안되는 이슈가 있음..
-        // clear로 하고 item 라벨들의 backgroundColor를 줘야함
-
         actionButton.overlayView.backgroundColor = .black.withAlphaComponent(0.3)
         actionButton.translatesAutoresizingMaskIntoConstraints = false
         actionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -30).isActive = true
