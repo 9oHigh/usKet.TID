@@ -19,7 +19,7 @@ final class SideMenuNavigationViewController: UIViewController {
     
     private lazy var imageGesture = UITapGestureRecognizer(target: self, action: #selector(toInstagram(_:)))
     
-    override func viewDidLoad() {
+    override func viewDidLoad(){
         super.viewDidLoad()
         
         //Button + Extension
@@ -34,13 +34,14 @@ final class SideMenuNavigationViewController: UIViewController {
         let image = UIImage(named: "instaLogo.png")
         instagramImageView.image = image
         instagramImageView.contentMode = .scaleAspectFill
+        
         //Gesture
         instagramImageView.addGestureRecognizer(imageGesture)
         instagramImageView.isUserInteractionEnabled = true
     }
     
     // 통계
-    @IBAction func statisticsButtonClicked(_ sender: UIButton) {
+    @IBAction func statisticsButtonClicked(_ sender: UIButton){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let vc = storyboard.instantiateViewController(withIdentifier: "StatisticsViewController") as! StatisticsViewController
@@ -50,8 +51,7 @@ final class SideMenuNavigationViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
     // 설정
-    @IBAction func settingButtonClicked(_ sender: UIButton) {
-        
+    @IBAction func settingButtonClicked(_ sender: UIButton){
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let vc = storyboard.instantiateViewController(withIdentifier: "SettingViewController") as! SettingViewController
@@ -61,7 +61,7 @@ final class SideMenuNavigationViewController: UIViewController {
         self.present(vc,animated: true,completion: nil)
     }
     // 오픈소스 라이선스
-    @IBAction func openSourceButtonClicked(_ sender: UIButton) {
+    @IBAction func openSourceButtonClicked(_ sender: UIButton){
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
@@ -72,7 +72,7 @@ final class SideMenuNavigationViewController: UIViewController {
         self.present(vc,animated: true,completion: nil)
     }
     // 문의하기
-    @IBAction func contactButtonClicked(_ sender: UIButton) {
+    @IBAction func contactButtonClicked(_ sender: UIButton){
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         

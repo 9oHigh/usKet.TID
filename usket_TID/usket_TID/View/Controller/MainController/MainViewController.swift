@@ -30,7 +30,7 @@ final class MainViewController: UIViewController {
     //오류방지
     var filtered : Results<DefineWordModel>!
     
-    var isFiltering: Bool {
+    var isFiltering: Bool{
         
         let searchController = self.navigationItem.searchController
         let isActive = searchController?.isActive ?? false
@@ -45,7 +45,7 @@ final class MainViewController: UIViewController {
     //코드로 barbuttonitem의 버튼에 접근 불가능
     @IBOutlet weak var mainTableView: UITableView!
     
-    override func viewDidLoad() {
+    override func viewDidLoad(){
         super.viewDidLoad()
         
         //Left Button - sideMenu
@@ -80,7 +80,7 @@ final class MainViewController: UIViewController {
         requestNotificationAuthorization()
     }
     
-    override func viewWillAppear(_ animated: Bool) {
+    override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
         
         //상단에 짤리지 않게 인셋
