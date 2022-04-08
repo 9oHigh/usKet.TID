@@ -41,6 +41,7 @@
 		4C3AD759274A5C4E00EFC636 /* ContactViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AD758274A5C4E00EFC636 /* ContactViewController.swift */; };
 		4C3AD75B274A70B700EFC636 /* Walkthrough.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 4C3AD75A274A70B700EFC636 /* Walkthrough.storyboard */; };
 		4C3AD75D274A70D700EFC636 /* FirstLoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3AD75C274A70D700EFC636 /* FirstLoginViewController.swift */; };
+		4C3D7D2928007AE000BCF563 /* Helper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C3D7D2828007AE000BCF563 /* Helper.swift */; };
 		4C489A3227526EF200932983 /* ShareContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C489A3127526EF200932983 /* ShareContent.swift */; };
 		4C489A34275271EA00932983 /* UIViewController + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C489A33275271EA00932983 /* UIViewController + Extension.swift */; };
 		4C489A36275280F600932983 /* TextField + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C489A35275280F600932983 /* TextField + Extension.swift */; };
@@ -118,6 +119,7 @@
 		4C3AD758274A5C4E00EFC636 /* ContactViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContactViewController.swift; sourceTree = "<group>"; };
 		4C3AD75A274A70B700EFC636 /* Walkthrough.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Walkthrough.storyboard; sourceTree = "<group>"; };
 		4C3AD75C274A70D700EFC636 /* FirstLoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstLoginViewController.swift; sourceTree = "<group>"; };
+		4C3D7D2828007AE000BCF563 /* Helper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Helper.swift; sourceTree = "<group>"; };
 		4C489A3127526EF200932983 /* ShareContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareContent.swift; sourceTree = "<group>"; };
 		4C489A33275271EA00932983 /* UIViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIViewController + Extension.swift"; sourceTree = "<group>"; };
 		4C489A35275280F600932983 /* TextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField + Extension.swift"; sourceTree = "<group>"; };
@@ -344,6 +346,7 @@
 		4C80A7FF27DE16240056EC71 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				4C3D7D2828007AE000BCF563 /* Helper.swift */,
 				4C80A80027DE16320056EC71 /* Protocols */,
 				4C23847F274A7F26007314BF /* Extension */,
 			);
@@ -533,6 +536,7 @@
 				4C3AD741274A0A0700EFC636 /* SettingViewController.swift in Sources */,
 				4C811C2A274D2B2800F51493 /* MainTableViewCell.swift in Sources */,
 				4C3276482747FA6D00C0456D /* SideMenuNavigationViewController.swift in Sources */,
+				4C3D7D2928007AE000BCF563 /* Helper.swift in Sources */,
 				4C811C28274D29BF00F51493 /* MainViewController + Extension.swift in Sources */,
 				4C811C24274CD48C00F51493 /* WordViewController + Extension.swift in Sources */,
 				4C3AD75D274A70D700EFC636 /* FirstLoginViewController.swift in Sources */,

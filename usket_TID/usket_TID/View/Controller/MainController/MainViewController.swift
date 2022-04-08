@@ -208,42 +208,40 @@ final class MainViewController: UIViewController {
         actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
         actionButton.buttonColor = .white
         actionButton.buttonImageColor = .black
-        
     }
     
     //서치바
     func searchBarSetting(){
+
         //생성
         let searchController = UISearchController(searchResultsController: nil)
-        //리턴키!
         searchController.searchBar.enablesReturnKeyAutomatically = true
-        //settings..
         searchController.searchResultsUpdater = self
-        //검색시 배경 alpha
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.placeholder = "단어, 연관단어, 내용을 검색해보세요."
-        //네비게이션 아이템에 넣기
+        
+        //네비게이션
         navigationItem.searchController = searchController
         definesPresentationContext = true
+        
         //서치바 속성
         searchController.searchBar.searchBarStyle = .minimal
         searchController.searchBar.backgroundColor = .clear
+        
         //텍스트 필드 속성
         searchController.searchBar.searchTextField.backgroundColor = .clear
         searchController.searchBar.searchTextField.borderStyle = .none
         searchController.searchBar.searchTextField.textColor = .black
         searchController.searchBar.searchTextField.font = UIFont(name: MainViewController.originalFont, size: 18)
         searchController.searchBar.searchTextField.leftView?.tintColor = .lightGray
-        //영어도 있을 수 있으니..
         searchController.searchBar.autocapitalizationType = .none
         searchController.searchBar.setValue("취소", forKey: "cancelButtonText")
-        
-        //취소버튼 color + font 변경
+
+        //폰트 + 컬러
         let attributes:[NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.black,
             .font: UIFont(name: MainViewController.originalFont, size: 17)!
         ]
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes(attributes, for: .normal)
-        
     }
 }
