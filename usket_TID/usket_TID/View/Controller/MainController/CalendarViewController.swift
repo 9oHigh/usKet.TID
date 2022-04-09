@@ -73,7 +73,7 @@ final class CalendarViewController: UIViewController {
         calendar.appearance.headerDateFormat = "YYYY년 M월"
         
         //폰트
-        let customFont = UIFont(name: MainViewController.originalFont, size: 18)
+        let customFont = UIFont(name: Helper.shared.originalFont, size: 18)
         calendar.appearance.titleFont = customFont
         calendar.appearance.weekdayFont = customFont
         calendar.appearance.subtitleFont = customFont
@@ -208,7 +208,7 @@ extension CalendarViewController : FSCalendarDelegate,FSCalendarDataSource,UITab
         if works.count > 0 {
             let compliment : String = " 짝짝짝👏 정의한 단어 \(works.count)개가 있어요!"
             let attributedString = NSMutableAttributedString(string: compliment, attributes: [
-                .font: UIFont(name: MainViewController.originalFont, size: 20)!,
+                .font: UIFont(name: Helper.shared.originalFont, size: 20)!,
                 .foregroundColor: UIColor.black
             ])
             

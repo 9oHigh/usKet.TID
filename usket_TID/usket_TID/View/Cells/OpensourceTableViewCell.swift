@@ -14,7 +14,7 @@ final class OpensourceTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        nameLabel.font = UIFont(name: MainViewController.originalFont, size: 20)
+        nameLabel.font = UIFont(name: Helper.shared.originalFont, size: 20)
         
         //백그라운드 그림자 효과
         self.contentView.layer.cornerRadius = 5

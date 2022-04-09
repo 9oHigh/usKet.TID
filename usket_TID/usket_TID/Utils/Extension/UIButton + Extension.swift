@@ -12,7 +12,7 @@ extension UIButton {
     
     func toCustomButton(){
         self.titleLabel?.tintColor = .black
-        self.titleLabel?.font = UIFont(name: MainViewController.originalFont, size: 22)
+        self.titleLabel?.font = UIFont(name: Helper.shared.originalFont, size: 22)
     }
     
     func getOpacity(alpha : CGFloat){

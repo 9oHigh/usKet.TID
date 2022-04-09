@@ -38,9 +38,6 @@ final class MainViewController: UIViewController {
         return isActive && isSearchBarHasText
     }
     
-    //Appdelegate로 할 수 있는 걸로 알고 있다. 찾아보자.
-    static let originalFont : String = "Cafe24Oneprettynight"
-    
     //barbuttonItem에서 Storyboard에서 확인..
     //코드로 barbuttonitem의 버튼에 접근 불가능
     @IBOutlet weak var mainTableView: UITableView!
@@ -61,7 +58,7 @@ final class MainViewController: UIViewController {
         //네비게이션바 스크롤시 default 값은 다크모드시 검정색이 된다.
         //타이틀에 폰트 주기
         navigationController?.navigationBar.barTintColor = .white
-        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: MainViewController.originalFont, size: 25)!,NSAttributedString.Key.foregroundColor : UIColor.black]
+        navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: Helper.shared.originalFont, size: 25)!,NSAttributedString.Key.foregroundColor : UIColor.black]
         
         //delegate + dataSource
         mainTableView.delegate = self
@@ -156,7 +153,7 @@ final class MainViewController: UIViewController {
             // .trailing은 버튼이 왼쪽에 있을 경우
             item.titlePosition = .leading
             //커스텀 폰트 적용
-            item.titleLabel.font = UIFont(name: MainViewController.originalFont, size: 17)
+            item.titleLabel.font = UIFont(name: Helper.shared.originalFont, size: 17)
             item.titleLabel.textColor = .black
             item.titleLabel.backgroundColor = .white
             
@@ -232,7 +229,7 @@ final class MainViewController: UIViewController {
         searchController.searchBar.searchTextField.backgroundColor = .clear
         searchController.searchBar.searchTextField.borderStyle = .none
         searchController.searchBar.searchTextField.textColor = .black
-        searchController.searchBar.searchTextField.font = UIFont(name: MainViewController.originalFont, size: 18)
+        searchController.searchBar.searchTextField.font = UIFont(name: Helper.shared.originalFont, size: 18)
         searchController.searchBar.searchTextField.leftView?.tintColor = .lightGray
         searchController.searchBar.autocapitalizationType = .none
         searchController.searchBar.setValue("취소", forKey: "cancelButtonText")
@@ -240,7 +237,7 @@ final class MainViewController: UIViewController {
         //폰트 + 컬러
         let attributes:[NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.black,
-            .font: UIFont(name: MainViewController.originalFont, size: 17)!
+            .font: UIFont(name: Helper.shared.originalFont, size: 17)!
         ]
         UIBarButtonItem.appearance(whenContainedInInstancesOf: [UISearchBar.self]).setTitleTextAttributes(attributes, for: .normal)
     }

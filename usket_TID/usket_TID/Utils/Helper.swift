@@ -8,6 +8,6 @@
 import UIKit
 
 final class Helper {
-    
     static let shared = Helper()
+    let originalFont : String = "Cafe24Oneprettynight"
 }

@@ -46,7 +46,7 @@ extension UIViewController {
         
         //위치와 사이즈 설정
         let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height - self.view.frame.size.height/2 , width: 160, height: 50))
-        toastLabel.font = UIFont(name: MainViewController.originalFont, size: 18)
+        toastLabel.font = UIFont(name: Helper.shared.originalFont, size: 18)
         toastLabel.backgroundColor = UIColor.lightGray
         toastLabel.textColor = UIColor.white
         toastLabel.text = message

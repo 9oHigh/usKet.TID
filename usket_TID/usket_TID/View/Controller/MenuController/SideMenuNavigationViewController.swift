@@ -29,7 +29,7 @@ final class SideMenuNavigationViewController: UIViewController {
         contactButton.toCustomButton()
         
         supportLabel.text = "Logo,\nEmotion\nBy   bo110_1"
-        supportLabel.font = UIFont(name: MainViewController.originalFont, size: 18)
+        supportLabel.font = UIFont(name: Helper.shared.originalFont, size: 18)
         
         let image = UIImage(named: "instaLogo.png")
         instagramImageView.image = image
