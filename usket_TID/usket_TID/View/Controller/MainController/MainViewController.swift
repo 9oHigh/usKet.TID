@@ -15,31 +15,22 @@ final class MainViewController: UIViewController {
     
     //First Login 구현을 위해 UserDefaults
     let userDefaults = UserDefaults.standard
-    
     //알람설정
     let userNotiCenter = UNUserNotificationCenter.current()
-    
     //realm
     let localRealm = try! Realm()
     var tasks : Results<DefineWordModel>!
-    
     // 저장 및 수정 확인
     static var toastMessage : String?
-    
     //서치바에서 검색중인지 아닌지 확인하고 filtered로 사용하기
     //오류방지
     var filtered : Results<DefineWordModel>!
-    
     var isFiltering: Bool{
-        
         let searchController = self.navigationItem.searchController
         let isActive = searchController?.isActive ?? false
         let isSearchBarHasText = searchController?.searchBar.text?.isEmpty == false
         return isActive && isSearchBarHasText
     }
-    
-    //barbuttonItem에서 Storyboard에서 확인..
-    //코드로 barbuttonitem의 버튼에 접근 불가능
     @IBOutlet weak var mainTableView: UITableView!
     
     override func viewDidLoad(){
@@ -56,8 +47,8 @@ final class MainViewController: UIViewController {
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: calendarImage, style: .plain, target: self, action: #selector(openCalendar))
         
         //네비게이션바 스크롤시 default 값은 다크모드시 검정색이 된다.
-        //타이틀에 폰트 주기
         navigationController?.navigationBar.barTintColor = .white
+        //타이틀에 폰트 주기
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: Helper.shared.originalFont, size: 25)!,NSAttributedString.Key.foregroundColor : UIColor.black]
         
         //delegate + dataSource
@@ -67,14 +58,10 @@ final class MainViewController: UIViewController {
         //tasks 확인 - 먼저입력한게 하단으로..
         tasks = localRealm.objects(DefineWordModel.self).sorted(byKeyPath: "date", ascending: false)
         
-        //first LogIn 확인
-        firstLogInCheck()
-        //액션버튼 적용
-        addActionButton()
-        //서치바 적용
-        searchBarSetting()
-        //알림 요청
-        requestNotificationAuthorization()
+        firstLogInCheck() //first LogIn 확인
+        addActionButton() //액션버튼 적용
+        searchBarSetting() //서치바 적용
+        requestNotificationAuthorization() //알림 요청
     }
     
     override func viewWillAppear(_ animated: Bool){
@@ -95,7 +82,6 @@ final class MainViewController: UIViewController {
     }
     //처음인지 아닌지 확인
     func firstLogInCheck(){
-        
         //두번이상 실행
         if userDefaults.bool(forKey: "FirstLogIn") { return }
         //처음 실행
@@ -109,7 +95,7 @@ final class MainViewController: UIViewController {
         
         self.present(vc, animated: true, completion: nil)
     }
-    //SideMenu OpenSource
+    // SideMenu
     @objc func openSideMenu(){
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -120,7 +106,7 @@ final class MainViewController: UIViewController {
         
         self.present(menu,animated: true,completion: nil)
     }
-    // 캘린더 뷰컨트롤러
+    // Calendar
     @objc func openCalendar(){
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
@@ -130,7 +116,6 @@ final class MainViewController: UIViewController {
         
         self.present(vc, animated: true, completion: nil)
     }
-    
     //로컬 푸시 권한
     func requestNotificationAuthorization(){
         
@@ -139,10 +124,8 @@ final class MainViewController: UIViewController {
         userNotiCenter.requestAuthorization(options: authOptions) { success, error in
             //푸시 허용상태인지 저장
             UserDefaults.standard.set(success,forKey: "pushAllow")
-            
         }
     }
-    
     //Floating Button 추가하기
     func addActionButton(){
         let actionButton = JJFloatingActionButton()
@@ -152,19 +135,19 @@ final class MainViewController: UIViewController {
         actionButton.configureDefaultItem { item in
             // .trailing은 버튼이 왼쪽에 있을 경우
             item.titlePosition = .leading
-            //커스텀 폰트 적용
+            // 커스텀 폰트 적용
             item.titleLabel.font = UIFont(name: Helper.shared.originalFont, size: 17)
             item.titleLabel.textColor = .black
             item.titleLabel.backgroundColor = .white
             
-            //해당 버튼 패키지에서 set을 막아두어 설정할 수 없기에
-            //constraint를 직접 만져야했음..
+            // 해당 버튼 패키지에서 set을 막아두어 설정할 수 없기에
+            // constraint를 직접 만져야했음..
             let paddedWidth = item.titleLabel.intrinsicContentSize.width + 20
             let paddedheight = item.titleLabel.intrinsicContentSize.height + 20
             item.titleLabel.widthAnchor.constraint(equalToConstant: paddedWidth).isActive = true
             item.titleLabel.heightAnchor.constraint(equalToConstant: paddedheight).isActive = true
             
-            //Label's attribute
+            //Label attribute
             item.titleLabel.textAlignment = .center
             item.titleLabel.clipsToBounds = true // -> cornerRadius
             item.titleLabel.layer.borderColor = UIColor.black.cgColor
@@ -180,7 +163,6 @@ final class MainViewController: UIViewController {
         }
         
         actionButton.addItem(title: "작성하기", image: UIImage(named: "writing.png")?.withRenderingMode(.alwaysTemplate)) { item in
-            
             //에디터로 연결
             let storyboard = UIStoryboard(name: "WordScreen", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "PageViewController") as! PageViewController
@@ -195,7 +177,6 @@ final class MainViewController: UIViewController {
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
         }
-        //전체 뷰위에 constrain 값주고 올리기
         view.addSubview(actionButton)
         
         //여기서 overLayview의 backgroundColor를 블러 처리로 사용할 수 있으나 navigationBar에 적용이 안되는 이슈가 있음..
@@ -206,7 +187,6 @@ final class MainViewController: UIViewController {
         actionButton.buttonColor = .white
         actionButton.buttonImageColor = .black
     }
-    
     //서치바
     func searchBarSetting(){
 

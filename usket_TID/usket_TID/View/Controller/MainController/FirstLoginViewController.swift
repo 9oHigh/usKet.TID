@@ -31,7 +31,7 @@ final class FirstLoginViewController: UIViewController {
         contentLabel.font = UIFont(name: Helper.shared.originalFont, size: 18.0)
         contentLabel.text = "세상을 바라보는 정의와 의미는 모두가 다를 것이라고 생각합니다. 여러분들의 세상은 어떤 세상인지 오늘부터 주변의 것들에 대해 하나씩 기록하면서 돌아보는 시간을 갖길 바랍니다😄"
         
-        sendLabel.font = UIFont(name: MainViewController.originalFont, size: 18.0)
+        sendLabel.font = UIFont(name: Helper.shared.originalFont, size: 18.0)
         sendLabel.text = "개발자 드림"
     }
     //Start
