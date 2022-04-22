@@ -350,9 +350,9 @@
                                         </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vkX-cZ-GEY">
-                                        <rect key="frame" x="0.0" y="229" width="96.333333333333329" height="37.333333333333314"/>
+                                        <rect key="frame" x="0.0" y="229" width="118.33333333333333" height="37.333333333333314"/>
                                         <state key="normal" title="Button"/>
-                                        <buttonConfiguration key="configuration" style="plain" title="문의하기">
+                                        <buttonConfiguration key="configuration" style="plain" title="문의 &amp; 리뷰">
                                             <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="22"/>
                                             <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </buttonConfiguration>
@@ -523,7 +523,7 @@
                                     <action selector="closeButtonClicked:" destination="yIK-eH-oic" eventType="touchUpInside" id="Hc5-oa-HTq"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="통계" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygl-kM-d9x">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="통계" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ygl-kM-d9x">
                                 <rect key="frame" x="197.66666666666666" y="56" width="32.666666666666657" height="21"/>
                                 <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -633,7 +633,6 @@
                             <constraint firstItem="2mw-QX-5rM" firstAttribute="leading" secondItem="USX-OV-W7W" secondAttribute="leading" constant="30" id="Kst-py-phb"/>
                             <constraint firstItem="cIi-7s-QkE" firstAttribute="leading" secondItem="USX-OV-W7W" secondAttribute="leading" constant="30" id="Le8-Rr-cA7"/>
                             <constraint firstItem="PKN-bI-OSe" firstAttribute="leading" secondItem="USX-OV-W7W" secondAttribute="leading" constant="10" id="MDd-Kj-P7a"/>
-                            <constraint firstItem="Ygl-kM-d9x" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PKN-bI-OSe" secondAttribute="trailing" constant="8" symbolic="YES" id="Mdc-cd-Dho"/>
                             <constraint firstItem="a9t-bS-cfL" firstAttribute="height" secondItem="jNH-lF-qdb" secondAttribute="height" multiplier="0.282366" id="NuY-cQ-mN2"/>
                             <constraint firstItem="cIi-7s-QkE" firstAttribute="top" secondItem="PKN-bI-OSe" secondAttribute="bottom" constant="30" id="Qgu-CH-s2G"/>
                             <constraint firstItem="Ygl-kM-d9x" firstAttribute="top" secondItem="USX-OV-W7W" secondAttribute="top" constant="12" id="Swr-Hg-dMP"/>
@@ -641,6 +640,7 @@
                             <constraint firstItem="PKN-bI-OSe" firstAttribute="top" secondItem="USX-OV-W7W" secondAttribute="top" id="csP-V3-9W1"/>
                             <constraint firstItem="2mw-QX-5rM" firstAttribute="top" secondItem="cIi-7s-QkE" secondAttribute="bottom" constant="15" id="e2c-ws-G5g"/>
                             <constraint firstItem="USX-OV-W7W" firstAttribute="trailing" secondItem="2mw-QX-5rM" secondAttribute="trailing" constant="30" id="eNL-co-gsF"/>
+                            <constraint firstItem="Ygl-kM-d9x" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="PKN-bI-OSe" secondAttribute="trailing" constant="8" symbolic="YES" id="hhY-UQ-d3x"/>
                             <constraint firstItem="a9t-bS-cfL" firstAttribute="top" secondItem="2mw-QX-5rM" secondAttribute="bottom" constant="15" id="mbt-UB-hHQ"/>
                             <constraint firstItem="a9t-bS-cfL" firstAttribute="centerX" secondItem="USX-OV-W7W" secondAttribute="centerX" id="nnV-o3-yIF"/>
                             <constraint firstItem="USX-OV-W7W" firstAttribute="trailing" secondItem="a9t-bS-cfL" secondAttribute="trailing" constant="30" id="rRP-sb-02V"/>
@@ -754,7 +754,7 @@
                                     <constraint firstItem="8xY-ZB-0iE" firstAttribute="leading" secondItem="AIH-cO-WPI" secondAttribute="leading" constant="-0.6666666666666643" id="wjv-I4-1ps"/>
                                 </constraints>
                             </view>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUA-u5-cQ8">
+                            <button hidden="YES" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QUA-u5-cQ8">
                                 <rect key="frame" x="100" y="757" width="228" height="35"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="plain" image="lockColored" imagePlacement="trailing" title="Comming Soon">
@@ -765,6 +765,12 @@
                                     <action selector="commingSoonButtonClicked:" destination="gRh-aj-JLi" eventType="touchUpInside" id="GJM-09-dS7"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="설정" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Q5-Fx-Kwa">
+                                <rect key="frame" x="197" y="56" width="34" height="21"/>
+                                <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="N8L-ju-Kct"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -773,6 +779,7 @@
                             <constraint firstItem="7Zj-qj-Tpo" firstAttribute="top" secondItem="N8L-ju-Kct" secondAttribute="top" id="2C6-rQ-sqI"/>
                             <constraint firstItem="QUA-u5-cQ8" firstAttribute="leading" secondItem="N8L-ju-Kct" secondAttribute="leading" constant="100" id="5eN-qG-dwr"/>
                             <constraint firstItem="kxd-Hm-L04" firstAttribute="centerX" secondItem="N8L-ju-Kct" secondAttribute="centerX" id="64O-nC-Rnt"/>
+                            <constraint firstItem="2Q5-Fx-Kwa" firstAttribute="centerX" secondItem="N8L-ju-Kct" secondAttribute="centerX" id="9vK-sZ-VTF"/>
                             <constraint firstItem="N8L-ju-Kct" firstAttribute="bottom" secondItem="QUA-u5-cQ8" secondAttribute="bottom" constant="100" id="Beh-cn-aE3"/>
                             <constraint firstItem="eBI-sm-0vb" firstAttribute="height" secondItem="FRl-Hb-7wz" secondAttribute="height" multiplier="0.226782" id="Ip1-eb-cy1"/>
                             <constraint firstItem="eBI-sm-0vb" firstAttribute="centerX" secondItem="N8L-ju-Kct" secondAttribute="centerX" id="Kdg-qg-LU2"/>
@@ -781,6 +788,7 @@
                             <constraint firstItem="N8L-ju-Kct" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="7Zj-qj-Tpo" secondAttribute="trailing" symbolic="YES" id="U1m-vJ-yLj"/>
                             <constraint firstItem="7Zj-qj-Tpo" firstAttribute="leading" secondItem="N8L-ju-Kct" secondAttribute="leading" constant="10" id="h92-AM-xWW"/>
                             <constraint firstItem="kxd-Hm-L04" firstAttribute="centerY" secondItem="7Zj-qj-Tpo" secondAttribute="centerY" id="iOf-Xl-UEQ"/>
+                            <constraint firstItem="2Q5-Fx-Kwa" firstAttribute="top" secondItem="N8L-ju-Kct" secondAttribute="top" constant="12" id="k9N-Ra-7wp"/>
                             <constraint firstItem="eBI-sm-0vb" firstAttribute="centerY" secondItem="N8L-ju-Kct" secondAttribute="centerY" multiplier="0.5" id="vka-iG-sld"/>
                         </constraints>
                     </view>
@@ -864,18 +872,27 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="오픈소스 라이선스" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RHb-Zy-5EC">
+                                <rect key="frame" x="147" y="56" width="134" height="20"/>
+                                <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qxs-cP-doh"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="Qxs-cP-doh" firstAttribute="trailing" secondItem="luc-Xn-6Cf" secondAttribute="trailing" constant="20" id="30T-mV-NK4"/>
                             <constraint firstItem="tDC-0q-3aY" firstAttribute="leading" secondItem="Qxs-cP-doh" secondAttribute="leading" constant="10" id="5GM-mF-Mlk"/>
+                            <constraint firstItem="RHb-Zy-5EC" firstAttribute="centerX" secondItem="Qxs-cP-doh" secondAttribute="centerX" id="ApK-J5-ZNh"/>
                             <constraint firstItem="luc-Xn-6Cf" firstAttribute="height" secondItem="au7-w3-ymR" secondAttribute="height" multiplier="0.904018" constant="-7.1206680000000233" id="CO4-ZI-fly"/>
                             <constraint firstItem="Lug-Xf-LfA" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="tDC-0q-3aY" secondAttribute="trailing" constant="8" symbolic="YES" id="Dti-fp-Mjf"/>
                             <constraint firstItem="luc-Xn-6Cf" firstAttribute="leading" secondItem="Qxs-cP-doh" secondAttribute="leading" constant="20" id="Eeu-xp-FQp"/>
+                            <constraint firstItem="RHb-Zy-5EC" firstAttribute="top" secondItem="Qxs-cP-doh" secondAttribute="top" constant="12" id="GmX-nS-29k"/>
                             <constraint firstAttribute="bottom" secondItem="luc-Xn-6Cf" secondAttribute="bottom" id="IcJ-cU-okS"/>
                             <constraint firstItem="Lug-Xf-LfA" firstAttribute="centerX" secondItem="Qxs-cP-doh" secondAttribute="centerX" id="Kdz-qe-ovO"/>
                             <constraint firstItem="tDC-0q-3aY" firstAttribute="top" secondItem="Qxs-cP-doh" secondAttribute="top" id="iMm-Wr-8nk"/>
+                            <constraint firstItem="RHb-Zy-5EC" firstAttribute="centerY" secondItem="tDC-0q-3aY" secondAttribute="centerY" id="mgO-Mc-Eja"/>
                             <constraint firstItem="Lug-Xf-LfA" firstAttribute="top" secondItem="Qxs-cP-doh" secondAttribute="top" constant="12" id="uad-u3-elu"/>
                         </constraints>
                     </view>
@@ -944,28 +961,76 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="k4A-sL-Med">
-                                <rect key="frame" x="42" y="249.66666666666663" width="344" height="437"/>
+                                <rect key="frame" x="42" y="202.66666666666663" width="344" height="437"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="usKet@icloud.com" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YB9-dl-hZJ">
-                                        <rect key="frame" x="112" y="249" width="120.33333333333331" height="19"/>
-                                        <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="18"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="www.github.com/9oHigh" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d2C-vR-mR1">
-                                        <rect key="frame" x="89.666666666666657" y="85.000000000000028" width="165" height="19"/>
-                                        <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="18"/>
-                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이메일" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZYw-Lg-Dey">
-                                        <rect key="frame" x="146.66666666666666" y="208.00000000000003" width="50.666666666666657" height="21"/>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5o-1C-kYN">
+                                        <rect key="frame" x="97" y="205.00000000000003" width="150" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="8em-gg-VbQ"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="sfM-ij-Ehg"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Email" cornerStyle="medium">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="emailButtonClicked:" destination="gri-vp-qou" eventType="touchUpInside" id="DXp-aQ-Tsk"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Lgn-wJ-qqr">
+                                        <rect key="frame" x="97" y="351" width="150" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="vcc-op-376"/>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="vhO-3q-gke"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Review" cornerStyle="medium">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="reviewButtonClicked:" destination="gri-vp-qou" eventType="touchUpInside" id="cI7-Bj-PfH"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="리뷰 남기기" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MkQ-ff-t09">
+                                        <rect key="frame" x="128" y="300" width="88" height="21"/>
                                         <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Github" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gXb-9E-lxF">
-                                        <rect key="frame" x="147" y="44.000000000000028" width="50.333333333333343" height="21"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="개발 관련 문의" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Siq-4h-aO6">
+                                        <rect key="frame" x="117.66666666666666" y="8" width="109" height="21"/>
+                                        <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
+                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZd-VK-91g">
+                                        <rect key="frame" x="97" y="59.000000000000028" width="150" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="150" id="bRg-HX-YpY"/>
+                                            <constraint firstAttribute="height" constant="50" id="nek-Db-kdb"/>
+                                        </constraints>
+                                        <state key="normal" title="Button"/>
+                                        <buttonConfiguration key="configuration" style="plain" title="Github" cornerStyle="medium">
+                                            <backgroundConfiguration key="background">
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                            </backgroundConfiguration>
+                                            <fontDescription key="titleFontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
+                                            <color key="baseForegroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </buttonConfiguration>
+                                        <connections>
+                                            <action selector="githubButtonClicked:" destination="gri-vp-qou" eventType="touchUpInside" id="Qxo-oV-Vcq"/>
+                                        </connections>
+                                    </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="애플리케이션 관련 문의" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rMS-YO-ZIb">
+                                        <rect key="frame" x="84.666666666666686" y="154.00000000000003" width="175" height="21"/>
                                         <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
@@ -973,33 +1038,52 @@
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstItem="ZYw-Lg-Dey" firstAttribute="centerX" secondItem="k4A-sL-Med" secondAttribute="centerX" id="0dv-rF-S5h"/>
-                                    <constraint firstItem="YB9-dl-hZJ" firstAttribute="top" secondItem="ZYw-Lg-Dey" secondAttribute="bottom" constant="20" id="0tB-37-2pZ"/>
-                                    <constraint firstItem="gXb-9E-lxF" firstAttribute="centerX" secondItem="k4A-sL-Med" secondAttribute="centerX" id="5YP-Sc-Wry"/>
-                                    <constraint firstItem="YB9-dl-hZJ" firstAttribute="centerX" secondItem="ZYw-Lg-Dey" secondAttribute="centerX" id="C0m-ZU-Xqo"/>
-                                    <constraint firstItem="ZYw-Lg-Dey" firstAttribute="centerY" secondItem="k4A-sL-Med" secondAttribute="centerY" id="ZN4-7j-uhR"/>
-                                    <constraint firstItem="d2C-vR-mR1" firstAttribute="top" secondItem="gXb-9E-lxF" secondAttribute="bottom" constant="20" id="bxh-ko-WOD"/>
-                                    <constraint firstItem="gXb-9E-lxF" firstAttribute="centerY" secondItem="k4A-sL-Med" secondAttribute="centerY" multiplier="0.25" id="lDd-Uj-v0T"/>
-                                    <constraint firstItem="d2C-vR-mR1" firstAttribute="centerX" secondItem="gXb-9E-lxF" secondAttribute="centerX" id="oOd-KA-lC5"/>
+                                    <constraint firstItem="rMS-YO-ZIb" firstAttribute="centerX" secondItem="k4A-sL-Med" secondAttribute="centerX" id="5ET-e3-VX0"/>
+                                    <constraint firstItem="Siq-4h-aO6" firstAttribute="top" secondItem="k4A-sL-Med" secondAttribute="top" constant="8" id="5cn-1a-BWN"/>
+                                    <constraint firstItem="h5o-1C-kYN" firstAttribute="centerX" secondItem="k4A-sL-Med" secondAttribute="centerX" id="AfH-KS-STU"/>
+                                    <constraint firstItem="bZd-VK-91g" firstAttribute="centerX" secondItem="k4A-sL-Med" secondAttribute="centerX" id="Phh-sa-Fh8"/>
+                                    <constraint firstItem="MkQ-ff-t09" firstAttribute="top" secondItem="h5o-1C-kYN" secondAttribute="bottom" constant="45" id="PuZ-O8-wlL"/>
+                                    <constraint firstItem="Lgn-wJ-qqr" firstAttribute="centerX" secondItem="k4A-sL-Med" secondAttribute="centerX" id="TzZ-84-0VD"/>
+                                    <constraint firstItem="bZd-VK-91g" firstAttribute="top" secondItem="Siq-4h-aO6" secondAttribute="bottom" constant="30" id="Va5-U0-nZ6"/>
+                                    <constraint firstItem="Siq-4h-aO6" firstAttribute="centerX" secondItem="k4A-sL-Med" secondAttribute="centerX" id="Zky-9F-sWt"/>
+                                    <constraint firstItem="MkQ-ff-t09" firstAttribute="centerX" secondItem="k4A-sL-Med" secondAttribute="centerX" id="adt-Pi-Fhx"/>
+                                    <constraint firstItem="h5o-1C-kYN" firstAttribute="top" secondItem="rMS-YO-ZIb" secondAttribute="bottom" constant="30" id="ddg-s5-v5I"/>
+                                    <constraint firstItem="rMS-YO-ZIb" firstAttribute="top" secondItem="bZd-VK-91g" secondAttribute="bottom" constant="45" id="fe0-LI-2Hd"/>
+                                    <constraint firstItem="Lgn-wJ-qqr" firstAttribute="top" secondItem="MkQ-ff-t09" secondAttribute="bottom" constant="30" id="gBZ-Dg-7d6"/>
+                                    <constraint firstItem="Lgn-wJ-qqr" firstAttribute="centerX" secondItem="k4A-sL-Med" secondAttribute="centerX" id="s7S-TH-D1V"/>
                                 </constraints>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="문의 및 리뷰" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xIW-s3-UsJ">
+                                <rect key="frame" x="168.66666666666666" y="56" width="90.999999999999972" height="20"/>
+                                <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="20"/>
+                                <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dh2-Re-r7h"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="k4A-sL-Med" firstAttribute="centerY" secondItem="dh2-Re-r7h" secondAttribute="centerY" id="Cqs-cq-D0z"/>
+                            <constraint firstItem="k4A-sL-Med" firstAttribute="centerY" secondItem="dh2-Re-r7h" secondAttribute="centerY" multiplier="0.9" id="Cqs-cq-D0z"/>
                             <constraint firstItem="dh2-Re-r7h" firstAttribute="trailing" relation="greaterThanOrEqual" secondItem="sJV-ZY-SnE" secondAttribute="trailing" symbolic="YES" id="GJH-1Z-L3I"/>
                             <constraint firstItem="k4A-sL-Med" firstAttribute="centerX" secondItem="dh2-Re-r7h" secondAttribute="centerX" id="LAl-Bw-f4Z"/>
+                            <constraint firstItem="xIW-s3-UsJ" firstAttribute="top" secondItem="dh2-Re-r7h" secondAttribute="top" constant="12" id="PnE-a2-hWL"/>
+                            <constraint firstItem="xIW-s3-UsJ" firstAttribute="centerX" secondItem="dh2-Re-r7h" secondAttribute="centerX" id="a9V-zw-Icv"/>
+                            <constraint firstItem="xIW-s3-UsJ" firstAttribute="centerY" secondItem="sJV-ZY-SnE" secondAttribute="centerY" id="ktP-Pg-Jij"/>
                             <constraint firstItem="k4A-sL-Med" firstAttribute="height" secondItem="cWI-ib-Ycj" secondAttribute="height" multiplier="0.471922" id="liJ-Z2-0cO"/>
                             <constraint firstItem="sJV-ZY-SnE" firstAttribute="top" secondItem="dh2-Re-r7h" secondAttribute="top" id="vOr-6m-Ahq"/>
                             <constraint firstItem="k4A-sL-Med" firstAttribute="width" secondItem="cWI-ib-Ycj" secondAttribute="width" multiplier="0.803738" id="w0c-Ue-7mK"/>
                             <constraint firstItem="sJV-ZY-SnE" firstAttribute="leading" secondItem="dh2-Re-r7h" secondAttribute="leading" constant="10" id="z5O-Ru-vDO"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailButton" destination="h5o-1C-kYN" id="jsf-pj-bOM"/>
+                        <outlet property="githubButton" destination="bZd-VK-91g" id="aps-dl-ms1"/>
+                        <outlet property="reviewButton" destination="Lgn-wJ-qqr" id="eXy-mM-Tp2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Pw3-di-KNS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2087" y="1504"/>
+            <point key="canvasLocation" x="2085.9813084112147" y="1503.8876889848814"/>
         </scene>
         <!--Custom Side Menu Navigation-->
         <scene sceneID="MYS-Jp-Mzb">

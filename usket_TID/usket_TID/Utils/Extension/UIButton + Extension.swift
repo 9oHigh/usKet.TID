@@ -35,4 +35,10 @@ extension UIButton {
         },
         completion: nil)
     }
+    
+    func borderConfig(){
+        self.layer.borderColor = UIColor.black.cgColor
+        self.layer.borderWidth = 1
+        self.layer.cornerRadius = 15
+    }
 }
