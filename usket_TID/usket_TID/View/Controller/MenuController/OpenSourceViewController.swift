@@ -36,7 +36,7 @@ final class OpenSourceViewController: UIViewController {
             if let contents = try? String(contentsOfFile: path) {
                 return contents
             } else {
-           showAlert(title: "오류 안내", message: "죄송합니다. 현재 파일을 가지고 올 수 없습니다.")
+                showAlert(title: "오류 안내", message: "죄송합니다. 현재 파일을 가지고 올 수 없습니다.")
             }
         } else {
             showAlert(title: "오류 안내", message: "죄송합니다. 현재 파일을 가지고 올 수 없습니다.")
@@ -44,7 +44,8 @@ final class OpenSourceViewController: UIViewController {
         return ""
     }
 }
-extension OpenSourceViewController : UITableViewDelegate,UITableViewDataSource{
+extension OpenSourceViewController : UITableViewDelegate,UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return opensourceList.count
     }
@@ -64,5 +65,4 @@ extension OpenSourceViewController : UITableViewDelegate,UITableViewDataSource{
         vc.content = self.loadFile(file: opensourceList[indexPath.row])
         self.present(vc, animated: true, completion: nil)
     }
-    
 }

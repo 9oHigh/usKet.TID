@@ -47,6 +47,7 @@ extension WordViewController {
             }
         }
     }
+    
     func monitorNetwork(){
         
         let monitor = NWPathMonitor()
@@ -67,6 +68,7 @@ extension WordViewController {
         let queue = DispatchQueue(label: "Network")
         monitor.start(queue: queue)
     }
+    
     func showAlert(title : String, connection : Bool){
         
         let alert = UIAlertController(title: "네트워크 오류 안내", message: title, preferredStyle: .alert)

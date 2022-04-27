@@ -104,7 +104,6 @@ final class BasicViewController: UIViewController {
         let swipeDown = UISwipeGestureRecognizer(target: self, action: #selector(BasicViewController.respondToSwipeGesture(_:)))
         swipeDown.direction = UISwipeGestureRecognizer.Direction.down
         self.view.addGestureRecognizer(swipeDown)
-        
     }
     // 아래로 내리면 디스미스!
     @objc func respondToSwipeGesture(_ gesture: UIGestureRecognizer) {
@@ -202,5 +201,4 @@ extension BasicViewController : UITextFieldDelegate{
         
         return updatedText.count <= 6
     }
-    
 }

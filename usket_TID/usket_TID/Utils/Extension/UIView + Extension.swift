@@ -11,7 +11,6 @@ import UIKit
 extension UIView {
     
     func toShadowView(){
-        
         self.layer.cornerRadius = 10
         self.layer.shadowOpacity = 0.25
         self.layer.shadowOffset = CGSize(width: 1, height: 1)

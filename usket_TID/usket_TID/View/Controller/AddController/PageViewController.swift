@@ -45,7 +45,7 @@ final class PageViewController: UIPageViewController {
             //해당 id의 값으로 셋팅하기
             tasks = localReam.objects(DefineWordModel.self)
             let target = tasks.filter("_id == %@", id)[0]
-                
+            
             BasicVC.cellId = target._id
             BasicVC.wordText = target.word
             BasicVC.firstText = target.firstWord
@@ -70,7 +70,7 @@ final class PageViewController: UIPageViewController {
         let pageControl = UIPageControl.appearance()
         pageControl.pageIndicatorTintColor = .lightGray
         pageControl.currentPageIndicatorTintColor = .black
-
+        
     }
     //스토리보드 특정 및 Identifier
     private func PageInstance(name : String) -> UIViewController{

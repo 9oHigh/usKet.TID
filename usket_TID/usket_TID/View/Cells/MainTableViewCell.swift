@@ -9,7 +9,6 @@ import UIKit
 
 final class MainTableViewCell: UITableViewCell {
     
-    
     @IBOutlet weak var firstComeWordLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     @IBOutlet weak var dayLabel: UILabel!

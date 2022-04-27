@@ -144,5 +144,4 @@ extension MainViewController : UISearchResultsUpdating {
         
         self.mainTableView.reloadData()
     }
-    
 }

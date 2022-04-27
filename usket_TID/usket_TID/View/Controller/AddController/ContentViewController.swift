@@ -7,6 +7,7 @@
 
 import UIKit
 import RealmSwift
+import Firebase
 
 final class ContentViewController: UIViewController,shareToContent{
     
@@ -56,6 +57,11 @@ final class ContentViewController: UIViewController,shareToContent{
     
     //저장버튼 클릭시 유효성 검사 + 메인에서 reloadData
     @IBAction func storeButtonClicked(_ sender: UIButton) {
+        
+        let event = "StoreButtonClicked"
+        Analytics.setUserID("\(UserDefaults.standard.value(forKey: "MY_UUID") as? String ?? "Error_UUID")")
+        Analytics.logEvent(event, parameters: nil)
+        
         //유효성 검사시에 Nope이아닌 ADD/Modify가 넘어왔다면 실행
         if dataCorrectCheck() != "Nope" {
             let method : String = dataCorrectCheck()
@@ -63,7 +69,7 @@ final class ContentViewController: UIViewController,shareToContent{
             if method == "ADD"{
                 delegate?.getDatas(word: word, firstComes: firstComes, emotion: emotion, definition: defineTextView.text)
                 MainViewController.toastMessage = "저장완료😊"
-            //수정해주는 delegate by ID
+                //수정해주는 delegate by ID
             } else {
                 delegate?.getDatas(word: word, firstComes: firstComes, emotion: emotion, definition: defineTextView.text, id: idOfCell!)
                 MainViewController.toastMessage = "수정완료😊"
@@ -87,7 +93,6 @@ final class ContentViewController: UIViewController,shareToContent{
         self.emotion = emotion
         self.defineTextView.text = definition
     }
-    
     //유효성 검사
     func dataCorrectCheck() -> String{
         //유효성 검사, 오류

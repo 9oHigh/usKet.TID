@@ -15,7 +15,6 @@ final class IndicatorView : UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setConfig()
         setUI()
     }
@@ -36,7 +35,6 @@ final class IndicatorView : UIView {
     }
     
     func setUI(){
-        
         addSubview(activityView)
         addSubview(informLabel)
         
@@ -52,7 +50,7 @@ final class IndicatorView : UIView {
         
         activityView.startAnimating()
     }
-
+    
     func stopAction(){
         activityView.stopAnimating()
     }

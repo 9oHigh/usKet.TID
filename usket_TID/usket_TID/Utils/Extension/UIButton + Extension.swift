@@ -33,7 +33,7 @@ extension UIButton {
                             animations: { [weak self] in
             self?.transform = .identity
         },
-        completion: nil)
+                            completion: nil)
     }
     
     func borderConfig(){

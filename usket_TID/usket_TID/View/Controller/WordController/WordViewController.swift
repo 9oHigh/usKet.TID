@@ -8,6 +8,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Firebase
 
 final class WordViewController: UIViewController {
     
@@ -31,6 +32,11 @@ final class WordViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        let event = "RecommendWordViewOpened"
+        Analytics.setUserID("\(UserDefaults.standard.value(forKey: "MY_UUID") as? String ?? "Error_UUID")")
+        Analytics.logEvent(event, parameters: nil)
+        
         todayWord = randomWords.wordList.randomWord()
         
         todayWordLabel.text = "추천 단어는 \(todayWord)입니다."
@@ -46,7 +52,7 @@ final class WordViewController: UIViewController {
     @IBAction func closeButtonClicked(_ sender: UIButton) {
         self.dismiss(animated: true, completion: nil)
     }
-
+    
     @IBAction func wantButtonClicked(_ sender: UIButton) {
         let storyboard = UIStoryboard(name: "WordScreen", bundle: nil)
         
@@ -83,6 +89,7 @@ final class WordViewController: UIViewController {
     }
 }
 extension WordViewController : UITableViewDelegate,UITableViewDataSource {
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if numbering.count == 0 {
             if section == 0 { return 1 }

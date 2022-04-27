@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import Firebase
 
 final class SideMenuNavigationViewController: UIViewController {
     
-    //Buttons...
+    //Buttons
     @IBOutlet weak var statisticsButton: UIButton!
     @IBOutlet weak var settingButton: UIButton!
     @IBOutlet weak var openSourceButton: UIButton!
@@ -39,9 +40,13 @@ final class SideMenuNavigationViewController: UIViewController {
         instagramImageView.addGestureRecognizer(imageGesture)
         instagramImageView.isUserInteractionEnabled = true
     }
-    
     // 통계
     @IBAction func statisticsButtonClicked(_ sender: UIButton){
+        
+        let event = "statisticsButtonClicked"
+        Analytics.setUserID("\(UserDefaults.standard.value(forKey: "MY_UUID") as? String ?? "Error_UUID")")
+        Analytics.logEvent(event, parameters: nil)
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let vc = storyboard.instantiateViewController(withIdentifier: "StatisticsViewController") as! StatisticsViewController
@@ -52,6 +57,11 @@ final class SideMenuNavigationViewController: UIViewController {
     }
     // 설정
     @IBAction func settingButtonClicked(_ sender: UIButton){
+        
+        let event = "settingButtonClicked"
+        Analytics.setUserID("\(UserDefaults.standard.value(forKey: "MY_UUID") as? String ?? "Error_UUID")")
+        Analytics.logEvent(event, parameters: nil)
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let vc = storyboard.instantiateViewController(withIdentifier: "SettingViewController") as! SettingViewController
@@ -74,6 +84,10 @@ final class SideMenuNavigationViewController: UIViewController {
     // 문의하기
     @IBAction func contactButtonClicked(_ sender: UIButton){
         
+        let event = "contactButtonClicked"
+        Analytics.setUserID("\(UserDefaults.standard.value(forKey: "MY_UUID") as? String ?? "Error_UUID")")
+        Analytics.logEvent(event, parameters: nil)
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         let vc = storyboard.instantiateViewController(withIdentifier: "ContactViewController") as! ContactViewController
@@ -82,10 +96,13 @@ final class SideMenuNavigationViewController: UIViewController {
         
         self.present(vc,animated: true,completion: nil)
     }
-    
     // 인스타그램
     @objc
     private func toInstagram(_ sender: UITapGestureRecognizer){
+        
+        let event = "instagramButtonClicked"
+        Analytics.setUserID("\(UserDefaults.standard.value(forKey: "MY_UUID") as? String ?? "Error_UUID")")
+        Analytics.logEvent(event, parameters: nil)
         
         guard let instaUrl = URL(string:"https://www.instagram.com/bo110_1/?utm_medium=copy_link") else {
             return

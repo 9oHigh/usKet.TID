@@ -5,12 +5,10 @@
 //  Created by 이경후 on 2021/11/21.
 //
 
-//MARK: DONE.
-
 import UIKit
 
 final class FirstLoginViewController: UIViewController {
-
+    
     @IBOutlet var mainView: UIView!
     @IBOutlet weak var introLabel: UILabel!
     @IBOutlet weak var contentLabel: UILabel!

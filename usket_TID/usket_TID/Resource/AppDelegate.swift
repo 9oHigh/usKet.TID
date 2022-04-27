@@ -16,8 +16,8 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
+        //IQKeyboardManager
         IQKeyboardManager.shared.enable = true
         IQKeyboardManager.shared.enableAutoToolbar = true
         IQKeyboardManager.shared.shouldResignOnTouchOutside = true
@@ -25,7 +25,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared.toolbarDoneBarButtonItemText = "완료"
         IQKeyboardManager.shared.shouldShowToolbarPlaceholder = false
         
-        //realm migration
+        //Realm migration
         let config = Realm.Configuration(
             schemaVersion: 2,
             migrationBlock: { migration,oldSchemaVersion in
@@ -39,20 +39,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                         newObject?["storedDate"] = value
                     }
                 }
-                
             }
         )
         Realm.Configuration.defaultConfiguration = config
-        //뷰컨에서 못받을 수도 있으니!
         UNUserNotificationCenter.current().delegate = self
         
+        //User Id setting
+        if let uuid = UserDefaults.standard.value(forKey: "MY_UUID") as? String, !uuid.isEmpty {
+            
+        } else {
+            let uuid = UUID().uuidString
+            UserDefaults.standard.set(uuid, forKey: "MY_UUID")
+        }
+        
+        //Analytics
         FirebaseApp.configure()
+        let event = "AppOpened"
+        Analytics.setUserID("\(UserDefaults.standard.value(forKey: "MY_UUID") as? String ?? "Error_UUID")")
+        Analytics.logEvent(event, parameters: nil)
         
         return true
     }
     
     // MARK: UISceneSession Lifecycle
-    
     func application(_ application: UIApplication, configurationForConnecting connectingSceneSession: UISceneSession, options: UIScene.ConnectionOptions) -> UISceneConfiguration {
         // Called when a new scene session is being created.
         // Use this method to select a configuration to create the new scene with.
@@ -81,7 +90,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     
     func userNotificationCenter(_ center: UNUserNotificationCenter,
                                 didReceive response: UNNotificationResponse,
-                                withCompletionHandler completionHandler: @escaping () -> Void) {        
+                                withCompletionHandler completionHandler: @escaping () -> Void) {
         completionHandler()
     }
 }

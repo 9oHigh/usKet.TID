@@ -10,20 +10,20 @@ import SideMenu
 import RealmSwift
 import JJFloatingActionButton
 import UserNotifications
+import Firebase
 
 final class MainViewController: UIViewController {
     
-    //First Login 구현을 위해 UserDefaults
+    @IBOutlet weak var mainTableView: UITableView!
     let userDefaults = UserDefaults.standard
-    //알람설정
     let userNotiCenter = UNUserNotificationCenter.current()
-    //realm
+    static var toastMessage : String?
+    
+    // Realm
     let localRealm = try! Realm()
     var tasks : Results<DefineWordModel>!
-    // 저장 및 수정 확인
-    static var toastMessage : String?
-    //서치바에서 검색중인지 아닌지 확인하고 filtered로 사용하기
-    //오류방지
+    
+    // Check User Searching Status
     var filtered : Results<DefineWordModel>!
     var isFiltering: Bool{
         let searchController = self.navigationItem.searchController
@@ -31,7 +31,6 @@ final class MainViewController: UIViewController {
         let isSearchBarHasText = searchController?.searchBar.text?.isEmpty == false
         return isActive && isSearchBarHasText
     }
-    @IBOutlet weak var mainTableView: UITableView!
     
     override func viewDidLoad(){
         super.viewDidLoad()
@@ -46,16 +45,14 @@ final class MainViewController: UIViewController {
         let calendarImage = UIImage(systemName: "calendar", withConfiguration: config)
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: calendarImage, style: .plain, target: self, action: #selector(openCalendar))
         
-        //네비게이션바 스크롤시 default 값은 다크모드시 검정색이 된다.
         navigationController?.navigationBar.barTintColor = .white
-        //타이틀에 폰트 주기
         navigationController?.navigationBar.titleTextAttributes = [NSAttributedString.Key.font: UIFont(name: Helper.shared.originalFont, size: 25)!,NSAttributedString.Key.foregroundColor : UIColor.black]
         
         //delegate + dataSource
         mainTableView.delegate = self
         mainTableView.dataSource = self
         
-        //tasks 확인 - 먼저입력한게 하단으로..
+        // Sort Task
         tasks = localRealm.objects(DefineWordModel.self).sorted(byKeyPath: "date", ascending: false)
         
         firstLogInCheck() //first LogIn 확인
@@ -67,10 +64,9 @@ final class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool){
         super.viewWillAppear(animated)
         
-        //상단에 짤리지 않게 인셋
+        //상단에 짤리지 않게 Inset
         mainTableView.contentInset = UIEdgeInsets(top: 10, left: 0, bottom: 0, right: 0)
-        
-        //리로드!
+        //변경사항 확인
         tasks = localRealm.objects(DefineWordModel.self).sorted(byKeyPath: "date", ascending: false)
         self.mainTableView.reloadData()
         
@@ -82,15 +78,12 @@ final class MainViewController: UIViewController {
     }
     //처음인지 아닌지 확인
     func firstLogInCheck(){
-        //두번이상 실행
         if userDefaults.bool(forKey: "FirstLogIn") { return }
-        //처음 실행
         userDefaults.set(true,forKey: "FirstLogIn")
-        
-        //처음이므로 튜토리얼 안내
+
         let storyboard = UIStoryboard(name: "Walkthrough", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "FirstLoginViewController") as! FirstLoginViewController
-        //overFullScreen으로 백그라운드 alpha값 주기
+
         vc.modalPresentationStyle = .overFullScreen
         
         self.present(vc, animated: true, completion: nil)
@@ -109,6 +102,10 @@ final class MainViewController: UIViewController {
     // Calendar
     @objc func openCalendar(){
         
+        let event = "CalendarButtonClicked"
+        Analytics.setUserID("\(UserDefaults.standard.value(forKey: "MY_UUID") as? String ?? "Error_UUID")")
+        Analytics.logEvent(event, parameters: nil)
+        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "CalendarViewController") as! CalendarViewController
         
@@ -116,7 +113,7 @@ final class MainViewController: UIViewController {
         
         self.present(vc, animated: true, completion: nil)
     }
-    //로컬 푸시 권한
+    //Auth Loacl Push
     func requestNotificationAuthorization(){
         
         let authOptions : UNAuthorizationOptions = [.alert,.sound,.badge]
@@ -127,6 +124,7 @@ final class MainViewController: UIViewController {
         }
     }
     //Floating Button 추가하기
+    // MARK: Need Refactor by Utils / ActionButton
     func addActionButton(){
         let actionButton = JJFloatingActionButton()
         //버튼 클릭시 상단에 뜨는 버튼들의 사이즈 비율
@@ -161,7 +159,7 @@ final class MainViewController: UIViewController {
             item.layer.shadowOpacity = Float(0.4)
             item.layer.shadowRadius = CGFloat(2)
         }
-
+        
         actionButton.addItem(title: "작성하기", image: UIImage(named: "writing.png")?.withRenderingMode(.alwaysTemplate)) { item in
             //에디터로 연결
             let storyboard = UIStoryboard(name: "WordScreen", bundle: nil)
@@ -177,22 +175,19 @@ final class MainViewController: UIViewController {
             vc.modalPresentationStyle = .fullScreen
             self.present(vc, animated: true, completion: nil)
         }
-        view.addSubview(actionButton)
+        self.navigationController?.view.addSubview(actionButton)
         
         //여기서 overLayview의 backgroundColor를 블러 처리로 사용할 수 있으나 navigationBar에 적용이 안되는 이슈가 있음..
         actionButton.overlayView.backgroundColor =
             .black.withAlphaComponent(0.3)
         actionButton.translatesAutoresizingMaskIntoConstraints = false
-        actionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -30).isActive = true
-        actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
+        actionButton.trailingAnchor.constraint(equalTo: (self.navigationController?.view.safeAreaLayoutGuide.trailingAnchor)!, constant: -30).isActive = true
+        actionButton.bottomAnchor.constraint(equalTo: (self.navigationController?.view.safeAreaLayoutGuide.bottomAnchor)!, constant: -20).isActive = true
         actionButton.buttonColor = .white
         actionButton.buttonImageColor = .black
-        
-        
     }
-    //서치바
+    //MARK: Need Refactor by Utils / SearchBar
     func searchBarSetting(){
-        
         //생성
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.enablesReturnKeyAutomatically = true

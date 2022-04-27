@@ -8,7 +8,7 @@
 import UIKit
 
 final class CalendarTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var firstComeLabel: UILabel!
     @IBOutlet weak var emotionImageView: UIImageView!
@@ -28,7 +28,7 @@ final class CalendarTableViewCell: UITableViewCell {
         self.contentView.layer.shadowRadius = 3
         self.contentView.layer.shadowOpacity = 0.25
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }

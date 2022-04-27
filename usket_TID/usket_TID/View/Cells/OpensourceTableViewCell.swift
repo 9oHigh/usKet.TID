@@ -8,7 +8,7 @@
 import UIKit
 
 final class OpensourceTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var nameLabel: UILabel!
     
     override func awakeFromNib() {
@@ -28,7 +28,7 @@ final class OpensourceTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
     }
     
     override func layoutSubviews() {

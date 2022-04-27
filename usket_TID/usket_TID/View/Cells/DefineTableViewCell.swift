@@ -8,7 +8,7 @@
 import UIKit
 
 final class DefineTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var numberLabel: UILabel!
     @IBOutlet weak var defineLabel: UILabel!
     
@@ -28,7 +28,7 @@ final class DefineTableViewCell: UITableViewCell {
     
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
     }
     
     override func layoutSubviews() {

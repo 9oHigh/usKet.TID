@@ -16,7 +16,7 @@ final class CalendarViewController: UIViewController {
     @IBOutlet weak var emptyLabel: UILabel!
     @IBOutlet weak var calendarHeightConstraint: NSLayoutConstraint!
     
-    //스코프 제스처 상단으로 캘린더 올리기
+    //Scope Gesture
     fileprivate lazy var scopeGesture: UIPanGestureRecognizer = {
         [unowned self] in
         let panGesture = UIPanGestureRecognizer(target: self.calendar, action: #selector(self.calendar.handleScopeGesture(_:)))
@@ -50,7 +50,7 @@ final class CalendarViewController: UIViewController {
         //tableView에서 사용할 tasks
         tasks = localRealm.objects(DefineWordModel.self).sorted(byKeyPath: "date", ascending: false)
         
-        //오늘 날짜에 아무것도 있는지 없는지 확인
+        //Check Today isEmpty
         let today = Date()
         let format = DateFormatter()
         format.dateFormat = "yyyy년 MM월 dd일"
@@ -98,7 +98,6 @@ final class CalendarViewController: UIViewController {
         calendar.reloadData()
         calendarTableView.contentInset = UIEdgeInsets(top: 15, left: 0, bottom: 0, right: 0)
         calendarTableView.reloadData()
-    
     }
     
     @IBAction func closeClicked(_ sender: UIButton) {
@@ -123,7 +122,6 @@ final class CalendarViewController: UIViewController {
 }
 
 extension CalendarViewController : FSCalendarDelegate,FSCalendarDataSource,UITableViewDelegate,UITableViewDataSource,UIGestureRecognizerDelegate{
-    
     //MARK: Calendar
     func calendar(_ calendar: FSCalendar, numberOfEventsFor date: Date) -> Int {
         
@@ -137,6 +135,7 @@ extension CalendarViewController : FSCalendarDelegate,FSCalendarDataSource,UITab
             return 0
         }
     }
+    
     func calendar(_ calendar: FSCalendar, didSelect date: Date, at monthPosition: FSCalendarMonthPosition) {
         
         let format = DateFormatter()
@@ -188,10 +187,8 @@ extension CalendarViewController : FSCalendarDelegate,FSCalendarDataSource,UITab
             cell.firstComeLabel.text = "[" + works[indexPath.row].firstWord + "]"
             cell.emotionImageView.image = UIImage(named: works[indexPath.row].emotion)
             cell.definitionLabel.text = works[indexPath.row].definition
-            
             return cell
         } else {
-            
             self.calendarTableView.isHidden = true
             return cell
         }
@@ -211,11 +208,8 @@ extension CalendarViewController : FSCalendarDelegate,FSCalendarDataSource,UITab
                 .font: UIFont(name: Helper.shared.originalFont, size: 20)!,
                 .foregroundColor: UIColor.black
             ])
-            
             return attributedString.string
-            
         } else {
-            
             return nil
         }
     }

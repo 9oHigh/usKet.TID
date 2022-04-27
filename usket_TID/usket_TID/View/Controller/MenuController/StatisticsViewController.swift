@@ -68,10 +68,11 @@ final class StatisticsViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        //여기다가 실제 수치
+        //Real Percent
         progressRing.setProgress(self.gauge * 0.01, animated: true)
     }
     
+    //MARK: Need Refactor by Utils / Realm + Calculate
     func fetchDatas(){
         
         tasks = localRealm.objects(DefineWordModel.self)
@@ -129,32 +130,23 @@ final class StatisticsViewController: UIViewController {
             var writeCount : Int = 0
             
             if writeDay.count == 0 {
-                
                 writeCount = 0
-                
             } else {
-                
                 for item in 0...writeDay.count - 1 {
-                    
                     if dayArr.contains(writeDay[item].storedDate){
                         continue
                     } else {
                         dayArr.append(writeDay[item].storedDate)
                     }
-                    
                 }
                 writeCount = dayArr.count
             }
             
-            
             //퍼센테이지 계산
             if writeCount == 0{
-                
                 self.progressLabel.text = "0일 / \(totalDay)일"
                 self.percentLabel.text = "0% 달성중.."
-                
             } else {
-                
                 let percent = Double(writeCount) / Double(totalDay) * 100
                 self.gauge = Float(percent)
                 self.progressLabel.text = "\(writeCount)일 / \(totalDay)일"
@@ -165,7 +157,6 @@ final class StatisticsViewController: UIViewController {
                 }
             }
         } else {
-            //한게없으뮤
             self.countWordLabel.text = "0개"
             self.countMorphemeLabel.text = "0개"
             self.percentLabel.text = "0% 달성중"
@@ -175,11 +166,9 @@ final class StatisticsViewController: UIViewController {
             self.normalCountLabel.text = "0개"
             self.angryCountLabel.text = "0개"
         }
-        
     }
-    //NumberFormmater : 세자리마다 컴마!
+    //NumberFormmater : ","
     func numberFormatter(number: Int) -> String {
-        
         let numberFormatter = NumberFormatter()
         numberFormatter.numberStyle = .decimal
         
@@ -187,7 +176,6 @@ final class StatisticsViewController: UIViewController {
     }
     //마지막날을 가지고 오는 함수
     func lastDay(ofMonth m: Int, year y: Int) -> Int {
-        
         let cal = Calendar.current
         var comps = DateComponents(calendar: cal, year: y, month: m)
         
