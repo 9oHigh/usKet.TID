@@ -161,7 +161,7 @@ final class MainViewController: UIViewController {
             item.layer.shadowOpacity = Float(0.4)
             item.layer.shadowRadius = CGFloat(2)
         }
-        
+
         actionButton.addItem(title: "작성하기", image: UIImage(named: "writing.png")?.withRenderingMode(.alwaysTemplate)) { item in
             //에디터로 연결
             let storyboard = UIStoryboard(name: "WordScreen", bundle: nil)
@@ -180,16 +180,19 @@ final class MainViewController: UIViewController {
         view.addSubview(actionButton)
         
         //여기서 overLayview의 backgroundColor를 블러 처리로 사용할 수 있으나 navigationBar에 적용이 안되는 이슈가 있음..
-        actionButton.overlayView.backgroundColor = .black.withAlphaComponent(0.3)
+        actionButton.overlayView.backgroundColor =
+            .black.withAlphaComponent(0.3)
         actionButton.translatesAutoresizingMaskIntoConstraints = false
         actionButton.trailingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: -30).isActive = true
         actionButton.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -20).isActive = true
         actionButton.buttonColor = .white
         actionButton.buttonImageColor = .black
+        
+        
     }
     //서치바
     func searchBarSetting(){
-
+        
         //생성
         let searchController = UISearchController(searchResultsController: nil)
         searchController.searchBar.enablesReturnKeyAutomatically = true
@@ -213,7 +216,7 @@ final class MainViewController: UIViewController {
         searchController.searchBar.searchTextField.leftView?.tintColor = .lightGray
         searchController.searchBar.autocapitalizationType = .none
         searchController.searchBar.setValue("취소", forKey: "cancelButtonText")
-
+        
         //폰트 + 컬러
         let attributes:[NSAttributedString.Key: Any] = [
             .foregroundColor: UIColor.black,
