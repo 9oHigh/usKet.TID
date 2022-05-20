@@ -84,16 +84,105 @@
   * 서비스를 개발하고 배포하는 일련의 과정을 경험할 수 있었습니다.
   * 업데이트를 꾸준히 진행하고 있습니다. ( 가장 최근 업데이트 : 2022.3.14 ) 
   
+### 6. CI / CD 학습 및 적용
+  <details>
+ <summary> 학습 내용 정리 </summary>
+ <div markdown="1">
   
-### 6. 업데이트
+  - CI / CD Github Action
+    - Github Action이란
+        - Pull Request, Push 등의 이벤트 발생에 따라 자동화된 작업을 진행할 수 있게 해주는 기능
+        - CI / CD
+            - 로컬 레포지토리에서 원격 레포지토리로 푸쉬하고 난 후, Github Actions에서는 이벤트 발생에 따라 자동으로 빌드 및 배포하는 스크립트를 실행시켜주는 것
+        - Testing
+            - Pull Request를 보내면 자동으로 테스트를 진행하는 것 또한 구현 가능하고 자동으로 Pull Request를 open 및 close할 수 있게 됨
+        - Cron Job
+            - 특정한 시간대에 스크립트를 반복 실행할 수 있음
+    - Github Action의 구성요소
+        - Workflow
+            - 레포에 추가할 수 있는 자동화 커맨드의 집합으로 하나 이상의 Job으로 구성되어 있으며 Push나 PR과 같은 이벤트에 의해 실행될 수도 있으며 특정 시간대에 실행될 수도 있음
+                
+               ![Untitled](https://user-images.githubusercontent.com/53691249/169544406-155d6cee-4ccb-4350-a876-d9599202c006.png)
+                
+        - Event
+            - Workflow를 실행시키는 특정 행동 ( Push, Pull Request, Commit 등 )을 의미 함
+        - Job
+            - Job이란 동일한 Runner에서 진행되는 Step의 집합
+            - 하나의 workflow 내의 여러 Job은 독립적으로 실행되나 필요에 따라 의존 관계를 설정하여 순서를 지정할 수 있음
+                - 가령 Test 작업과 Build 작업을 수행하는 Job들이 하나의 workflow에 존재한다면 Build 이후에 Test가 진행되어야 하기 때문에 Build Job이 마무리 된 후 Test Job을 실행할 수 있도록 지정가능 ( Build 실패시 Test는 실행하지 않음 )
+        - Step
+            - 커맨드를 실행할 수 있는 각각의 Task를 의미하고, Shell 커맨드가 될 수도 있고, 하나의 Action이 될 수도 있음
+            - 하나의 Job 내에서 각각의 Step은 다양한 Task로 인해 생성된 데이터를 공유할 수 있음
+        - Action
+            - Job을 만들기 위해 Step을 결합한 커맨드로 재사용이 가능한 Workflow의 가장 작은 단위
+            - 직접 만들거나 Github Community에 의해 생성된 Action을 불러와 사용할 수 있음
+        - Runner
+            - Runner란 Github Actions Workflow 내에 있는 Job을 실행시키기 위한 애플리케이션
+            - Runner Application은 Github에서 호스팅하는 가상환경 혹은 직접 호스팅하는 가상 환경에서 실행 가능하며 Github에서 호스팅하는 가상 인스턴스의 경우 메모리 및 용량 제한이 존재
+        
+    - Workflow 생성 및 파일 설명
+        - .github/workflows 디렉토리 내에 .yml 파일을 생성해도 되지만, Repository의 Actions 탭에서 자동으로 template를 만들어주는 기능을 사용하는 것이 좋음
+        - Github에서 제공하는 가장 기본적인 Template는 set up a workflow yourself를 클릭
+            
+            ![스크린샷 2022-05-20 오후 9 56 20](https://user-images.githubusercontent.com/53691249/169544548-920fb460-2134-4b8a-b80a-92e5a9c43795.png)
+            
+        
+        - 다음과 같은 양식의 .yml 파일이 생성됨
+            
+            ![스크린샷 2022-05-20 오후 9 58 50](https://user-images.githubusercontent.com/53691249/169544604-da39ac8f-b665-4b2c-a8d0-f62a880e7b60.png)
+            
+        - 설명
+            
+            ```yaml
+            # Actions 탭에 표시될 Workflow 이름
+            name: CI
+            
+            # Workflow를 실행시키기 위한 Event 목록
+            on: # 트리거
+              # 하단 코드에 따라 develop 브랜치에 Push 또는 Pull Request 이벤트가 발생한 경우에 Workflow가 실행
+              push:
+                branches: [main]
+              # 특정한 Branch에 푸쉬되었을 때 사용하려면 가령 feature/*로 작성하면 됨
+              pull_request:
+                branches: [main]
+            
+              # 해당 옵션을 통해 Actions 탭에서 Workflow를 실행
+              workflow_dispatch:
+            
+            # Workflow의 하나 이상의 Job 
+            jobs:
+              # Job 이름으로, build라는 이름으로 Job이 표시
+              build:
+                # Runner가 실행되는 환경을 정의
+                runs-on: macos-latest
+            
+                # build Job 내의 step 목록
+                steps:
+                  # uses 키워드를 통해 Action을 불러옴
+                  # 여기에서는 해당 레포지토리로 check-out 및 레포지토리에 접근할 수 있는 Action을 불러옴.
+                  - uses: actions/checkout@v2
+                  # 실행되는 커맨드에 대한 설명으로, Workflow에 표시
+                  - name: Build
+                    run: echo Hello, world!
+            
+                  # 하나의 커맨드가 아닌 여러 커맨드도 실행 가능
+                  - name: Run tests
+                    run: |
+                      xcodebuild test -project "$XC_PROJECT" -scheme "$XC_SCHEME" -destination 'platform=iOS Simulator,name=iPhone 13'
+            ```
+  
+ </div>
+ </details>
+
+### 7. 업데이트
 
   |버전|업데이트 내역|설명|
   |:---:|:---:|:---:|
-  |v2.07|추가버튼 클릭시 Navigation Bar는 Overlay View에 감싸지지 않던 오류|해당 오류를 해결했습니다.|
+  |v2.07|추가버튼 클릭시 Navigation Bar는 Overlay View에 감싸지지 않던 오류 <br /> [트러블 슈팅 기록 - 블로그](https://pooh-footprints.tistory.com/65)|해당 오류를 해결했습니다.|
   |v2.06|개발, 앱, 리뷰를 위한 버튼 생성|각각 깃허브 링크, 앱관련 문의를 위한 이메일 딥링크, 리뷰페이지로 이동가능한 버튼을 추가|
   |v2.05|로고 디자이너 인스타그램 링크|요청으로 링크를 첨부 및 추가 버튼 클릭시 백그라운드 컬러 |
   |v2.04|Firebase Crashlytics|Firebase Crashlytics 적용 및 기타 오류수정|
-  |v2.03|Local Notification|로컬알림시 한 단어만 반복해서 오는 이슈를 수정했습니다.|
+  |v2.03|Local Notification <br /> [트러블 슈팅 기록 - 블로그](https://pooh-footprints.tistory.com/58)|로컬알림시 한 단어만 반복해서 오는 이슈를 수정했습니다.|
   |v2.02|레이아웃 버그 수정|단어의 뜻을 보여주는 TableView에서 발생한 오류를 해결했습니다.|
   |v2.01|통계 버그 수정|월이 바뀌게 될 경우 기존의 코드에서 nil 처리로 인한 오류가 존재, 이를 해결했습니다.|
   |v2.0|레이아웃 버그 수정, 저장시 토스트 알림 추가, 작성페이지 진입시 제스처로 나가기 추가, 수정시 감정과 정의 부분까지 보이게 추가, 통계수치 수정, 로컬 알림 제공, 캘린더 제공|출시 이후 받은 피드백 통해 캘린더와 알림을 중점으로 업데이트를 진행했습니다.|
