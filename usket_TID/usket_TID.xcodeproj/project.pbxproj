@@ -48,6 +48,7 @@
 		4C489A3827528D0400932983 /* ShareMain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C489A3727528D0400932983 /* ShareMain.swift */; };
 		4C489A3A275369A900932983 /* SharePage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C489A39275369A900932983 /* SharePage.swift */; };
 		4C489A3D2753B95700932983 /* IQKeyboardManagerSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 4C489A3C2753B95700932983 /* IQKeyboardManagerSwift */; };
+		4C55D7B2283BCC1B003F3281 /* usket_TIDTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C55D7B1283BCC1B003F3281 /* usket_TIDTests.swift */; };
 		4C596D02274BDA1900E2DE59 /* DefineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C596D01274BDA1900E2DE59 /* DefineTableViewCell.swift */; };
 		4C6086D8274E031200FCD3E4 /* JJFloatingActionButton in Frameworks */ = {isa = PBXBuildFile; productRef = 4C6086D7274E031200FCD3E4 /* JJFloatingActionButton */; };
 		4C6086E1274FD89900FCD3E4 /* UIView + Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C6086E0274FD89900FCD3E4 /* UIView + Extension.swift */; };
@@ -75,6 +76,16 @@
 		4CDF67A327DEE88F006ED93C /* IndicatorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CDF67A227DEE88F006ED93C /* IndicatorView.swift */; };
 		4CDF67A627DEE9FD006ED93C /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = 4CDF67A527DEE9FD006ED93C /* SnapKit */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		4C55D7B3283BCC1B003F3281 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 4C758A8E2746AA9E00B9F7AC /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 4C758A952746AA9E00B9F7AC;
+			remoteInfo = usket_TID;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		4C05400E2756155700498E86 /* Embed Frameworks */ = {
@@ -125,6 +136,8 @@
 		4C489A35275280F600932983 /* TextField + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "TextField + Extension.swift"; sourceTree = "<group>"; };
 		4C489A3727528D0400932983 /* ShareMain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShareMain.swift; sourceTree = "<group>"; };
 		4C489A39275369A900932983 /* SharePage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SharePage.swift; sourceTree = "<group>"; };
+		4C55D7AF283BCC1A003F3281 /* usket_TIDTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = usket_TIDTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		4C55D7B1283BCC1B003F3281 /* usket_TIDTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = usket_TIDTests.swift; sourceTree = "<group>"; };
 		4C596D01274BDA1900E2DE59 /* DefineTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DefineTableViewCell.swift; sourceTree = "<group>"; };
 		4C6086E0274FD89900FCD3E4 /* UIView + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView + Extension.swift"; sourceTree = "<group>"; };
 		4C6086E2274FE1E200FCD3E4 /* ContentViewController + Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ContentViewController + Extension.swift"; sourceTree = "<group>"; };
@@ -150,6 +163,13 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		4C55D7AC283BCC1A003F3281 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4C758A932746AA9E00B9F7AC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -292,6 +312,14 @@
 			path = AddController;
 			sourceTree = "<group>";
 		};
+		4C55D7B0283BCC1B003F3281 /* usket_TIDTests */ = {
+			isa = PBXGroup;
+			children = (
+				4C55D7B1283BCC1B003F3281 /* usket_TIDTests.swift */,
+			);
+			path = usket_TIDTests;
+			sourceTree = "<group>";
+		};
 		4C596CFF274BD9BC00E2DE59 /* Storyboard */ = {
 			isa = PBXGroup;
 			children = (
@@ -318,6 +346,7 @@
 			isa = PBXGroup;
 			children = (
 				4C758A982746AA9E00B9F7AC /* usket_TID */,
+				4C55D7B0283BCC1B003F3281 /* usket_TIDTests */,
 				4C758A972746AA9E00B9F7AC /* Products */,
 			);
 			sourceTree = "<group>";
@@ -326,6 +355,7 @@
 			isa = PBXGroup;
 			children = (
 				4C758A962746AA9E00B9F7AC /* usket_TID.app */,
+				4C55D7AF283BCC1A003F3281 /* usket_TIDTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -382,6 +412,24 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		4C55D7AE283BCC1A003F3281 /* usket_TIDTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 4C55D7B5283BCC1B003F3281 /* Build configuration list for PBXNativeTarget "usket_TIDTests" */;
+			buildPhases = (
+				4C55D7AB283BCC1A003F3281 /* Sources */,
+				4C55D7AC283BCC1A003F3281 /* Frameworks */,
+				4C55D7AD283BCC1A003F3281 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4C55D7B4283BCC1B003F3281 /* PBXTargetDependency */,
+			);
+			name = usket_TIDTests;
+			productName = usket_TIDTests;
+			productReference = 4C55D7AF283BCC1A003F3281 /* usket_TIDTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 		4C758A952746AA9E00B9F7AC /* usket_TID */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 4C758AAA2746AA9F00B9F7AC /* Build configuration list for PBXNativeTarget "usket_TID" */;
@@ -422,9 +470,13 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 1300;
+				LastSwiftUpdateCheck = 1310;
 				LastUpgradeCheck = 1300;
 				TargetAttributes = {
+					4C55D7AE283BCC1A003F3281 = {
+						CreatedOnToolsVersion = 13.1;
+						TestTargetID = 4C758A952746AA9E00B9F7AC;
+					};
 					4C758A952746AA9E00B9F7AC = {
 						CreatedOnToolsVersion = 13.0;
 					};
@@ -456,11 +508,19 @@
 			projectRoot = "";
 			targets = (
 				4C758A952746AA9E00B9F7AC /* usket_TID */,
+				4C55D7AE283BCC1A003F3281 /* usket_TIDTests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		4C55D7AD283BCC1A003F3281 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4C758A942746AA9E00B9F7AC /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -509,6 +569,14 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		4C55D7AB283BCC1A003F3281 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4C55D7B2283BCC1B003F3281 /* usket_TIDTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		4C758A922746AA9E00B9F7AC /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -557,6 +625,14 @@
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		4C55D7B4283BCC1B003F3281 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 4C758A952746AA9E00B9F7AC /* usket_TID */;
+			targetProxy = 4C55D7B3283BCC1B003F3281 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin PBXVariantGroup section */
 		4C758A9F2746AA9E00B9F7AC /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
@@ -577,6 +653,54 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		4C55D7B6283BCC1B003F3281 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 46QF7GBZH7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "usKet.usket-TIDTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/usket_TID.app/usket_TID";
+			};
+			name = Debug;
+		};
+		4C55D7B7283BCC1B003F3281 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 46QF7GBZH7;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "usKet.usket-TIDTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/usket_TID.app/usket_TID";
+			};
+			name = Release;
+		};
 		4C758AA82746AA9F00B9F7AC /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -770,6 +894,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		4C55D7B5283BCC1B003F3281 /* Build configuration list for PBXNativeTarget "usket_TIDTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				4C55D7B6283BCC1B003F3281 /* Debug */,
+				4C55D7B7283BCC1B003F3281 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		4C758A912746AA9E00B9F7AC /* Build configuration list for PBXProject "usket_TID" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
