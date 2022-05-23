@@ -171,9 +171,22 @@
                       xcodebuild test -project "$XC_PROJECT" -scheme "$XC_SCHEME" -destination 'platform=iOS Simulator,name=iPhone 13'
             ```
   
+       - Start Commit 후 Action 탭을 확인해보면 다음과 같이 정상적으로 작동한 것을 확인할 수 있음.
+        ![스크린샷 2022-05-23 오후 10 41 42](https://user-images.githubusercontent.com/53691249/169832694-e4414be0-3ec1-4054-9cac-bd174721ffb6.png)
+
+
  </div>
  </details>
-
+ 
+  <details>
+ <summary> Github Action 방법 및 적용</summary>
+ <div markdown="2">
+  
+  
+  
+   </div>
+ </details>
+ 
 ### 7. 업데이트
 
   |버전|업데이트 내역|설명|
