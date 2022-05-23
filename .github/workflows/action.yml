@@ -31,5 +31,6 @@ jobs:
 
       # Runs a set of commands using the runners shell
       - name: Run tests
+        working-directory: usket_TID
         run: |
           xcodebuild clean test -project usket_TID.xcodeproj -scheme usKet_TID -destination "platform=iOS Simulator,name=iPhone 11"
