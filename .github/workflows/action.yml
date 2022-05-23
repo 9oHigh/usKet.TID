@@ -33,4 +33,4 @@ jobs:
       - name: Run tests
         working-directory: usket_TID
         run: |
-          xcodebuild clean test -project usket_TID.xcodeproj -scheme usket_TIDTests -destination "platform=iOS Simulator,name=iPhone 11"
+          xcodebuild clean test -project usket_TID.xcodeproj -scheme usket_TID -destination "platform=iOS Simulator,name=iPhone 11"
