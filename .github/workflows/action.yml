@@ -6,27 +6,25 @@ on:
    branches: [ main ]
   pull_request:
     branches: [ main ]
-    
-  workflow_dispatch:
 
 jobs:
   build:
+  
     runs-on: macos-latest
-    # 가상환경
-    env:
+    env: # 가상환경
       XC_VERSION: ${{ '13.1' }}
       XC_PROJECT: ${{ 'usket_TID.xcodeproj' }}
       XC_SCHEME: ${{ 'usket_TID' }}
     steps:
       - name: Select Xcode Version
-      - run: "sudo xcode-select -s /Application/Xcode_$XC_VERSION.app"
-      
+      - run: "sudo xcode-select -s /Applications/Xcode_$XC_VERSION.app"
+    
       - uses: actions/checkout@v3
       
       - name: Build
         run: echo Hello, world!
 
-      - name: Run tests
+      - name: Run
         working-directory: usket_TID
         run: |
           xcodebuild test -project "$XC_PROJECT" -scheme "$XC_SCHEME" -destination 'platform=iOS Simulator,name=iPhone 13'
