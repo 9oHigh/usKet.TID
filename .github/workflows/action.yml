@@ -15,9 +15,10 @@ jobs:
       XC_VERSION: ${{ '13.1' }}
       XC_PROJECT: ${{ 'usket_TID.xcodeproj' }}
       XC_SCHEME: ${{ 'usket_TID' }}
+      
     steps:
       - name: Select Xcode Version
-      - run: "sudo xcode-select -s /Applications/Xcode_$XC_VERSION.app"
+        run: "sudo xcode-select -s /Applications/Xcode_$XC_VERSION.app"
     
       - uses: actions/checkout@v3
       
