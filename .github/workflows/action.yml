@@ -3,7 +3,9 @@ name: TID Automation release
 
 on:
   push:
-   branches: [ main ]
+    paths-ignore:
+    - 'Storage.swift'
+    branches: [ main ]
   pull_request:
     branches: [ main ]
 
