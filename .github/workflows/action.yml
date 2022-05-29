@@ -27,6 +27,5 @@ jobs:
 
       - name: Run
         working-directory: usket_TID
-        continue-on-error: true
         run: |
           xcodebuild test -project "$XC_PROJECT" -scheme "$XC_SCHEME" -destination 'platform=iOS Simulator,name=iPhone 13'
