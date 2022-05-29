@@ -3,8 +3,6 @@ name: TID Automation release
 
 on:
   push:
-    paths-ignore:
-    - '**/Storage.swift'
     branches: [ main ]
   pull_request:
     branches: [ main ]
@@ -29,5 +27,6 @@ jobs:
 
       - name: Run
         working-directory: usket_TID
+        continue-on-error: true
         run: |
           xcodebuild test -project "$XC_PROJECT" -scheme "$XC_SCHEME" -destination 'platform=iOS Simulator,name=iPhone 13'
