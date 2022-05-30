@@ -12,6 +12,7 @@ jobs:
   
     runs-on: macos-latest
     env: # 가상환경
+      ARGS: "-av"
       XC_VERSION: ${{ '13.1' }}
       XC_PROJECT: ${{ 'usket_TID.xcodeproj' }}
       XC_SCHEME: ${{ 'usket_TID' }}
