@@ -22,9 +22,6 @@ jobs:
     
       - uses: actions/checkout@v3
 
-      - name: check-git-ignore
-        uses: fornwall/check-ignore@0.3
-
       - name: Build
         run: echo Hello, world!
 
