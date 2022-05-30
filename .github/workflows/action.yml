@@ -21,9 +21,9 @@ jobs:
         run: "sudo xcode-select -s /Applications/Xcode_$XC_VERSION.app"
     
       - uses: actions/checkout@v3
-      
-      - name: Should gitignore
-        uses: ginokent/github-actions-should-gitignore@v1.0.2
+
+      - name: check-git-ignore
+        uses: fornwall/check-ignore@0.3
 
       - name: Build
         run: echo Hello, world!
