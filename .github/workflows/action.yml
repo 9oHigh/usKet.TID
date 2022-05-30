@@ -22,6 +22,9 @@ jobs:
     
       - uses: actions/checkout@v3
       
+      - name: Should gitignore
+        uses: ginokent/github-actions-should-gitignore@v1.0.2
+
       - name: Build
         run: echo Hello, world!
 
