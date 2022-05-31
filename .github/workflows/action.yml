@@ -12,9 +12,8 @@ jobs:
   
     runs-on: macos-latest
     env: # 가상환경
-      ARGS: "-av"
       XC_VERSION: ${{ '13.1' }}
-      XC_PROJECT: ${{ '*/usket_TID.xcodeproj' }}
+      XC_PROJECT: ${{ 'usket_TID.xcodeproj' }}
       XC_SCHEME: ${{ 'usket_TID' }}
       KEYCHAIN: ${{ 'usket.keychain' }}
       
@@ -71,6 +70,7 @@ jobs:
             done
 
       - name: Archive
+        working-directory: usket_TID
         run: | 
           mkdir artifacts
           xcodebuild archive -project "$XC_PROJECT" -scheme "$XC_SCHEME" -configuration release -archivePath "$XC_ARCHIVE_PATH"
@@ -80,7 +80,7 @@ jobs:
           xcodebuild -exportArchive -archivePath "$XC_ARCHIVE_PATH" -exportOptionsPlist ExportOptions.plist -exportPath "$XC_EXPORT_PATH"
 
       - name: Upload Artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v3
         with:
           name: Artifacts
           path: ./artifacts 
