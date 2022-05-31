@@ -18,7 +18,7 @@ jobs:
       XC_SCHEME: ${{ 'usket_TID' }}
       KEYCHAIN: ${{ 'usket.keychain' }}
       
-      PROJECT_ROOT_PATH: ${{ 'usket_TID }}
+      PROJECT_ROOT_PATH: ${{ 'usket_TID' }}
       
       ENCRYPTED_CERTS_FILE_PATH: ${{ '.github/secrets/GithubActionKey.p12.gpg' }}
       DECRYPTED_CERTS_FILE_PATH: ${{ '.github/secrets/GithubActionKey.p12' }} # 어디에 복호화 할 것인지 명시
