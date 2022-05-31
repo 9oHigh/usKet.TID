@@ -182,7 +182,98 @@
  <summary> Github Action 방법 및 적용</summary>
  <div markdown="2">
   
-  
+  - 적용방법
+    
+    ```
+    name: TID Automation release
+    
+    on:
+      push:
+        branches: [ main ]
+      pull_request:
+        branches: [ main ]
+    
+    jobs:
+      build:
+      
+        runs-on: macos-latest
+        env: 
+    			   # 가상환경
+    		   	# Xcode 버전 및 프로젝트와 스키마 설정 + 사용할 키체인 설정 ( 스크립트에서 만들어서 넣을 변수 )
+          XC_VERSION: ${{ '13.1' }}
+          XC_PROJECT: ${{ 'usket_TID.xcodeproj' }}
+          XC_SCHEME: ${{ 'usket_TID' }}
+          KEYCHAIN: ${{ 'usket.keychain' }}
+          # 루트
+          PROJECT_ROOT_PATH: ${{ 'usket_TID' }}
+           
+          ENCRYPTED_CERTS_FILE_PATH: ${{ '.github/secrets/GithubActionKey.p12.gpg' }}
+    			   # 어디에 복호화 할 것인지 명시
+          DECRYPTED_CERTS_FILE_PATH: ${{ '.github/secrets/GithubActionKey.p12' }}
+    
+          ENCRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/GithubAction.mobileprovision.gpg' }}
+    		   	# 어디에 복호화 할 것인지 명시
+          DECRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/GithubAction.mobileprovision' }} 
+    			
+    			   # 기존에 secrets를 가지고와서 적용
+          CERTS_EXPORT_PWD: ${{ secrets.CERTS_EXPORT_PWD }}
+          CERTS_ENCRYPTION_PWD: ${{ secrets.CERTS_ENCRYPTO_PWD }}
+          PROFILES_ENCRYPTO_PWD: ${{ secrets.PROFILES_ENCRYPTO_PWD }}
+    			
+    			   # 아카이브 path 및 앱스토어에 올릴 artifacts path 설정 
+          XC_ARCHIVE_PATH: ${{ 'usket_TID.xcarchive' }}
+          XC_EXPORT_PATH: ${{ './artifacts' }}
+          
+        steps:
+          - name: Select Xcode Version
+            run: "sudo xcode-select -s /Applications/Xcode_$XC_VERSION.app"
+        
+          - uses: actions/checkout@v3
+    
+          - name: Build
+            run: echo Hello, world!
+    			
+    			   # 위에서 만들어둔 키체인 적용
+          - name: Configure Keychain 
+            run: | 
+              security create-keychain -p "" "$KEYCHAIN" 
+              security list-keychains -s "$KEYCHAIN" 
+              security default-keychain -s "$KEYCHAIN" 
+              security unlock-keychain -p "" "$KEYCHAIN"
+              
+    			   # Code Signing 실행
+          - name : Configure Code Signing
+            run: | 
+              gpg -d -o "$DECRYPTED_CERTS_FILE_PATH" --pinentry-mode=loopback --passphrase "$CERTS_ENCRYPTION_PWD" "$ENCRYPTED_CERTS_FILE_PATH"
+              gpg -d -o "$DECRYPTED_PROVISION_FILE_PATH" --pinentry-mode=loopback --passphrase "$PROFILES_ENCRYPTO_PWD" "$ENCRYPTED_PROVISION_FILE_PATH"
+              security import "$DECRYPTED_CERTS_FILE_PATH" -k "$KEYCHAIN" -P "$CERTS_EXPORT_PWD" -A
+              security set-key-partition-list -S apple-tool:,apple: -s -k "" "$KEYCHAIN"
+              mkdir -p "$HOME/Library/MobileDevice/Provisioning Profiles"
+              echo `ls .github/secrets/*.mobileprovision`
+              # 프로파일들을 rename하고 새로만든 디렉토리에 복사
+              for PROVISION in `ls .github/secrets/*.mobileprovision`
+                do
+                  UUID=`/usr/libexec/PlistBuddy -c 'Print :UUID' /dev/stdin <<< $(security cms -D -i ./$PROVISION)`
+                cp "./$PROVISION" "$HOME/Library/MobileDevice/Provisioning Profiles/$UUID.mobileprovision"
+                done
+    			   # 아카이브!
+          - name: Archive
+            working-directory: usket_TID
+            run: | 
+              mkdir artifacts
+              xcodebuild archive -project "$XC_PROJECT" -scheme "$XC_SCHEME" -configuration release -archivePath "$XC_ARCHIVE_PATH"
+    			   # App Store로 내보내기
+          - name: Export for App Store
+            run: | 
+              xcodebuild -exportArchive -archivePath "$XC_ARCHIVE_PATH" -exportOptionsPlist ExportOptions.plist -exportPath "$XC_EXPORT_PATH"
+    
+    			   # 업로드하면 끝!
+          - name: Upload Artifact
+            uses: actions/upload-artifact@v3
+            with:
+              name: Artifacts
+              path: ./artifacts
+    ```
   
    </div>
  </details>
