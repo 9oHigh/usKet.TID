@@ -16,6 +16,22 @@ jobs:
       XC_VERSION: ${{ '13.1' }}
       XC_PROJECT: ${{ 'usket_TID.xcodeproj' }}
       XC_SCHEME: ${{ 'usket_TID' }}
+      KEYCHAIN: ${{ 'usket.keychain' }}
+      
+      PROJECT_ROOT_PATH: ${{ 'usket_TID }}
+      
+      ENCRYPTED_CERTS_FILE_PATH: ${{ '.github/secrets/GithubActionKey.p12.gpg' }}
+      DECRYPTED_CERTS_FILE_PATH: ${{ '.github/secrets/GithubActionKey.p12' }} # 어디에 복호화 할 것인지 명시
+
+      ENCRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/GithubAction.mobileprovision.gpg' }}
+      DECRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/GithubAction.mobileprovision' }} # 어디에 복호화 할 것인지 명시
+
+      CERTS_EXPORT_PWD: ${{ secrets.CERTS_EXPORT_PWD }}
+      CERTS_ENCRYPTION_PWD: ${{ secrets.CERTS_ENCRYPTO_PWD }}
+      PROFILES_ENCRYPTO_PWD: ${{ secrets.PROFILES_ENCRYPTO_PWD }}
+
+      XC_ARCHIVE_PATH: ${{ 'usket_TID.xcarchive' }}
+      XC_EXPORT_PATH: ${{ './artifacts' }}
       
     steps:
       - name: Select Xcode Version
@@ -26,7 +42,50 @@ jobs:
       - name: Build
         run: echo Hello, world!
 
-      - name: Run
-        working-directory: usket_TID
-        run: |
-          xcodebuild test -project "$XC_PROJECT" -scheme "$XC_SCHEME" -destination 'platform=iOS Simulator,name=iPhone 13'
+#      - name: Run Test
+ #       working-directory: usket_TID
+  #      run: |
+   #       xcodebuild test -project "$XC_PROJECT" -scheme "$XC_SCHEME" -destination 'platform=iOS Simulator,name=iPhone 13'
+
+      - name: Configure Keychain 
+        run: | 
+          security create-keychain -p "" "$KEYCHAIN" 
+          security list-keychains -s "$KEYCHAIN" 
+          security default-keychain -s "$KEYCHAIN" 
+          security unlock-keychain -p "" "$KEYCHAIN"
+          
+      - name : Configure Code Signing
+        run: | 
+          gpg -d -o "$DECRYPTED_CERTS_FILE_PATH" --pinentry-mode=loopback --passphrase "$CERTS_ENCRYPTION_PWD" "$ENCRYPTED_CERTS_FILE_PATH"
+          gpg -d -o "$DECRYPTED_PROVISION_FILE_PATH" --pinentry-mode=loopback --passphrase "$PROFILES_ENCRYPTO_PWD" "$ENCRYPTED_PROVISION_FILE_PATH"
+          security import "$DECRYPTED_CERTS_FILE_PATH" -k "$KEYCHAIN" -P "$CERTS_EXPORT_PWD" -A
+          security set-key-partition-list -S apple-tool:,apple: -s -k "" "$KEYCHAIN"
+          mkdir -p "$HOME/Library/MobileDevice/Provisioning Profiles"
+
+          echo `ls .github/secrets/*.mobileprovision`
+          # 프로파일들을 rename하고 새로만든 디렉토리에 복사
+          for PROVISION in `ls .github/secrets/*.mobileprovision`
+            do
+              UUID=`/usr/libexec/PlistBuddy -c 'Print :UUID' /dev/stdin <<< $(security cms -D -i ./$PROVISION)`
+            cp "./$PROVISION" "$HOME/Library/MobileDevice/Provisioning Profiles/$UUID.mobileprovision"
+            done
+
+      - name: Archive
+        run: | 
+          mkdir artifacts
+          xcodebuild archive -project "$XC_PROJECT" -scheme "$XC_SCHEME" -configuration release -archivePath "$XC_ARCHIVE_PATH"
+
+      - name: Export for App Store
+        run: | 
+          xcodebuild -exportArchive -archivePath "$XC_ARCHIVE_PATH" -exportOptionsPlist ExportOptions.plist -exportPath "$XC_EXPORT_PATH"
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: Artifacts
+          path: ./artifacts 
+          
+          
+          
+          
+          
