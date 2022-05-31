@@ -1,4 +1,3 @@
-# only Unit test
 name: TID Automation release
 
 on:
@@ -40,11 +39,6 @@ jobs:
 
       - name: Build
         run: echo Hello, world!
-# TEST CODE
-#      - name: Run Test
-#         working-directory: usket_TID
-#        run: |
-#         xcodebuild test -project "$XC_PROJECT" -scheme "$XC_SCHEME" -destination 'platform=iOS Simulator,name=iPhone 13'
 
       - name: Configure Keychain 
         run: | 
@@ -84,8 +78,3 @@ jobs:
         with:
           name: Artifacts
           path: ./artifacts 
-          
-          
-          
-          
-          
