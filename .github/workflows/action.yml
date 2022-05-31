@@ -14,7 +14,7 @@ jobs:
     env: # 가상환경
       ARGS: "-av"
       XC_VERSION: ${{ '13.1' }}
-      XC_PROJECT: ${{ 'usket_TID.xcodeproj' }}
+      XC_PROJECT: ${{ '*/usket_TID.xcodeproj' }}
       XC_SCHEME: ${{ 'usket_TID' }}
       KEYCHAIN: ${{ 'usket.keychain' }}
       
@@ -41,11 +41,11 @@ jobs:
 
       - name: Build
         run: echo Hello, world!
-
+# TEST CODE
 #      - name: Run Test
- #       working-directory: usket_TID
-  #      run: |
-   #       xcodebuild test -project "$XC_PROJECT" -scheme "$XC_SCHEME" -destination 'platform=iOS Simulator,name=iPhone 13'
+#         working-directory: usket_TID
+#        run: |
+#         xcodebuild test -project "$XC_PROJECT" -scheme "$XC_SCHEME" -destination 'platform=iOS Simulator,name=iPhone 13'
 
       - name: Configure Keychain 
         run: | 
