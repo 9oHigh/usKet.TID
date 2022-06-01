@@ -36,6 +36,8 @@ jobs:
         run: "sudo xcode-select -s /Applications/Xcode_$XC_VERSION.app"
     
       - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.pull_request.head.ref }}
 
       - name: Build
         run: echo Hello, world!
@@ -77,16 +79,16 @@ jobs:
         run: | 
           xcodebuild -exportArchive -archivePath "$XC_ARCHIVE_PATH" -exportOptionsPlist ExportOptions.plist -exportPath "$XC_EXPORT_PATH" -allowProvisioningUpdates
           pwd
-#       - name: Upload Artifact
-#         uses: actions/upload-artifact@v3
-#         with:
-#           name: Artifacts
-#           path: usket_TID/artifacts 
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: Artifacts
+          path: usket_TID/artifacts 
           
       - name: Upload app to TestFlight
         uses: apple-actions/upload-testflight-build@v1
         with:
-          app-path: usket_TID/artifacts/usket_TID.ipa
+          app-path: ./artifacts/usket_TID.ipa
           issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
           api-key-id: ${{ secrets.APPSTORE_API_KEY_ID }}
           api-private-key: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
