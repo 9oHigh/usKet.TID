@@ -29,7 +29,7 @@ jobs:
       PROFILES_ENCRYPTO_PWD: ${{ secrets.PROFILES_ENCRYPTO_PWD }}
 
       XC_ARCHIVE_PATH: ${{ 'usket_TID.xcarchive' }}
-      XC_EXPORT_PATH: ${{ 'usket_TID/artifacts' }}
+      XC_EXPORT_PATH: ${{ './artifacts' }}
       
     steps:
       - name: Select Xcode Version
@@ -80,4 +80,4 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Artifacts
-          path: ./artifacts 
+          path: usket_TID/artifacts 
