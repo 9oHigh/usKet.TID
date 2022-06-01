@@ -65,13 +65,13 @@ jobs:
             cp "./$PROVISION" "$HOME/Library/MobileDevice/Provisioning Profiles/$UUID.mobileprovision"
             done
 
-      - name: Archive
+      - name: Archive App
         working-directory: usket_TID
         run: | 
           mkdir artifacts
           xcodebuild archive -project "$XC_PROJECT" -scheme "$XC_SCHEME" -configuration release -archivePath "$XC_ARCHIVE_PATH"
 
-      - name: Export for App Store
+      - name: Export App
         working-directory: usket_TID
         run: | 
           xcodebuild -exportArchive -archivePath "$XC_ARCHIVE_PATH" -exportOptionsPlist ExportOptions.plist -exportPath "$XC_EXPORT_PATH"
@@ -85,7 +85,7 @@ jobs:
       - name: Upload app to TestFlight
         uses: apple-actions/upload-testflight-build@v1
         with:
-          app-path: 'usket_TID.ipa'
+          app-path: 'usket_TID/usket_TID.ipa'
           issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
           api-key-id: ${{ secrets.APPSTORE_API_KEY_ID }}
           api-private-key: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
