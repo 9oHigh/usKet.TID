@@ -8,7 +8,6 @@ on:
 
 jobs:
   build:
-  
     runs-on: macos-latest
     env: # 가상환경
       XC_VERSION: ${{ '13.1' }}
@@ -35,7 +34,7 @@ jobs:
       - name: Select Xcode Version
         run: "sudo xcode-select -s /Applications/Xcode_$XC_VERSION.app"
     
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
         with:
           ref: ${{ github.event.pull_request.head.ref }}
 
@@ -72,13 +71,12 @@ jobs:
         run: | 
           mkdir artifacts
           xcodebuild archive -project "$XC_PROJECT" -scheme "$XC_SCHEME" -configuration release -archivePath "$XC_ARCHIVE_PATH"
-          pwd
           
       - name: Export App
         working-directory: usket_TID
         run: | 
           xcodebuild -exportArchive -archivePath "$XC_ARCHIVE_PATH" -exportOptionsPlist ExportOptions.plist -exportPath "$XC_EXPORT_PATH" -allowProvisioningUpdates
-          pwd
+
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
@@ -88,7 +86,7 @@ jobs:
       - name: Upload app to TestFlight
         uses: apple-actions/upload-testflight-build@v1
         with:
-          app-path: ./artifacts/usket_TID.ipa
+          app-path: usket_TID/artifacts/usket_TID.ipa
           issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
           api-key-id: ${{ secrets.APPSTORE_API_KEY_ID }}
           api-private-key: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
