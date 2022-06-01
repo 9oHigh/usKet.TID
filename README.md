@@ -182,8 +182,9 @@
  <summary> Github Action 방법 및 적용</summary>
  <div markdown="2">
   
-  - 적용방법
-    
+  - 참고: [naljin님의 블로그](https://sujinnaljin.medium.com/ci-cd-github-actions-%EB%A5%BC-%EC%9D%B4%EC%9A%A9%ED%95%9C-testflight-%EC%97%85%EB%A1%9C%EB%93%9C-%EC%9E%90%EB%8F%99%ED%99%94-8ecdbeb227a3)
+  - 적용방법 
+  
     ```
     name: TID Automation release
     
