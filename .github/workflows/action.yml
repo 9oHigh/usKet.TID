@@ -79,7 +79,7 @@ jobs:
         uses: actions/upload-artifact@v3
         with:
           name: Artifacts
-          path: usket_TID/artifacts 
+          path: ./artifacts 
           
       - name: Upload app to TestFlight
         uses: apple-actions/upload-testflight-build@v1
