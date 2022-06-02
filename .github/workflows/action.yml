@@ -67,19 +67,23 @@ jobs:
       - name: Archive App
         working-directory: usket_TID
         run: | 
+          ls
           mkdir artifacts
           xcodebuild archive -project "$XC_PROJECT" -scheme "$XC_SCHEME" -configuration release -archivePath "$XC_ARCHIVE_PATH"
+          pwd
           
       - name: Export App
         working-directory: usket_TID
-        run: | 
+        run:  |
+          ls
           xcodebuild -exportArchive -archivePath "$XC_ARCHIVE_PATH" -exportOptionsPlist ExportOptions.plist -exportPath "$XC_EXPORT_PATH" -allowProvisioningUpdates
+          pwd
 
       - name: Upload Artifact
         uses: actions/upload-artifact@v3
         with:
           name: Artifacts
-          path: ./artifacts 
+          path: usket_TID/artifacts 
           
       - name: Upload app to TestFlight
         uses: apple-actions/upload-testflight-build@v1
