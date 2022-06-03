@@ -35,16 +35,13 @@ jobs:
     
       - uses: actions/checkout@v3
 
-      - name: Build
-        run: echo Hello, world!
-
       - name: Configure Keychain 
         run: | 
           security create-keychain -p "" "$KEYCHAIN" 
           security list-keychains -s "$KEYCHAIN" 
           security default-keychain -s "$KEYCHAIN" 
           security unlock-keychain -p "" "$KEYCHAIN"
-          security set-keychain-settings -lut 1200
+          security set-keychain-settings -lut 2400
           security list-keychains
           
       - name : Configure Code Signing
@@ -67,18 +64,17 @@ jobs:
         working-directory: usket_TID
         run: | 
           xcodebuild archive -project "$XC_PROJECT" -scheme "$XC_SCHEME" -configuration release -archivePath "$XC_ARCHIVE_PATH"
-          mkdir artifacts
           
       - name: Export App
         working-directory: usket_TID
         run:  |
-          xcodebuild -exportArchive -archivePath "$XC_ARCHIVE_PATH" -exportOptionsPlist ExportOptions.plist -exportPath . -allowProvisioningUpdates
+          xcodebuild -exportArchive -archivePath "$XC_ARCHIVE_PATH" -exportOptionsPlist ExportOptions.plist -exportPath .
           ls
           
       - name: Upload app to TestFlight
         uses: apple-actions/upload-testflight-build@v1
         with:
-          app-path: 'usket_TID.ipa'
+          app-path: usket_TID.ipa
           issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
           api-key-id: ${{ secrets.APPSTORE_API_KEY_ID }}
           api-private-key: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
