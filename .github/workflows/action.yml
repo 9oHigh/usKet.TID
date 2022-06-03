@@ -74,21 +74,11 @@ jobs:
         run:  |
           xcodebuild -exportArchive -archivePath "$XC_ARCHIVE_PATH" -exportOptionsPlist ExportOptions.plist -exportPath . -allowProvisioningUpdates
           ls
-#       Artifact.zip을 이용해 업로드          
-#       - name: Upload Artifact
-#         uses: actions/upload-artifact@v3
-#         with:
-#           name: Artifacts
-#           path: usket_TID/artifacts 
-
-#       - name: Xcode install
-#         run: |
-#           xcode -select --install
           
       - name: Upload app to TestFlight
         uses: apple-actions/upload-testflight-build@v1
         with:
-          app-path: ./usket_TID.ipa
+          app-path: './usket_TID.ipa'
           issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
           api-key-id: ${{ secrets.APPSTORE_API_KEY_ID }}
           api-private-key: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
