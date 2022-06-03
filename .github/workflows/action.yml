@@ -82,9 +82,9 @@ jobs:
 #           name: Artifacts
 #           path: usket_TID/artifacts 
 
-      - name: Xcode install
-        run: |
-          xcode -select --install
+#       - name: Xcode install
+#         run: |
+#           xcode -select --install
           
       - name: Upload app to TestFlight
         uses: apple-actions/upload-testflight-build@v1
