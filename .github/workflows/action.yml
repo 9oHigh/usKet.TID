@@ -72,7 +72,7 @@ jobs:
       - name: Export App
         working-directory: usket_TID
         run:  |
-          xcodebuild -exportArchive -archivePath "$XC_ARCHIVE_PATH" -exportOptionsPlist ExportOptions.plist -exportPath -allowProvisioningUpdates
+          xcodebuild -exportArchive -archivePath "$XC_ARCHIVE_PATH" -exportOptionsPlist ExportOptions.plist -exportPath . -allowProvisioningUpdates
           ls
 #       Artifact.zip을 이용해 업로드          
 #       - name: Upload Artifact
