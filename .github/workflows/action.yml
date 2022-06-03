@@ -28,7 +28,7 @@ jobs:
       PROFILES_ENCRYPTO_PWD: ${{ secrets.PROFILES_ENCRYPTO_PWD }}
 
       XC_ARCHIVE_PATH: ${{ 'usket_TID.xcarchive' }}
-      XC_EXPORT_PATH: ${{ 'usket_TID/artifacts' }}
+      XC_EXPORT_PATH: ${{ './artifacts' }}
       
     steps:
       - name: Select Xcode Version
@@ -67,10 +67,8 @@ jobs:
       - name: Archive App
         working-directory: usket_TID
         run: | 
-          ls
           mkdir artifacts
           xcodebuild archive -project "$XC_PROJECT" -scheme "$XC_SCHEME" -configuration release -archivePath "$XC_ARCHIVE_PATH"
-          pwd
           
       - name: Export App
         working-directory: usket_TID
