@@ -37,7 +37,7 @@ jobs:
           
       - name: Setting Xcode
         run: |
-          "xcode-select --install"
+          "sudo xcode-select --install"
           
       - name: Select Xcode Version
         run: "sudo xcode-select -s /Applications/Xcode_$XC_VERSION.app"
