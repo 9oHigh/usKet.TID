@@ -30,9 +30,11 @@ jobs:
       XC_ARCHIVE_PATH: ${{ 'usket_TID.xcarchive' }}
       
     steps:
+          
       - name: Select Xcode Version
         run: "sudo xcode-select -s /Applications/Xcode_$XC_VERSION.app"
-    
+
+      - name: Setting checkout
       - uses: actions/checkout@v3
 
       - name: Configure Keychain 
@@ -63,13 +65,13 @@ jobs:
       - name: Archive App
         working-directory: usket_TID
         run: | 
-          xcodebuild archive -project "$XC_PROJECT" -scheme "$XC_SCHEME" -configuration release -archivePath "$XC_ARCHIVE_PATH" "OTHER_CODE_SIGN_FLAGS=--keychain '$KEYCHAIN'"
+          xcodebuild clean archive -project "$XC_PROJECT" -scheme "$XC_SCHEME" -configuration release -archivePath "$XC_ARCHIVE_PATH" 
           
       - name: Export App
         working-directory: usket_TID
         run:  |
-          xcodebuild -exportArchive -archivePath "$XC_ARCHIVE_PATH" -exportOptionsPlist ExportOptions.plist -exportPath .
-          pwd
+          xcodebuild -exportArchive -archivePath "$XC_ARCHIVE_PATH" -exportOptionsPlist ExportOptions.plist -exportPath . -allowProvisioningUpdates
+          ls
           
       - name: Upload app to TestFlight
         uses: apple-actions/upload-testflight-build@v1
