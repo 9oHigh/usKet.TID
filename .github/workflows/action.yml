@@ -68,8 +68,6 @@ jobs:
         run:  |
           xcodebuild -exportArchive -archivePath "$XC_ARCHIVE_PATH" -exportOptionsPlist ExportOptions.plist -exportPath . -allowProvisioningUpdates
           ls
-          cat useket_TID.ipa
-          cd useket_TID.ipa
 
       - name: Upload app to TestFlight
         uses: apple-actions/upload-testflight-build@v1
