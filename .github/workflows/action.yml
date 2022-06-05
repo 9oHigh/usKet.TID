@@ -35,6 +35,11 @@ jobs:
         run: |  
           git config --global url."https://${PERSONAL_ACCESS_TOKEN}@github.com/".insteadOf "https://github.com/"
 
+          
+      - name: Setting Xcode
+        run: |
+          xcode-select --install
+          
       - name: Select Xcode Version
         run: "sudo xcode-select -s /Applications/Xcode_$XC_VERSION.app"
 
@@ -73,7 +78,7 @@ jobs:
         run:  |
           xcodebuild -exportArchive -archivePath "$XC_ARCHIVE_PATH" -exportOptionsPlist ExportOptions.plist -exportPath . -allowProvisioningUpdates
           ls
-          
+
       - name: Upload app to TestFlight
         uses: apple-actions/upload-testflight-build@v1
         with:
