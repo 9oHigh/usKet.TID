@@ -80,4 +80,4 @@ jobs:
         run: |
           cd usket_TID
           ls
-          xcrun altool --output-format xml --upload-app -f usket_TID.ipa -t ios --apiKey ${{ secrets.APPSTORE_KEY_ID }} --apiIssuer ${{ secrets.APPSTORE_ISSUER_ID }}
+          xcrun altool --output-format xml --upload-app -f usket_TID.ipa -t ios --apiKey ${{ secrets.APPSTORE_API_KEY_ID }} --apiIssuer ${{ secrets.APPSTORE_ISSUER_ID }}
