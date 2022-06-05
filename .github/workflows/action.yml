@@ -11,7 +11,7 @@ jobs:
     runs-on: macos-latest
     env: # 가상환경
       PERSONAL_ACCESS_TOKEN : ${{ secrets.PERSONAL_ACCESS_TOKEN }}
-      XC_VERSION: ${{ '13.2' }}
+      XC_VERSION: ${{ '13.3' }}
       XC_PROJECT: ${{ 'usket_TID.xcodeproj' }}
       XC_SCHEME: ${{ 'usket_TID' }}
       XC_ARCHIVE_PATH: ${{ 'usket_TID.xcarchive' }}
