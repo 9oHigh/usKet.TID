@@ -70,9 +70,11 @@ jobs:
           ls
 
       - name: Upload app to TestFlight
-        uses: apple-actions/upload-testflight-build@v1
-        with:
-          app-path: 'usket_TID.ipa'
-          issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
-          api-key-id: ${{ secrets.APPSTORE_API_KEY_ID }}
-          api-private-key: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
+#         uses: apple-actions/upload-testflight-build@v1
+#         with:
+#           app-path: 'usket_TID.ipa'
+#           issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
+#           api-key-id: ${{ secrets.APPSTORE_API_KEY_ID }}
+#           api-private-key: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
+        run: |
+          xcrun altool — validate-app -f usket_TID.ipa -t ios — apiKey ${{ secrets.APPSTORE_API_KEY_ID }} — apiIssuer ${{secrets.APPSTORE_ISSUER_ID }}
