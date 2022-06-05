@@ -77,5 +77,7 @@ jobs:
 #           api-key-id: ${{ secrets.APPSTORE_API_KEY_ID }}
 #           api-private-key: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
         run: |
+          ls
+          pwd
           xcrun altool --output-format xml --upload-app --file usket_TID.ipa --type ios --apiKey ${{ secrets.APPSTORE_API_KEY_ID }} --apiIssuer ${{secrets.APPSTORE_ISSUER_ID }}
 #          xcrun altool — validate-app -f usket_TID.ipa -t ios — apiKey ${{ secrets.APPSTORE_API_KEY_ID }} — apiIssuer ${{secrets.APPSTORE_ISSUER_ID }}
