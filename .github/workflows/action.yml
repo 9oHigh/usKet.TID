@@ -10,7 +10,6 @@ jobs:
   build:
     runs-on: macos-latest
     env: # 가상환경
-      PERSONAL_ACCESS_TOKEN : ${{ secrets.PERSONAL_ACCESS_TOKEN }}
       XC_VERSION: ${{ '12.5.1' }}
       XC_PROJECT: ${{ 'usket_TID.xcodeproj' }}
       XC_SCHEME: ${{ 'usket_TID' }}
@@ -30,10 +29,6 @@ jobs:
     steps:
       - name: Setting checkout
         uses: actions/checkout@v3
-
-      - name: :"Credentials setup"
-        run: |  
-          git config --global url."https://${PERSONAL_ACCESS_TOKEN}@github.com/".insteadOf "https://github.com/"
           
       - name: Select Xcode Version
         run: "sudo xcode-select -s /Applications/Xcode_$XC_VERSION.app"
