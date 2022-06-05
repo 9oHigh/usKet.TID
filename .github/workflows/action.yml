@@ -59,12 +59,11 @@ jobs:
             done
 
       - name: Archive App
-        working-directory: usket_TID
         run: | 
+          cd usket_TID
           xcodebuild clean archive -project "$XC_PROJECT" -scheme "$XC_SCHEME" -configuration release -archivePath "$XC_ARCHIVE_PATH" 
           
       - name: Export App
-        working-directory: usket_TID
         run:  |
           xcodebuild -exportArchive -archivePath "$XC_ARCHIVE_PATH" -exportOptionsPlist ExportOptions.plist -exportPath . -allowProvisioningUpdates
           ls
