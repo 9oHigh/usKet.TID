@@ -65,6 +65,7 @@ jobs:
           
       - name: Export App
         run:  |
+          cd usket_TID
           xcodebuild -exportArchive -archivePath "$XC_ARCHIVE_PATH" -exportOptionsPlist ExportOptions.plist -exportPath . -allowProvisioningUpdates
           ls
           
