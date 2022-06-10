@@ -275,7 +275,114 @@
               name: Artifacts
               path: ./artifacts
     ```
-  
+  - Artifact가 아닌 TestFlight로 적용방법
+    - 경로를 찾을 수 없다는 오류 오류 
+      - apple-actions/upload-testflight-build@v1를 이용했을 경우 발생함. 
+      - 디렉토리와 파일을 생성하는 방법으로 변경 
+    
+    - 원래 적용 했어야하는 방법
+                                                                                         
+      ```
+       name: Upload app to TestFlight 
+       uses: apple-actions/upload-testflight-build@v1
+        with:
+            app-path: 'usket_TID.ipa'
+            issuer-id: ${{ secrets.APPSTORE_ISSUER_ID }}
+            api-key-id: ${{ secrets.APPSTORE_API_KEY_ID }}
+            api-private-key: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
+      ```
+                                                                                         
+    - 다음과 같이 디렉토리를 생성 및 base64로 인코딩된 Private Key를 decoding하여 넣은 후 실행 그리고 성공!
+        
+        ```
+        name: TID Automation release
+        
+        on:
+          push:
+            branches: [ main ]
+          pull_request:
+            branches: [ main ]
+        
+        jobs:
+          build:
+            runs-on: macos-latest
+            env: # 가상환경
+              XC_VERSION: ${{ '13.1' }}
+              XC_PROJECT: ${{ 'usket_TID.xcodeproj' }}
+              XC_SCHEME: ${{ 'usket_TID' }}
+              XC_ARCHIVE_PATH: ${{ 'usket_TID.xcarchive' }}
+              KEYCHAIN: ${{ 'usket.keychain' }}
+              
+              ENCRYPTED_CERTS_FILE_PATH: ${{ '.github/secrets/GithubActionKey.p12.gpg' }}
+              DECRYPTED_CERTS_FILE_PATH: ${{ '.github/secrets/GithubActionKey.p12' }} # 어디에 복호화 할 것인지 명시
+        
+              ENCRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/GithubAction.mobileprovision.gpg' }}
+              DECRYPTED_PROVISION_FILE_PATH: ${{ '.github/secrets/GithubAction.mobileprovision' }} # 어디에 복호화 할 것인지 명시
+        
+              CERTS_EXPORT_PWD: ${{ secrets.CERTS_EXPORT_PWD }}
+              CERTS_ENCRYPTION_PWD: ${{ secrets.CERTS_ENCRYPTO_PWD }}
+              PROFILES_ENCRYPTO_PWD: ${{ secrets.PROFILES_ENCRYPTO_PWD }}
+        
+            steps:
+              - name: Setting checkout
+                uses: actions/checkout@v3
+                  
+              - name: Select Xcode Version
+                run: "sudo xcode-select -s /Applications/Xcode_$XC_VERSION.app"
+        
+              - name: Configure Keychain 
+                run: | 
+                  security create-keychain -p "" "$KEYCHAIN" 
+                  security list-keychains -s "$KEYCHAIN" 
+                  security default-keychain -s "$KEYCHAIN" 
+                  security unlock-keychain -p "" "$KEYCHAIN"
+                  security set-keychain-settings -lut 1200
+                  security list-keychains
+                  
+              - name : Configure Code Signing
+                run: | 
+                  gpg -d -o "$DECRYPTED_CERTS_FILE_PATH" --pinentry-mode=loopback --passphrase "$CERTS_ENCRYPTION_PWD" "$ENCRYPTED_CERTS_FILE_PATH"
+                  gpg -d -o "$DECRYPTED_PROVISION_FILE_PATH" --pinentry-mode=loopback --passphrase "$PROFILES_ENCRYPTO_PWD" "$ENCRYPTED_PROVISION_FILE_PATH"
+                  security import "$DECRYPTED_CERTS_FILE_PATH" -k "$KEYCHAIN" -P "$CERTS_EXPORT_PWD" -A
+                  security set-key-partition-list -S apple-tool:,apple: -s -k "" "$KEYCHAIN"
+                  mkdir -p "$HOME/Library/MobileDevice/Provisioning Profiles"
+                  echo `ls .github/secrets/*.mobileprovision`
+                  # 프로파일들을 rename하고 새로만든 디렉토리에 복사
+                  for PROVISION in `ls .github/secrets/*.mobileprovision`
+                    do
+                      UUID=`/usr/libexec/PlistBuddy -c 'Print :UUID' /dev/stdin <<< $(security cms -D -i ./$PROVISION)`
+                    cp "./$PROVISION" "$HOME/Library/MobileDevice/Provisioning Profiles/$UUID.mobileprovision"
+                    done
+              - name: Archive App
+                working-directory: usket_TID
+                run: | 
+                  xcodebuild clean archive -project "$XC_PROJECT" -scheme "$XC_SCHEME" -configuration release -archivePath "$XC_ARCHIVE_PATH" 
+                  
+              - name: Export App
+                working-directory: usket_TID
+                run:  |
+                  xcodebuild -exportArchive -archivePath "$XC_ARCHIVE_PATH" -exportOptionsPlist ExportOptions.plist -exportPath . -allowProvisioningUpdates
+                  ls
+        			# Make Private API Key Path
+              - name: Install private API key P8
+                env:
+                  APPSTORE_API_PRIVATE_KEY: ${{ secrets.APPSTORE_API_PRIVATE_KEY }}
+                  APPSTORE_API_KEY_ID: ${{ secrets.APPSTORE_API_KEY_ID }}
+        				# Decode Private Key
+                run: | 
+                  mkdir -p ~/private_keys
+                  echo -n "$APPSTORE_API_PRIVATE_KEY" | base64 --decode --output ~/private_keys/AuthKey_$APPSTORE_API_KEY_ID.p8
+                  ls
+                  
+              - name: Upload app to TestFlight
+                env:
+                  APPSTORE_API_KEY_ID: ${{ secrets.APPSTORE_API_KEY_ID }}
+                run: |
+                  cd usket_TID
+                  ls
+                  xcrun altool --output-format xml --upload-app -f usket_TID.ipa -t ios --apiKey $APPSTORE_API_KEY_ID --apiIssuer ${{ secrets.APPSTORE_ISSUER_ID }}
+        ```
+                                                                
    </div>
  </details>
  
