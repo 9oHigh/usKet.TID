@@ -390,7 +390,7 @@
 
   |버전|업데이트 내역|설명|
   |:---:|:---:|:---:|
-  |v2.08|CI / CD|Github Action을 이용해 자동배포 환경을 구축했습니다.|
+  |v2.08|CI / CD <br /> [ [CI/CD 기록(1) - 블로그](https://pooh-footprints.tistory.com/66) ] <br /> [ [CI/CD 기록(2) - 블로그](https://pooh-footprints.tistory.com/67) ] <br /> [ [CI/CD 기록(3) - 블로그](https://pooh-footprints.tistory.com/68) ]|Github Action을 이용해 자동배포 환경을 구축했습니다.|
   |v2.07|추가버튼 클릭시 Navigation Bar는 Overlay View에 감싸지지 않던 오류 <br /> [ [트러블 슈팅 기록 - 블로그](https://pooh-footprints.tistory.com/65) ]|해당 오류를 해결했습니다.|
   |v2.06|개발, 앱, 리뷰를 위한 버튼 생성|각각 깃허브 링크, 앱관련 문의를 위한 이메일 딥링크, 리뷰페이지로 이동가능한 버튼을 추가|
   |v2.05|로고 디자이너 인스타그램 링크|요청으로 링크를 첨부 및 추가 버튼 클릭시 백그라운드 컬러 |
