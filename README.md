@@ -7,7 +7,7 @@
 
 
 ### 주요 기술 스택
-`Realm` `AutoLayout` `Alamofire` `SwiftyJSON` `MVC`
+`Realm` `AutoLayout` `Snapkit` `Alamofire` `SwiftyJSON` `MVC` `Github Action`
 
 ###  ✔ 학습 및 적용 🏃🏻‍♂️
 
