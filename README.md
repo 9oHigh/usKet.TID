@@ -90,7 +90,7 @@
  <div markdown="1">
   
   - CI / CD Github Action
-    - Github Action이란
+    - Github Action이란 
         - Pull Request, Push 등의 이벤트 발생에 따라 자동화된 작업을 진행할 수 있게 해주는 기능
         - CI / CD
             - 로컬 레포지토리에서 원격 레포지토리로 푸쉬하고 난 후, Github Actions에서는 이벤트 발생에 따라 자동으로 빌드 및 배포하는 스크립트를 실행시켜주는 것
