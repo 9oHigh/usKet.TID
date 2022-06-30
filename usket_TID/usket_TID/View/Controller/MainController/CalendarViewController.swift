@@ -174,7 +174,7 @@ extension CalendarViewController : FSCalendarDelegate,FSCalendarDataSource,UITab
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "CalendarTableViewCell") as? CalendarTableViewCell else {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: CalendarTableViewCell.identifier) as? CalendarTableViewCell else {
             return UITableViewCell()
         }
         
@@ -211,6 +211,23 @@ extension CalendarViewController : FSCalendarDelegate,FSCalendarDataSource,UITab
             return attributedString.string
         } else {
             return nil
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let works: Results<DefineWordModel>!
+        works = localRealm.objects(DefineWordModel.self).filter("storedDate == %@", pressedDate)
+        if works.isEmpty {
+            return
+        } else {
+            let storyboard = UIStoryboard(name: "WordScreen", bundle: nil)
+            let vc = storyboard.instantiateViewController(withIdentifier: "PageViewController") as! PageViewController
+            
+            vc.idOfCell = works[indexPath.row]._id
+                        
+            vc.modalPresentationStyle = .fullScreen
+            
+            self.present(vc, animated: true, completion: nil)
         }
     }
 }

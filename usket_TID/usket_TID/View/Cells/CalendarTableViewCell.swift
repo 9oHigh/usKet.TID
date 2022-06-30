@@ -9,6 +9,7 @@ import UIKit
 
 final class CalendarTableViewCell: UITableViewCell {
     
+    static let identifier: String = "CalendarTableViewCell"
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var firstComeLabel: UILabel!
     @IBOutlet weak var emotionImageView: UIImageView!
@@ -17,7 +18,6 @@ final class CalendarTableViewCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         //백그라운드 그림자 효과
         self.backView.layer.cornerRadius = 10
         self.contentView.layer.cornerRadius = 10
