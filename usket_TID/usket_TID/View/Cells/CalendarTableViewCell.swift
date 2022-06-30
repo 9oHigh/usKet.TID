@@ -9,6 +9,7 @@ import UIKit
 
 final class CalendarTableViewCell: UITableViewCell {
     
+    static let identifier: String = "CalendarTableViewCell"
     @IBOutlet weak var wordLabel: UILabel!
     @IBOutlet weak var firstComeLabel: UILabel!
     @IBOutlet weak var emotionImageView: UIImageView!

@@ -56,7 +56,7 @@ extension MainViewController : UITableViewDelegate,UITableViewDataSource{
         let storyboard = UIStoryboard(name: "WordScreen", bundle: nil)
         let vc = storyboard.instantiateViewController(withIdentifier: "PageViewController") as! PageViewController
         
-        if isFiltering{
+        if isFiltering {
             vc.idOfCell = filtered[indexPath.row]._id
         } else {
             vc.idOfCell = tasks[indexPath.row]._id
@@ -65,7 +65,6 @@ extension MainViewController : UITableViewDelegate,UITableViewDataSource{
         vc.modalPresentationStyle = .fullScreen
         
         self.present(vc, animated: true, completion: nil)
-        
     }
     
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
