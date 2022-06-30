@@ -66,8 +66,8 @@ final class StatisticsViewController: UIViewController {
         self.dismiss(animated: true, completion: nil)
     }
     
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
         //Real Percent
         progressRing.setProgress(self.gauge * 0.01, animated: true)
     }
