@@ -20,6 +20,7 @@ final class SettingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        notiTimePicker.timeZone = TimeZone.autoupdatingCurrent
         //알림을 허용했다면
         if UserDefaults.standard.bool(forKey: "pushAllow"){
             notiSwitch.isOn = true
@@ -31,8 +32,15 @@ final class SettingViewController: UIViewController {
         if UserDefaults.standard.double(forKey: "setAlarm") > 0 {
             
             let date = Date(timeIntervalSince1970: UserDefaults.standard.double(forKey: "setAlarm"))
-            
-            notiTimePicker.date = date
+            // 기존에 날짜가 타임존이 맞지 않았음
+            // 따라서 기존의 유저에 있던
+            // UserDefault 값을 무시해야하기 때문에
+            // 조건식이 필요함
+            if date < notiTimePicker.date {
+                return
+            } else {
+                notiTimePicker.date = date
+            }
         }
     }
     
@@ -118,6 +126,7 @@ final class SettingViewController: UIViewController {
     private func sendNoti() {
         
         userNotiCenter.removeAllPendingNotificationRequests()
+        userNotiCenter.removeAllDeliveredNotifications()
         setIndicator()
         
         DispatchQueue.main.async {
