@@ -21,6 +21,7 @@ final class SettingViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         notiTimePicker.timeZone = TimeZone.autoupdatingCurrent
+        notiTimePicker.locale = Locale.current
         //알림을 허용했다면
         if UserDefaults.standard.bool(forKey: "pushAllow"){
             notiSwitch.isOn = true
@@ -111,13 +112,13 @@ final class SettingViewController: UIViewController {
                 self.sendNoti()
                 
                 DispatchQueue.main.async {
-                    self.showToast(message: "알림시간 저장완료😊")
+                    self.showToast(message: I18N.setAlarm)
                 }
                 //알림 시간 저장
                 UserDefaults.standard.set(sender.date.timeIntervalSince1970, forKey: "setAlarm")
             } else {
                 DispatchQueue.main.async {
-                    self.showToast(message: "알림시간 저장실패😅")
+                    self.showToast(message: I18N.cannotSetAlarm)
                 }
             }
         }
@@ -164,7 +165,7 @@ final class SettingViewController: UIViewController {
                     return
                 }
                 DispatchQueue.main.async {
-                    self.showToast(message: "다시 시도해주세요!")
+                    self.showToast(message: I18N.retry)
                 }
             }
         }

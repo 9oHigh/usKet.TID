@@ -160,7 +160,7 @@ final class MainViewController: UIViewController {
             item.layer.shadowRadius = CGFloat(2)
         }
         
-        actionButton.addItem(title: "작성하기", image: UIImage(named: "writing.png")?.withRenderingMode(.alwaysTemplate)) { item in
+        actionButton.addItem(title: I18N.write, image: UIImage(named: "writing.png")?.withRenderingMode(.alwaysTemplate)) { item in
             //에디터로 연결
             let storyboard = UIStoryboard(name: "WordScreen", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "PageViewController") as! PageViewController
@@ -168,7 +168,7 @@ final class MainViewController: UIViewController {
             self.present(vc, animated: true, completion: nil)
         }
         
-        actionButton.addItem(title: "단어 추천 받기", image: UIImage(named: "recommendation.png")?.withRenderingMode(.alwaysTemplate)) { item in
+        actionButton.addItem(title: I18N.recomment, image: UIImage(named: "recommendation.png")?.withRenderingMode(.alwaysTemplate)) { item in
             //단어 추천 으로 연결
             let storyboard = UIStoryboard(name: "WordScreen", bundle: nil)
             let vc = storyboard.instantiateViewController(withIdentifier: "WordViewController") as! WordViewController
@@ -193,7 +193,7 @@ final class MainViewController: UIViewController {
         searchController.searchBar.enablesReturnKeyAutomatically = true
         searchController.searchResultsUpdater = self
         searchController.obscuresBackgroundDuringPresentation = false
-        searchController.searchBar.placeholder = "단어, 연관단어, 내용을 검색해보세요."
+        searchController.searchBar.placeholder = I18N.searchBar
         
         //네비게이션
         navigationItem.searchController = searchController
@@ -210,7 +210,7 @@ final class MainViewController: UIViewController {
         searchController.searchBar.searchTextField.font = UIFont(name: Helper.shared.originalFont, size: 18)
         searchController.searchBar.searchTextField.leftView?.tintColor = .lightGray
         searchController.searchBar.autocapitalizationType = .none
-        searchController.searchBar.setValue("취소", forKey: "cancelButtonText")
+        searchController.searchBar.setValue(I18N.cancel, forKey: "cancelButtonText")
         
         //폰트 + 컬러
         let attributes:[NSAttributedString.Key: Any] = [

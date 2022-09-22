@@ -88,7 +88,16 @@ final class StatisticsViewController: UIViewController {
         let formatMonth = DateFormatter()
         formatMonth.dateFormat = "M"
         let nowMonth = formatMonth.string(from: month)
-        monthLabel.text = nowMonth + "월❗️"
+        
+        if String(Locale.preferredLanguages[0].prefix(2)) == "ko" {
+            monthLabel.text = nowMonth + I18N.month + "❗️"
+        } else {
+            Month.allCases.forEach { month in
+                if month.rawValue == Int(nowMonth) {
+                    monthLabel.text = month.name + "❗️"
+                }
+            }
+        }
         
         //한달 일수
         let totalDay = lastDay(ofMonth: Int(nowMonth)!, year: Int(nowYear)!)
@@ -97,26 +106,26 @@ final class StatisticsViewController: UIViewController {
         if tasks.count > 0 {
             //감정 개수 반환
             var image = tasks.filter("emotion == %@","happyFace.png")
-            self.happyCountLabel.text = String(image.count) + "개"
+            self.happyCountLabel.text = String(image.count) + I18N.ea
             
             image = tasks.filter("emotion == %@","sadFace.png")
-            self.sadCountLabel.text = String(image.count) + "개"
+            self.sadCountLabel.text = String(image.count) + I18N.ea
             
             image = tasks.filter("emotion == %@","normalFace.png")
-            self.normalCountLabel.text = String(image.count) + "개"
+            self.normalCountLabel.text = String(image.count) + I18N.ea
             
             image = tasks.filter("emotion == %@","angryFace.png")
-            self.angryCountLabel.text = String(image.count) + "개"
+            self.angryCountLabel.text = String(image.count) + I18N.ea
             
             //단어 개수 및 글자 수 반환
-            self.countWordLabel.text = String(tasks.count) + "개"
+            self.countWordLabel.text = String(tasks.count) + I18N.ea
             var cnt : Int = 0
             for item in 0...tasks.count - 1{
                 cnt += tasks[item].word.count
                 cnt += tasks[item].firstWord.count
                 cnt += tasks[item].definition.count
             }
-            self.countMorphemeLabel.text = numberFormatter(number: cnt) + "개"
+            self.countMorphemeLabel.text = numberFormatter(number: cnt) + I18N.ea
             
             //프로그레스 체크!
             //이번달에 등록한 날의 개수.. 중복제거가 어렵다..
@@ -144,27 +153,43 @@ final class StatisticsViewController: UIViewController {
             
             //퍼센테이지 계산
             if writeCount == 0{
-                self.progressLabel.text = "0일 / \(totalDay)일"
-                self.percentLabel.text = "0% 달성중.."
+                if String(Locale.preferredLanguages[0].prefix(2)) == "ko" {
+                    self.progressLabel.text = "0" + I18N.day + " / \(totalDay)" + I18N.day
+                } else {
+                    self.progressLabel.text = "0" + I18N.day + " / \(totalDay)" + I18N.day + "s"
+                }
+                
+                self.percentLabel.text = "0% " + I18N.achieving + ".."
             } else {
                 let percent = Double(writeCount) / Double(totalDay) * 100
                 self.gauge = Float(percent)
-                self.progressLabel.text = "\(writeCount)일 / \(totalDay)일"
-                if percent == 100 {
-                    self.percentLabel.text = "\(Int(percent))% 달성🎉"
+                if String(Locale.preferredLanguages[0].prefix(2)) == "ko" {
+                    self.progressLabel.text = "\(writeCount)" + I18N.day + " / \(totalDay)" + I18N.day
                 } else {
-                    self.percentLabel.text = "\(Int(percent))% 달성중!"
+                    self.progressLabel.text = "\(writeCount)" + I18N.day + " / \(totalDay)" + I18N.day + "s"
+                }
+                
+                if percent == 100 {
+                    self.percentLabel.text = "\(Int(percent))% " + I18N.achievement + "🎉"
+                } else {
+                    self.percentLabel.text = "\(Int(percent))% " + I18N.achieving + "!"
                 }
             }
         } else {
-            self.countWordLabel.text = "0개"
-            self.countMorphemeLabel.text = "0개"
-            self.percentLabel.text = "0% 달성중"
-            self.progressLabel.text = "0일 /\(totalDay)일"
-            self.happyCountLabel.text = "0개"
-            self.sadCountLabel.text = "0개"
-            self.normalCountLabel.text = "0개"
-            self.angryCountLabel.text = "0개"
+            self.countWordLabel.text = "0" + I18N.ea
+            self.countMorphemeLabel.text = "0" + I18N.ea
+            self.percentLabel.text = "0% " + I18N.achieving
+            self.progressLabel.text = "0" + I18N.day + "/\(totalDay)" + I18N.day
+            if String(Locale.preferredLanguages[0].prefix(2)) == "ko" {
+                self.progressLabel.text = "0" + I18N.day + "/\(totalDay)" + I18N.day
+            } else {
+                self.progressLabel.text = "0" + I18N.day + "/\(totalDay)" + I18N.day + "s"
+            }
+            
+            self.happyCountLabel.text = "0" + I18N.ea
+            self.sadCountLabel.text = "0" + I18N.ea
+            self.normalCountLabel.text = "0" + I18N.ea
+            self.angryCountLabel.text = "0" + I18N.ea
         }
     }
     //NumberFormmater : ","
@@ -187,4 +212,3 @@ final class StatisticsViewController: UIViewController {
         return cal.component(.day, from: date)
     }
 }
-

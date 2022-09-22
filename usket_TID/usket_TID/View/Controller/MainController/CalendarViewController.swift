@@ -42,6 +42,7 @@ final class CalendarViewController: UIViewController {
         calendar.dataSource = self
         calendarTableView.delegate = self
         calendarTableView.dataSource = self
+        calendar.locale = Locale.current
         
         view.addGestureRecognizer(self.scopeGesture)
         calendarTableView.panGestureRecognizer.require(toFail: self.scopeGesture)
@@ -60,7 +61,7 @@ final class CalendarViewController: UIViewController {
             emptyLabel.isHidden = true
         } else {
             emptyLabel.isHidden = false
-            emptyLabel.text = "텅 비었어요!\n하루에 하나씩 꾸준히 적어봐요 🤗"
+            emptyLabel.text = I18N.emptyDay
         }
         
         //캘린더 컬러
@@ -69,8 +70,14 @@ final class CalendarViewController: UIViewController {
         calendar.appearance.headerTitleColor = .black
         calendar.appearance.weekdayTextColor = .darkGray
         
+        
         // 달력의 년월 글자 바꾸기
-        calendar.appearance.headerDateFormat = "YYYY년 M월"
+        if String(Locale.preferredLanguages[0].prefix(2)) == "ko" {
+            calendar.appearance.headerDateFormat = "YYYY년 M월"
+        } else {
+            calendar.appearance.headerDateFormat = "MMMM, YYYY"
+        }
+        
         
         //폰트
         let customFont = UIFont(name: Helper.shared.originalFont, size: 18)
@@ -85,9 +92,6 @@ final class CalendarViewController: UIViewController {
         calendar.appearance.todayColor = UIColor.gray
         calendar.appearance.todaySelectionColor = UIColor.gray
         calendar.layer.addBorder([.top], color: .black, width: 0.25)
-        
-        // 한국기준
-        calendar.locale = Locale(identifier: "ko_KR")
         
         // 년월에 흐릿하게 보이는 애들 없애기
         calendar.appearance.headerMinimumDissolvedAlpha = 0
@@ -152,7 +156,7 @@ extension CalendarViewController : FSCalendarDelegate,FSCalendarDataSource,UITab
         } else {
             calendarTableView.isHidden = true
             emptyLabel.isHidden = false
-            emptyLabel.text = "텅 비었어요!\n하루에 하나씩 꾸준히 적어봐요 🤗"
+            emptyLabel.text = I18N.emptyDay
         }
     }
     func calendar(_ calendar: FSCalendar, boundingRectWillChange bounds: CGRect, animated: Bool) {
@@ -203,10 +207,16 @@ extension CalendarViewController : FSCalendarDelegate,FSCalendarDataSource,UITab
         let works : Results<DefineWordModel>!
         works = localRealm.objects(DefineWordModel.self).filter("storedDate == %@", pressedDate)
         if works.count > 0 {
-            let compliment : String = " 짝짝짝👏 정의한 단어 \(works.count)개가 있어요!"
+            var compliment : String = ""
+            
+            if String(Locale.preferredLanguages[0].prefix(2)) == "ko" {
+                compliment = " 짝짝짝👏 정의한 단어 \(works.count)개가 있어요!"
+            } else {
+                compliment = "Clap Clap👏 There are \(works.count) words that you defined!"
+            }
             let attributedString = NSMutableAttributedString(string: compliment, attributes: [
                 .font: UIFont(name: Helper.shared.originalFont, size: 20)!,
-                .foregroundColor: UIColor.black
+                .foregroundColor: UIColor.black,
             ])
             return attributedString.string
         } else {

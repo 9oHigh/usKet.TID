@@ -4,10 +4,14 @@
 //
 //  Created by 이경후 on 2021/11/23.
 //
-
 import Foundation
 
 extension String {
+    
+    var localized: String {
+        return NSLocalizedString(self, comment: "")
+    }
+    
     // 정규식으로 제거하기
     func matchString (_string : String) -> String {
         // 문자열 한글자씩 확인을 위해 배열에 담는다

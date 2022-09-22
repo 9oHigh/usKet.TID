@@ -12,7 +12,7 @@ extension ContentViewController : UITextViewDelegate {
     
     func placeholderSetting() {
         defineTextView.delegate = self
-        defineTextView.text = "이 곳에 적어볼까요!"
+        defineTextView.text = I18N.writeHere
         defineTextView.textColor = UIColor.lightGray
         
     }

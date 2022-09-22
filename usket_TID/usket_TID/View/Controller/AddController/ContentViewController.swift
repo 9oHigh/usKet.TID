@@ -68,11 +68,11 @@ final class ContentViewController: UIViewController,shareToContent{
             //추가해주는 delegate
             if method == "ADD"{
                 delegate?.getDatas(word: word, firstComes: firstComes, emotion: emotion, definition: defineTextView.text)
-                MainViewController.toastMessage = "저장완료😊"
+                MainViewController.toastMessage = I18N.saved
                 //수정해주는 delegate by ID
             } else {
                 delegate?.getDatas(word: word, firstComes: firstComes, emotion: emotion, definition: defineTextView.text, id: idOfCell!)
-                MainViewController.toastMessage = "수정완료😊"
+                MainViewController.toastMessage = I18N.modified
             }
             //추천단어로 들어왔을 수도 있으니 루트뷰로 보내주기
             self.view.window?.rootViewController?.dismiss(animated: true)

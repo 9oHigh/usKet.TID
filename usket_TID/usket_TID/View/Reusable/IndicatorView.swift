@@ -29,7 +29,7 @@ final class IndicatorView : UIView {
         informLabel.textColor = .white
         informLabel.numberOfLines = 0
         informLabel.font = UIFont(name: Helper.shared.originalFont, size: 17)
-        informLabel.text = "잠시만 기다려 주세요! 단어를 선별 중 🧐\n[최대 5분 소요]"
+        informLabel.text = I18N.wait
         activityView.style = .large
         activityView.color = .white
     }
