@@ -18,7 +18,7 @@ final class LicenseViewController: UIViewController {
         if let overview = content {
             contentTextView.text = overview
         } else {
-            showAlert(title: "라이선스 안내", message: "현재 해당 라이선스의 내용을 가지고 올 수 없어요.")
+            showAlert(title: I18N.licenseInform, message: I18N.licenseMessage)
         }
     }
 }

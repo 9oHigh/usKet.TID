@@ -1,0 +1,72 @@
+
+/* Class = "UILabel"; text = "먼저, 시작의 정의를 볼까요?"; ObjectID = "6Gf-Fc-6gD"; */
+"6Gf-Fc-6gD.text" = "먼저, 시작의 정의를 볼까요?";
+
+/* Class = "UIButton"; configuration.title = "저장"; ObjectID = "CzW-3r-8Z2"; */
+"CzW-3r-8Z2.configuration.title" = "저장";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "CzW-3r-8Z2"; */
+"CzW-3r-8Z2.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Q. 어떤 단어가 가장 처음 떠오르나요?"; ObjectID = "D4S-Ev-MiM"; */
+"D4S-Ev-MiM.text" = "Q. 어떤 단어가 가장 처음 떠오르나요?";
+
+/* Class = "UITextField"; placeholder = "여기에 적어 볼까요!"; ObjectID = "HvR-hR-P2v"; */
+"HvR-hR-P2v.placeholder" = "여기에 적어 볼까요!";
+
+/* Class = "UIButton"; configuration.title = "새로운 단어"; ObjectID = "QE1-Lc-bkm"; */
+"QE1-Lc-bkm.configuration.title" = "새로운 단어";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "QE1-Lc-bkm"; */
+"QE1-Lc-bkm.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Rex-rf-tWL"; */
+"Rex-rf-tWL.normalTitle" = "Button";
+
+/* Class = "UITextField"; placeholder = "여기에 적어 볼까요!"; ObjectID = "UCE-0D-FSf"; */
+"UCE-0D-FSf.placeholder" = "여기에 적어 볼까요!";
+
+/* Class = "UILabel"; text = "Q. 이 단어의 정의를 적어볼까요?"; ObjectID = "ZHb-VD-Als"; */
+"ZHb-VD-Als.text" = "Q. 이 단어의 정의를 적어볼까요?";
+
+/* Class = "UILabel"; text = "(반드시 마지막에 꼭 눌러주세요👀)"; ObjectID = "ZQ8-1B-o5Q"; */
+"ZQ8-1B-o5Q.text" = "(반드시 마지막에 꼭 눌러주세요👀)";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ZTz-f3-fCY"; */
+"ZTz-f3-fCY.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "취소"; ObjectID = "aqa-i8-1ug"; */
+"aqa-i8-1ug.configuration.title" = "취소";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "aqa-i8-1ug"; */
+"aqa-i8-1ug.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "byF-uc-iVI"; */
+"byF-uc-iVI.normalTitle" = "Button";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "cZV-lp-SMi"; */
+"cZV-lp-SMi.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "나에게 주는 의미를 적는 것도 좋아요."; ObjectID = "ejB-FI-ba8"; */
+"ejB-FI-ba8.text" = "나에게 주는 의미를 적는 것도 좋아요.";
+
+/* Class = "UILabel"; text = "Q. 어떤 단어를 선택하셨나요?"; ObjectID = "gYN-ya-amx"; */
+"gYN-ya-amx.text" = "Q. 어떤 단어를 선택하셨나요?";
+
+/* Class = "UIButton"; configuration.title = "이걸로 할래요!"; ObjectID = "ggS-eB-MaG"; */
+"ggS-eB-MaG.configuration.title" = "이걸로 할래요!";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ggS-eB-MaG"; */
+"ggS-eB-MaG.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "오류"; ObjectID = "h1T-6y-eGc"; */
+"h1T-6y-eGc.text" = "오류";
+
+/* Class = "UILabel"; text = "오늘의 단어는 시작입니다."; ObjectID = "hwg-SJ-Al9"; */
+"hwg-SJ-Al9.text" = "오늘의 단어는 시작입니다.";
+
+/* Class = "UILabel"; text = "오류"; ObjectID = "iUz-gH-do2"; */
+"iUz-gH-do2.text" = "오류";
+
+/* Class = "UILabel"; text = "Q. 이 단어를 보면 어떤 감정이 드나요?"; ObjectID = "zRH-Ew-OLu"; */
+"zRH-Ew-OLu.text" = "Q. 이 단어를 보면 어떤 감정이 드나요?";

@@ -181,10 +181,10 @@ final class BasicViewController: UIViewController {
     }
     func correctCheck() -> Bool{
         if choseWordTextField.text == ""{
-            showAlert(title: "단어 입력 오류", message: "단어를 입력하지 않았어요. 순서대로 모두 입력하고 다시 눌러주세요!")
+            showAlert(title: I18N.errorWordInput, message: I18N.errorWordInputMessage)
             return false
         } else if wordTextField.text == ""{
-            showAlert(title: "연관 단어 입력 오류", message: "연관 단어를 입력하지 않았어요. 순서대로 모두 입력하고 다시 눌러주세요!")
+            showAlert(title: I18N.errorAssociationWord, message: I18N.errorAssociationWordMessage)
             return false
         } else {
             return true

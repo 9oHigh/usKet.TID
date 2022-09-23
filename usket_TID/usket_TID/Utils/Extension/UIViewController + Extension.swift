@@ -12,7 +12,7 @@ extension UIViewController {
     
     func showAlert(title : String, message: String){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "화인", style: .default,handler: nil)
+        let ok = UIAlertAction(title: I18N.confirm, style: .default,handler: nil)
         
         alert.addAction(ok)
         present(alert, animated: true,completion: nil)
@@ -21,8 +21,8 @@ extension UIViewController {
     func showAlertCancel(title : String, message: String,handler: @escaping (UIAlertAction) -> Void){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let ok = UIAlertAction(title: "확인", style: .default,handler: handler)
-        let cancel = UIAlertAction(title: "취소", style: .default)
+        let ok = UIAlertAction(title: I18N.confirm, style: .default,handler: handler)
+        let cancel = UIAlertAction(title: I18N.cancel, style: .default)
         
         alert.addAction(ok)
         alert.addAction(cancel)
@@ -33,8 +33,8 @@ extension UIViewController {
     func showAlertWithCancel(title : String, message: String, okHandler: @escaping (UIAlertAction) -> Void, noHandler: @escaping (UIAlertAction) -> Void){
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         
-        let ok = UIAlertAction(title: "확인", style: .default,handler: okHandler)
-        let cancel = UIAlertAction(title: "취소", style: .default,handler: noHandler)
+        let ok = UIAlertAction(title: I18N.confirm, style: .default,handler: okHandler)
+        let cancel = UIAlertAction(title: I18N.cancel, style: .default,handler: noHandler)
         
         alert.addAction(ok)
         alert.addAction(cancel)
@@ -45,7 +45,7 @@ extension UIViewController {
     func showToast(message : String) {
         
         //위치와 사이즈 설정
-        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height - self.view.frame.size.height/2 , width: 160, height: 50))
+        let toastLabel = UILabel(frame: CGRect(x: self.view.frame.size.width/2 - 75, y: self.view.frame.size.height - self.view.frame.size.height/2 , width: 180, height: 50))
         toastLabel.font = UIFont(name: Helper.shared.originalFont, size: 18)
         toastLabel.backgroundColor = UIColor.lightGray
         toastLabel.textColor = UIColor.white

@@ -1,9 +1,9 @@
 
 /* Class = "UILabel"; text = "설정"; ObjectID = "2Q5-Fx-Kwa"; */
-"2Q5-Fx-Kwa.text" = "설정";
+"2Q5-Fx-Kwa.text" = "setting";
 
 /* Class = "UILabel"; text = "행복"; ObjectID = "2ih-um-HEu"; */
-"2ih-um-HEu.text" = "행복";
+"2ih-um-HEu.text" = "Happiness";
 
 /* Class = "UINavigationItem"; title = "Today I Define"; ObjectID = "4hP-hm-B8o"; */
 "4hP-hm-B8o.title" = "Today I Define";
@@ -12,7 +12,7 @@
 "7Zj-qj-Tpo.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "[매일 같은시간에 추천단어 알림이 와요😊]"; ObjectID = "8xY-ZB-0iE"; */
-"8xY-ZB-0iE.text" = "[매일 같은시간에 추천단어 알림이 와요😊]";
+"8xY-ZB-0iE.text" = "Word recommendation at the same time every day!";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "9Bq-Rk-HG6"; */
 "9Bq-Rk-HG6.normalTitle" = "Button";
@@ -21,10 +21,10 @@
 "ABF-a4-T7a.text" = "Label";
 
 /* Class = "UILabel"; text = "알림 시간"; ObjectID = "AIH-cO-WPI"; */
-"AIH-cO-WPI.text" = "알림 시간";
+"AIH-cO-WPI.text" = "Notification time";
 
 /* Class = "UILabel"; text = "1일 1티드"; ObjectID = "Bmc-bc-Icv"; */
-"Bmc-bc-Icv.text" = "1일 1티드";
+"Bmc-bc-Icv.text" = "One TID per day";
 
 /* Class = "UILabel"; text = "100"; ObjectID = "ByI-c3-fry"; */
 "ByI-c3-fry.text" = "100";
@@ -33,13 +33,13 @@
 "D7D-YP-eJa.text" = "by bo110_1";
 
 /* Class = "UILabel"; text = "단어의 개수"; ObjectID = "FwC-q9-rSl"; */
-"FwC-q9-rSl.text" = "단어의 개수";
+"FwC-q9-rSl.text" = "The number of words";
 
 /* Class = "UILabel"; text = "행복"; ObjectID = "IV4-Gb-mPs"; */
-"IV4-Gb-mPs.text" = "행복";
+"IV4-Gb-mPs.text" = "Happiness";
 
 /* Class = "UIButton"; configuration.title = "오픈소스 라이선스"; ObjectID = "Jkv-dI-Nqk"; */
-"Jkv-dI-Nqk.configuration.title" = "오픈소스 라이선스";
+"Jkv-dI-Nqk.configuration.title" = "License";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Jkv-dI-Nqk"; */
 "Jkv-dI-Nqk.normalTitle" = "Button";
@@ -51,13 +51,13 @@
 "Lgn-wJ-qqr.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "오픈소스 라이선스"; ObjectID = "Lug-Xf-LfA"; */
-"Lug-Xf-LfA.text" = "오픈소스 라이선스";
+"Lug-Xf-LfA.text" = "Open Source License";
 
 /* Class = "UILabel"; text = "리뷰 남기기"; ObjectID = "MkQ-ff-t09"; */
-"MkQ-ff-t09.text" = "리뷰 남기기";
+"MkQ-ff-t09.text" = "Write a review";
 
 /* Class = "UILabel"; text = "분노"; ObjectID = "Nvs-LM-0Ed"; */
-"Nvs-LM-0Ed.text" = "분노";
+"Nvs-LM-0Ed.text" = "Anger";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "PKN-bI-OSe"; */
 "PKN-bI-OSe.normalTitle" = "Button";
@@ -72,16 +72,16 @@
 "Qh8-ZK-AWX.text" = "Label";
 
 /* Class = "UILabel"; text = "오픈소스 라이선스"; ObjectID = "RHb-Zy-5EC"; */
-"RHb-Zy-5EC.text" = "오픈소스 라이선스";
+"RHb-Zy-5EC.text" = "Open Source License";
 
 /* Class = "UIButton"; configuration.title = "설정"; ObjectID = "Rja-o2-T5I"; */
-"Rja-o2-T5I.configuration.title" = "설정";
+"Rja-o2-T5I.configuration.title" = "Setting";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Rja-o2-T5I"; */
 "Rja-o2-T5I.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "개발 관련 문의"; ObjectID = "Siq-4h-aO6"; */
-"Siq-4h-aO6.text" = "개발 관련 문의";
+"Siq-4h-aO6.text" = "Inquiries about development";
 
 /* Class = "UILabel"; text = "WED"; ObjectID = "VW0-v7-Bka"; */
 "VW0-v7-Bka.text" = "WED";
@@ -93,13 +93,13 @@
 "YDD-2n-Thb.text" = "멍청이멍청이멍청이";
 
 /* Class = "UILabel"; text = "통계"; ObjectID = "Ygl-kM-d9x"; */
-"Ygl-kM-d9x.text" = "통계";
+"Ygl-kM-d9x.text" = "Statistics";
 
 /* Class = "UILabel"; text = "[기쁨]"; ObjectID = "b56-DO-430"; */
 "b56-DO-430.text" = "[기쁨]";
 
 /* Class = "UILabel"; text = "나의 단어 감정 기록"; ObjectID = "bXs-Vz-jca"; */
-"bXs-Vz-jca.text" = "나의 단어 감정 기록";
+"bXs-Vz-jca.text" = "My word emotion record";
 
 /* Class = "UIButton"; configuration.title = "Github"; ObjectID = "bZd-VK-91g"; */
 "bZd-VK-91g.configuration.title" = "Github";
@@ -123,10 +123,10 @@
 "eDZ-9b-CG2.text" = "Calendar";
 
 /* Class = "UIBarButtonItem"; title = "뒤로가기"; ObjectID = "eTL-2F-725"; */
-"eTL-2F-725.title" = "뒤로가기";
+"eTL-2F-725.title" = "Go backwards";
 
 /* Class = "UILabel"; text = "알림"; ObjectID = "fMK-fv-jTr"; */
-"fMK-fv-jTr.text" = "알림";
+"fMK-fv-jTr.text" = "Notification";
 
 /* Class = "UIButton"; configuration.title = "Email"; ObjectID = "h5o-1C-kYN"; */
 "h5o-1C-kYN.configuration.title" = "Email";
@@ -138,7 +138,7 @@
 "iYj-uQ-ywc.text" = "행복은 어디에나 있구나";
 
 /* Class = "UILabel"; text = "설정"; ObjectID = "kxd-Hm-L04"; */
-"kxd-Hm-L04.text" = "설정";
+"kxd-Hm-L04.text" = "setting";
 
 /* Class = "UILabel"; text = "78% 달성중!"; ObjectID = "lKL-c8-jOe"; */
 "lKL-c8-jOe.text" = "78% 달성중!";
@@ -147,16 +147,16 @@
 "ljI-bU-zRF.text" = "동해물과 백두산이 마르고 닳도록동해물과 백두산이 마르고 닳도록동해물과 백두산이 마르고 닳도록동해물과 백두산이 마르고 닳도록동해물과 백두산이 마르고 닳도록동해물과 백두산이 마르고 닳도록동해물과 백두산이 마르고 닳도록";
 
 /* Class = "UIButton"; configuration.title = "통계"; ObjectID = "oXQ-5i-Bdx"; */
-"oXQ-5i-Bdx.configuration.title" = "통계";
+"oXQ-5i-Bdx.configuration.title" = "Statistics";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "oXQ-5i-Bdx"; */
 "oXQ-5i-Bdx.normalTitle" = "Button";
 
 /* Class = "UILabel"; text = "우울"; ObjectID = "pZZ-gV-bUx"; */
-"pZZ-gV-bUx.text" = "우울";
+"pZZ-gV-bUx.text" = "Depression";
 
 /* Class = "UILabel"; text = "애플리케이션 관련 문의"; ObjectID = "rMS-YO-ZIb"; */
-"rMS-YO-ZIb.text" = "애플리케이션 관련 문의";
+"rMS-YO-ZIb.text" = "Application-related inquiries";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "sJV-ZY-SnE"; */
 "sJV-ZY-SnE.normalTitle" = "Button";
@@ -165,16 +165,16 @@
 "tDC-0q-3aY.normalTitle" = "Button";
 
 /* Class = "UIButton"; configuration.title = "문의 & 리뷰"; ObjectID = "vkX-cZ-GEY"; */
-"vkX-cZ-GEY.configuration.title" = "문의 & 리뷰";
+"vkX-cZ-GEY.configuration.title" = "Contact & Review";
 
 /* Class = "UIButton"; normalTitle = "Button"; ObjectID = "vkX-cZ-GEY"; */
-"vkX-cZ-GEY.normalTitle" = "Button";
+"vkX-cZ-GEY.normalTitle" = "Contact & Review";
 
 /* Class = "UILabel"; text = "문의 및 리뷰"; ObjectID = "xIW-s3-UsJ"; */
-"xIW-s3-UsJ.text" = "문의 및 리뷰";
+"xIW-s3-UsJ.text" = "Contact & Review";
 
 /* Class = "UILabel"; text = "글자의 개수"; ObjectID = "xfv-yw-ZYA"; */
-"xfv-yw-ZYA.text" = "글자의 개수";
+"xfv-yw-ZYA.text" = "The number of letters";
 
 /* Class = "UILabel"; text = "평범"; ObjectID = "zKF-bf-Fk8"; */
-"zKF-bf-Fk8.text" = "평범";
+"zKF-bf-Fk8.text" = "Normal";

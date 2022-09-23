@@ -1,0 +1,60 @@
+month = "month";
+ea = "";
+day = "day";
+achieving = "achieving";
+achievement = "achievement";
+searchBar = "Search for words, related words, and content.";
+cancel = "cancel";
+write = "Write";
+loding = "Loading..";
+recomment = "recommendation";
+emptyDay = "It's empty!\nWrite down one a day 🤗";
+compliment = " Clap clap 👏 There are defined words";
+setAlarm = "Save notification 😊";
+cannotSetAlarm = "Failed to save notification😅";
+retry = "Please try again!";
+saved = "Saved😊";
+modified = "Modified😊";
+wait = "Wait a minute, please! Selecting words 🧐\n[Takes up to 5 minutes]";
+maxWord = "Up to 5 letters!";
+writeHere = "Write it down here!";
+confirm = "Confirm";
+
+alertNoti = "Notification Settings Guide";
+alertNotiMessage = "Do you want to go to the notification settings screen?";
+
+updateInfom = "Update Guide";
+updateMessage = "Preparing dark mode and font 🤗";
+
+notificationTitle = "Let's be together with TID today🏃🏻‍♂️";
+notificationToday = "Today's recommendation is";
+notificationBody = "What do you think of";
+
+errorInform = "Error Guide";
+errorCannotLoad = "Sorry, the file cannot be imported at this time.";
+
+licenseInform = "License Guide";
+licenseMessage = "The contents of the license cannot be imported at this time.";
+
+errorWordInput = "Word Input Error";
+errorWordInputMessage = "You didn't type a word. Please type them all in order and press it again!";
+
+errorAssociationWord = "Associated Word Input Error";
+errorAssociationWordMessage = "You have not entered a related word. Please type them all in order and press it again!";
+
+errorInputInform = "Input Error Guide";
+errorNotInput = "There's something you haven't entered yet.\nPlease fill them out in order!";
+errorEmotionInputAgain = "Please click on the emotion again!";
+errorEmotionInput = "Emotions didn't get recorded.\nPlease fill them out in order!";
+errorNotInputDefinition = "There is no definition.\nPlease fill them out in order!";
+errorDuplicatedInform = "Duplicated words";
+errorDuplicated = "It's a word that's already on the list.\nPlease rewrite it from the beginning and press the emotion button!";
+
+deleteInform = "Delete Guide";
+deleteMessage = "Are you sure you want to delete it?";
+deleteDenied = "The word cannot be deleted.";
+
+networkErrorInform = "Network Error";
+networkCannotAccess = "There is no response from the network.\nPlease try again in a moment 🥲";
+neworkNotConnected = "I'm not connected to the network.\nGo to the settings screen 🥲";
+

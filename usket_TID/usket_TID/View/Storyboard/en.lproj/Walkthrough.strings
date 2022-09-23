@@ -1,0 +1,15 @@
+
+/* Class = "UILabel"; text = "개발자 드림"; ObjectID = "9zM-gv-dLk"; */
+"9zM-gv-dLk.text" = "개발자 드림";
+
+/* Class = "UIButton"; normalTitle = "시작하기"; ObjectID = "FbG-al-n7B"; */
+"FbG-al-n7B.normalTitle" = "시작하기";
+
+/* Class = "UILabel"; text = "세상을 바라보는 정의와 의미는 모두가 다를 것이라고 생각합니다. 여러분들의 세상은 어떤 세상인지 오늘부터 하나씩 기록하시면서 자신을 돌아보는 시간을 갖길 바랍니다😄"; ObjectID = "XCf-9q-8kx"; */
+"XCf-9q-8kx.text" = "세상을 바라보는 정의와 의미는 모두가 다를 것이라고 생각합니다. 여러분들의 세상은 어떤 세상인지 오늘부터 하나씩 기록하시면서 자신을 돌아보는 시간을 갖길 바랍니다😄";
+
+/* Class = "UILabel"; text = "안녕하세요😊"; ObjectID = "XDE-JS-9L4"; */
+"XDE-JS-9L4.text" = "안녕하세요😊";
+
+/* Class = "UILabel"; text = "안녕하세요. Today I Define을 만든 개발자입니다.\\n애플리케이션을 다운받아주셔서 정말 감사합니다."; ObjectID = "dqg-2o-ncF"; */
+"dqg-2o-ncF.text" = "안녕하세요. Today I Define을 만든 개발자입니다.\\n애플리케이션을 다운받아주셔서 정말 감사합니다.";

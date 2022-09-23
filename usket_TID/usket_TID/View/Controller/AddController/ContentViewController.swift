@@ -68,11 +68,11 @@ final class ContentViewController: UIViewController,shareToContent{
             //추가해주는 delegate
             if method == "ADD"{
                 delegate?.getDatas(word: word, firstComes: firstComes, emotion: emotion, definition: defineTextView.text)
-                MainViewController.toastMessage = "저장완료😊"
+                MainViewController.toastMessage = I18N.saved
                 //수정해주는 delegate by ID
             } else {
                 delegate?.getDatas(word: word, firstComes: firstComes, emotion: emotion, definition: defineTextView.text, id: idOfCell!)
-                MainViewController.toastMessage = "수정완료😊"
+                MainViewController.toastMessage = I18N.modified
             }
             //추천단어로 들어왔을 수도 있으니 루트뷰로 보내주기
             self.view.window?.rootViewController?.dismiss(animated: true)
@@ -96,17 +96,17 @@ final class ContentViewController: UIViewController,shareToContent{
     //유효성 검사
     func dataCorrectCheck() -> String{
         //유효성 검사, 오류
-        if word == "" || word == "이 곳에 적어볼까요!" {
-            self.showAlert(title: "입력 오류 안내", message: "아직 입력하지 않은게 있어요.\n순서대로 모두 작성해주세요!")
+        if word == "" || word == I18N.writeHere {
+            self.showAlert(title: I18N.errorInputInform, message: I18N.errorNotInput)
             return "Nope"
-        } else if firstComes == "" || firstComes == "이 곳에 적어볼까요!" {
-            self.showAlert(title: "입력 오류 안내", message: "감정을 다시 한번 클릭 해주세요!")
+        } else if firstComes == "" || firstComes == I18N.writeHere {
+            self.showAlert(title: I18N.errorInputInform, message: I18N.errorEmotionInputAgain)
             return "Nope"
         } else if emotion == "" {
-            self.showAlert(title: "입력 오류 안내", message: "감정이 기록이 되지 않았어요.\n순서대로 모두 작성해주세요!")
+            self.showAlert(title: I18N.errorInputInform, message: I18N.errorEmotionInput)
             return "Nope"
-        } else if defineTextView.text == "" || defineTextView.text == "이 곳에 적어볼까요!"{
-            self.showAlert(title: "입력 오류 안내", message: "정의/의미가 없습니다.\n순서대로 모두 작성해주세요!")
+        } else if defineTextView.text == "" || defineTextView.text == I18N.writeHere {
+            self.showAlert(title: I18N.errorInputInform, message: I18N.errorNotInputDefinition)
             return "Nope"
         } else {
             let tasks = localRealm.objects(DefineWordModel.self)
@@ -121,7 +121,7 @@ final class ContentViewController: UIViewController,shareToContent{
                 if contain.isEmpty {
                     return "ADD"
                 } else {
-                    showAlert(title: "중복된 단어", message: "이미 목록에 있는 단어에요.\n처음부터 다시 작성후 감정버튼을 눌러주세요!")
+                    showAlert(title: I18N.errorDuplicatedInform, message: I18N.errorDuplicated)
                     return "Nope"
                 }
             }
