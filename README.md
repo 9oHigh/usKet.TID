@@ -390,6 +390,7 @@
 
   |버전|업데이트 내역|설명|
   |:---:|:---:|:---:|
+  |v2.12|Localize|다국어 처리(English)|
   |v2.11|알림 설정시 알림이 오지 않던 오류| TimeZone 이슈로 인한 알림이 이전 날짜에 등록되던 이슈를 해결했습니다.|
   |v2.10|Calendar에서 단어 클릭 이벤트|수정 페이지로 이동가능하게 변경했습니다.|
   |v2.08|CI / CD <br /> [ [CI/CD 기록(1) - 블로그](https://pooh-footprints.tistory.com/66) ] <br /> [ [CI/CD 기록(2) - 블로그](https://pooh-footprints.tistory.com/67) ] <br /> [ [CI/CD 기록(3) - 블로그](https://pooh-footprints.tistory.com/68) ]|Github Action을 이용해 자동배포 환경을 구축했습니다.|
