@@ -44,7 +44,7 @@ extension WordViewController {
                 }
                 self.defineTableView.reloadData()
             case .failure:
-                self.showAlert(title: "네트워크에서 응답이 없어요.\n잠시후 다시 시도해 주세요 🥲", connection: false)
+                self.showAlert(title: I18N.networkCannotAccess, connection: false)
             }
         }
     }
@@ -62,7 +62,7 @@ extension WordViewController {
             } else {
                 DispatchQueue.main.async {
                     
-                    self.showAlert(title: "네트워크에 연결되어 있지 않아요.\n설정화면으로 이동합니다 🥲",connection: true)
+                    self.showAlert(title: I18N.neworkNotConnected,connection: true)
                 }
             }
         }
@@ -72,8 +72,8 @@ extension WordViewController {
     
     func showAlert(title : String, connection : Bool){
         
-        let alert = UIAlertController(title: "네트워크 오류 안내", message: title, preferredStyle: .alert)
-        let ok = UIAlertAction(title: "화인", style: .default) { action in
+        let alert = UIAlertController(title: I18N.networkErrorInform, message: title, preferredStyle: .alert)
+        let ok = UIAlertAction(title: I18N.confirm, style: .default) { action in
             if connection {
                 guard let url = URL(string:UIApplication.openSettingsURLString) else { return }
                 if UIApplication.shared.canOpenURL(url) {

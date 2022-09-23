@@ -38,8 +38,6 @@ final class SettingViewController: UIViewController {
             // UserDefault 값을 무시해야하기 때문에
             // 조건식이 필요함
             if date < notiTimePicker.date {
-                return
-            } else {
                 notiTimePicker.date = date
             }
         }
@@ -75,7 +73,7 @@ final class SettingViewController: UIViewController {
         //알림을 켰을 경우 - 설정으로 이동하여 키기
         if sender.isOn {
             UserDefaults.standard.set(true,forKey: "pushAllow")
-            showAlertWithCancel(title: "알림 설정 안내", message: "알림 설정 화면으로 이동하시겠습니까?") { action in
+            showAlertWithCancel(title: I18N.alertNoti, message: I18N.alertNotiMessage) { action in
                 guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
                 
                 if UIApplication.shared.canOpenURL(url) {
@@ -88,7 +86,7 @@ final class SettingViewController: UIViewController {
             //알림을 끌 경우 - 설정으로 이동하여 꺼기
         } else {
             UserDefaults.standard.set(false,forKey: "pushAllow")
-            showAlertWithCancel(title: "알림 설정 안내", message: "알림 설정 화면으로 이동하시겠습니까?") { action in
+            showAlertWithCancel(title: I18N.alertNoti, message: I18N.alertNotiMessage) { action in
                 guard let url = URL(string: UIApplication.openSettingsURLString) else { return }
                 
                 if UIApplication.shared.canOpenURL(url) {
@@ -102,7 +100,7 @@ final class SettingViewController: UIViewController {
     }
     // 새로운 업데이트 예정 알림
     @IBAction func commingSoonButtonClicked(_ sender: UIButton) {
-        self.showAlert(title: "업데이트 안내", message: "다크모드와 폰트 준비중🤗")
+        self.showAlert(title: I18N.updateInfom, message: I18N.updateMessage)
     }
     
     @IBAction func pickTimeAdded(_ sender: UIDatePicker) {
@@ -116,6 +114,12 @@ final class SettingViewController: UIViewController {
                 }
                 //알림 시간 저장
                 UserDefaults.standard.set(sender.date.timeIntervalSince1970, forKey: "setAlarm")
+                
+                let date = Date(timeIntervalSince1970: UserDefaults.standard.double(forKey: "setAlarm"))
+
+                if date < self.notiTimePicker.date {
+                    self.notiTimePicker.date = date
+                }
             } else {
                 DispatchQueue.main.async {
                     self.showToast(message: I18N.cannotSetAlarm)
@@ -149,8 +153,12 @@ final class SettingViewController: UIViewController {
             let word = randomWords.wordList.randomWordGenerate(date: newDate!)
             
             let content = UNMutableNotificationContent()
-            content.title = "오늘도 티드와 함께 해요🏃🏻‍♂️"
-            content.body = "오늘의 추천 단어는 [ \(word) ]입니다❗️\n\(word)에 대해 어떻게 생각하시나요? 작성하러 가요😊"
+            content.title = I18N.notificationTitle
+            if String(Locale.preferredLanguages[0].prefix(2)) == "ko" {
+                content.body = "오늘의 추천 단어는 [ \(word) ]입니다❗️\n\(word)에 대해 어떻게 생각하시나요? 작성하러 가요😊"
+            } else {
+                content.body = I18N.notificationToday + " [ \(word) ]❗️\n" + I18N.notificationBody + " \(word)?" + " Let's go fill it out!"
+            }
             content.sound = .default
             
             let trigger = UNCalendarNotificationTrigger(

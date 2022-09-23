@@ -78,7 +78,7 @@ extension MainViewController : UITableViewDelegate,UITableViewDataSource{
                 works = self.tasks
             }
             
-            self.showAlertCancel(title: "삭제 안내", message: "정말로 삭제 하시겠습니까?") { delete in
+            self.showAlertCancel(title: I18N.deleteInform, message: I18N.deleteMessage) { delete in
                 
                 do{
                     try self.localRealm.write{
@@ -87,7 +87,7 @@ extension MainViewController : UITableViewDelegate,UITableViewDataSource{
                     }
                 } catch{
                     
-                    self.showAlert(title: "안내", message: "해당 단어는 삭제할 수 없습니다.")
+                    self.showAlert(title: I18N.deleteInform, message: I18N.deleteDenied)
                 }
             }
             completionHandler(true)

@@ -21,8 +21,14 @@ final class WordViewController: UIViewController {
     // 오늘의 단어가 버튼으로 지속적으로 바뀐다.
     var todayWord : String = "시작" {
         didSet{
-            todayWordLabel.text = "추천 단어는 \(todayWord)입니다."
-            defineLabel.text = "먼저, \(todayWord)의 정의를 볼까요?"
+            if String(Locale.preferredLanguages[0].prefix(2)) == "ko" {
+                todayWordLabel.text = "추천 단어는 \(todayWord)입니다."
+                defineLabel.text = "먼저, \(todayWord)의 정의를 볼까요?"
+            } else {
+                todayWordLabel.text = "Today's word is \(todayWord)."
+                defineLabel.text = "First, let's look at the definition of \(todayWord) in Korean"
+
+            }
             //로딩중 화면을 위해 필요한 듯
             coloredText()
         }
@@ -39,9 +45,14 @@ final class WordViewController: UIViewController {
         
         todayWord = randomWords.wordList.randomWord()
         
-        todayWordLabel.text = "추천 단어는 \(todayWord)입니다."
-        defineLabel.text = "먼저, \(todayWord)의 정의를 볼까요?"
-        
+        if String(Locale.preferredLanguages[0].prefix(2)) == "ko" {
+            todayWordLabel.text = "추천 단어는 \(todayWord)입니다."
+            defineLabel.text = "먼저, \(todayWord)의 정의를 볼까요?"
+        } else {
+            todayWordLabel.text = "Today's word is \(todayWord)."
+            defineLabel.text = "First, let's look at the definition of \(todayWord) in Korean"
+
+        }
         defineTableView.delegate = self
         defineTableView.dataSource = self
         
@@ -104,7 +115,7 @@ extension WordViewController : UITableViewDelegate,UITableViewDataSource {
         //가지고온 값이 없다면
         if definitions.isEmpty {
             newWordButton.isUserInteractionEnabled = false
-            cell.defineLabel.text = "로딩중..."
+            cell.defineLabel.text = I18N.loding
             cell.numberLabel.text = ""
             return cell
         }else {

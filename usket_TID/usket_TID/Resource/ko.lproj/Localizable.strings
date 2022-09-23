@@ -5,6 +5,8 @@ achieving = "달성중";
 achievement = "달성";
 searchBar = "단어, 연관단어, 내용을 검색해보세요.";
 cancel = "취소";
+confirm = "확인";
+loding = "로딩중..";
 write = "작성하기";
 recomment = "단어 추천 받기";
 emptyDay = "텅 비었어요!\n하루에 하나씩 꾸준히 적어봐요 🤗";
@@ -17,3 +19,42 @@ modified = "수정완료😊";
 wait = "잠시만 기다려 주세요! 단어를 선별 중 🧐\n[최대 5분 소요]";
 maxWord = "최대 다섯 글자!";
 writeHere = "이 곳에 적어볼까요!";
+
+
+alertNoti = "알림 설정 안내";
+alertNotiMessage = "알림 설정 화면으로 이동하시겠습니까?";
+
+updateInfom = "업데이트 안내";
+updateMessage = "다크모드와 폰트 준비중🤗";
+
+notificationTitle = "오늘도 티드와 함께 해요🏃🏻‍♂️";
+notificationToday = "오늘의 추천 단어는";
+notificationBody = "\n\(word)에 대해 어떻게 생각하시나요? 작성하러 가요😊";
+
+errorInform = "오류 안내";
+errorCannotLoad = "죄송합니다. 현재 파일을 가지고 올 수 없습니다.";
+
+licenseInform = "라이선스 안내";
+licenseMessage = "현재 해당 라이선스의 내용을 가지고 올 수 없어요.";
+
+errorWordInput = "단어 입력 오류";
+errorWordInputMessage = "단어를 입력하지 않았어요. 순서대로 모두 입력하고 다시 눌러주세요!";
+
+errorAssociationWord = "연관 단어 입력 오류";
+errorAssociationWordMessage = "연관 단어를 입력하지 않았어요. 순서대로 모두 입력하고 다시 눌러주세요!";
+
+errorInputInform = "입력 오류 안내";
+errorNotInput = "아직 입력하지 않은게 있어요.\n순서대로 모두 작성해주세요!";
+errorEmotionInputAgain = "감정을 다시 한번 클릭 해주세요!";
+errorEmotionInput = "감정이 기록이 되지 않았어요.\n순서대로 모두 작성해주세요!";
+errorNotInputDefinition = "정의/의미가 없습니다.\n순서대로 모두 작성해주세요!";
+errorDuplicatedInform = "중복된 단어";
+errorDuplicated = "이미 목록에 있는 단어에요.\n처음부터 다시 작성후 감정버튼을 눌러주세요!";
+
+deleteInform = "삭제 안내";
+deleteMessage = "정말로 삭제 하시겠습니까?";
+deleteDenied = "해당 단어는 삭제할 수 없습니다.";
+
+networkErrorInform = "네트워크 오류";
+networkCannotAccess = "네트워크에서 응답이 없어요.\n잠시후 다시 시도해 주세요 🥲";
+neworkNotConnected = "네트워크에 연결되어 있지 않아요.\n설정화면으로 이동합니다 🥲";

@@ -36,10 +36,10 @@ final class OpenSourceViewController: UIViewController {
             if let contents = try? String(contentsOfFile: path) {
                 return contents
             } else {
-                showAlert(title: "오류 안내", message: "죄송합니다. 현재 파일을 가지고 올 수 없습니다.")
+                showAlert(title: I18N.errorInform, message: I18N.errorCannotLoad)
             }
         } else {
-            showAlert(title: "오류 안내", message: "죄송합니다. 현재 파일을 가지고 올 수 없습니다.")
+            showAlert(title: I18N.errorInform, message: I18N.errorCannotLoad)
         }
         return ""
     }

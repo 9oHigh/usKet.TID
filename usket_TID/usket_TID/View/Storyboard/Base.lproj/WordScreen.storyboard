@@ -29,8 +29,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="먼저, 시작의 정의를 볼까요?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Gf-Fc-6gD">
-                                <rect key="frame" x="0.0" y="158" width="375" height="23.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="먼저, 시작의 정의를 볼까요?" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Gf-Fc-6gD">
+                                <rect key="frame" x="8" y="158" width="359" height="23.5"/>
                                 <fontDescription key="fontDescription" name="Cafe24Oneprettynight" family="Cafe24 Oneprettynight" pointSize="22"/>
                                 <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
@@ -138,8 +138,8 @@
                         <viewLayoutGuide key="safeArea" id="kjx-4L-VJy"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="6Gf-Fc-6gD" firstAttribute="leading" secondItem="kjx-4L-VJy" secondAttribute="leading" id="2Y9-iZ-5Wl"/>
-                            <constraint firstItem="kjx-4L-VJy" firstAttribute="trailing" secondItem="6Gf-Fc-6gD" secondAttribute="trailing" id="2pG-SO-xui"/>
+                            <constraint firstItem="6Gf-Fc-6gD" firstAttribute="leading" secondItem="kjx-4L-VJy" secondAttribute="leading" constant="8" id="2Y9-iZ-5Wl"/>
+                            <constraint firstItem="kjx-4L-VJy" firstAttribute="trailing" secondItem="6Gf-Fc-6gD" secondAttribute="trailing" constant="8" id="2pG-SO-xui"/>
                             <constraint firstItem="cZV-lp-SMi" firstAttribute="leading" secondItem="kjx-4L-VJy" secondAttribute="leading" constant="20" id="5Ui-p8-P10"/>
                             <constraint firstItem="ggS-eB-MaG" firstAttribute="top" secondItem="pRE-Qz-tRC" secondAttribute="bottom" constant="25.5" id="GuW-24-5rw"/>
                             <constraint firstItem="QE1-Lc-bkm" firstAttribute="top" secondItem="pRE-Qz-tRC" secondAttribute="bottom" constant="25.5" id="IT9-FI-TbT"/>
